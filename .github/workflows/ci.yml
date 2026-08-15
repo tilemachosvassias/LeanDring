@@ -16,20 +16,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: No sorry / axiom / native_decide / unsafe in Lean sources
+      - name: No sorry / axiom / native_decide / unsafe in Lean code
+        # Comment-aware: strips /- -/ blocks and -- line comments before
+        # matching, so prose in docstrings never trips the gate.
         run: |
-          set -e
-          fail=0
-          # sorry as code (allow the word inside comments/docstrings)
-          if grep -rn --include='*.lean' -E '^\s*(sorry|admit)\b' LeanDring/ LeanDring.lean; then
-            echo '::error::sorry/admit found'; fail=1; fi
-          if grep -rn --include='*.lean' -E '^\s*axiom ' LeanDring/ LeanDring.lean; then
-            echo '::error::custom axiom declaration found'; fail=1; fi
-          if grep -rn --include='*.lean' -E '\bnative_decide\b' LeanDring/ LeanDring.lean | grep -vE '(--|/-|\*|`)'; then
-            echo '::error::native_decide found outside comments'; fail=1; fi
-          if grep -rn --include='*.lean' -E '^\s*(unsafe|opaque) |@\[(implemented_by|extern)' LeanDring/ LeanDring.lean; then
-            echo '::error::unsafe/opaque/implemented_by/extern found'; fail=1; fi
-          exit $fail
+          python3 - <<'EOF'
+          import os, re, sys
+          PAT = re.compile(
+              r"(?<![A-Za-z_'.])(sorry|admit|native_decide)(?![A-Za-z_'])"
+              r"|^\s*(axiom|unsafe|opaque)\s"
+              r"|@\[(implemented_by|extern)")
+          bad = []
+          files = ["LeanDring.lean"]
+          for r, ds, fs in os.walk("LeanDring"):
+              files += [os.path.join(r, f) for f in fs if f.endswith(".lean")]
+          for p in files:
+              depth = 0
+              for i, line in enumerate(open(p, encoding="utf-8"), 1):
+                  opens, closes = line.count("/-"), line.count("-/")
+                  was_in = depth > 0
+                  depth = max(0, depth + opens - closes)
+                  if was_in or opens:
+                      continue
+                  code = line.split("--", 1)[0]
+                  m = PAT.search(code)
+                  if m:
+                      bad.append(f"{p}:{i}: {line.strip()[:80]}")
+          if bad:
+              print("::error::forbidden token in Lean code:")
+              print(*bad[:20], sep="\n")
+              sys.exit(1)
+          print(f"clean: {len(files)} files, no sorry/admit/axiom/native_decide/unsafe/opaque in code")
+          EOF
 
       - name: Import layering (against committed baseline)
         run: python3 scripts/check_imports.py
