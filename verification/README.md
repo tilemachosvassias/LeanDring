@@ -131,11 +131,12 @@ repository.
 
 ## Reproducing
 
-The GAP scripts were run under GAP 4.16 with the standard character-table
+The GAP scripts were run under GAP 4.16.0 with the standard character-table
 (`CTblLib`) and small-groups libraries; the ATLAS cross-checks additionally
 use `AtlasRep`. They are independent of the Lean toolchain: no build step, no
 ordering, and no dependency on the state of the library. The Python scripts
-use exact integer and `Fraction` arithmetic and the standard library only.
+(Python 3.10+) use exact integer and `Fraction` arithmetic and the standard
+library only.
 
 ```bash
 gap bc_separation/orthogonal_witness.g

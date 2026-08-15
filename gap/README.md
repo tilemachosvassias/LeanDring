@@ -82,7 +82,7 @@ gap -q < gap/em06_brauer_pair.g   > results/em06_brauer_pair.log
 gap -q < gap/p4/species_p4_small.g > results/species_p4_small.log
 ```
 
-Written for GAP 4.x with the standard character-table and small-groups
+Written for GAP 4.16.0 with the standard character-table and small-groups
 libraries. Paths inside the scripts are repository-relative, so run them from
 the repository root; several write into `results/`, which you may need to
 create.
