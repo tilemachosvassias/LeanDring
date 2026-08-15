@@ -1,10 +1,0 @@
-A5: |G|=60  kappa=12  predicted 3*(n-3)! = 
-6  match=false  witness=C2 x C2 |H|=4  mindex=5 vs n(n-1)(n-2)/6=10
-A6: |G|=360  kappa=36  predicted 3*(n-3)! = 
-18  match=false  witness=C3 x C3 |H|=9  mindex=10 vs n(n-1)(n-2)/6=20
-A7: |G|=2520  kappa=72  predicted 3*(n-3)! = 72  match=true  witness=C3 |H|=
-3  mindex=35 vs n(n-1)(n-2)/6=35
-A8: |G|=20160  kappa=1344  predicted 3*(n-3)! = 
-360  match=false  witness=C2 x C2 x C2 |H|=8  mindex=15 vs n(n-1)(n-2)/6=56
-A9: |G|=181440  kappa=2160  predicted 3*(n-3)! = 
-2160  match=true  witness=C3 |H|=3  mindex=84 vs n(n-1)(n-2)/6=84

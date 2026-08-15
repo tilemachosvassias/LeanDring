@@ -101,9 +101,9 @@ Top level, at a glance:
 | `LeanDring/`, `LeanDring.lean` | the Lean library — pure `.lean`, nothing else | **yes** |
 | `docs/` | the paper ↔ Lean theorem correspondence table | no |
 | `scripts/` | import-layering and paper-number checkers | no |
-| `gap/` | GAP scripts for the order-`p⁴` and order-`5⁵` results, including the one the paper cites by path; untrusted hint providers, provenance only | no |
+| `gap/` | the 19 GAP scripts that compute the order-`p⁴` and order-`5⁵` objects — species tables, the `5⁵` census, the table alignment — including the one the paper cites by path; untrusted hint providers, provenance only | no |
 | `python/` | the seven emitters that generated the machine-emitted `5⁵` certificates; provenance only | no |
-| `verification/` | GAP/Python/Sage computations that corroborate the even-order layer; provenance only | no |
+| `verification/` | GAP/Python computations that corroborate the even-order layer, in six per-topic clusters; provenance only | no |
 
 The library itself is organized into five strata, each importing only downward
 (`scripts/check_imports.py` enforces this mechanically):
@@ -264,6 +264,24 @@ the exact list.
 See the paper's appendix (theorem map) and `sec:limitations` for the precise
 statement of what
 each of these gaps does and does not affect.
+
+## AI assistance, stated plainly
+
+This formalization was developed with substantial assistance from **Claude**
+(Anthropic's AI assistant), working in human-directed sessions: large parts
+of the Lean proofs, the certificate engineering, the restructuring, and the
+documentation were drafted, repaired, and audited that way. Every file's
+`Authors:` line records it (`formalization assisted by Claude`). The
+mathematics, the accompanying paper, the decisions about what to prove and
+what to cite, and the final review are the author's.
+
+This does not enter the trust base. The point of a kernel-checked
+development is precisely that trust rests on the *checker*, not on how the
+proofs were found: every theorem here is verified by Lean's kernel against
+the three standard axioms, the build and audit gates above are reproducible
+by anyone, and a wrong proof — whoever or whatever wrote it — does not
+compile. Treat the AI's role the way you would treat any proof assistant
+tooling: it explains how the artifact was produced, not why it is correct.
 
 ## Citation
 

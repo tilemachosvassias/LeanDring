@@ -1,6 +1,0 @@
-=== Route 1: TableOfMarks probe ===
-fail
-O7(3) tom: fail
-fail
-S6(3) tom: fail
-=== done route1 probe ===

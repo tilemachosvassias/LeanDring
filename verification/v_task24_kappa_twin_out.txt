@@ -1,8 +1,0 @@
-A10 min index over CYCLIC subgroups: 120 witness [ "cyclic", 3 ]
-A10 mindex (cyclic + abelian-in-Sylow): 120 witness 
-[ "cyclic", 3 ]   [C(10,3) = 120]
-=> kappa(A10) = 15120
-
-twin S6 x A7: |T| = 1814400  (|A10| = 1814400)
-   H = Syl3(A6) = C3xC3: |T:N_T(H)| = 10   => kappa(T) >= 181440
-   H = 3-cycle in A7: |T:N_T(H)| = 35   => kappa(T) >= 51840

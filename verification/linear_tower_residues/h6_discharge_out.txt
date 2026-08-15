@@ -1,0 +1,335 @@
+h6_discharge.py -- closing (H6), the c-correction hypothesis
+dhi = 120   qmax = 100
+
+============================================================================
+PART 1 -- Lemma OUT-p : the diagonal factor is prime to p
+============================================================================
+
+  > Lemma OUT-p [PROVEN].  Let S_i be simple of Lie type over F_{q_i},
+  > q_i = p^{f_i}, with |Out(S_i)| = d_i * f_i * g_i (diagonal * field *
+  > graph, g_i in {1,2,3,6}).  Then p does NOT divide d_i, hence
+  >
+  >      v_p(|Out(S_i)|) = v_p(f_i) + v_p(g_i),   v_p(g_i) <= 1,
+  >      and v_p(g_i) = 0 unless p in {2,3}.
+  >
+  > Proof.  Every diagonal order in the table is one of gcd(n, q_i-1),
+  > gcd(n, q_i+1), gcd(2, q_i-1), gcd(4, q_i^n -+ 1), gcd(3, q_i -+ 1), 1,
+  > i.e. a divisor of q_i^a -+ 1 for some a >= 1; and gcd(p, q_i^a -+ 1) = 1
+  > because p | q_i.   []
+
+  Consequence -- the INTEGER-floor bound on v_p(c) asked for by (H6):
+
+      v_p(c)  <=  sum_i l_i ( v_p(f_i) + v_p(g_i) )  +  sum_i v_p(l_i!)
+              <=  sum_i l_i ( floor(log_p f_i) + [p <= 3] )  +  (L-r)/(p-1)
+
+  with, by Lemma Z (Z1),  f_i <= f K / k_i .  Note what is NOT there: the
+  diagonal d_i.  The generic bound  c | prod|Out|^{l} l!  has a factor d_i
+  per socle factor, and d_i can be as large as the rank; its p-part is 0, so
+  it contributes nothing to eps_P = v_p(c)/f.  This is exactly the step that
+  turns the O(L log_q(df)) generic estimate into O(L log_q f).
+
+  exhaustive check: 46155 (family, rank <= 40, prime power q <= 1024)
+  rows with  p | d_i  :  NONE
+  graph factors g_i occurring : [1, 2, 3, 6]
+
+  resulting bound on v_p(c) for the shapes PART 2 leaves (L <= 7,
+  f_i <= f K/k_i with k_i >= d-2 in the pinned shapes):
+    p    f      B_out(L=2) B_out(L=7)
+    2    1      5          18        
+    2    2      7          25        
+    2    4      9          32        
+    2    12     11         39        
+    2    60     15         53        
+    3    1      2          9         
+    3    2      4          16        
+    3    4      4          16        
+    3    12     6          23        
+    3    60     10         37        
+    5    1      0          1         
+    5    2      0          1         
+    5    4      2          8         
+    5    12     2          8         
+    5    60     4          15        
+
+============================================================================
+PART 2 -- Lemma FL2 : the orbit floor bounds the NUMBER of factors
+============================================================================
+
+  > Lemma FL2 [PROVEN].  Write b := deg_q iota(S) (= d-1 linear, 2d-3
+  > unitary), s_i := log_q(8 l_i |Out(S_i)|), rho_i := n_i/mu_i.  The orbit
+  > floor  l_i |Out(S_i)| iotabar(S_i) >= iota(S)  gives j_i mu_i >= b - s_i,
+  > hence
+  >        v_i = l_i j_i n_i  >=  l_i rho_i (b - s_i)
+  > and, with (R=)  sum_i v_i = (d-1) + theta,
+  >        L = sum_i l_i  <=  (d-1+theta) / ( rho_min (b - s_max) ).
+  > []
+
+  rho = n_r/mu, minimised over the rank, per family:
+     E8     rho_min = 8/57      = 0.1404
+     2F4    rho_min = 1/5       = 0.2000
+     E7     rho_min = 7/27      = 0.2593
+     F4     rho_min = 4/15      = 0.2667
+     2G2    rho_min = 1/3       = 0.3333
+     E6     rho_min = 3/8       = 0.3750
+     2E6    rho_min = 3/8       = 0.3750
+     G2     rho_min = 2/5       = 0.4000
+     3D4    rho_min = 4/9       = 0.4444
+     2B2    rho_min = 1/2       = 0.5000
+     C      rho_min = 400/799   = 0.5006
+     B      rho_min = 400/799   = 0.5006
+     2A     rho_min = 399/797   = 0.5006
+     D      rho_min = 200/399   = 0.5013
+     2D     rho_min = 200/399   = 0.5013
+     A1     rho_min = 1         = 1.0000
+     A      rho_min = 1         = 1.0000
+
+  rho_min over ALL families        = 8/57  (E8)  = 0.1404
+  rho_min over CLASSICAL families  = 400/799        = 0.5006
+
+  Asymptotic consequence (s_i/b -> 0, theta = o(d)):
+     LINEAR  b = d-1 = the rank budget :  L <= 1/rho_min = 57/8 = 7.125,
+             so L <= 7 ; with no exceptional factor rho_i >= 1/2 gives L<=2.
+     UNITARY b = 2d-3, rank budget d-1 :  L <= (d-1)/(rho_min(2d-3)) ->
+             57/16 = 3.5625, so L <= 3 ; with rho_i >= 1/2 the bound is
+             L <= 1 -- the all-classical unitary multi-factor branch is
+             EMPTY by the floor alone.
+
+  EXACT integer version (no logarithms anywhere).  For a grid of (X,d,q):
+  the largest L for which SOME atom (family, rank, f_i, multiplicity l)
+  simultaneously satisfies the exact floor  l|Out|iotabar >= iota(S),
+  Lemma Z  f_i k_i <= f K,  and the exact p-budget  l f_i N_i <= f N,
+  while consuming rank budget  l j_i n_i <= d-1:
+    X   d     q      Lmax   Lmax_cl  cheapest atom
+    L   61    2      3      2        F4(n=1) f_i=4 l>=1
+    L   61    4      5      2        E8(n=1) f_i=3 l>=1
+    L   61    97     3      1        F4(n=1) f_i=4 l>=1
+    L   120   2      4      2        E8(n=1) f_i=3 l>=1
+    L   120   4      5      2        E8(n=1) f_i=5 l>=1
+    L   120   97     4      1        E8(n=1) f_i=3 l>=1
+    L   200   2      6      2        E8(n=1) f_i=4 l>=1
+    L   200   4      7      2        E8(n=1) f_i=7 l>=1
+    L   200   97     6      1        E8(n=1) f_i=4 l>=1
+    U   61    2      2      1        E8(n=1) f_i=3 l>=1
+    U   61    4      3      1        E8(n=1) f_i=5 l>=1
+    U   61    97     2      1        E8(n=1) f_i=3 l>=1
+    U   120   2      2      1        E8(n=1) f_i=5 l>=1
+    U   120   4      3      1        E8(n=1) f_i=9 l>=1
+    U   120   97     2      1        E8(n=1) f_i=5 l>=1
+    U   200   2      3      1        E8(n=1) f_i=7 l>=1
+    U   200   4      3      1        E8(n=1) f_i=14 l>=1
+    U   200   97     3      1        E8(n=1) f_i=7 l>=1
+
+  worst Lmax over the whole grid       :  L tower 7 , U tower 3
+  worst Lmax, CLASSICAL atoms only     :  L tower 2 , U tower 1
+  (Lmax_cl = 0 in the U tower means: no classical atom at all can
+   meet the floor, so L >= 2 is impossible there.)
+
+============================================================================
+PART 3 -- the exact slack calculus
+============================================================================
+
+  Notation.  x_i = l_i j_i, v_i := x_i n_i, h_i the Coxeter number of the
+  ambient diagram, N_i = h_i n_i/2 (Lemma COX), delta_i := d - h_i.
+
+  (S1)  E := sum_i v_i delta_i  =  d*theta + 2*eps_P .
+        [ d sum v_i - sum v_i h_i = d(d-1+theta) - 2 sum x_i N_i
+                                  = d(d-1+theta) - 2(N - eps_P) ]
+
+  (S2)  q^theta = (pi_S/e_S) * (c_p^2/c) * prod_i (e_i/pi_i)^{l_i},
+        e_S, e_i the diagonal orders, pi_S := |S| e_S q^{-a},
+        pi_i := |S_i| e_i q_i^{-D_i}, c := |S|/prod_i|S_i|^{l_i}.
+        [ q^{d-1+theta} = prod_i (q_i^{D_i-2N_i})^{l_i}
+                        = (|S| / |S|_p^2) (c_p^2/c) prod (e_i/pi_i)^{l_i} ]
+        Both pi's lie in [prod_{m>=1}(1-p^{-m}), 1], so (S2) is the sharp
+        replacement for Lemma DEG's fudge factor kappa in [12^{-k}, 1].
+
+  (S3)  INTEGRALITY.  f*theta = sum_i l_i f_i n_i - f(d-1) in Z, and
+        f*eps_P = v_p(c) in Z_{>=0}.  If every j_i is an integer -- which
+        Lemma Z forces whenever f < K/k_i, i.e. in every shape whose factors
+        carry a top cyclotomic block -- then theta itself is an INTEGER.
+
+  Machine verification of (S1) and (S2) as exact identities of rationals on
+  synthetic configurations (arbitrary families / ranks / l_i / f_i, c taken
+  as the rational |S|/prod|S_i|^{l_i}: they are algebraic identities, so
+  they must hold off the admissible set as well):
+
+  synthetic configurations tested : 2902
+  (S1) failures : 0       (S2) failures : 0
+
+============================================================================
+PART 4 -- the exact tolerance of every branch of Theorem MF
+============================================================================
+
+  Assume (POS) and Lemma Z, so delta_i = d - h_i >= 0 in the linear tower;
+  E = d*theta + 2*eps_P by (S1).  Let A := {i : h_i = d} (then j_i = 1,
+  k_i = d, n_i >= d/2) and B := the rest (delta_i >= 1).
+
+    (L-a)  A empty :   E >= sum_i v_i = d-1+theta
+                       ==>  a leak needs  (d-1) theta + 2 eps_P >= d-1 .
+    (L-b)  A = {L_d(q)} :  v_A = d-1, sum_B v_i = theta, B nonempty, so by
+                       Lemma FL2  theta >= rho_min (b - s) , i.e.
+                       theta >= 8(d-1-s)/57  (>= (d-1-s)/2 if B is
+                       classical).
+    (L-c)  A = {C_{d/2}, B_{d/2} or D_{d/2+1}}  (d EVEN only) :
+                       sum_B v_i = (d-1+theta) - n_A , every B row has
+                       delta >= 1, so a leak needs
+                       (d-1) theta + 2 eps_P >= (d-1) - n_A  >= d/2 - 1 .
+    For d ODD the family list with h = k = d is {L_d} alone, so (L-c) does
+    not occur and only the very weak (L-b) threshold is needed.
+
+    (U)    Steps U1-U5 use sum v_i = d-1+theta against margins that are
+           Theta(d^2); they tolerate |theta|, eps_P = o(d).
+
+  (L-c) is the ONLY tight branch, and it becomes an INTEGER question.  Pin
+  it: A = {C_{d/2}(q)} (l=1, j=1, n_A = d/2, N_A = d^2/4) plus one B factor,
+
+      v_B = d/2 - 1 + theta ,     eps_P = d(d-2)/4 - v_B h_B / 2 ,
+      hence  eps_P = [ delta_B (d - 2 + 2 theta) - 2 theta d ] / 4 .
+
+  eps_P >= 0 and delta_B >= 1 force theta <= (d-2)/(2(d-1)) < 1/2, and then
+
+      v_p(c) = f eps_P >= f [ (d-2)/4 - theta (d-1)/2 ] .
+
+  Now Lemma Z pins the B factor: it must cover Phi_{d-1} (C_{d/2} does not:
+  d-1 is odd and Cyc(C_n) contains only divisors of the even numbers 2i),
+  so j_B k_B >= d-1 while j_B k_B < K = d by PACK-TOP (M_K = 1, the owner is
+  A).  Hence k_B >= (d-1)/j_B and f_B <= f d/(d-1): for every f < d-1 this
+  gives  f_B = f, i.e. j_B = 1, so by (S3) theta is an INTEGER; theta < 1/2
+  then gives theta <= 0 and
+
+      v_p(c) >= f (d-2)/4     versus     B_out <= 2 floor(log_p f) + 3 .
+
+  Checked exactly below for every d in the range, p in {2,3,5,7,11,13} and
+  every f < d-1 :
+
+  (L-c) integrality kill, 61 <= d <= 2000, every f <= d-2 :
+      failures = NONE
+
+  The complementary range f >= d-1 means q = p^f >= 2^{d-1}.  There the
+  analytic form of (S2) closes (L-c) directly:  since pi_S <= 1, e_S >= 1
+  and c_p <= c,
+      theta <= eps_P + sum_i l_i log_q(e_i/pi_i)
+            <= [ B_out + L (log_p e_max + log_p(1/pi(q))) ] / f ,
+  with e_max <= d, L <= 2 (PART 2) and pi(q) := prod_{m>=1}(1-q^{-m})
+  bounded below EXACTLY (no floats: log_p is bounded by an exact rational
+  m/2000 with y^2000 <= p^m).  The leak needs
+      (d-1) theta + 2 eps_P  >=  (d-2)/2 ,
+  so the kill is  (d-1)*theta_ub + 2*eps_ub < (d-2)/2.  Smallest f for
+  which that holds, against the integrality range f <= d-2 :
+    p    d      f needed     integrality covers             verdict
+    2    61     52           f <= 59                        NO GAP
+    2    62     52           f <= 60                        NO GAP
+    2    80     56           f <= 78                        NO GAP
+    2    100    56           f <= 98                        NO GAP
+    2    130    59           f <= 128                       NO GAP
+    2    200    59           f <= 198                       NO GAP
+    2    500    67           f <= 498                       NO GAP
+    3    61     34           f <= 59                        NO GAP
+    3    62     34           f <= 60                        NO GAP
+    3    80     33           f <= 78                        NO GAP
+    3    100    37           f <= 98                        NO GAP
+    3    130    37           f <= 128                       NO GAP
+    3    200    37           f <= 198                       NO GAP
+    3    500    41           f <= 498                       NO GAP
+    5    61     17           f <= 59                        NO GAP
+    5    62     17           f <= 60                        NO GAP
+    5    80     17           f <= 78                        NO GAP
+    5    100    17           f <= 98                        NO GAP
+    5    130    21           f <= 128                       NO GAP
+    5    200    21           f <= 198                       NO GAP
+    5    500    21           f <= 498                       NO GAP
+
+  residual (p, d, f_needed) of branch (L-c) : NONE
+
+============================================================================
+PART 4b -- Lemma FL2 in action: how much the floor alone kills
+============================================================================
+
+  For each target (X, d, q) let A be the complete atom list: every
+  (family, rank, f_i) surviving (D1) order divisibility, the exact orbit
+  floor (D3) at its minimal admissible multiplicity, Lemma Z and the exact
+  p-budget  sum_i l_i f_i N_i <= f N.  Subfield atoms f_i < f included.
+  No (DEG-exact), no (POS), no logarithm.  A target with no L >= 2 multiset
+  of atoms whose p-budget fits is EMPTY unconditionally -- the census of
+  PART 5 does not even have to descend.  Counts:
+
+  ... d = 70    emptied by the floor 350     need DFS 350   
+  ... d = 80    emptied by the floor 700     need DFS 700   
+  ... d = 90    emptied by the floor 1050    need DFS 1050  
+  ... d = 100   emptied by the floor 1400    need DFS 1400  
+  ... d = 110   emptied by the floor 1750    need DFS 1750  
+  ... d = 120   emptied by the floor 2100    need DFS 2100  
+
+  (X,d,q) targets EMPTIED by the floor + p-budget alone : 2100
+  (X,d,q) targets still needing the census DFS          : 2100
+     L tower : 0 emptied, 2100 need DFS
+     U tower : 2100 emptied, 0 need DFS
+
+============================================================================
+PART 4c -- the decisive (p,f)-parametrised 2-factor sweep
+============================================================================
+
+  Under (POS) and Lemma FL2 (L <= 2 with no exceptional factor) every
+  admissible linear-tower configuration is a pair, and every quantity in
+  Lemma DEG is determined by (row_i, l_i, f_i):
+
+      theta  = ( sum_i l_i f_i n_i ) / f  -  (d-1)
+      eps_P  =  N  -  ( sum_i l_i f_i N_i ) / f       (must be >= 0)
+      v_p(c) =  f * eps_P                             (must be an integer)
+
+  and the two certified bounds are
+      v_p(c) <= B_out := sum_i l_i (v_p(f_i)+v_p(g_i)) + sum_i v_p(l_i!)
+                                                       [Lemma OUT-p]
+      theta  <= theta_ub := [B_out + sum_i l_i (log_p e_i + log_p(1/pi(q)))]/f
+                                                       [(S2)]
+  Constraints imposed: (POS) f_i >= f; (Z) f_i k_i <= f d; (PACK-TOP) some
+  factor has f_i k_i = f d exactly and l_i = 1; the degree form of the orbit
+  floor  f_i mu_i + log_p(48 f N (n_i+1) f_i) + 1 >= f (d-1)  (generous, so
+  conservative); and h_i <= d.  Any surviving pair is reported.
+
+  ... d = 70   pairs tested 9392048    survivors 1329
+  ... d = 80   pairs tested 20293704   survivors 2653
+  ... d = 90   pairs tested 31997437   survivors 3973
+  ... d = 100  pairs tested 44512860   survivors 5347
+  ... d = 110  pairs tested 57168499   survivors 6757
+  ... d = 120  pairs tested 72427952   survivors 8167
+
+  (POS) 2-factor pairs tested, 61 <= d <= 120, p in (2, 3, 5, 7, 11, 13), f <= 48
+     pairs tested                          : 72427952
+     pairs surviving the DEG/(S2)/Out tests: 8167
+     they occur only at q in a bounded set: max q = 823543
+     theta values realised                : ['1', '13', '15', '23', '25', '27']
+     v_p(c) values realised               : [0, 2, 3, 4]
+     family pairs realised                : [('2A', '2D'), ('2A', 'D'), ('2D', 'A'), ('2D', 'B'), ('2D', 'C'), ('B', '2D'), ('B', 'A'), ('B', 'D'), ('C', '2D'), ('C', 'A'), ('C', 'D'), ('D', 'B'), ('D', 'C')]
+
+  Every survivor is now sent through the EXACT integer tests
+  (D1) order divisibility and (D2) c | prod|Out|^l l! :
+     survivors also passing (D1)+(D2)+(D3) : NONE
+
+============================================================================
+PART 5 -- exact, slack-free census, 61 <= d <= 120, every q <= 100
+============================================================================
+
+  Tests, all INTEGER tests, exactly those of the development record section 5:
+    (D1)  prod_i |S_i|^{l_i} divides |S|
+    (D2)  c := |S|/prod_i|S_i|^{l_i}  divides  prod_i(|Out(S_i)|^{l_i} l_i!)
+    (D3)  l_i |Out(S_i)| iotabar(S_i) >= iota(S)  for every i
+    (D4)  sum_i l_i >= 2
+  No (DEG-exact), no (POS), no logarithm feeds a yes/no answer.  Subfield
+  factors f_i < f are enumerated.  New here is the range (the development record stopped
+  at d = 60) and the PART 1/2 pruner, which makes the range reachable.
+
+  ... d = 70   atoms so far 4677    nodes 7221      HITS 0
+  ... d = 80   atoms so far 9936    nodes 17754     HITS 0
+  ... d = 90   atoms so far 15409   nodes 36174     HITS 0
+  ... d = 100  atoms so far 21526   nodes 57727     HITS 0
+  ... d = 110  atoms so far 27599   nodes 101713    HITS 0
+  ... d = 120  atoms so far 33911   nodes 170177    HITS 0
+
+  surviving single atoms (D1)+(D3)-compatible : 33911
+  DFS nodes                                   : 170177
+  MULTI-FACTOR CONFIGURATIONS SURVIVING       : NONE
+
+============================================================================
+ALL CHECKS PASS.
+============================================================================

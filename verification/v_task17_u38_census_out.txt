@@ -1,10 +1,0 @@
-PSU(3,8) built-in degree=4161 order=5515776
-1014
-reduced degree=513 order=5515776 time=140
-1154
-RepresentativesPerfectSubgroups: 3 classes, time=18089
-  order=504 selfnorm(own)=false
-  order=5515776 selfnorm(own)=true
-  order=1 selfnorm(own)=false
-U3(8) own p.s.n. count (nontrivial): 1
-=== DONE u38_census ===

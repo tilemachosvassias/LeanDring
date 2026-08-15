@@ -1,0 +1,227 @@
+pos_discharge.py -- the ^2A half of the (POS) residue
+dmax = 2000   dspot = 120
+
+============================================================================
+PART 1 -- exact cyclotomic data for U_m and for the target L_d
+============================================================================
+  3 <= m <= 200 :
+    max Cyc(U_m) = 2m (m odd) / 2m-2 (m even)  ... violations NONE
+    mult of Phi_2 in Cyc(U_m) = m - 1          ... (same check)
+    M_1(L_d) = d-1 and M_t(L_d) = floor(d/t) for t >= 2 ... 0 violations
+
+  So the two numbers the whole argument turns on are
+
+        mult_2 Cyc(U_m) = m - 1        M_1(L_d) = d - 1 ,
+
+  i.e. a unitary group of rank m-1 carries EXACTLY as many Phi_2 blocks as
+  a linear group of degree m carries Phi_1 blocks.  Over a square-root
+  subfield (j = 1/2) Phi_2(q_1) and Phi_1(q) are the SAME block, so the
+  transfer is by exactly one unit -- which is why this case, and only this
+  case, survives PART 3.
+
+  sample rows:   m        k(U_m) mult_2   Cyc(U_m) top
+                 5        10     4        [2, 4, 6, 10]
+                 6        10     5        [3, 4, 6, 10]
+                 7        14     6        [4, 6, 10, 14]
+                 8        14     7        [6, 8, 10, 14]
+                 61       122    60       [110, 114, 118, 122]
+                 62       122    61       [110, 114, 118, 122]
+
+============================================================================
+PART 2 -- the owner equation and the positivity kill  j > 1/4
+============================================================================
+
+  PACK-TOP (M_K = 1 in the linear tower) forces the Phi_K owner to have
+  l_1 = 1 and j_1 k_1 = K = d exactly.  For S_1 = U_m(q^{j}):
+        k_1 = 2m   (m odd)  ==>  j = d/(2m) ,   n_1 = m-1, h_1 = m
+        k_1 = 2m-2 (m even) ==>  j = d/(2m-2), n_1 = m-1, h_1 = m
+  so, with 1/j =: t,
+        m odd  : v_1 = j(m-1) = d/2 - j ,   v_1 h_1 = d^2 t/4 - d/2
+        m even : v_1 = j(m-1) = d/2     ,   v_1 h_1 = d^2 t/4 + d/2 .
+  Since every v_i h_i > 0 and sum_i v_i h_i = 2N = d(d-1) (Lemma COX +
+  (P=)), v_1 h_1 <= d(d-1), i.e.
+        m odd  :  d t/4 <= d - 1/2  ,      m even :  d t/4 <= d - 3/2 ,
+  hence  t < 4  in both parities:  j > 1/4.  Checked exhaustively:
+
+  61 <= d <= 2000 : subfield owner shapes surviving positivity : 2996330
+  any with 1/j >= 4 : NONE
+  the values of j that survive : ['1/2', '1/3', '10/11', '10/13', '10/17', '10/19', '10/21', '10/23', '10/27', '10/29', '10/31', '10/33'] ...
+
+============================================================================
+PART 3 -- the exact PACK-exc multiplicity transfer
+============================================================================
+
+  Lemma PACK (lu_residues section 1.3), over the common base u = p^g with
+  j = s_1/s in lowest terms:  the target's block Phi_{t s}(u) (multiplicity
+  M_t) is covered by S_1 exactly when
+        kappa := t s / gcd(t s, s_1)   lies in   Cyc(S_1) ,
+  with covering multiplicity mult_kappa Cyc(S_1); and (PACK-exc) says
+        l_1 * mult_kappa Cyc(S_1)  <=  M_t          for every t .
+  This is a pure multiplicity count -- no Zsygmondy size estimate, no LTE,
+  no threshold in q.  Applied to S_1 = U_m over the subfield:
+
+  61 <= d <= 800, every subfield owner shape (m, j):
+    killed by (PACK-exc)         : 480260
+    surviving (PACK-exc)         : 370
+    the surviving values of j    : ['1/2']
+
+  sample kills (d, m, j | kappa, kappa', T, cov, M_T):
+      d=61 m=31 j=61/62  ->  kappa=1 kappa'=61 T=61 cov=15 > M_T=1
+      d=61 m=32 j=61/62  ->  kappa=1 kappa'=61 T=61 cov=16 > M_T=1
+      d=61 m=33 j=61/66  ->  kappa=1 kappa'=61 T=61 cov=16 > M_T=1
+      d=61 m=34 j=61/66  ->  kappa=1 kappa'=61 T=61 cov=17 > M_T=1
+      d=61 m=35 j=61/70  ->  kappa=1 kappa'=61 T=61 cov=17 > M_T=1
+      d=61 m=36 j=61/70  ->  kappa=1 kappa'=61 T=61 cov=18 > M_T=1
+      d=61 m=37 j=61/74  ->  kappa=1 kappa'=61 T=61 cov=18 > M_T=1
+      d=61 m=38 j=61/74  ->  kappa=1 kappa'=61 T=61 cov=19 > M_T=1
+
+  kills whose ONLY violated base index is a Zsygmondy
+  exception (kappa' in {1,2,6}) -- these need the explicit
+  r-adic argument of PART 3b :  {2: 8}
+  kills with a violated index kappa' >= 3, kappa' != 6 : 480252
+
+  Reading.  At t = 1 the target block is Phi_s(u) with M_1 = d-1, and
+  kappa = s/gcd(s,s_1) = s (gcd(s,s_1)=1).  Lemma ZM's inequality t >= 2j
+  and (PACK-exc)'s  mult_kappa <= M_t  can only both hold when t = 2/(1/j)
+  is an integer, i.e. only for j = 1/2.  PART 2 already restricted j to
+  (1/4, 1); PART 3 restricts it to exactly {1/2}.
+
+  the surviving (d mod 2, m mod 2) pairs : [(1, 1)]
+  shapes handed on to PART 4 (surviving + Zsygmondy-exceptional)
+     count 378, all with j = ['1/2'], m - d in [0, 1], d odd only : True
+
+============================================================================
+PART 3c -- the same three tests run over ALL 17 families
+============================================================================
+
+  A subfield Phi_K owner of L_d(q) is a pair (family, rank n) with
+        j := d / k(family, n)  <  1 ,
+  and the three tests of PARTS 2-3 apply verbatim:
+     (T1) POSITIVITY   v_1 h_1 = j n_r h <= sum_i v_i h_i = 2N = d(d-1) ;
+     (T2) STRICT       if v_1 h_1 = 2N exactly then sum_{i>=2} v_i h_i = 0,
+                       so there is NO second factor and L = 1 -- excluded,
+                       T is not almost simple ;
+     (T3) (PACK-exc)   in base-field indices, as in PART 3.
+  (T1) already removes the whole A family (it needs n <= d, while being a
+  subfield factor needs n > d) and every exceptional family at d >= 31
+  (their k <= 30 < d forces j > 1).
+
+  61 <= d <= 600, every (family, rank) with j = d/k < 1 :
+     shapes examined                 : 2584440
+     killed by (T1) positivity       : 1962090
+     killed by (T2) strict equality  : 3240
+     killed by (T3) (PACK-exc)       : 618840
+     surviving, by family            : {'2A': 270}
+        2A   : j values ['1/2'] ; n - d in [0] ; sample [(61, 61, '1/2'), (63, 63, '1/2'), (65, 65, '1/2'), (67, 67, '1/2')]
+
+  Reading.  (T2) is what removes ^2D: for ^2D_n with n = d one has
+  k = 2n = 2d, j = 1/2, n_r = n = d, h = 2n-2 = 2d-2, so
+        v_1 h_1 = (d/2)(2d-2) = d(d-1) = 2N   EXACTLY,
+  leaving sum_{i>=2} v_i h_i = 0 and hence no second socle factor at all.
+  After (T1)-(T3) the ONLY surviving subfield owner shapes in the whole
+  linear tower are the ^2A ones of PART 3, which PART 4 kills.
+
+============================================================================
+PART 4 -- j = 1/2 killed by the COX mean, BOTH parities of m
+============================================================================
+
+  j = 1/2 and PACK-TOP give exactly two shapes:
+        m odd  : 2m/2 = d  ==>  m = d   (d odd),  n_1 = d-1, h_1 = d
+        m even : (2m-2)/2 = d ==> m = d+1 (d odd), n_1 = d,   h_1 = d+1
+  In both, v_1 = (m-1)/2.  Write the two Lemma-COX identities for the
+  REMAINING factors (which satisfy (POS)):
+
+     m = d   :  sum_{i>=2} v_i       = (d-1) - (d-1)/2 = (d-1)/2
+                sum_{i>=2} v_i h_i   = d(d-1) - d(d-1)/2 = d(d-1)/2
+                ==> sum_{i>=2} v_i (d - h_i) = 0
+                ==> every remaining h_i = d, hence n_i >= d/2, j_i = 1,
+                    so v_i >= d/2 > (d-1)/2 = the whole budget.  KILL.
+                [this is the development record section 4.1's odd-m half]
+
+     m = d+1 :  v_1 = d/2 , h_1 = d+1 , v_1 h_1 = d(d+1)/2
+                sum_{i>=2} v_i       = (d-1) - d/2 = d/2 - 1
+                sum_{i>=2} v_i h_i   = d(d-1) - d(d+1)/2 = d(d-3)/2
+                ==> sum_{i>=2} v_i (d - 1 - h_i) = (d-1)(d/2-1)
+                                                   - d(d-3)/2 = 1  EXACTLY.
+                A factor with h_i = d would contribute -v_i <= -d/2, which
+                the remaining budget d/2-1 cannot repay, so every remaining
+                h_i <= d-1 and every term is >= 0.  The weight carried by
+                factors with h_i <= d-2 is therefore <= 1, so the weight on
+                h_i = d-1 is >= d/2 - 2 > 0: some factor has h_i = d-1.
+                For d odd, d-1 is even and the rows with h = d-1 are
+                C_{(d-1)/2}, B_{(d-1)/2} (n_r = (d-1)/2), D_{(d+1)/2},
+                ^2D_{(d+1)/2} (n_r = (d+1)/2), L_{d-1}, U_{d-1} (n_r = d-2)
+                -- plus exceptionals only when d-1 in {2,4,6,12,18,30}, i.e.
+                d <= 31.  So n_r >= (d-1)/2 and, by (POS), v_i >= (d-1)/2 >
+                d/2 - 1 = the whole remaining budget.  KILL.
+
+  This is the "sharper substitute for h <= 2v" the residue asked for: the
+  crude inequality is replaced by the EXACT identity
+  sum_{i>=2} v_i (d-1-h_i) = 1.  Machine check of every step:
+
+  61 <= d <= 2000 (d odd) : failures = NONE
+  shapes handed on by PART 3 that are NOT of the form
+  (d odd, j = 1/2, m in {d, d+1})            : NONE
+  so PART 3's residue is exactly the two shapes killed above:
+     370 shapes with m = d   (odd  m)
+     8 shapes with m = d+1 (even m)
+  minimal n_r among the rows with h = d-1, d odd :  (d-1)/2
+  the whole remaining budget                     :  d/2 - 1
+  (d-1)/2 - (d/2 - 1) = 1/2 > 0  for every d.    KILL, all d.
+
+============================================================================
+PART 5 -- exact integer spot rows, 61 <= d <= 120
+============================================================================
+
+  For every d in the range, every p in (2, 3, 5, 7, 11, 13), every 2 <= f <= 6, every
+  f_1 < f and every m: the EXACT integer tests on the shape
+  U_m(p^{f_1}) as a socle factor of L_d(p^f) --
+
+      (E1)  |U_m(q_1)|  divides  |L_d(q)|                     [(D1)]
+      (E2)  |Out(U_m(q_1))| * iotabar(U_m(q_1))  >=  iota(L_d(q))
+            (l_1 = 1 by PACK-TOP)                             [(D3)]
+      (E3)  f_1 N_1 <= f N                                    [p-budget]
+      (E4)  f_1 k_1 <= f d                                    [Lemma Z]
+
+  -- and then the kills of PARTS 2-4.  A row passing (E1)-(E4) and not
+  killed would be a genuine counterexample to (POS) for ^2A.  (Rows with
+  j k_1 < d are NOT Phi_K owners; for them PACK-TOP does not pin j, so they
+  are reported separately and handled by Lemma FL2 in the write-up.)
+
+  ... d = 70   shapes 13728     passed (E1)-(E4) 38     owner-unkilled 0    non-owner 23
+  ... d = 80   shapes 27300     passed (E1)-(E4) 72     owner-unkilled 0    non-owner 49
+  ... d = 90   shapes 40734     passed (E1)-(E4) 109    owner-unkilled 0    non-owner 77
+  ... d = 100  shapes 53970     passed (E1)-(E4) 145    owner-unkilled 0    non-owner 102
+  ... d = 110  shapes 67086     passed (E1)-(E4) 178    owner-unkilled 0    non-owner 127
+  ... d = 120  shapes 80040     passed (E1)-(E4) 216    owner-unkilled 0    non-owner 154
+
+  shapes examined                          : 80040
+  shapes passing (E1)-(E4)                 : 216
+     Phi_K OWNERS among them               : 62
+        killed by positivity (PART 2)      : 0
+        killed by (PACK-exc) (PART 3)      : 2
+        killed by the COX mean (PART 4)    : 60
+        NOT killed                         : 0
+     NON-owners (j k_1 < d)                : 154
+     first non-owner rows (d,p,f,f_1,m) : [(62, 2, 2, 1, 62), (62, 2, 4, 2, 62), (62, 3, 2, 1, 62), (64, 2, 2, 1, 64), (64, 2, 4, 2, 64), (64, 3, 2, 1, 64), (64, 7, 2, 1, 64), (66, 2, 2, 1, 66)]
+
+============================================================================
+PART 6 -- the NON-owner subfield ^2A rows, completed exactly
+============================================================================
+
+  A subfield factor U_m(q_1) with j k_1 < K is not pinned by PACK-TOP, so
+  PARTS 2-4 do not apply to it.  By Lemma FL2 (h6_discharge.py PART 2) the
+  whole socle then has L <= 2, i.e. the configuration is
+        Soc T  =  U_m(q_1)^{l_1}  x  S_2^{l_2} ,   l_1 + l_2 <= 2 ,
+  so it is a FINITE, explicitly parametrised list.  Every member is tested
+  here by the same integer tests as the census:
+        (D1) |U_m(q_1)|^{l_1} |S_2|^{l_2} divides |S| ;
+        (D2) c divides |Out_1|^{l_1} l_1! |Out_2|^{l_2} l_2! ;
+        (D3) the floor for BOTH factors.
+
+  non-owner rows completed : 154
+  complete configurations surviving (D1)-(D3) : NONE
+
+============================================================================
+ALL CHECKS PASS.
+============================================================================

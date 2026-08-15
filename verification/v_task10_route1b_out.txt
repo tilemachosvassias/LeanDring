@@ -1,12 +1,0 @@
-=== Route 1b: load tomlib, retry ===
-true
-tomlib loaded: true
-fail
-O7(3) tom: fail
-fail
-S6(3) tom: fail
-Trying alt names...
-Omega(7,3): fail
-PSp(6,3): fail
-Sp(6,3): fail
-=== done route1b probe ===

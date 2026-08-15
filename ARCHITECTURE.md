@@ -62,11 +62,17 @@ LeanDring/
   in-file "outside the build closure" note.)
 scripts/check_imports.py         -- layering checker (see below)
 
-gap/                             -- GAP scripts for the p^4 / 5^5 arc (199 files): species
-                                    generation, the 5^5 censuses, gauge/linkage experiments,
-                                    sieve searches. Untrusted hint providers -- every datum
-                                    they emit is re-checked by a kernel decide in Lean. The
-                                    paper cites gap/em06_brauer_pair.g by path
+gap/                             -- GAP scripts for the p^4 / 5^5 arc (19 scripts, curated):
+                                    lib/ the species engine and the M(G)/G pair-class
+                                    enumeration, census/ the 5^5 subgroup/normalizer/character
+                                    census, species/ the 2724x2724 species tables and their
+                                    row/column alignment, p4/ the order-p^4 separations.
+                                    Untrusted hint providers -- every datum they emit is
+                                    re-checked by a kernel decide in Lean. The paper cites
+                                    gap/em06_brauer_pair.g by path, which is why that one
+                                    script stays at the top level. The exploratory corpus
+                                    behind them (sieves, gauge/linkage experiments, session
+                                    tasks) is not published; see gap/README.md
 python/                          -- the seven emitters that generated the machine-emitted
                                     5^5 certificates, plus their shared helper. Published
                                     unmodified as provenance: they predate the P5/ block
@@ -74,10 +80,11 @@ python/                          -- the seven emitters that generated the machin
                                     reproduce the certificates' content, not their present
                                     paths (scripts/mapping.tsv records old -> new)
 verification/                    -- external computations that corroborate the even-order
-                                    layer: GAP scripts and their captured output, plus a few
-                                    Python/Sage helpers. NOT Lean, not compiled, and nothing
-                                    in the library depends on them; they are provenance for
-                                    the numbers quoted in the paper
+                                    layer: six per-topic clusters of GAP/Python scripts with
+                                    their captured output and a RESULTS.md each, plus lib/.
+                                    NOT Lean, not compiled, and nothing in the library depends
+                                    on them; they are provenance for the numbers quoted in
+                                    the paper. verification/README.md indexes them
 docs/PAPER_THEOREM_MAP.md        -- paper result <-> Lean declaration correspondence table
 scripts/mapping.tsv              -- old-path <TAB> new-path record of the Basic/ -> current
                                     layout migration. Operational: compile.sh resolves its

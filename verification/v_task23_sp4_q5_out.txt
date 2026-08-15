@@ -1,14 +1,0 @@
-Sp4(5) perm degree 624 size 9360000
-perfect classes: 13   time 14951ms
-  |U|=120 |N|=14400 PSN=false  SL(2,5)
-  |U|=120 |N|=1440 PSN=false  SL(2,5)
-  |U|=120 |N|=960 PSN=false  SL(2,5)
-  |U|=120 |N|=120 PSN=true  SL(2,5)
-  |U|=120 |N|=120 PSN=true  SL(2,5)
-  |U|=720 |N|=720 PSN=true  SL(2,9)
-  |U|=1920 |N|=1920 PSN=true  C2 . ((C2 x C2 x C2 x C2) : A5)
-  |U|=14400 |N|=28800 PSN=false  SL(2,5) x SL(2,5)
-  |U|=15000 |N|=60000 PSN=false  (C5 x C5 x C5) : SL(2,5)
-  |U|=15000 |N|=60000 PSN=false  ((C5 x C5) : C5) : SL(2,5)
-  |U|=15600 |N|=31200 PSN=false  SL(2,25)
-  |U|=9360000 |N|=9360000 PSN=true  C2 . O(5,5)

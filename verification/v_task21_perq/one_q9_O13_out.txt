@@ -1,14 +1,0 @@
-true
-true
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-#I  Have 66252 points.
-#I  Have 66429 points.
-#I  Have 66252 points.
-#I  Have 66429 points.
-RESULT O q=9 idx=13 sizeM=22594320403200 index=
-1 zInD=false isG2order=true rounds=5

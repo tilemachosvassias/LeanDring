@@ -1,15 +1,0 @@
-true
-true
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-#I  Have 868222 points.
-#I  Have 1356082 points.
-#I  Have 1628309 points.
-#I  Have 1777718 points.
-#I  Have 1859507 points.
-#I  Have 1903746 points.
-#I  Have 1927183 points.

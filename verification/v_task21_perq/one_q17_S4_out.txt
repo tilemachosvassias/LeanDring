@@ -1,10 +1,0 @@
-true
-true
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-Syntax error: 'QUIT;' cannot be used in this context
-    QUIT;
-    ^^^^
-RESULT S q=17 idx=4 sizeM=9836035059548160 index=
-1 zInD=true isG2order=false rounds=4

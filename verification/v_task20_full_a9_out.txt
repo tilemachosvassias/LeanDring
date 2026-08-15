@@ -1,17 +1,0 @@
-=== A9 full p.s.n. census, |A9|=181440 ===
-RepresentativesPerfectSubgroups: 13 classes, time(ms)=490
-  order=1 struct=1 selfnorm=false
-  order=60 struct=A5 selfnorm=false
-  order=60 struct=A5 selfnorm=false
-  order=360 struct=A6 selfnorm=false
-  order=168 struct=PSL(3,2) selfnorm=true
-  order=2520 struct=A7 selfnorm=false
-  order=168 struct=PSL(3,2) selfnorm=true
-  order=1344 struct=(C2 x C2 x C2) : PSL(3,2) selfnorm=true
-  order=1344 struct=(C2 x C2 x C2) : PSL(3,2) selfnorm=true
-  order=20160 struct=A8 selfnorm=true
-  order=504 struct=PSL(2,8) selfnorm=false
-  order=504 struct=PSL(2,8) selfnorm=false
-  order=181440 struct=A9 selfnorm=true
-A9 mult1 (EXACT) = 6
-=== DONE full_a9 ===

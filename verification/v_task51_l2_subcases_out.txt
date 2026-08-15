@@ -1,9 +1,0 @@
-# TARGETED SCAN of the residual L_2(q1)-socle branches
-  _icbrt selftest (incl. the 10^120 scale of the l=2 branch): OK
-  (E1)  l=1 almost simple, q1 <= 20000000 : 1272217 (q1,c) pairs tested, 0 hits
-  (E2)  l=2 socle L_2(q1)^2, q1 <= 100000 : 39232 (q1,c) pairs tested, 0 hits
-  NO SOLUTIONS in either branch.
-  (E3)  alternating socle A_m^l, m <= 200, l = 1,2 : 0 hits
-  (E4)  sporadic socle S^l, all 27, l = 1,2 : 0 hits
-  positive control solve_L2_order(|L2(4)|=60) = [4, 5] (expect [4,5])
-  positive control solve_L2_order(|L2(9)|=360) = [9] (expect [9])

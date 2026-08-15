@@ -1,11 +1,0 @@
-=== n=9 twin: Aut(A5) x Aut(L2(8)) = S5 x PGammaL(2,8), order 181440 ===
-|Aut(A5)|=120 |Socle|=60 |Out(A5)|=2
-|Aut(L2(8))|=1512 |Socle|=504 |Out(L2(8))|=3
-T built, |T|=181440 (expect 181440) time(ms)=0
-RepresentativesPerfectSubgroups: 4 classes, time(ms)=234
-  order=60 struct=A5 selfnorm=false
-  order=504 struct=PSL(2,8) selfnorm=false
-  order=30240 struct=PSL(2,8) x A5 selfnorm=false
-  order=1 struct=1 selfnorm=false
-n=9 twin mult1 (nontrivial p.s.n. classes) = 0
-=== DONE a9 ===

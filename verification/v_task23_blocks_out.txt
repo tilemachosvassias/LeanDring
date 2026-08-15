@@ -1,14 +1,0 @@
-q=9: #(2.A5 classes in SL2(q)) = 2
-  PSp4(9) degree 820 size 1721606400
-  SL2 x SL2: |U|=259200 |N|=518400  PSN=false  perfect=true
-  SL2 x 2A5_a: |U|=43200 |N|=43200  PSN=true  perfect=true
-  SL2 x 2A5_b: |U|=43200 |N|=43200  PSN=true  perfect=true
-  2A5_a x 2A5_b: |U|=7200 |N|=7200  PSN=true  perfect=true
-  2A5_a x 2A5_a: |U|=7200 |N|=14400  PSN=false  perfect=true
-q=11: #(2.A5 classes in SL2(q)) = 2
-  PSp4(11) degree 1464 size 12860654400
-  SL2 x SL2: |U|=871200 |N|=1742400  PSN=false  perfect=true
-  SL2 x 2A5_a: |U|=79200 |N|=79200  PSN=true  perfect=true
-  SL2 x 2A5_b: |U|=79200 |N|=79200  PSN=true  perfect=true
-  2A5_a x 2A5_b: |U|=7200 |N|=7200  PSN=true  perfect=true
-  2A5_a x 2A5_a: |U|=7200 |N|=14400  PSN=false  perfect=true

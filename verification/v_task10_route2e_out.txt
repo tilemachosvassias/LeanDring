@@ -1,13 +1,0 @@
-=== Route 2e: perfect groups library limits ===
-IsBoundGlobal NumberPerfectGroups: true
-NumberPerfectLibraryGroups(60): 1
-order 60: NumberPerfectGroups = 1
-order 120: NumberPerfectGroups = 1
-order 360: NumberPerfectGroups = 1
-order 1000: NumberPerfectGroups = 0
-order 1000000: NumberPerfectGroups = 0
-order 2000000: NumberPerfectGroups = 0
-order 5000000: NumberPerfectGroups = fail
-order 10000000: NumberPerfectGroups = fail
-order 13000000: NumberPerfectGroups = fail
-=== done route2e ===

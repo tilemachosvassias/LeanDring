@@ -1,9 +1,0 @@
-q=7  Sym3 SL2(q): |U|=168 |N|=168 PSN=true irred=true
-q=9 NO alternating invariant form
-q=11  Sym3 SL2(q): |U|=660 |N|=660 PSN=true irred=true
-q=11  Sym3 2.A5_1: |U|=60 |N|=120 PSN=false irred=true
-q=11  Sym3 2.A5_2: |U|=60 |N|=120 PSN=false irred=true
-q=13  Sym3 SL2(q): |U|=1092 |N|=1092 PSN=true irred=true
-q=19  Sym3 SL2(q): |U|=3420 |N|=3420 PSN=true irred=true
-q=19  Sym3 2.A5_1: |U|=60 |N|=60 PSN=true irred=true
-q=19  Sym3 2.A5_2: |U|=60 |N|=60 PSN=true irred=true

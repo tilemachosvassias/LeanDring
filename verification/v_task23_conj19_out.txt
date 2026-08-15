@@ -1,2 +1,0 @@
-q=19: |U1|=60 |U2|=60
-Sp4(19)-conjugate? true

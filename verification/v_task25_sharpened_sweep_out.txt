@@ -1,7 +1,0 @@
-  n=10: cands=17 cumulative_factorizations=19 uncovered=0  [0s]
-  n=20: cands=62 cumulative_factorizations=165 uncovered=0  [0s]
-  n=30: cands=92 cumulative_factorizations=183 uncovered=0  [1s]
-  n=40: cands=122 cumulative_factorizations=187 uncovered=0  [8s]
-  n=50: cands=149 cumulative_factorizations=191 uncovered=0  [29s]
-  n=60: cands=166 cumulative_factorizations=200 uncovered=0  [74s]
-  n=70: cands=193 cumulative_factorizations=222 uncovered=0  [159s]

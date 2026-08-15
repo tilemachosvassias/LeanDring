@@ -1,16 +1,0 @@
-A5: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 10  witness cycle type 
-[ 1 ]   C(m,2)=10  C(m,3)=10
-A6: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 15  witness cycle type 
-[ 1 ]   C(m,2)=15  C(m,3)=20
-A7: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 21  witness cycle type 
-[ 1 ]   C(m,2)=21  C(m,3)=35
-A8: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 28  witness cycle type 
-[ 1 ]   C(m,2)=28  C(m,3)=56
-A9: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 36  witness cycle type 
-[ 1 ]   C(m,2)=36  C(m,3)=84
-A10: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 45  witness cycle type 
-[ 1 ]   C(m,2)=45  C(m,3)=120
-A11: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 55  witness cycle type 
-[ 1 ]   C(m,2)=55  C(m,3)=165
-A12: iota = 0   nu(A_m) = min outer [S:C_S(a)] = 66  witness cycle type 
-[ 1 ]   C(m,2)=66  C(m,3)=220
