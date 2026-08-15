@@ -18,8 +18,9 @@ theorem LeanDring.P5Presentation.dring_equiv_coordinate12 :
     Nonempty (DRing (Coordinate 1) ≃+* DRing (Coordinate 2))
 ```
 
-The two groups of order `5⁵` that GAP labels `SmallGroup(3125,68)` and
-`SmallGroup(3125,69)` have isomorphic D-rings — a counterexample to D-ring
+The two groups of order `5⁵` catalogued as `SmallGroup(3125,68)` and
+`SmallGroup(3125,69)` in the SmallGroups library (Besche–Eick–O'Brien, as
+distributed with GAP) have isomorphic D-rings — a counterexample to D-ring
 rigidity. The ring isomorphism is proved in Lean's kernel; the identification
 of the two Lean pc-presentations with those GAP labels, and the two groups'
 non-isomorphy, are exact GAP computations, stated as such wherever the claim
@@ -83,8 +84,8 @@ mark tables of `K` and `κK` — is proven here rather than assumed.
 
 **Order `p⁴` (`p ≥ 5`).** Lean models for all fifteen groups (ten
 nonabelian, five abelian), built from presentations with `ZMod`-carry
-and cocycle toolkits — GAP is used only to match models to SmallGroup
-IDs, never as proof input. Machine-checked subgroup-count rows
+and cocycle toolkits — GAP is used only to match models to their
+SmallGroups-library identifiers, never as proof input. Machine-checked subgroup-count rows
 (correcting an error in the [GJG10] table, `P4TableAudit`), the Gauss-sum
 evaluation of the A-block for the critical pair (xii)/(xiii)
 (`φ_{A,h}[A,χ] = χ(h)·ψ(−B²/4A)·χ₂(A)·g(χ₂,ψ)`), the

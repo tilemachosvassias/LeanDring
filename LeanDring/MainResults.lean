@@ -29,9 +29,11 @@ computational claims to kernel-checked statements.
 
 The two groups of order `5⁵` at the heart of the main theorem are called
 `Coordinate 1` and `Coordinate 2` throughout the Lean development.  They are the
-kernel-computable models of the two pc-presentations that GAP labels
-`SmallGroup(3125, 68)` and `SmallGroup(3125, 69)`.  The identification with those
-GAP labels, and the fact that the two groups are themselves non-isomorphic, are
+kernel-computable models of two explicit pc-presentations; the SmallGroups
+library (Besche–Eick–O'Brien, distributed with GAP) catalogues the presented
+groups as `SmallGroup(3125, 68)` and `SmallGroup(3125, 69)` — a catalogue
+identifier, not a mathematical name.  The identification with those
+library labels, and the fact that the two groups are themselves non-isomorphic, are
 external computational provenance (`[COMPUTED]`, established by GAP) and are
 **not** formalised here.
 

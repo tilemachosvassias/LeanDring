@@ -38,6 +38,11 @@ lake env lean LeanDring/CertificateAnchors.lean
 
 Every printed axiom set is a subset of `[propext, Classical.choice, Quot.sound]`.
 
+**Notation.** `SmallGroup(n,k)` is a catalogue identifier — the k-th group of
+order n in the SmallGroups library (Besche–Eick–O'Brien), as distributed with
+GAP — not a mathematical name; the groups themselves enter Lean through
+explicit presentations.
+
 ## Status legend
 
 | status | meaning |
