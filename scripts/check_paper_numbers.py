@@ -7,8 +7,8 @@ lists).  They fall into two classes:
   * theorem-backed -- the number appears in a kernel-checked Lean statement
     (MainResults.lean / CertificateAnchors.lean).  We check it is still there.
   * evaluation-derived -- produced by the standalone emitters or by a
-    measurement run, and reported as such in the paper (Theorem 5.1 proof
-    discussion, Table 2).  We cannot re-derive those here; we check the
+    measurement run, and reported as such in the paper (the Section 5 divergence remark,
+    and Table 2).  We cannot re-derive those here; we check the
     arithmetic identities they must satisfy instead.
 
 Run from the repository root:  python3 scripts/check_paper_numbers.py
@@ -122,7 +122,7 @@ report(abs(decide_total / 76272 - 2.27) < 0.005,
        f"{decide_total / 76272:.4f}")
 
 classes = set(range(28, 53)) | {64, 67, 73, 76, 90, 95, 100, 105, 110}
-report(len(classes) == 34, "Theorem 5.1(6) class list has 34 members", f"{len(classes)}")
+report(len(classes) == 34, "34-class divergence list (Remark, Section 5) has 34 members", f"{len(classes)}")
 
 print("\n== repository shape claims made in the paper ==")
 lean_files = list(lean_sources())
