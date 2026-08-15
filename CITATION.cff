@@ -20,7 +20,7 @@ authors:
 license: Apache-2.0
 version: 1.0.0
 date-released: 2026-08-15
-# doi: added after the Zenodo-linked GitHub release mints it
+doi: 10.5281/zenodo.21949625
 repository-code: "https://github.com/tilemachosvassias/LeanDring"
 keywords:
   - Lean 4

@@ -4,6 +4,7 @@
 [![Mathlib](https://img.shields.io/badge/Mathlib-pinned-blue)](lake-manifest.json)
 [![sorry-free](https://img.shields.io/badge/sorry--free-yes-brightgreen)](LeanDring/AxiomAudit.lean)
 [![axioms](https://img.shields.io/badge/axioms-propext%20%7C%20Classical.choice%20%7C%20Quot.sound-brightgreen)](LeanDring/MainResults.lean)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21949625.svg)](https://doi.org/10.5281/zenodo.21949625)
 [![License](https://img.shields.io/badge/license-Apache--2.0-lightgrey)](LICENSE)
 
 A Lean 4 + Mathlib formalization of the **monomial representation ring**
