@@ -1,0 +1,72 @@
+=== SANITY: order-32 analogues ===
+  computing ConjugacyClassesSubgroups ... 118 classes
+D8 x C2^2 = G(32,46): r = 583  f = 583  expected r = 
+583  SANITY true  > 381: true  (265 ms)
+  computing ConjugacyClassesSubgroups ... 78 classes
+Q8 x C2^2 = G(32,47): r = 407  f = 407  expected r = 
+407  SANITY true  > 381: true  (159 ms)
+
+=== MAIN: radical census at order 128 ===
+
+--- E32+ x C2^2 (order 128) ---
+  computing ConjugacyClassesSubgroups ... 3280 classes
+  ... 500 classes processed, running r = 2157
+  ... 1000 classes processed, running r = 4767
+  ... 1500 classes processed, running r = 8495
+  ... 2000 classes processed, running r = 12703
+  ... 2500 classes processed, running r = 16999
+  ... 3000 classes processed, running r = 24563
+E32+ x C2^2: r = 30099   f = 30099   D-rational = true   (18924 ms)
+E32+ x C2^2: predicted r = 30099   MATCH
+E32+ x C2^2: r > 27632 (E128+ value)?  true
+
+--- E32- x C2^2 (order 128) ---
+  computing ConjugacyClassesSubgroups ... 2936 classes
+  ... 500 classes processed, running r = 2239
+  ... 1000 classes processed, running r = 5167
+  ... 1500 classes processed, running r = 9239
+  ... 2000 classes processed, running r = 13447
+  ... 2500 classes processed, running r = 19787
+E32- x C2^2: r = 27827   f = 27827   D-rational = true   (18001 ms)
+E32- x C2^2: predicted r = 27827   MATCH
+E32- x C2^2: r > 27632 (E128+ value)?  true
+
+--- Q8  x C2^4 (order 128) ---
+  computing ConjugacyClassesSubgroups ... 3132 classes
+  ... 500 classes processed, running r = 2385
+  ... 1000 classes processed, running r = 5215
+  ... 1500 classes processed, running r = 9203
+  ... 2000 classes processed, running r = 14299
+  ... 2500 classes processed, running r = 20139
+  ... 3000 classes processed, running r = 28531
+Q8  x C2^4: r = 31747   f = 31747   D-rational = true   (23698 ms)
+Q8  x C2^4: predicted r = 31747   MATCH
+Q8  x C2^4: r > 27632 (E128+ value)?  true
+
+--- D8  x C2^4 (order 128) ---
+  computing ConjugacyClassesSubgroups ... 5276 classes
+  ... 500 classes processed, running r = 1839
+  ... 1000 classes processed, running r = 4517
+  ... 1500 classes processed, running r = 7571
+  ... 2000 classes processed, running r = 11335
+  ... 2500 classes processed, running r = 15099
+  ... 3000 classes processed, running r = 20611
+  ... 3500 classes processed, running r = 27871
+  ... 4000 classes processed, running r = 32851
+  ... 4500 classes processed, running r = 36851
+  ... 5000 classes processed, running r = 45627
+D8  x C2^4: r = 51395   f = 51395   D-rational = true   (29489 ms)
+D8  x C2^4: predicted r = 51395   MATCH
+D8  x C2^4: r > 27632 (E128+ value)?  true
+
+=== SUMMARY ===
+group          predicted  computed  f       match  >27632  D-rational
+E32+ x C2^2        30099     30099   30099  MATCH  true    true
+E32- x C2^2        27827     27827   27827  MATCH  true    true
+Q8  x C2^4         31747     31747   31747  MATCH  true    true
+D8  x C2^4         51395     51395   51395  MATCH  true    true
+
+ALL FOUR MATCH PREDICTIONS: true
+ALL FOUR STRICTLY > 27632 : true
+
+DONE

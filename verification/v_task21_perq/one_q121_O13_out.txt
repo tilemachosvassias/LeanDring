@@ -1,0 +1,38 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Looking for short orbit (0)...
+#I  Have 327990 points.
+#I  Have 655720 points.
+#I  Have 982529 points.
+#I  Have 1308551 points.
+#I  Have 1633241 points.
+#I  Have 1959903 points.
+#I  Have 2289603 points.
+#I  Have 2617861 points.
+#I  Have 2942877 points.
+#I  Have 3267129 points.
+#I  Have 3591160 points.
+#I  Have 3920659 points.
+#I  Have 4250312 points.
+#I  Have 4574008 points.
+#I  Have 4897536 points.
+#I  Have 5220558 points.
+#I  Have 5538565 points.
+#I  Have 5860150 points.
+#I  Have 6178690 points.
+#I  Have 6496768 points.
+#I  Have 6816690 points.
+#I  Have 7131467 points.
+#I  Have 7450676 points.
+#I  Have 7766778 points.
+#I  Have 8082574 points.
+#I  Have 8400275 points.
+#I  Have 8717888 points.
+#I  Have 9033829 points.
+#I  Have 9348587 points.

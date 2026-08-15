@@ -1,0 +1,6 @@
+=== A10, |A10|=1814400: ConjugacyClassesSubgroups timing probe ===
+A10: 430 subgroup conjugacy classes, time(ms)=3754
+
+=== twin#2 = S6 x A7, |T|=1814400: ConjugacyClassesSubgroups timing probe ===
+S6xA7: 5521 subgroup conjugacy classes, time(ms)=71875
+=== DONE rank_probe ===

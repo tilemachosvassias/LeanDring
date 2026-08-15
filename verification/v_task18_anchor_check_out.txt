@@ -1,0 +1,41 @@
+=== B anchor: prime 47 forces L2(47); prime 31 must land in the
+remaining <=2 slots. Condition checked: c = |B|/(51888*X) must
+divide Out(L2(47))*Out(X) = 2*Out(X).
+
+  L2(47)*L2(32) (order 1698605568): c=2445995444438827008000000  Out-product=
+10  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L5(2) (order 518846791680): c=8007723181198540800000  Out-product=
+4  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L5(4) (order 13412646150104678400): c=309765980160000  Out-product=
+8  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L2(125) (order 50668632000): c=81999085375473057792000  Out-product=
+12  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L3(5) (order 19302336000): c=215247599110616776704000  Out-product=
+4  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L3(25) (order 2634768864000000): c=1576905487989866496  Out-product=
+24  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L4(5) (order 376395552000000): c=11038338415929065472  Out-product=
+16  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*G2(5) (order 304011792000000): c=13666514229245509632  Out-product=
+2  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*L2(31) (order 772093440): c=5381189977765419417600000  Out-product=
+4  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+  L2(47)*Th (order 4708625536453902336000): c=882376704000  Out-product=
+2  c|Outprod? false  -> REJECTED (c vastly exceeds Outprod)
+
+=== B anchor, k=3: L2(47)*X*Y for all pairs of 31-candidates ===
+  none found. Confirms NO_FACTORIZATION for B via the forced-slot argument.
+
+=== M anchor: primes 41,59,71 each have EXACTLY ONE candidate.
+Three distinct primes exactly saturate k<=3, forcing the unique
+candidate S1*S2*S3 = L2(41)*L2(59)*L2(71).
+
+Product = 632591412768000
+|M| mod product = 0 (0 means it DOES divide |M|)
+c = |M|/product = 1277313299684087810109379839000576000000
+Out-product = 2*2*2 = 8
+c | Outprod?  (Outprod mod c = 0): false
+-> REJECTED: c is astronomically larger than 8, so this forced
+   unique candidate fails. No other k<=3 combination can cover all
+   three of {41,59,71} simultaneously (each needs its own slot,
+   and there is no room for a 4th).  Confirms NO_FACTORIZATION for M.

@@ -1,0 +1,383 @@
+==========================================================================
+PART 1 -- the theta = D/mu table, and the per-target threshold a/b
+==========================================================================
+
+  Lemma W (below) kills a socle family as soon as  b*D1 - a*mu1 > 0, i.e.
+  theta := D1/mu1 > a/b.  a/b is 8/3 (U_3), 5/2 (Sz), 7/3 (R).
+
+  family   n         D    mu theta=D/mu      N     N-mu   dies for target
+  2G2      1         7     3       7/3      3        0   -- NONE (boundary/below)
+  2B2      1         5     2       5/2      2        0   Ree
+  2F4      1        26    10     26/10     12        2   Sz,Ree
+  2A       3         8     3       8/3      3        0   Sz,Ree
+  G2       1        14     5      14/5      6        1   U3,Sz,Ree
+  2A       4        15     5      15/5      6        1   U3,Sz,Ree
+  A1       1         3     1       3/1      1        0   U3,Sz,Ree
+  3D4      1        28     9      28/9     12        3   U3,Sz,Ree
+  C        2        10     3      10/3      4        1   U3,Sz,Ree
+  2A       5        24     7      24/7     10        3   U3,Sz,Ree
+  F4       1        52    15     52/15     24        9   U3,Sz,Ree
+  2A       6        35     9      35/9     15        6   U3,Sz,Ree
+  A        3         8     2       8/2      3        1   U3,Sz,Ree
+  B        3        21     5      21/5      9        4   U3,Sz,Ree
+  C        3        21     5      21/5      9        4   U3,Sz,Ree
+  E8       1       248    57    248/57    120       63   U3,Sz,Ree
+  2A       7        48    11     48/11     21       10   U3,Sz,Ree
+  2D       4        28     6      28/6     12        6   U3,Sz,Ree
+  D        4        28     6      28/6     12        6   U3,Sz,Ree
+  2A       8        63    13     63/13     28       15   U3,Sz,Ree
+  2E6      1        78    16     78/16     36       20   U3,Sz,Ree
+  E6       1        78    16     78/16     36       20   U3,Sz,Ree
+  E7       1       133    27    133/27     63       36   U3,Sz,Ree
+  A        4        15     3      15/3      6        3   U3,Sz,Ree
+  B        4        36     7      36/7     16        9   U3,Sz,Ree
+  C        4        36     7      36/7     16        9   U3,Sz,Ree
+  2D       5        45     8      45/8     20       12   U3,Sz,Ree
+  D        5        45     8      45/8     20       12   U3,Sz,Ree
+  A        5        24     4      24/4     10        6   U3,Sz,Ree
+  B        5        55     9      55/9     25       16   U3,Sz,Ree
+  C        5        55     9      55/9     25       16   U3,Sz,Ree
+  2D       6        66    10     66/10     30       20   U3,Sz,Ree
+  D        6        66    10     66/10     30       20   U3,Sz,Ree
+  A        6        35     5      35/5     15       10   U3,Sz,Ree
+  B        6        78    11     78/11     36       25   U3,Sz,Ree
+  C        6        78    11     78/11     36       25   U3,Sz,Ree
+  2D       7        91    12     91/12     42       30   U3,Sz,Ree
+  D        7        91    12     91/12     42       30   U3,Sz,Ree
+  A        7        48     6      48/6     21       15   U3,Sz,Ree
+  B        7       105    13    105/13     49       36   U3,Sz,Ree
+  C        7       105    13    105/13     49       36   U3,Sz,Ree
+  2D       8       120    14    120/14     56       42   U3,Sz,Ree
+  D        8       120    14    120/14     56       42   U3,Sz,Ree
+  A        8        63     7      63/7     28       21   U3,Sz,Ree
+  B        8       136    15    136/15     64       49   U3,Sz,Ree
+  C        8       136    15    136/15     64       49   U3,Sz,Ree
+
+  target U3   (a/b = 8/3 = 8/3): families NOT killed by Lemma W:
+        2G2    n=1   theta = 7/3    
+        2B2    n=1   theta = 5/2    
+        2F4    n=1   theta = 13/5   
+        2A     n=3   theta = 8/3    (= a/b, boundary)
+
+  target Sz   (a/b = 5/2 = 5/2): families NOT killed by Lemma W:
+        2G2    n=1   theta = 7/3    
+        2B2    n=1   theta = 5/2    (= a/b, boundary)
+
+  target Ree  (a/b = 7/3 = 7/3): families NOT killed by Lemma W:
+        2G2    n=1   theta = 7/3    (= a/b, boundary)
+
+  The set of theta-values below any bound is FINITE because theta
+  -> infinity with the rank in every classical family:
+     A    theta(n) for n = 3..12 : 4 5 6 7 8 9 10 11 12 13
+     2A   theta(n) for n = 3..12 : 8/3 3 24/7 35/9 48/11 63/13 16/3 99/17 120/19 143/21
+     C    theta(n) for n = 2..12 : 10/3 21/5 36/7 55/9 78/11 105/13 136/15 171/17 210/19 253/21 300/23
+     B    theta(n) for n = 3..12 : 21/5 36/7 55/9 78/11 105/13 136/15 171/17 210/19 253/21 300/23
+     D    theta(n) for n = 4..12 : 14/3 45/8 33/5 91/12 60/7 153/16 95/9 231/20 138/11
+     2D   theta(n) for n = 4..12 : 14/3 45/8 33/5 91/12 60/7 153/16 95/9 231/20 138/11
+
+==========================================================================
+PART 2 -- Lemma W, exact integer form, and the per-family window
+==========================================================================
+
+  (T1)  |S_1| >= q_1^{D1}/(12 d1)          [v_task52]
+  (T2)  iota(S_1) <= 4 q_1^{mu1}           [v_task52]
+  (E)   c |S_1| = |S|, c >= 2   ==>  q_1^{D1} <= 12 d1 |S_1| <= 6 d1 |S|
+  (F)   4 d1 f1 g1 q_1^{mu1} >= |Out| iota(S_1) >= iota(S)
+
+  raising the last to the power D1 and the previous to the power mu1:
+
+      Lemma W:   iota(S)^{D1}  <  (4 d1 f1 g1)^{D1} * (6 d1 |S|)^{mu1}
+
+  is NECESSARY.  f1 <= log_2 q_1 <= log_2(6 d1 |S|)/D1, and q_1 >= 2 forces
+  2^{D1} <= 6 d1 |S|, so for each target only finitely many (family, rank)
+  need testing.  Below: for each family the LARGEST target q at which
+  Lemma W still holds (i.e. the family is not yet excluded).
+
+  --- target U3  (a/b = 8/3) ---
+     G2     n=1  theta=14/5      excluded for q > 14491907064494760255
+     A1     n=1  theta=3         excluded for q > 3907928063
+     2A     n=4  theta=3         excluded for q > 3863740415
+     3D4    n=1  theta=28/9      excluded for q > 32100
+     C      n=2  theta=10/3      excluded for q > 19147
+     2A     n=5  theta=24/7      excluded for q > 8962
+     A      n=3  theta=4         excluded for q > 444
+     2A     n=6  theta=35/9      excluded for q > 161
+     2A     n=7  theta=48/11     excluded for q > 65
+     D      n=4  theta=14/3      excluded for q > 59
+     F4     n=1  theta=52/15     excluded for q > 42
+     C      n=3  theta=21/5      excluded for q > 40
+     2A     n=8  theta=63/13     excluded for q > 39
+     A      n=4  theta=5         excluded for q > 30
+     2A     n=9  theta=16/3      excluded for q > 28
+     D      n=5  theta=45/8      excluded for q > 25
+     2D     n=4  theta=14/3      excluded for q > 25
+     2A     n=10 theta=99/17     excluded for q > 22
+     2A     n=11 theta=120/19    excluded for q > 19
+     2A     n=12 theta=143/21    excluded for q > 17
+     D      n=6  theta=33/5      excluded for q > 16
+     E6     n=1  theta=39/8      excluded for q > 16
+     2E6    n=1  theta=39/8      excluded for q > 16
+     A      n=5  theta=6         excluded for q > 12
+     D      n=7  theta=91/12     excluded for q > 12
+     2D     n=5  theta=45/8      excluded for q > 12
+     B      n=3  theta=21/5      excluded for q > 11
+     A      n=6  theta=7         excluded for q > 10
+     D      n=8  theta=60/7      excluded for q > 10
+     A      n=7  theta=8         excluded for q > 9
+     C      n=4  theta=36/7      excluded for q > 9
+     D      n=9  theta=153/16    excluded for q > 9
+     2D     n=6  theta=33/5      excluded for q > 9
+     2A     n=3  theta=8/3       SURVIVES ALL q (theta = 8/3 <= a/b)
+     2B2    n=1  theta=5/2       SURVIVES ALL q (theta = 5/2 <= a/b)
+     2G2    n=1  theta=7/3       SURVIVES ALL q (theta = 7/3 <= a/b)
+     2F4    n=1  theta=13/5      SURVIVES ALL q (theta = 13/5 <= a/b)
+     (+ 33 further (family,rank) rows, all excluded for q > 8; ranks up to 12 tested)
+     ==> families surviving Lemma W at every q: 2A(n=3), 2B2(n=1), 2G2(n=1), 2F4(n=1)
+
+  --- target Sz  (a/b = 5/2) ---
+     2A     n=3  theta=8/3       excluded for q > 1078244997...(30 digits)
+     2F4    n=1  theta=13/5      excluded for q > 5168590405...(28 digits)
+     G2     n=1  theta=14/5      excluded for q > 35279127680
+     2A     n=4  theta=3         excluded for q > 786431998
+     A1     n=1  theta=3         excluded for q > 767999998
+     C      n=2  theta=10/3      excluded for q > 72765
+     2A     n=5  theta=24/7      excluded for q > 43038
+     3D4    n=1  theta=28/9      excluded for q > 14122
+     A      n=3  theta=4         excluded for q > 2429
+     2A     n=6  theta=35/9      excluded for q > 820
+     2A     n=7  theta=48/11     excluded for q > 303
+     D      n=4  theta=14/3      excluded for q > 283
+     2A     n=8  theta=63/13     excluded for q > 167
+     A      n=4  theta=5         excluded for q > 120
+     2A     n=9  theta=16/3      excluded for q > 113
+     F4     n=1  theta=52/15     excluded for q > 104
+     D      n=5  theta=45/8      excluded for q > 100
+     2D     n=4  theta=14/3      excluded for q > 86
+     2A     n=10 theta=99/17     excluded for q > 85
+     2A     n=11 theta=120/19    excluded for q > 70
+     C      n=3  theta=21/5      excluded for q > 63
+     2A     n=12 theta=143/21    excluded for q > 60
+     D      n=6  theta=33/5      excluded for q > 57
+     E6     n=1  theta=39/8      excluded for q > 47
+     2E6    n=1  theta=39/8      excluded for q > 47
+     D      n=7  theta=91/12     excluded for q > 41
+     A      n=5  theta=6         excluded for q > 38
+     2D     n=5  theta=45/8      excluded for q > 37
+     D      n=8  theta=60/7      excluded for q > 32
+     A      n=6  theta=7         excluded for q > 30
+     D      n=9  theta=153/16    excluded for q > 27
+     A      n=7  theta=8         excluded for q > 26
+     B      n=3  theta=21/5      excluded for q > 26
+     D      n=10 theta=95/9      excluded for q > 24
+     A      n=8  theta=9         excluded for q > 23
+     C      n=4  theta=36/7      excluded for q > 23
+     2D     n=6  theta=33/5      excluded for q > 23
+     A      n=9  theta=10        excluded for q > 22
+     A      n=10 theta=11        excluded for q > 21
+     D      n=11 theta=231/20    excluded for q > 21
+     A      n=11 theta=12        excluded for q > 20
+     A      n=12 theta=13        excluded for q > 20
+     D      n=12 theta=138/11    excluded for q > 20
+     2D     n=7  theta=91/12     excluded for q > 17
+     C      n=5  theta=55/9      excluded for q > 14
+     2D     n=8  theta=60/7      excluded for q > 14
+     E7     n=1  theta=133/27    excluded for q > 13
+     2D     n=9  theta=153/16    excluded for q > 12
+     B      n=4  theta=36/7      excluded for q > 11
+     2D     n=10 theta=95/9      excluded for q > 11
+     C      n=6  theta=78/11     excluded for q > 10
+     2D     n=11 theta=231/20    excluded for q > 10
+     2D     n=12 theta=138/11    excluded for q > 10
+     C      n=7  theta=105/13    excluded for q > 9
+     2B2    n=1  theta=5/2       SURVIVES ALL q (theta = 5/2 <= a/b)
+     2G2    n=1  theta=7/3       SURVIVES ALL q (theta = 7/3 <= a/b)
+     (+ 14 further (family,rank) rows, all excluded for q > 8; ranks up to 12 tested)
+     ==> families surviving Lemma W at every q: 2B2(n=1), 2G2(n=1)
+
+  --- target Ree  (a/b = 7/3) ---
+     2B2    n=1  theta=5/2       excluded for q > 36585180721149
+     2A     n=3  theta=8/3       excluded for q > 460973371
+     2F4    n=1  theta=13/5      excluded for q > 76925
+     A1     n=1  theta=3         excluded for q > 14858
+     2A     n=4  theta=3         excluded for q > 13032
+     G2     n=1  theta=14/5      excluded for q > 8284
+     C      n=2  theta=10/3      excluded for q > 364
+     2A     n=5  theta=24/7      excluded for q > 272
+     A      n=3  theta=4         excluded for q > 94
+     3D4    n=1  theta=28/9      excluded for q > 58
+     2A     n=6  theta=35/9      excluded for q > 54
+     2A     n=7  theta=48/11     excluded for q > 32
+     D      n=4  theta=14/3      excluded for q > 32
+     2A     n=8  theta=63/13     excluded for q > 24
+     A      n=4  theta=5         excluded for q > 19
+     2A     n=9  theta=16/3      excluded for q > 19
+     D      n=5  theta=45/8      excluded for q > 18
+     2A     n=10 theta=99/17     excluded for q > 16
+     2A     n=11 theta=120/19    excluded for q > 15
+     2D     n=4  theta=14/3      excluded for q > 15
+     2A     n=12 theta=143/21    excluded for q > 13
+     D      n=6  theta=33/5      excluded for q > 13
+     F4     n=1  theta=52/15     excluded for q > 13
+     C      n=3  theta=21/5      excluded for q > 12
+     E6     n=1  theta=39/8      excluded for q > 11
+     2E6    n=1  theta=39/8      excluded for q > 11
+     A      n=5  theta=6         excluded for q > 10
+     D      n=7  theta=91/12     excluded for q > 10
+     D      n=8  theta=60/7      excluded for q > 9
+     2D     n=5  theta=45/8      excluded for q > 9
+     2G2    n=1  theta=7/3       SURVIVES ALL q (theta = 7/3 <= a/b)
+     (+ 39 further (family,rank) rows, all excluded for q > 8; ranks up to 12 tested)
+     ==> families surviving Lemma W at every q: 2G2(n=1)
+
+==========================================================================
+PART 3 -- (G2') the Suzuki cross-characteristic branch, UNIFORM
+==========================================================================
+
+  Step 1.  3 never divides |Sz(q)|.
+      q = 2^f with f odd  ==>  q = 2 (mod 3), hence
+      q - 1 = 1 (mod 3) and q^2 + 1 = 2 (mod 3), and q^2 is a 2-power.
+  Step 2.  [LIT, corollary of CFSG]  the finite simple groups of order
+      coprime to 3 are EXACTLY the Suzuki groups Sz(2^{2m+1}).
+      Since |S_1| divides |Sz(q)|, S_1 = Sz(q_1).  In particular the
+      alternating, sporadic AND all cross-characteristic Lie socles are
+      excluded outright -- no window, no census.
+  Step 3.  the subfield count.  Zsygmondy: 4f_1 >= 12 so q_1^2+1 has a
+      primitive prime divisor r of 2^{4f_1}-1; r | |Sz(q_1)| divides
+      |Sz(q)| | 2^{4f}-1 (times a 2-power), so 4f_1 | 4f, i.e. f_1 | f.
+      f_1 < f and both odd force f >= 3 f_1, so q/q_1 >= q_1^2, while
+          c = |Sz(q)|/|Sz(q_1)| > (q/q_1)^5 / 2 >= q_1^{10}/2
+      and c <= |Out(Sz(q_1))| = f_1 <= log_2 q_1.  Contradiction.
+
+  3 | |Sz(q)| for f odd, 3 <= f <= 401 (200 targets): violations = 0
+
+  the subfield count, checked exactly (f_1 | f, f_1 < f):
+  pairs f_1 | f, f_1 < f, both odd, f <= 201 : hits = 0
+  smallest ratio c/|Out| encountered: 1205899264/3 at (f,f1) = (9,3)
+  (c/|Out| >= 1 is already impossible for c >= 2 unless c | |Out|;
+   the ratio here is astronomically larger than 1.)
+
+  cross-check: alternating and sporadic orders are all divisible by 3
+     |A_m| divisible by 3 for 5 <= m <= 39 : True
+
+  ==> (G2') CLOSED: Theorem Sz-T holds for every q = 2^{2m+1},
+      uniformly, with no census and no residual window.
+
+==========================================================================
+PART 4 -- (G4) Lemma EQ: the equal-characteristic window
+==========================================================================
+
+  Equal characteristic: S_1 is of Lie type over F_{q_1}, q_1 = p^{f_1},
+  p the defining characteristic of the rank-1 TARGET.  Then
+
+     (alpha)  q_1^{N1} = |S_1|_p  divides  |S|_p = q^N          [(E)]
+     (beta)   4 d1 f1 g1 q_1^{mu1} >= |Out(S_1)| iota(S_1) >= iota(S)
+              = q^N + 1 > q^N >= q_1^{N1}                       [(F),(T2)]
+
+  Dividing:      Lemma EQ:   q_1^{N1 - mu1} < 4 d1 f1 g1 .
+
+  N1 - mu1 = 0 exactly for the rank-1 families (the minimal parabolic IS
+  the Borel, of index q_1^{N1}+1); N1 - mu1 >= 1 for every rank >= 2.
+  Since f_1 <= log_2 q_1, Lemma EQ is a FINITE window.  Note it does not
+  mention the target at all beyond its characteristic.
+
+  family n        N1    mu1   N1-mu1   admissible q_1 (any characteristic)
+  A      3         3      2        1   2 3 4 5 7 8 9 11 13 16 17 19 23 25 27 32 64 81 128
+  A      4         6      3        3   2 3
+  2A     4         6      5        1   2 3 4 5 7 8 9 11 13 16 17 19 23 25 27 29 31 32 49 64 81 128
+  2A     5        10      7        3   2 3 4
+  C      2         4      3        1   2 3 4 5 7 8 9 11 13 16 25 27 32 64
+  D      4        12      6        6   2
+  G2     1         6      5        1   2 3 4 5 7 8 9 16 32
+  3D4    1        12      9        3   2
+
+  window size: 71 (family, rank, q_1) triples
+  (empty for every rank whose N1-mu1 exceeds ~6: 2^{N1-mu1}
+   beats 4 d1 f1 g1 <= 24*dmax*log_2 q_1 immediately.)
+
+  now impose (E): c |S_1| = |S| with 2 <= c | |Out(S_1)|,
+  and solve for the target q by exact integer root extraction.
+  (S_1, c) pairs tested: 190   ->  HITS: 0
+
+  positive control (c = 1 self-solutions must be found):
+     solve_U3(|U3(9)|)=[9], solve_Sz(|Sz(32)|)=[32], solve_Ree(|R(243)|)=[243] : True
+
+  ==> (G4) rank >= 2 socle in equal characteristic: CLOSED,
+      for all three targets and all q.
+
+==========================================================================
+PART 5 -- (G4) rank-1 socle in equal characteristic
+==========================================================================
+
+  For a rank-1 S_1, N1 = mu1 and Lemma EQ is vacuous.  Instead put
+      X := q_1^{N1} = |S_1|_p ,  Y := q^{N} = |S|_p ,  w := |Out(S_1)| .
+  (alpha) X | Y  and  (beta) w(X+1) >= Y+1, so X lies within a factor w of
+  Y.  With theta_1 := D1/N1 in {3 (L_2), 8/3 (U_3), 5/2 (Sz), 7/3 (R)} and
+  the target exponent a/N in {8/3 (U_3), 5/2 (Sz), 7/3 (R)}:
+
+    theta_1 < a/N :  c = |S|/|S_1| > d1 |S| / Y^{theta_1} -> infinity,
+                     against c <= w = O(log Y).
+    theta_1 > a/N :  c < 12 d1 |S| / X^{theta_1} -> 0, against c >= 2.
+    theta_1 = a/N :  S_1 is in the target's OWN family; then Zsygmondy gives
+                     f_1 | f, so q/q_1 >= q_1, and
+                       c > (q/q_1)^a/(12 d) >= q_1^a/36  vs  c <= w <= 6 f_1,
+                     impossible for every q_1 >= 2.
+
+  Both thresholds are computed below EXACTLY (as integer inequalities, by
+  raising to the power N1 so that theta_1 becomes the integer pair
+  (D1, N1)), and the range below the threshold is checked exhaustively.
+
+  thresholds (smallest q_0 with the kill inequality valid for all
+  q >= q_0, verified monotone on the scanned range):
+  targ  S_1 fam  theta_1  a/N        kill threshold q_0
+  U3    A1       3        8/3        all q >= 4812208
+  U3    2A       8/3      8/3        same family as target -- subfield case, see below
+  U3    2B2      5/2      8/3        all q >= 122
+  U3    2G2      7/3      8/3        all q >= 3
+  Sz    A1       3        5/2        all q >= 1102736
+  Sz    2A       8/3      5/2        all q >= 1079833087557369821950
+  Sz    2B2      5/2      5/2        same family as target -- subfield case, see below
+  Sz    2G2      7/3      5/2        all q >= 128
+  Ree   A1       3        7/3        all q >= 593
+  Ree   2A       8/3      7/3        all q >= 1197041
+  Ree   2B2      5/2      7/3        all q >= 115856199
+  Ree   2G2      7/3      7/3        same family as target -- subfield case, see below
+
+  exhaustive check of (alpha)+(beta)+(E) over rank-1 socles in
+  equal characteristic:
+     U3  : 348939 targets, 698084 (S_1) candidates passing the floor  ->  HITS: 0
+     Sz  : 99 targets, 1211 (S_1) candidates passing the floor  ->  HITS: 0
+     Ree : 99 targets, 895 (S_1) candidates passing the floor  ->  HITS: 0
+
+  ==> (G4) rank-1 socle in equal characteristic: CLOSED.
+
+==========================================================================
+PART 6 -- (G3): what is left of the bounded --sub scan
+==========================================================================
+
+  v_task53 (G3) complained that the direct scan of (E) used q_1 <= 10^5 and
+  Lie rank <= 6.  After PARTS 3-5 that scan is no longer load-bearing:
+
+    Sz  : PART 3 leaves only S_1 = Sz(q_1) -- no scan, no census, no window.
+    U_3 : cross characteristic dies by v_task53 Sec 5.2 for q >= 179;
+          equal characteristic dies by PARTS 4-5 for ALL q (rank >= 2 socle:
+          the 71-element Lemma-EQ window, 0 hits; rank-1 socle: thresholds
+          122 / 3 / 4 812 208, exhausted below).
+          Residue needing the census: q < 179, plus q in {3,4,7} from Step 3.
+    R   : cross characteristic dies by Sec 5.2 for q >= 2187, leaving
+          q in {27, 243}; equal characteristic dies by PARTS 4-5 for all q.
+
+  Rank is bounded without any scan assumption: 2^{D1} <= 6 d1 |S| (PART 2)
+  in general and Lemma EQ in equal characteristic; both were enforced with
+  rank <= 40 / <= 12, far past the true bound, and the Lemma-EQ window is
+  empty for every N1 - mu1 >= 7.
+
+  target residual window after PARTS 3-5        covered by
+  U3     q < 179 (cross-char); q in {3,4,7}     census q <= 50 000, EMPTY (raw)
+  Sz     -- none --                             uniform proof, PART 3
+  Ree    q in {27, 243} (cross-char)            census q <= 1.3e29, EMPTY (raw)
+
+  Alternating / sporadic socles: v_task53 Sec 5.4 is COMPLETE in q
+  for all three targets (|Out| <= 4 resp. <= 2 makes the candidate
+  list finite), 0 hits; for Sz they are additionally excluded by
+  3-coprimality (PART 3).
+

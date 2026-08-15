@@ -1,0 +1,71 @@
+formula n=3 plus : 27632
+formula n=3 minus: 27136
+
+=== SANITY: anchors ===
+  computing ConjugacyClassesSubgroups ... 8 classes
+G(8,3)  D8 : r=20  (expected 20: true)
+  computing ConjugacyClassesSubgroups ... 6 classes
+G(8,4)  Q8 : r=16  (expected 16: true)
+  computing ConjugacyClassesSubgroups ... 83 classes
+G(32,49)   : r=381  (expected 381: true)
+  computing ConjugacyClassesSubgroups ... 73 classes
+G(32,50)   : r=349  (expected 349: true)
+
+=== SCAN: extraspecial groups of order 128 ===
+extraspecial ids at order 128: [ 2326, 2327 ]
+Syntax warning: Unbound global variable in v_task6_extraspecial128.g:165
+  ninv := Number(G, x -> x <> One(G) and x^2 = One(G));
+                                  ^
+Syntax warning: Unbound global variable in v_task6_extraspecial128.g:165
+  ninv := Number(G, x -> x <> One(G) and x^2 = One(G));
+                                                   ^
+G(128,2326): |Z|=2 exponent=4 involutions=
+71  (plus type 2^{1+6}_+ has 71 involutions, minus type 55)
+G(128,2327): |Z|=2 exponent=4 involutions=
+55  (plus type 2^{1+6}_+ has 71 involutions, minus type 55)
+
+=== MAIN: r for the extraspecial groups of order 128 ===
+G(128,2326):
+  computing ConjugacyClassesSubgroups ... 2996 classes
+  ... 200 classes processed, running r = 662
+  ... 400 classes processed, running r = 1556
+  ... 600 classes processed, running r = 2444
+  ... 800 classes processed, running r = 3361
+  ... 1000 classes processed, running r = 4760
+  ... 1200 classes processed, running r = 6379
+  ... 1400 classes processed, running r = 7996
+  ... 1600 classes processed, running r = 9620
+  ... 1800 classes processed, running r = 11244
+  ... 2000 classes processed, running r = 12862
+  ... 2200 classes processed, running r = 14483
+  ... 2400 classes processed, running r = 17040
+  ... 2600 classes processed, running r = 20240
+  ... 2800 classes processed, running r = 23440
+G(128,2326): r = 27632   f = 27632   (14754 ms)
+G(128,2326): degree multiset = [ [ [ 1, 1 ], 2996 ], [ [ 2, 1 ], 24293 ], 
+  [ [ 4, 1 ], 343 ] ]
+G(128,2326): matches plus prediction 27632?  true
+G(128,2326): matches minus prediction 27136? false
+G(128,2327):
+  computing ConjugacyClassesSubgroups ... 2898 classes
+  ... 200 classes processed, running r = 703
+  ... 400 classes processed, running r = 1603
+  ... 600 classes processed, running r = 2494
+  ... 800 classes processed, running r = 3441
+  ... 1000 classes processed, running r = 5054
+  ... 1200 classes processed, running r = 6673
+  ... 1400 classes processed, running r = 8293
+  ... 1600 classes processed, running r = 9917
+  ... 1800 classes processed, running r = 11540
+  ... 2000 classes processed, running r = 13156
+  ... 2200 classes processed, running r = 14912
+  ... 2400 classes processed, running r = 18112
+  ... 2600 classes processed, running r = 21312
+  ... 2800 classes processed, running r = 24512
+G(128,2327): r = 27136   f = 27136   (14629 ms)
+G(128,2327): degree multiset = [ [ [ 1, 1 ], 2898 ], [ [ 2, 1 ], 23797 ], 
+  [ [ 4, 1 ], 441 ] ]
+G(128,2327): matches plus prediction 27632?  false
+G(128,2327): matches minus prediction 27136? true
+
+DONE

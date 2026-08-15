@@ -1,0 +1,72 @@
+### PART A: is a nonsquare of F_{q0} a square in F_{q0^r}?
+  q0=3 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=3 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=3 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=3 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=3 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=3 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=5 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=5 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=5 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=5 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=5 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=5 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=7 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=7 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=7 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=7 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=7 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=7 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=9 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=9 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=9 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=9 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=9 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=9 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=11 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=11 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=11 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=11 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=11 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=11 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=13 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=13 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=13 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=13 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=13 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=13 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=25 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=25 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=25 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=25 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=25 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=25 r=6  nonsquare becomes square in F_q: true   (r even: true)
+  q0=27 r=1  nonsquare becomes square in F_q: false   (r even: false)
+  q0=27 r=2  nonsquare becomes square in F_q: true   (r even: true)
+  q0=27 r=3  nonsquare becomes square in F_q: false   (r even: false)
+  q0=27 r=4  nonsquare becomes square in F_q: true   (r even: true)
+  q0=27 r=5  nonsquare becomes square in F_q: false   (r even: false)
+  q0=27 r=6  nonsquare becomes square in F_q: true   (r even: true)
+
+### PART B: N_{SL(2,q)}(SL(2,q0))
+  SL(2,3) < SL(2,9):  |N|/|H| = 2   psn: false   [r = 2, r odd: false]
+  SL(2,3) < SL(2,27):  |N|/|H| = 1   psn: true   [r = 3, r odd: true]
+  SL(2,5) < SL(2,25):  |N|/|H| = 2   psn: false   [r = 2, r odd: false]
+  SL(2,5) < SL(2,125):  |N|/|H| = 1   psn: true   [r = 3, r odd: true]
+  SL(2,7) < SL(2,49):  |N|/|H| = 2   psn: false   [r = 2, r odd: false]
+  SL(2,9) < SL(2,81):  |N|/|H| = 2   psn: false   [r = 2, r odd: false]
+  SL(2,11) < SL(2,121):  |N|/|H| = 2   psn: false   [r = 2, r odd: false]
+  SL(2,3) < SL(2,81):  |N|/|H| = 2   psn: false   [r = 4, r odd: false]
+  SL(2,3) < SL(2,243):  |N|/|H| = 1   psn: true   [r = 5, r odd: true]
+
+### PART C: spinor norm of an element of SO_7(q0) \ Omega_7(q0)
+Syntax warning: Unbound global variable in v_task63_subfield.g:45
+  g := First(GeneratorsOfGroup(S), x -> not x in O);
+                                                 ^
+Syntax warning: Unbound global variable in v_task63_subfield.g:47
+    g := First(Elements(Group(GeneratorsOfGroup(S))), x -> not x in O);
+                                                                    ^
+  q0=3  found element of SO\Omega: true
+  q0=5  found element of SO\Omega: true
+  q0=7  found element of SO\Omega: true
+  q0=9  found element of SO\Omega: true

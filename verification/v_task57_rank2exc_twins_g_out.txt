@@ -1,0 +1,168 @@
+======================================================================
+PART A -- orders and |Out| against the closed formulas
+======================================================================
+   S4(3) : |S| = 25920  formula = 25920   true
+   S4(4) : |S| = 979200  formula = 979200   true
+   S4(5) : |S| = 4680000  formula = 4680000   true
+   S4(7) : |S| = 138297600  formula = 138297600   true
+   S4(8) : |S| = 1056706560  formula = 1056706560   true
+   S4(9) : |S| = 1721606400  formula = 1721606400   true
+   G2(3) : |S| = 4245696  formula = 4245696   true
+   G2(4) : |S| = 251596800  formula = 251596800   true
+   G2(5) : |S| = 5859000000  formula = 5859000000   true
+   3D4(2) : |S| = 211341312  formula = 211341312   true
+   3D4(3) : |S| = 20560831566912  formula = 20560831566912   true
+   2F4(2)' is the TITS group (excluded from the target range);
+   |2F4(2)| = 35942400 = 2 * |2F4(2)'| : true
+   |2F4(8)| = 264905352699586176614400  (no stored table; formula only)
+
+======================================================================
+PART B -- the S4(3) DEFECT: iota(S4(3)) = 27, not the parabolic 40
+======================================================================
+   |PSp(4,3)| = 25920   ( = |U4(2)| = 25920 : true -- an ISOMORPHISM )
+   parabolic index (q+1)(q^2+1) = 40
+   maximal subgroup indices : [ 27, 36, 40, 40, 45 ]
+   indices [S:N_S(A)] with A abelian, N_S(A) maximal, index<=200 : 
+[ 27, 40, 45 ]
+   ==> iota(S4(3)) = 27   (parabolic index 40 is NOT the minimum)
+   witness: A elementary abelian of order 16, A' = 1, N_G(A) = M of index 
+27   (structure 2^4:A5)
+
+======================================================================
+PART C -- the iota WITNESS for S4(q), q = 4, 5, 7: A = O_p(Siegel P)
+======================================================================
+   At rank 2 the witness is NOT Z(Syl_p) (that gives the Borel).
+   For C_2 the SIEGEL parabolic (stabiliser of a totally isotropic
+   2-space) has ABELIAN unipotent radical of order q^3, and
+   N_S(O_p(P)) = P of index (q+1)(q^2+1).
+
+   q = 4 : |S| = 979200 , |Syl_p| = 256 ( = q^4 : true )
+        abelian normal subgroups of Syl_p of order q^3 : 2
+        [S : N_S(A)] for these : [ 85 ]     claimed (q+1)(q^2+1) = 85
+        THE TRAP: [S : N_S(Z(Syl_p))] = 425 (|Z| = 16) -- larger than iota
+   q = 5 : |S| = 4680000 , |Syl_p| = 625 ( = q^4 : true )
+        abelian normal subgroups of Syl_p of order q^3 : 1
+        [S : N_S(A)] for these : [ 156 ]     claimed (q+1)(q^2+1) = 156
+        THE TRAP: [S : N_S(Z(Syl_p))] = 156 (|Z| = 5) -- larger than iota
+   q = 7 : |S| = 138297600 , |Syl_p| = 2401 ( = q^4 : true )
+        abelian normal subgroups of Syl_p of order q^3 : 1
+        [S : N_S(A)] for these : [ 400 ]     claimed (q+1)(q^2+1) = 400
+        THE TRAP: [S : N_S(Z(Syl_p))] = 400 (|Z| = 7) -- larger than iota
+
+======================================================================
+PART C2 -- the iota WITNESS for G2(3) and 3D4(2): A = Z(U_P) = the
+           LONG ROOT subgroup (G2 has NO abelian unipotent radical)
+======================================================================
+   G2(3) : |G| = 4245696 , |Syl_p| = 729 , |Z(Syl_p)| = 
+9 , [G:N_G(Z(Syl_p))] = 1456   claimed iota = 364
+        abelian normal subgroups of Syl_p : 16 ; the set of [G:N_G(A)] : 
+[ 364, 1456, 2912 ]
+        minimum over this set = 364   ( = claimed iota : true )
+   3D4(2) : |G| = 211341312 , |Syl_p| = 4096 , |Z(Syl_p)| = 
+2 , [G:N_G(Z(Syl_p))] = 819   claimed iota = 819
+        abelian normal subgroups of Syl_p : 38 ; the set of [G:N_G(A)] : 
+[ 819, 2457, 17199, 51597 ]
+        minimum over this set = 819   ( = claimed iota : true )
+
+======================================================================
+PART D -- minimal degrees from the stored Maxes
+======================================================================
+   S4(3) : m(S) = 27   all maximal indices = [ 27, 36, 40, 40, 45 ]
+   S4(4) : m(S) = 85   all maximal indices = 
+[ 85, 85, 120, 120, 136, 136, 1360 ]
+   S4(5) : m(S) = 156   all maximal indices = 
+[ 156, 156, 300, 325, 4875, 6500, 9750, 13000 ]
+   S4(7) : no stored Maxes
+   S4(8) : no stored Maxes
+   S4(9) : no stored Maxes
+   G2(3) : m(S) = 351   all maximal indices = [ 351, 351, 364, 364, 378, 378, 
+  2808, 3159, 3888, 7371 ]
+   G2(4) : m(S) = 416   all maximal indices = 
+[ 416, 1365, 1365, 2016, 2080, 20800, 69888, 230400 ]
+   G2(5) : m(S) = 3906   all maximal indices = 
+[ 3906, 3906, 7750, 7875, 406875, 484375, 4359375 ]
+   3D4(2) : m(S) = 819   all maximal indices = 
+[ 819, 2457, 17472, 69888, 89856, 163072, 179712, 978432, 4064256 ]
+   2F4(2)' : m(S) = 1600   all maximal indices = 
+[ 1600, 1600, 1755, 2304, 2925, 12480, 12480, 14976 ]
+
+   claimed iota:  S4(q): (q+1)(q^2+1) = [ 40, 85, 156, 400, 585, 820 ]
+                  G2(q): (q^6-1)/(q-1) = [ 364, 1365, 3906 ]
+                  3D4(2): (q^8+q^4+1)(q+1) = 819
+
+======================================================================
+PART E -- G2(3), G2(4): the exceptional minimal degrees, and why
+          they are NOT iota values
+======================================================================
+   m(G2(3)) = 351 (U3(3):2) and m(G2(4)) = 416 (J2) are SMALLER than
+   the parabolic index (q^6-1)/(q-1) = 364 resp. 1365.  But a
+   subgroup N = N_S(A) with 1 <> A abelian has a nontrivial ABELIAN
+   NORMAL subgroup, so N cannot be (almost) simple.  Check:
+      G2(3) max U3(3).2 index 351  perfect: false
+      G2(3) max G2(3)M2 index 351  perfect: false
+      G2(3) max (3^(1+2)+x3^2):2S4 index 364  perfect: false
+      G2(3) max G2(3)M4 index 364  perfect: false
+      G2(3) max L3(3).2 index 378  perfect: false
+      G2(3) max G2(3)M6 index 378  perfect: false
+      G2(3) max L2(8).3 index 2808  perfect: false
+      G2(3) max 2^3.L3(2) index 3159  perfect: true
+      G2(3) max L2(13) index 3888  perfect: true
+      G2(3) max 2^(1+4)+:3^2.2 index 7371  perfect: false
+      G2(4) max J2 index 416  perfect: true
+      G2(4) max 2^(2+8):(3xA5) index 1365  perfect: false
+      G2(4) max 2^(4+6):(A5x3) index 1365  perfect: false
+      G2(4) max U3(4).2 index 2016  perfect: false
+      G2(4) max 3.L3(4).2_3 index 2080  perfect: false
+      G2(4) max U3(3).2 index 20800  perfect: false
+      G2(4) max A5xA5 index 69888  perfect: true
+      G2(4) max L2(13) index 230400  perfect: true
+   For G2(4) the only maximal subgroups of index < 1365 are the two
+   classes of J2 (index 416), and J2 is SIMPLE, so J2 <> N_S(A).
+   A proper N_S(A) <= J2 has index >= 416 * m(J2) = 416*100 = 41600
+   > 1365.  Hence iota(G2(4)) = 1365.  Same argument at G2(3) with
+   U3(3):2 (index 351, its unique minimal normal subgroup U3(3) is
+   simple, so it has no abelian normal subgroup) and
+   351 * m(U3(3):2) >= 351*28 > 364.
+
+======================================================================
+PART F -- 3D4(2): the maximal-subgroup index list and iota
+======================================================================
+   |3D4(2)| = 211341312 ( formula 211341312 : true )
+      max 2^(1+8)+:L2(8)  index 819  perfect: true
+      max 2^2.[2^9]:(7xS3)  index 2457  perfect: false
+      max U3(3).2  index 17472  perfect: false
+      max S3xL2(8)  index 69888  perfect: false
+      max (7xL2(7)):2  index 89856  perfect: false
+      max 3^(1+2)+.2S4  index 163072  perfect: false
+      max 7^2:2A4  index 179712  perfect: false
+      max 3^2:2A4  index 978432  perfect: false
+      max 13:4  index 4064256  perfect: false
+   parabolic indices: (q^8+q^4+1)(q+1) = 819 and (q^8+q^4+1)(q^3+1) = 2457
+
+======================================================================
+PART G -- coincidence and isomorphism controls
+======================================================================
+   |S4(2)|  = 720 ; S4(2)' = A6 : true
+   |S4(3)|  = |U4(2)| : true   (ISOMORPHISM, not a twin)
+   |G2(2)|  = 12096 ; G2(2)' = U3(3) : true
+   |2F4(2)| = 35942400 ; 2F4(2)' = Tits : true
+   |3D4(q)| vs |G2(q^2)| :
+      q = 2 : |3D4(q)| = 211341312 , |G2(q^2)| = 251596800 , ratio = 21/
+25  (< 1 : true)
+      q = 3 : |3D4(q)| = 20560831566912 , |G2(q^2)| = 
+22594320403200 , ratio = 91/100  (< 1 : true)
+      q = 4 : |3D4(q)| = 67802350642790400 , |G2(q^2)| = 71776114783027200
+  , ratio = 273/289  (< 1 : true)
+      q = 5 : |3D4(q)| = 35817806390625000000 , |G2(q^2)| = 
+37193298187500000000 , ratio = 651/676  (< 1 : true)
+   ==> |G2(q^2)| > |3D4(q)| for every q : the c_p = 1 sub-case of
+       the 3D4 <- G2 same-ratio branch dies on size alone.
+   |G2(q)| vs |R(q^2)| :
+      q = 3 : |G2(q)| = 4245696 , |R(q^2)| = 
+4257360 , |G2(q)| < |R(q^2)| : true
+      q = 9 : |G2(q)| = 22594320403200 , |R(q^2)| = 
+22594405433760 , |G2(q)| < |R(q^2)| : true
+      q = 27 : |G2(q)| = 109268894214173244096 , |R(q^2)| = 
+109268894778257476080 , |G2(q)| < |R(q^2)| : true
+
+DONE.

@@ -1,0 +1,331 @@
+==========================================================================
+PART 1 -- the target L_3(q): invariants, Lemma K, Lemma K',
+          and the exact shape of the rank-2 strain
+==========================================================================
+
+  |S| = q^3(q^2-1)(q^3-1)/e = q^3 (q-1)^2 (q+1) (q^2+q+1)/e ,  e=gcd(3,q-1)
+  |S|_p = q^3 ,  iota(S) = q^2+q+1 = [S:P] for either parabolic P,
+  |Out(S)| = 2 f e .   a := deg_q|S| = 8 ,  b := deg_q iota(S) = 2 ,
+  N := deg_q |S|_p = 3 .
+
+  Lemma K-L3 [PROVEN, elementary]:
+      ppmax_{p'}(|S|)  <=  2 (q-1)^2      and   ppmax(|S|) = q^3  (q>=3).
+  Proof.  gcd(q-1,q+1) | 2 ; q^2+q+1 = q(q+1)+1 so gcd(q+1, q^2+q+1) = 1 ;
+  q^2+q+1 == 3 mod (q-1) so gcd(q-1, q^2+q+1) | 3, and when 3 | q-1 the
+  3-part of q^2+q+1 is exactly 3, which is cancelled by e = 3.  Hence for
+  odd r != p the whole r-part sits in one block:  <= max((q-1)^2, q+1,
+  q^2+q+1) -- and the q^2+q+1 block is the only one that can beat (q-1)^2.
+  [The bound printed below is the honest max over the three blocks.]
+
+  Lemma K' [PROVEN, v_task53]: |G| < (|G|_p)^3 for every simple G of Lie
+  type.  For the target itself: |S| ~ q^8 < q^9 = (|S|_p)^3 -- the K'
+  route SURVIVES at rank 2, but only by the exponent 8 vs 9.
+
+  THE STRAIN.  iota(S)^3 ~ q^6 < |S| ~ q^8, so the rank-1 Step 2
+  ("iota^3 > |S| => one orbit") FAILS here.  This part prints the deficit.
+
+  q        |S|            iota(S)      ppmax_p'   bound      iota^3/|S|
+   VIOLATION at q = 3 16 13
+  3        5616           13           16         13         0.3912
+  4        20160          21           9          18         0.4594
+  5        372000         31           32         32         0.0801
+  7        1876896        57           32         72         0.0987
+  8        16482816       73           73         98         0.0236
+  9        42456960       91           128        128        0.0177
+  11       212427600      133          25         200        0.0111
+  13       270178272      183          61         288        0.0227
+  16       1425715200     273          25         450        0.0143
+  17       6950204928     307          512        512        0.0042
+  19       5644682640     381          127        648        0.0098
+  23       78156525216    553          121        968        0.0022
+  25       50778000000    651          128        1152       0.0054
+  27       282027786768   757          757        1352       0.0015
+  29       499631102880   871          67         1568       0.0013
+  31       283991644800   993          331        1800       0.0034
+  32       1098404364288  1057         961        1922       0.0011
+  128      72053161633775616 16513        16129      32258      0.0001
+  1024     402974888522408578252800 1049601      961        2093058    0.0000
+  2999     6543523670611858785179988000 8997001      2247001    17976008   0.0000
+
+  Lemma K-L3 violations over all prime powers 3 <= q <= 3000 : 1
+  max of iota(S)^3/|S| over the range : 0.4594 at q = 4
+  ==> iota(S)^3 > |S| holds for NO q >= 3.  Step 2 of the rank-1
+      pipeline is unavailable; PART 2 replaces it.
+
+==========================================================================
+PART 2 -- Lemma Q: T is ALMOST SIMPLE  (one orbit, length 1)
+==========================================================================
+
+  Setup.  Soc T = prod_j S_j^{l_j} over orbits; prod_j |S_j|^{l_j} = |S|/c.
+  If T is NOT almost simple then either some orbit has l_j >= 2, or there
+  are >= 2 orbits.  In BOTH cases some socle factor G = S_j satisfies
+
+      (Q1)   |G|^{max(2,l)} <= |S|          (l = l_j)
+      (Q2)   l * |Out(G)| * iota(G) >= iota(S) = q^2+q+1     [floor (F)]
+
+  (two orbits: the smaller contribution has |S_j|^{2 l_j} <= |S|).
+
+  2a.  l >= 3 dies from Lemma C alone:  by (C), l|Out|iota <= l |G|^{2/3}
+       <= l |S|^{2/(3l)} = l q^{16/(3l)} * (...), against q^2+q+1.
+  2b.  l <= 2 leaves  |G|^2 <= |S|  and  2 rho(G) >= q^2+q+1  where
+       rho(G) := |Out(G)| iota(G).  Eliminating q gives
+
+           |G|^{1/2} <= |S|^{1/4} < (2 rho(G))^{1/2} * (1+o(1)),
+
+       i.e.  |G| <~ 4 rho(G)^2 -- a violation of Lemma B (alpha <= 2).
+       Lemma B violators form a FINITE explicit list; each is given an
+       exact q-window below.
+
+  2a.  l >= 3, using Lemma C  (|Out|iota <= |G|^{2/3}) and
+       |G|^l <= |S|:   (q^2+q+1)^{3l} <= l^{3l} |S|^{2} is the
+       exact cube-cleared test.  Largest q for which it can hold:
+        l = 3   :  possible only for q <= 135
+        l = 4   :  possible only for q <= 6
+        l = 5   :  possible only for q <= 3
+        l = 6   :  possible only for q <= 3
+        l = 7   :  possible only for q <= 3
+        l = 8   :  possible only for q <= 3
+        l = 9   :  possible only for q <= 3
+        l = 10  :  possible only for q <= 3
+        l = 11  :  possible only for q <= 3
+        l = 12  :  possible only for q <= 3
+       ==> for q >= 141 every orbit has length l <= 2.
+
+  2b.  the complete list of simple G with  |G| <= 4 rho(G)^2 
+       (rho = |Out|*iotabar; iotabar >= iota, so conservative):
+
+        ranks 25..60, families of unbounded rank: rows for which
+        the surrogate can hold for SOME q1 >= 2 : NONE -- rank <= 24 is complete
+        Lie tail bound: the surrogate Lemma-B condition fails for
+        every q1 > 2709504 in every family/rank (max over 16 rows);
+        so an exact scan over q1 <= 2709504 is COMPLETE.
+
+        G            |G|                    |Out|  iotabar      q-window [q_lo, q_hi]
+        A5           60                     2      5            [3, 3]  <== NONEMPTY
+        L2(4)        60                     2      5            [3, 3]  <== NONEMPTY
+        L2(5)        60                     2      6            [3, 4]  <== NONEMPTY
+        L3(2)        168                    2      7            [5, 4]
+        L2(7)        168                    2      8            [5, 5]  <== NONEMPTY
+        A6           360                    4      10           [5, 8]  <== NONEMPTY
+        L2(9)        360                    4      10           [5, 8]  <== NONEMPTY
+        L2(8)        504                    3      9            [5, 6]  <== NONEMPTY
+        L2(11)       660                    2      12           [6, 6]  <== NONEMPTY
+        L2(13)       1092                   2      14           [6, 6]  <== NONEMPTY
+        L2(17)       2448                   2      18           [8, 7]
+        A7           2520                   2      35           [8, 11]  <== NONEMPTY
+        L2(19)       3420                   2      20           [8, 8]  <== NONEMPTY
+        L2(16)       4080                   4      17           [9, 11]  <== NONEMPTY
+        U3(3)        6048                   2      28           [9, 10]  <== NONEMPTY
+        L2(23)       6072                   2      24           [9, 9]  <== NONEMPTY
+        L2(25)       7800                   4      26           [11, 13]  <== NONEMPTY
+        M11          7920                   1      55           [11, 9]
+        L2(27)       9828                   6      28           [11, 17]  <== NONEMPTY
+        L2(29)       12180                  2      30           [11, 10]
+        L2(31)       14880                  2      32           [12, 10]
+        L3(4)        20160                  12     21           [12, 21]  <== NONEMPTY
+        U4(2)        25920                  2      45           [14, 12]
+        S4(3)        25920                  4      40           [14, 17]  <== NONEMPTY
+        Sz(8)        29120                  3      65           [14, 19]  <== NONEMPTY
+        L2(32)       32736                  5      33           [14, 17]  <== NONEMPTY
+        L2(49)       58800                  4      50           [17, 19]  <== NONEMPTY
+        U3(4)        62400                  4      65           [17, 22]  <== NONEMPTY
+        M12          95040                  2      220          [18, 29]  <== NONEMPTY
+        U3(5)        126000                 6      126          [20, 38]  <== NONEMPTY
+        J1           175560                 1      1045         [21, 45]  <== NONEMPTY
+        L2(64)       262080                 6      65           [23, 27]  <== NONEMPTY
+        L2(81)       265680                 8      82           [23, 35]  <== NONEMPTY
+        J2           604800                 2      280          [29, 32]  <== NONEMPTY
+        L2(121)      885720                 4      122          [32, 30]
+        L2(125)      976500                 6      126          [32, 38]  <== NONEMPTY
+        L2(128)      2097024                7      129          [39, 41]  <== NONEMPTY
+        U4(3)        3265920                8      280          [44, 66]  <== NONEMPTY
+        U3(8)        5515776                18     513          [50, 135]  <== NONEMPTY
+        L2(243)      7174332                10     244          [53, 69]  <== NONEMPTY
+        L2(256)      16776960               8      257          [65, 63]
+        2F4(2)'      17971200               2      1755         [66, 83]  <== NONEMPTY
+        Sz(32)       32537600               5      1025         [77, 100]  <== NONEMPTY
+        HS           44352000               2      3850         [83, 123]  <== NONEMPTY
+        J3           50232960               2      17442        [86, 263]  <== NONEMPTY
+        U3(11)       70915680               6      1332         [92, 125]  <== NONEMPTY
+        L2(729)      193709880              12     730          [119, 131]  <== NONEMPTY
+        McL          898128000              2      15400        [174, 247]  <== NONEMPTY
+        U3(17)       2317678272             6      4914         [221, 242]  <== NONEMPTY
+        U3(16)       4279234560             8      4097         [257, 255]
+        R(27)        10073444472            3      19684        [317, 343]  <== NONEMPTY
+        Sz(128)      34093383680            7      16385        [431, 478]  <== NONEMPTY
+        U3(32)       366157135872           30     32769        [779, 1401]  <== NONEMPTY
+        ON           460815505920           2      2857239      [824, 3380]  <== NONEMPTY
+        U3(128)      24017743449686016      42     2097153      [12449, 13272]  <== NONEMPTY
+        Th           90745943887872000      1      283599225    [17357, 23815]  <== NONEMPTY
+
+        Lemma-B violators found: 56 ; with a nonempty q-window: 47
+        every nonempty window lies in  q <= 23815.
+
+  ==> for q > max(140, 23815) T is ALMOST SIMPLE:
+          c*|S_1| = |S| ,  c >= 2 ,  c | |Out(S_1)| .
+
+==========================================================================
+PART 3 -- almost simple, CROSS characteristic: the ppmax^3 kill
+==========================================================================
+
+  S_1 of Lie type over F_{q1}, q1 = p1^{f1}, p1 != p.  Then
+      |S_1|_{p1} <= ppmax_{p'}(|S|) <= max(2(q-1)^2, (q^2+q+1)/e) =: P
+  and Lemma K' gives |S_1| < P^3.  With |S_1| = |S|/c, c <= |Out(S_1)|:
+
+      |S|  <  c * P^3 .
+
+  Rank bound (needed for the |Out| cap): 2^{N_1} <= q1^{N_1} <= P, and
+  N_1 >= n_1(n_1-1)/2 for every family, so n_1 <= n_max(P); then
+  |Out(S_1)| = d1 f1 g1 <= n_max * log2(P) * 6.
+
+  q        |S|              c*P^3          n_max    c_cap    survives?
+  3        5616             118638         3        54       YES
+  4        20160            419904         3        72       YES
+  5        372000           2949120        3        90       YES
+  7        1876896          53747712       4        144      YES
+  8        16482816         135531648      4        144      YES
+  9        42456960         352321536      4        168      YES
+  11       212427600        1344000000     4        168      YES
+  13       270178272        4586471424     4        192      YES
+  16       1425715200       17496000000    4        192      YES
+  17       6950204928       28991029248    4        216      YES
+  19       5644682640       58773123072    4        216      YES
+  23       78156525216      195920474112   4        216      YES
+  25       50778000000      458647142400   5        300      YES
+  27       282027786768     741397862400   5        300      YES
+  29       499631102880     1156536729600  5        300      YES
+  31       283991644800     1749600000000  5        300      YES
+  32       1098404364288    2130008834400  5        300      YES
+  37       1169948144736    5746705367040  5        330      YES
+  64       93801727918080   180067686361920 5        360      YES
+  128      72053161633775616 14098132993355040 5        420      no
+  179      1053927211015007280 137405387324897280 6        540      no
+  181      383967100578952800 146932807680000000 6        540      no
+  256      6148820499745996800 1266932721672000000 6        576      no
+  3989     64108005155037369258117131040 32440042681245731089022976 7        1008     no
+
+  cross-characteristic branch survives only for q in :
+      [3, 4, 5, 7, 8, 9, 11, 13, 16, 17, 19, 23, 25, 27, 29, 31, 32, 37, 41, 43, 47, 49, 61, 64, 67, 73, 79, 97]
+  (all prime powers 3 <= q <= 4000 tested; the branch is empty
+   for every q above the largest listed value -- the inequality
+   is q^8 ~ |S| vs c*8q^6, i.e. q^2 > 8c ~ polylog, monotone.)
+
+==========================================================================
+PART 4 -- almost simple, EQUAL characteristic
+==========================================================================
+
+  S_1 of Lie type over F_{q1} = F_{p^{f1}}.  Two exact constraints:
+
+    (alpha)  |S_1|_p = q1^{N1} divides |S|_p = q^3 , so q1^{N1} <= q^3 ;
+    (beta)   |S_1| = |S|/c  with  2 <= c <= |Out(S_1)| .
+
+  With (T1) |S_1| >= q1^{D1}/(12 d1) and |S_1| <= q1^{D1}:
+
+      q1^{D1} >= |S| / c >= q^8 (1-q^-2)(1-q^-3) / (3c)
+      q1^{N1} <= q^3
+      ==>  (q^3)^{D1/N1} >= q1^{D1} >= q^8 * (1-..)/(3c)
+      ==>  3 * D1/N1  >=  8 - log_q(3c/(1-..))            (*)
+
+  So every family with D1/N1 < 8/3 needs 3c >~ q^{8-3D1/N1}.  The next
+  value below 8/3 is 5/2, giving 3c >= q^{1/2} -- and c <= |Out| is
+  polylog.  The D/N table:
+
+    family   n         D      N        D/N   D/N >= 8/3 ?
+    A1       1         3      1          3   YES
+    A        3         8      3        8/3   YES
+    2A       3         8      3        8/3   YES
+    C        2        10      4        5/2   no
+    A        4        15      6        5/2   no
+    2B2      1         5      2        5/2   no
+    2A       4        15      6        5/2   no
+    A        5        24     10       12/5   no
+    2A       5        24     10       12/5   no
+    G2       1        14      6        7/3   no
+    D        4        28     12        7/3   no
+    C        3        21      9        7/3   no
+    B        3        21      9        7/3   no
+    A        6        35     15        7/3   no
+    ... (all remaining rows have D/N <= 5/2)
+
+  Families with D/N >= 8/3 : [('A1', 1, Fraction(3, 1)), ('A', 3, Fraction(8, 3)), ('2A', 3, Fraction(8, 3))]
+
+  So apart from A1 = L2, A2 = L3 and 2A2 = U3 every family needs
+  3c >= q^{1/2}.  With c <= |Out(S_1)| = d1 f1 g1 <= n1 * log2(q^3) * 6
+  and n1 <= 1 + sqrt(2 N1) <= 1 + sqrt(6 log_p q):
+
+     the surrogate (3c)^2 >= q fails for every prime power
+     q >= 185767 -- so for q >= 185767 the socle family is one of
+     L2(q1), L3(q1), U3(q1) (in the defining characteristic).
+
+  4.1  S_1 = L2(q1).  (alpha) gives q1 = q^3/p^j with p^j = c_p
+       | c, so |S_1| ~ q^9/p^{3j} and (beta) forces
+           p^{3j} ~ c q / d1  and  p^j <= c <= 2 f1 <= 6 f,
+       hence q <= 2 c^2 <= 72 f^2 = 72 (log_p q)^2.  Exact scan:
+       largest q meeting the bound: 12163 ; exact hits over all
+       prime powers q <= 2*10^5 and all j : NONE
+
+  4.2  S_1 = U3(q1).  Zsygmondy: q1^2-q1+1 carries a primitive
+       prime divisor r of p^{6f1}-1 (the only exception, (2,6),
+       is q1 = 2, and U3(2) is not simple).  r | |S_1| and
+       |S_1| | |S|, whose p'-part divides q^6-1 = p^{6f}-1, so
+       ord_r(p) = 6f1 divides 6f, i.e.  f1 | f.
+        * f1 = f : c*e*(q^3+1) = e1*(q^3-1) with e,e1 in {1,3}
+          and c >= 2 -- no solution (2e/e1 in {2/3,2,6}).
+        * f1 < f : f1 | f gives q >= q1^2, so
+          c = |S|/|S_1| >= (q/q1)^8/3 >= q1^8/3, against
+          c <= |Out(U3(q1))| = 2 f1 e1 <= 6 log_2 q1.
+       Exact confirmation (all q <= 10^5, all f1 <= f):
+       exact hits : NONE
+
+  4.3  S_1 = L3(q1), q1 = p^{f1} < q  (the SUBFIELD case).
+       q1 = q gives c = 1, excluded.  For q1 < q, Zsygmondy on
+       q1^2+q1+1 (primitive prime of p^{3f1}-1; only exception
+       (2,6), i.e. q1 = 4, checked separately) gives 3f1 | 6f,
+       i.e. f1 | 2f, hence f - f1 >= f/3 for f1 < f.  Then
+       c = |L3(q)|/|L3(q1)| >= (q/q1)^8/3 >= p^{8f/3}/3 while
+       c <= |Out(L3(q1))| = 6 f1 <= 6 f.  Exact scan:
+       exact hits : NONE
+
+==========================================================================
+PART 4.0 -- equal characteristic, decided EXACTLY for every q
+            (factorisation-free; complete in f1 and in the type)
+==========================================================================
+  targets (all prime powers 3 <= q <= 10000000) : 665133
+  (S_1 | |S|) divisor pairs found        : 1333165
+  POSITIVE CONTROL (S_1 = S, c = 1 found): 665133 / 665133
+  order-only NEAR-MISSES (c <= |Out|, c | |Out| dropped):
+      [(25, 'L4(5)', 7, 8)]
+  HITS (c >= 2 and c | |Out(S_1)|)       : NONE
+
+==========================================================================
+PART 5 -- almost simple with ALTERNATING or SPORADIC socle
+==========================================================================
+
+  (E): c |S_1| = |S|, 2 <= c | |Out(S_1)|.  For these two classes the
+  candidate list is COMPLETE, and |L_3(q)| = M is inverted exactly for q,
+  so each row is complete in q -- it covers ALL q, not a range.
+
+  (S_1, c) pairs tested : 74      hits : NONE
+  POSITIVE CONTROL (c = 1 self-solutions among alternating):
+      [('A8', [4])]  <- |A_8| = |L_3(4)| must appear
+      it is excluded only by c >= 2, i.e. by T non-simple;
+      the SIMPLE-simple separation L_3(4) vs A_8 is 4j-classical.
+
+==========================================================================
+PART 6 -- the residual census: Phase 1 (order census, RAW) +
+          Phase 2 (orbit floor l|Out(S_i)|iota(S_i) >= iota(S))
+==========================================================================
+  targets: 2715 prime powers
+   q = 4      |S| = 20160                 TWO simple groups of that order: ['A8', 'L3(4)']
+
+  RAW (Phase 1 only) non-simple census survivors : 4
+     q = 4      [([('A5', 1), ('L3(2)', 1)], 2)]
+     q = 9      [([('A6', 1), ('L2(27)', 1)], 12)]
+     q = 16     [([('L2(16)', 1), ('Sz(8)', 1)], 12)]
+     q = 729    [([('L2(729)', 1), ('L2(19683)', 1)], 108)]
+
+  AFTER the orbit floor (Phase 2)                : 0
+
+  positive-control failures : 0 / 2715
+  socle candidates with no iota bound (kept, conservative): none
+

@@ -1,0 +1,18 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 66386 points.
+#I  Have 66429 points.
+#I  Have 66407 points in new orbit.
+#I  Have 66430 points in new orbit.
+#I  Have 66386 points.
+#I  Have 66429 points.
+#I  Have 66388 points in new orbit.
+#I  Have 66430 points in new orbit.
+RESULT S q=81 idx=10 sizeM=216102925609998336000 index=
+2 zInD=true isG2order=false rounds=6

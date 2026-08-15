@@ -1,0 +1,24 @@
+v_task27: residual last-mile equations, n <= 1000000000000, 24 threads
+(all integer q >= 2 are scanned -- prime-power / |S| divisibility
+ filters are applied afterwards to any hit)
+
+  S4/L4  m=1   scanned q = 2 .. 5.50321e+11  (covers n <= 1000000000000)   hits: 0
+       945.2 s
+  U4     m=1   scanned q = 2 .. 6.38943e+08  (covers n <= 1000000000000)   hits: 0
+       257.2 s
+  L5     m=1   scanned q = 2 .. 6.38943e+08  (covers n <= 1000000000000)   hits: 0
+       96.8 s
+  HIT  G2/Sp6 m=1   q = 3   n = 14
+  G2/Sp6 m=1   scanned q = 2 .. 1.10757e+07  (covers n <= 1000000000000)   hits: 1
+       96.0 s
+  HIT  U5     m=1   q = 2   n = 11
+  U5     m=1   scanned q = 2 .. 107570  (covers n <= 1000000000000)   hits: 1
+       94.3 s
+  L3     m=2   scanned n = 3 .. 1000000000000                          hits: 0
+       675.7 s
+  L4     m=2   scanned q = 2 .. 4.3679e+11  (covers n <= 1000000000000)   hits: 0
+       974.2 s
+  L5     m=2   scanned q = 2 .. 5.37285e+08  (covers n <= 1000000000000)   hits: 0
+       103.2 s
+
+TOTAL HITS: 2

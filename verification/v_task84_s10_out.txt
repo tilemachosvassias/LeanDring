@@ -1,0 +1,8 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+s = 10  fpf classes = 229 (non-abelian 207)
+min V_10 = 945   |V_10| = 32
+V_10 = [ 945, 2100, 3150, 4200, 4536, 6300, 8400, 9450, 12600, 14175, 14400, 
+  16800, 18144, 18900, 28350, 33600, 37800, 45360, 50400, 56700, 75600, 
+  90720, 100800, 113400, 151200, 201600, 226800, 302400, 453600, 604800, 
+  907200, 1814400 ]

@@ -1,0 +1,19 @@
+scanning 468 perfect tables
+2.(2^4:A5)  |G|=1920  deg=4  |Z|=2  field=Rationals
+2.A5  |G|=120  deg=2  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A5  |G|=120  deg=2  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A5  |G|=120  deg=4  |Z|=2  field=Rationals
+2.A5  |G|=120  deg=6  |Z|=2  field=Rationals
+2.A5xA5  |G|=7200  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A5xA5  |G|=7200  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A5xA5  |G|=7200  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A5xA5  |G|=7200  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.A6  |G|=720  deg=4  |Z|=2  field=Rationals
+2.A6  |G|=720  deg=4  |Z|=2  field=Rationals
+2.J2  |G|=1209600  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.J2  |G|=1209600  deg=6  |Z|=2  field=NF(5,[ 1, 4 ])
+2.L2(13)  |G|=2184  deg=6  |Z|=2  field=NF(13,[ 1, 3, 4, 9, 10, 12 ])
+2.L2(13)  |G|=2184  deg=6  |Z|=2  field=NF(13,[ 1, 3, 4, 9, 10, 12 ])
+2.L3(2)  |G|=336  deg=6  |Z|=2  field=NF(8,[ 1, 7 ])
+2.L3(2)  |G|=336  deg=6  |Z|=2  field=NF(8,[ 1, 7 ])
+U3(3)  |G|=6048  deg=6  |Z|=1  field=Rationals

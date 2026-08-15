@@ -1,0 +1,106 @@
+
+=== M22 ===
+  order=443520  own perfect (simple, should be true)? true
+  Maxes names: [ "L3(4)", "2^4:a6", "A7", "A7", "2^4:s5", "2^3:sl(3,2)", 
+  "A6.2_3", "L2(11)" ]
+    L3(4) order=20160 PERFECT
+    2^4:a6 order=5760 PERFECT
+    A7 order=2520 PERFECT
+    A7 order=2520 PERFECT
+    2^4:s5 order=1920 not perfect
+    2^3:sl(3,2) order=1344 PERFECT
+    A6.2_3 order=720 not perfect
+    L2(11) order=660 PERFECT
+  Perfect maximal classes: 6
+  mult1 LOWER BOUND (perfect maximals + G itself): 7
+
+=== M24 ===
+  order=244823040  own perfect (simple, should be true)? true
+  Maxes names: [ "M23", "M22.2", "2^4:a8", "M12.2", "2^6:3.s6", 
+  "L3(4).3.2_2", "2^6:(psl(3,2)xs3)", "L2(23)", "L3(2)" ]
+    M23 order=10200960 PERFECT
+    M22.2 order=887040 not perfect
+    2^4:a8 order=322560 PERFECT
+    M12.2 order=190080 not perfect
+    2^6:3.s6 order=138240 not perfect
+    L3(4).3.2_2 order=120960 not perfect
+    2^6:(psl(3,2)xs3) order=64512 not perfect
+    L2(23) order=6072 PERFECT
+    L3(2) order=168 PERFECT
+  Perfect maximal classes: 4
+  mult1 LOWER BOUND (perfect maximals + G itself): 5
+
+=== J2 ===
+  order=604800  own perfect (simple, should be true)? true
+  Maxes names: [ "U3(3)", "3.A6.2_2", "2^1+4b:a5", "2^2+4.3xs3", "a4xa5", 
+  "a5xd10", "L3(2).2", "5^2:D12", "A5" ]
+    U3(3) order=6048 PERFECT
+    3.A6.2_2 order=2160 not perfect
+    2^1+4b:a5 order=1920 PERFECT
+    2^2+4.3xs3 order=1152 not perfect
+    a4xa5 order=720 not perfect
+    a5xd10 order=600 not perfect
+    L3(2).2 order=336 not perfect
+    5^2:D12 order=300 not perfect
+    A5 order=60 PERFECT
+  Perfect maximal classes: 3
+  mult1 LOWER BOUND (perfect maximals + G itself): 4
+
+=== Suz ===
+  order=448345497600  own perfect (simple, should be true)? true
+  Maxes names: [ "G2(4)", "3_2.U4(3).2_3'", "U5(2)", "2^1+6.u4q2", "3^5:M11", 
+  "J2.2", "2^4+6:3a6", "(a4xpsl(3,4)):2", "2^2+8(a5xs3)", "M12.2", 
+  "3^2+4:2(2^2xa4)2", "(a6xa5).2", "(3^2:4xa6).2", "L3(3).2", "L3(3).2", 
+  "L2(25)", "A7" ]
+    G2(4) order=251596800 PERFECT
+    3_2.U4(3).2_3' order=19595520 not perfect
+    U5(2) order=13685760 PERFECT
+    2^1+6.u4q2 order=3317760 PERFECT
+    3^5:M11 order=1924560 PERFECT
+    J2.2 order=1209600 not perfect
+    2^4+6:3a6 order=1105920 PERFECT
+    (a4xpsl(3,4)):2 order=483840 not perfect
+    2^2+8(a5xs3) order=368640 not perfect
+    M12.2 order=190080 not perfect
+    3^2+4:2(2^2xa4)2 order=139968 not perfect
+    (a6xa5).2 order=43200 not perfect
+    (3^2:4xa6).2 order=25920 not perfect
+    L3(3).2 order=11232 not perfect
+    L3(3).2 order=11232 not perfect
+    L2(25) order=7800 PERFECT
+    A7 order=2520 PERFECT
+  Perfect maximal classes: 7
+  mult1 LOWER BOUND (perfect maximals + G itself): 8
+
+=== Th ===
+  order=90745943887872000  own perfect (simple, should be true)? true
+  Maxes names: [ "3D4(2).3", "2^5.psl(5,2)", "2^1+8.a9", "U3(8).6", 
+  "(3xG2(3)):2", "ThN3B", "ThM7", "3^5:2S6", "5^(1+2):4S4", "5^2:4s5", 
+  "7^2:(3x2S4)", "L2(19).2", "L3(3)", "A6.2_3", "31:15", "A5.2" ]
+    3D4(2).3 order=634023936 not perfect
+    2^5.psl(5,2) order=319979520 PERFECT
+    2^1+8.a9 order=92897280 PERFECT
+    U3(8).6 order=33094656 not perfect
+    (3xG2(3)):2 order=25474176 not perfect
+    ThN3B order=944784 not perfect
+    ThM7 order=944784 not perfect
+    3^5:2S6 order=349920 not perfect
+    5^(1+2):4S4 order=12000 not perfect
+    5^2:4s5 order=12000 not perfect
+    7^2:(3x2S4) order=7056 not perfect
+    L2(19).2 order=6840 not perfect
+    L3(3) order=5616 PERFECT
+    A6.2_3 order=720 not perfect
+    31:15 order=465 not perfect
+    A5.2 order=120 not perfect
+  Perfect maximal classes: 3
+  mult1 LOWER BOUND (perfect maximals + G itself): 4
+
+=== SUMMARY (Part 2, Tier-1 lower bounds) ===
+M22: perfect maxes=6  mult1 >= 7
+M24: perfect maxes=4  mult1 >= 5
+J2:  perfect maxes=3  mult1 >= 4
+Suz: perfect maxes=7  mult1 >= 8
+Th:  perfect maxes=3  mult1 >= 4
+
+=== DONE part2_sporadics ===

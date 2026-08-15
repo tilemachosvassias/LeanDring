@@ -1,0 +1,45 @@
+=== v_task39: exact sporadic iota-coincidence scan ===
+equation  l*v = C(n,3),  v in V(S) (exact spectrum, v <= 2*iota),
+filters   TO-2 order squeeze  +  p-part of |S|^l | n!/2
+
+  M12      v=220                    l=1            n=12           *** LIVE COINCIDENCE ***
+  J2       v=280                    l=2            n=16           KILLED by p-part at p=5
+  J2       v=560                    l=1            n=16           *** LIVE COINCIDENCE ***
+  McL      v=30800                  l=29           n=176          KILLED by p-part at p=2
+  Ru       v=188500                 l=47           n=377          KILLED by p-part at p=2
+  Suz      v=22880                  l=2            n=66           *** LIVE COINCIDENCE ***
+  Suz      v=45760                  l=1            n=66           *** LIVE COINCIDENCE ***
+  2F4(2)'  v=2925                   l=1            n=27           *** LIVE COINCIDENCE ***
+
+  live coincidences: 5   (killed by p-part: 3)
+
+=== reach: largest n admitting this sporadic as a socle factor ===
+(needs l*2*iota >= C(n,3) for the orbit AND l*log|S| <= log(n!/2))
+  M11      iota=55                      reach n <= 0
+  M12      iota=220                     reach n <= 22
+  M22      iota=77                      reach n <= 10
+  M23      iota=253                     reach n <= 12
+  M24      iota=759                     reach n <= 21
+  J1       iota=1045                    reach n <= 37
+  J2       iota=280                     reach n <= 24
+  J3       iota=17442                   reach n <= 229
+  HS       iota=3850                    reach n <= 98
+  McL      iota=15400                   reach n <= 197
+  He       iota=8330                    reach n <= 132
+  Ru       iota=188500                  reach n <= 473
+  Suz      iota=22880                   reach n <= 211
+  Co1      iota=1545600                 reach n <= 1135
+  Co2      iota=46575                   reach n <= 194
+  Co3      iota=128800                  reach n <= 377
+  Fi22     iota=3510                    reach n <= 64
+  Fi23     iota=31671                   reach n <= 132
+  Fi24'    iota=4860485028              reach n <= 104454
+  HN       iota=1539000                 reach n <= 1884
+  Th       iota=283599225               reach n <= 19548
+  ON       iota=2857239                 reach n <= 2969
+  Ly       iota=9606125                 reach n <= 3211
+  J4       iota=173067389               reach n <= 13890
+  B        iota=13571955000             reach n <= 104454
+  M        iota=97239461142009184256    reach n <= 10040358043
+  2F4(2)'  iota=1755                    reach n <= 64
+  WORST: M -- no sporadic socle factor once n > 10040358043

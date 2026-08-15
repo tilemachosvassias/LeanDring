@@ -1,0 +1,46 @@
+40 numeric solutions; applying |S| divides n!/2
+
+   SURVIVES: m=1 L2(3) n=4
+   SURVIVES: m=2 L2(4) n=5
+   SURVIVES: m=2 L2(9) n=6
+   SURVIVES: m=3 S4/L4(3) n=10
+   SURVIVES: m=3 U3(3) n=9
+   SURVIVES: m=4 L2(4) n=6
+   SURVIVES: m=4 L3(4) n=9
+   SURVIVES: m=5 L2(3) n=6
+   SURVIVES: m=5 L3(2) n=7
+   SURVIVES: m=5 L3(9) n=15
+   SURVIVES: m=5 S4/L4(8) n=27
+   SURVIVES: m=5 U4(3) n=16
+   SURVIVES: m=7 L2(4) n=7
+   SURVIVES: m=7 L2(7) n=8
+   SURVIVES: m=7 L2(64) n=15
+   SURVIVES: m=7 Sz(8) n=15
+   SURVIVES: m=7 U3(4) n=15
+   SURVIVES: m=8 L3(2) n=8
+   SURVIVES: m=8 S4/L4(2) n=10
+   SURVIVES: m=8 S4/L4(4) n=17
+   SURVIVES: m=8 U4(4) n=26
+
+survivors after divisibility + family-existence filter: 21
+    (1, 'L2', 3, 4)
+    (2, 'L2', 4, 5)
+    (2, 'L2', 9, 6)
+    (3, 'S4/L4', 3, 10)
+    (3, 'U3', 3, 9)
+    (4, 'L2', 4, 6)
+    (4, 'L3', 4, 9)
+    (5, 'L2', 3, 6)
+    (5, 'L3', 2, 7)
+    (5, 'L3', 9, 15)
+    (5, 'S4/L4', 8, 27)
+    (5, 'U4', 3, 16)
+    (7, 'L2', 4, 7)
+    (7, 'L2', 7, 8)
+    (7, 'L2', 64, 15)
+    (7, 'Sz', 8, 15)
+    (7, 'U3', 4, 15)
+    (8, 'L3', 2, 8)
+    (8, 'S4/L4', 2, 10)
+    (8, 'S4/L4', 4, 17)
+    (8, 'U4', 4, 26)

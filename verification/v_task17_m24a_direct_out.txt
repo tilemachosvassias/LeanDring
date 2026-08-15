@@ -1,0 +1,27 @@
+=== M24 twin (a): DirectProduct(PGL(2,23), A8), order 244823040 ===
+981
+built, order=244823040 time(ms)=35
+1016
+RepresentativesPerfectSubgroups: 20 classes, time(ms)=26283
+  order=1 struct=1 selfnorm=false
+  order=60 struct=A5 selfnorm=false
+  order=60 struct=A5 selfnorm=false
+  order=168 struct=PSL(3,2) selfnorm=false
+  order=168 struct=PSL(3,2) selfnorm=false
+  order=168 struct=PSL(3,2) selfnorm=false
+  order=360 struct=A6 selfnorm=false
+  order=1344 struct=(C2 x C2 x C2) : PSL(3,2) selfnorm=false
+  order=1344 struct=(C2 x C2 x C2) : PSL(3,2) selfnorm=false
+  order=2520 struct=A7 selfnorm=false
+  order=6072 struct=PSL(2,23) selfnorm=false
+  order=20160 struct=A8 selfnorm=false
+  order=364320 struct=A5 x PSL(2,23) selfnorm=false
+  order=364320 struct=A5 x PSL(2,23) selfnorm=false
+  order=1020096 struct=PSL(3,2) x PSL(2,23) selfnorm=false
+  order=1020096 struct=PSL(3,2) x PSL(2,23) selfnorm=false
+  order=1020096 struct=PSL(3,2) x PSL(2,23) selfnorm=false
+  order=2185920 struct=A6 x PSL(2,23) selfnorm=false
+  order=8160768 struct=((C2 x C2 x C2) : PSL(3,2)) x PSL(2,23) selfnorm=false
+  order=8160768 struct=((C2 x C2 x C2) : PSL(3,2)) x PSL(2,23) selfnorm=false
+M24(a) twin mult1 (nontrivial p.s.n. classes): 0
+=== DONE m24a_direct ===

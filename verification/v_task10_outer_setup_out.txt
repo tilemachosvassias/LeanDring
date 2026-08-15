@@ -1,0 +1,9 @@
+=== Setup outer automorphism for O7(3) via O7(3).2 on 351 points ===
+true
+<permutation group of size 4585351680 with 2 generators>
+<permutation group of size 9170703360 with 2 generators>
+Size G1: 4585351680  Size G1ext: 9170703360
+NrMovedPoints G1: 351  NrMovedPoints G1ext: 351
+Is G1 subgroup of G1ext (as perm groups on same points)? false
+false
+=== done outer setup ===

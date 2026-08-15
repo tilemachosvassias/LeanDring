@@ -1,0 +1,30 @@
+SHARP prefilter (independent iota upper bounds) -- reproducing
+v_task50 §3.2 column 'proper factors surviving the orbit floor':
+
+  M11      iota=55                     divisors=4    survivors: [('A6', 1)]
+  M12      iota=220                    divisors=5    survivors: NONE
+  M22      iota=77                     divisors=10   survivors: [('A6', 1), ('A8', 1), ('L3(4)', 1)]
+  M23      iota=253                    divisors=12   survivors: NONE
+  M24      iota=759                    divisors=15   survivors: NONE
+  J1       iota=1045                   divisors=4    survivors: NONE
+  J2       iota=280                    divisors=9    survivors: NONE
+  J3       iota=17442                  divisors=7    survivors: NONE
+  J4       iota=173067389              divisors=22   survivors: NONE
+  HS       iota=3850                   divisors=12   survivors: NONE
+  McL      iota=15400                  divisors=20   survivors: NONE
+  He       iota=8330                   divisors=14   survivors: NONE
+  Ru       iota=188500                 divisors=21   survivors: NONE
+  Suz      iota=22880                  divisors=36   survivors: NONE
+  ON       iota=2857239                divisors=22   survivors: NONE
+  Co1      iota=1545600                divisors=56   survivors: NONE
+  Co2      iota=46575                  divisors=30   survivors: NONE
+  Co3      iota=128800                 divisors=28   survivors: NONE
+  Fi22     iota=3510                   divisors=40   survivors: [('U6(2)', 1), ('U4(3)', 2), ('Suz', 1), ("2F4(2)'", 1)]
+  Fi23     iota=31671                  divisors=52   survivors: [('Suz', 1)]
+  Fi24'    iota=4860485028             divisors=60   survivors: NONE
+  HN       iota=1539000                divisors=29   survivors: NONE
+  Ly       iota=9606125                divisors=26   survivors: NONE
+  Th       iota=283599225              divisors=41   survivors: NONE
+  B        iota=13571955000            divisors=100  survivors: NONE
+  M        iota=97239461142009186000   divisors=140  survivors: NONE
+  2F4(2)'  iota=1755                   divisors=6    survivors: NONE

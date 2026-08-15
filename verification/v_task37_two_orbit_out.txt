@@ -1,0 +1,89 @@
+=== PART A: bottom of the A_n conductor spectrum, uniform in n ===
+# rows:  s  |  H  |  |H'|  |  |N_{S_s}(H)|  |  ind* = n^(s) * f
+# f is printed as |H'|/|N_{S_s}(H)|; only the smallest f's matter.
+
+s = 3   (1 ffp all-even classes)
+   f = 1/6  H = C3  |H'| = 1  |N_{S_s}(H)| = 6  abelian: true
+
+s = 4   (3 ffp all-even classes)
+   f = 1/24  H = C2 x C2  |H'| = 1  |N_{S_s}(H)| = 24  abelian: true
+   f = 1/8  H = C2  |H'| = 1  |N_{S_s}(H)| = 8  abelian: true
+   f = 1/6  H = A4  |H'| = 4  |N_{S_s}(H)| = 24  abelian: false
+
+s = 5   (4 ffp all-even classes)
+   f = 1/20  H = C5  |H'| = 1  |N_{S_s}(H)| = 20  abelian: true
+   f = 1/4  H = S3  |H'| = 3  |N_{S_s}(H)| = 12  abelian: false
+   f = 1/4  H = D10  |H'| = 5  |N_{S_s}(H)| = 20  abelian: false
+   f = 1/2  H = A5  |H'| = 60  |N_{S_s}(H)| = 120  abelian: false
+
+s = 6   (13 ffp all-even classes)
+   f = 1/72  H = C3 x C3  |H'| = 1  |N_{S_s}(H)| = 72  abelian: true
+   f = 1/48  H = C2 x C2  |H'| = 1  |N_{S_s}(H)| = 48  abelian: true
+   f = 1/36  H = C3  |H'| = 1  |N_{S_s}(H)| = 36  abelian: true
+   f = 1/16  H = C4  |H'| = 1  |N_{S_s}(H)| = 16  abelian: true
+   f = 1/12  H = A4  |H'| = 4  |N_{S_s}(H)| = 48  abelian: false
+   f = 1/8  H = D8  |H'| = 2  |N_{S_s}(H)| = 16  abelian: false
+   f = 1/8  H = (C3 x C3) : C2  |H'| = 9  |N_{S_s}(H)| = 72  abelian: false
+   f = 1/8  H = (C3 x C3) : C4  |H'| = 9  |N_{S_s}(H)| = 72  abelian: false
+
+s = 7   (15 ffp all-even classes)
+   f = 1/144  H = C6 x C2  |H'| = 1  |N_{S_s}(H)| = 144  abelian: true
+   f = 1/48  H = C6  |H'| = 1  |N_{S_s}(H)| = 48  abelian: true
+   f = 1/42  H = C7  |H'| = 1  |N_{S_s}(H)| = 42  abelian: true
+   f = 1/36  H = C3 x A4  |H'| = 4  |N_{S_s}(H)| = 144  abelian: false
+   f = 1/18  H = A4  |H'| = 4  |N_{S_s}(H)| = 72  abelian: false
+   f = 1/16  H = D12  |H'| = 3  |N_{S_s}(H)| = 48  abelian: false
+   f = 1/16  H = C3 : C4  |H'| = 3  |N_{S_s}(H)| = 48  abelian: false
+   f = 1/8  H = C5 : C4  |H'| = 5  |N_{S_s}(H)| = 40  abelian: false
+
+s = 8   (75 ffp all-even classes)
+   f = 1/1344  H = C2 x C2 x C2  |H'| = 1  |N_{S_s}(H)| = 1344  abelian: true
+   f = 1/1152  H = C2 x C2 x C2 x C2  |H'| = 1  |N_{S_s}(H)| = 
+1152  abelian: true
+   f = 1/384  H = C2  |H'| = 1  |N_{S_s}(H)| = 384  abelian: true
+   f = 1/384  H = C2 x C2 x C2  |H'| = 1  |N_{S_s}(H)| = 384  abelian: true
+   f = 1/192  H = C2 x C2  |H'| = 1  |N_{S_s}(H)| = 192  abelian: true
+   f = 1/192  H = C2 x C2 x C2  |H'| = 1  |N_{S_s}(H)| = 192  abelian: true
+   f = 1/192  H = (C2 x C2 x C2) : (C2 x C2)  |H'| = 2  |N_{S_s}(H)| = 
+384  abelian: false
+   f = 1/144  H = C2 x C2 x A4  |H'| = 4  |N_{S_s}(H)| = 576  abelian: false
+
+
+=== PART B: g(m) = max m*|Aut(B)|, B abelian of order m ===
+g(2..64) := [ 2, 6, 24, 20, 12, 42, 1344, 432, 40, 110, 144, 156, 84, 120, 
+  322560, 272, 864, 342, 480, 252, 220, 506, 8064, 12000, 312, 303264, 1008, 
+  812, 240, 930, 319979520, 660, 544, 840, 10368, 1332, 684, 936, 26880, 
+  1640, 504, 1806, 2640, 8640, 1012, 2162, 1935360, 98784, 24000, 1632, 3744, 
+  2756, 606528, 2200, 56448, 2052, 1624, 3422, 2880, 3660, 1860, 18144, 
+  1290157424640 ];
+
+=== PART C: third-value transport (star_3) on the v_task34 groups ===
+A5 x A5        I(T) up to 40 = [ 5, 6, 10, 15, 25, 30, 36 ]
+A5 wr C2       I(T) up to 40 = [ 10, 12, 20, 25, 30, 36 ]
+(A5xA5).2 dia  I(T) up to 40 = [ 5, 6, 10, 15, 25, 30, 36 ]
+(A5xA5).2^2    I(T) up to 40 = [ 10, 12, 20, 25, 30, 36 ]
+A5 x A6        I(T) up to 40 = [ 5, 6, 10, 15, 20, 36 ]
+A5 x L2(7)     I(T) up to 40 = [ 5, 6, 7, 8, 10, 15, 21, 28, 35, 40 ]
+A5 x PGL(2,9)  I(T) up to 40 = [ 5, 6, 10, 15, 30, 36, 40 ]
+A5 wr C3       I(T) up to 40 = [ 15, 18, 30 ]
+
+=== PART D: ratio-3 test  iota_2(K<=Abar) = 3*iota(K<=Abar) ===
+A5 <= A5          I = [ 5, 6, 10, 15 ]   iota2/iota = 6/5
+A5 <= S5          I = [ 5, 6, 10, 15 ]   iota2/iota = 6/5
+A6 <= A6          I = [ 10, 15, 20, 36, 45 ]   iota2/iota = 3/2
+A6 <= S6          I = [ 10, 15, 20, 36, 45 ]   iota2/iota = 3/2
+A6 <= PGL(2,9)    I = [ 10, 30, 36, 40, 45 ]   iota2/iota = 3   <<< RATIO 3
+L2(7) <= L2(7)    I = [ 7, 8, 21, 28 ]   iota2/iota = 8/7
+L2(7) <= PGL(2,7)  I = [ 8, 14, 21, 28 ]   iota2/iota = 7/4
+L2(8) <= L2(8)    I = [ 9, 28, 36, 63 ]   iota2/iota = 28/9
+L2(11)<= L2(11)   I = [ 12, 55, 66 ]   iota2/iota = 55/12
+L2(13)<= L2(13)   I = [ 14, 78, 91 ]   iota2/iota = 39/7
+L3(2) <= L3(2)    I = [ 7, 8, 21, 28 ]   iota2/iota = 8/7
+L3(3) <= L3(3)    I = [ 13, 52, 104, 117, 144 ]   iota2/iota = 4
+U3(3) <= U3(3)    I = [ 28, 63, 112, 189 ]   iota2/iota = 9/4
+S4(3) <= S4(3)    I = [ 27, 40, 45, 120, 135 ]   iota2/iota = 40/27
+A7 <= A7          I = [ 35, 70, 105, 120, 126 ]   iota2/iota = 2
+A7 <= S7          I = [ 35, 70, 105, 120, 126 ]   iota2/iota = 2
+M11 <= M11        I = [ 55, 144, 165, 220 ]   iota2/iota = 144/55
+
+=== done ===

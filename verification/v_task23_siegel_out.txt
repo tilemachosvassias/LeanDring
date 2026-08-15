@@ -1,0 +1,12 @@
+Syntax warning: Unbound global variable in siegel.g:31
+  L := List(GeneratorsOfGroup(SL(n,q)), A -> lev(n,q,A));;
+                                                 ^
+Syntax warning: Unbound global variable in siegel.g:31
+  L := List(GeneratorsOfGroup(SL(n,q)), A -> lev(n,q,A));;
+                                                   ^
+n=2 q=5: |U|=7500 |N|=30000 index=4 PSN=false perfect=true
+n=2 q=7: |U|=57624 |N|=345744 index=6 PSN=false perfect=true
+n=3 q=3: |U|=4094064 |N|=4094064 index=1 PSN=true perfect=true
+n=3 q=5: |U|=5812500000 |N|=11625000000 index=2 PSN=false perfect=true
+n=3 q=7: |U|=662444812512 |N|=1987334437536 index=3 PSN=false perfect=true
+n=3 q=9: |U|=22563369279360 |N|=90253477117440 index=4 PSN=false perfect=true

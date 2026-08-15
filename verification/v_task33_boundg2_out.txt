@@ -1,0 +1,36 @@
+=== part 1: q = 5 structural check ===
+G2(5): degree 3906, |G| = 5859000000
+maximal M of index 7750, |M| = 756000
+  |M'| = 378000  (expect 3*|U3(5)| = 378000)
+  |Z(M')| = 3  abelian invariants [ 3 ]
+  |C_G(A)| = 378000  index 15500
+  |N_G(A)| = 756000  index 7750
+  N_G(A) = M ? true
+  [N:C] = 2 (expect 2)
+  predicted index q^3(q^3-1)/2 = 7750
+
+=== part 2: ratio-trick elimination with c(q) ===
+Syntax warning: Unbound global variable in v_task33_boundg2.g:57
+    good := Filtered([4..nmax], n -> Binomial(n,3) mod i1 = 0);
+                                                       ^^
+  q=3 c=4 nmax=35 iota1=364  n with iota1 | C(n,3): [ 14, 28 ]
+    q=3 ratio-forced n = 3+16*rho: [ 11, 19, 35 ]
+  q=4 c=5 nmax=43 iota1=1365  n with iota1 | C(n,3): [  ]
+  q=5 c=3 nmax=27 C(nmax,3)=2925 < iota1=3906  -> IMPOSSIBLE (size)
+  q=7 c=4 nmax=35 C(nmax,3)=6545 < iota1=19608  -> IMPOSSIBLE (size)
+  q=8 c=9 nmax=75 iota1=37449  n with iota1 | C(n,3): [  ]
+  q=9 c=10 nmax=83 iota1=66430  n with iota1 | C(n,3): [  ]
+  q=11 c=6 nmax=51 C(nmax,3)=20825 < iota1=177156  -> IMPOSSIBLE (size)
+  q=13 c=7 nmax=59 C(nmax,3)=32509 < iota1=402234  -> IMPOSSIBLE (size)
+  q=16 c=17 nmax=139 C(nmax,3)=437989 < iota1=1118481  -> IMPOSSIBLE (size)
+  q=17 c=9 nmax=75 C(nmax,3)=67525 < iota1=1508598  -> IMPOSSIBLE (size)
+  q=19 c=10 nmax=83 C(nmax,3)=91881 < iota1=2613660  -> IMPOSSIBLE (size)
+  q=23 c=12 nmax=99 C(nmax,3)=156849 < iota1=6728904  -> IMPOSSIBLE (size)
+  q=25 c=26 nmax=211 C(nmax,3)=1543465 < iota1=10172526  -> IMPOSSIBLE (size)
+  q=27 c=28 nmax=227 C(nmax,3)=1923825 < iota1=14900788  -> IMPOSSIBLE (size)
+  q=29 c=15 nmax=123 C(nmax,3)=302621 < iota1=21243690  -> IMPOSSIBLE (size)
+  q=31 c=16 nmax=131 C(nmax,3)=366145 < iota1=29583456  -> IMPOSSIBLE (size)
+  q=32 c=33 nmax=267 C(nmax,3)=3136805 < iota1=34636833  -> IMPOSSIBLE (size)
+  q=37 c=19 nmax=155 C(nmax,3)=608685 < iota1=71270178  -> IMPOSSIBLE (size)
+
+done

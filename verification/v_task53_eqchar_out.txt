@@ -1,0 +1,24 @@
+# v_task53 --eqchar : the EQUAL-characteristic half of the
+#   residual l = 1 branch  c*|S_1| = |S| ,  2 <= c | |Out(S_1)| ,
+#   decided EXACTLY (S_1 of Lie type in the DEFINING characteristic
+#   p of the target).  No factorisation of |S| is needed here --
+#   only |S| itself -- so this branch runs FAR past the census.
+#   Completeness in q1: q1 = p^f1 with f1 <= (p-exponent of |S|),
+#   because |S_1|_p = q1^N divides |S|_p; all f1 in that range and
+#   all Lie types of rank <= 6 over F_{q1} are enumerated.
+
+==========================================================================
+FAMILY U3 : 359 targets (q up to 6864377172744689378196133203444067624537070830997366604446306636401), 32937 (target, q1) pairs
+  POSITIVE CONTROL: the c = 1 self-solution S_1 = S must be
+    found for every target: 359 found / 359 targets, names ['U3(1024)', 'U3(10315908977942302627204470186314316211062255002161)', 'U3(10367793076318844190248738727596255138212949486449)'] : PASS
+  EQUAL-CHARACTERISTIC hits : 0 -> branch EMPTY, uniformly
+==========================================================================
+FAMILY Sz : 60 targets (q up to 2658455991569831745807614120560689152), 7440 (target, q1) pairs
+  POSITIVE CONTROL: the c = 1 self-solution S_1 = S must be
+    found for every target: 60 found / 60 targets, names ['Sz(10141204801825835211973625643008)', 'Sz(10384593717069655257060992658440192)', 'Sz(128)'] : PASS
+  EQUAL-CHARACTERISTIC hits : 0 -> branch EMPTY, uniformly
+==========================================================================
+FAMILY Ree : 60 targets (q up to 5391030899743293631239539488528815119194426882613553319203), 11160 (target, q1) pairs
+  POSITIVE CONTROL: the c = 1 self-solution S_1 = S must be
+    found for every target: 60 found / 60 targets, names ['R(10144175740568179028790664417176723510595582355545683)', 'R(10301051460877537453973547267843)', 'R(10460353203)'] : PASS
+  EQUAL-CHARACTERISTIC hits : 0 -> branch EMPTY, uniformly

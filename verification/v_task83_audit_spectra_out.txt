@@ -1,0 +1,27 @@
+family  spectrum                                              M  sum m_e phi(e)  a-N
+F4    Phi1^4 Phi2^4 Phi3^2 Phi4^2 Phi6^2 Phi8 Phi12           4   28   28   ok
+E6    Phi1^6 Phi2^4 Phi3^3 Phi4^2 Phi5 Phi6^2 Phi8 Phi9 Phi12 6   42   42   ok
+2E6   Phi1^4 Phi2^6 Phi3^2 Phi4^2 Phi6^3 Phi8 Phi10 Phi12 Phi18 6   42   42   ok
+E7    Phi1^7 Phi2^7 Phi3^3 Phi4^2 Phi5 Phi6^3 Phi7 Phi8 Phi9 Phi10 Phi12 Phi14 Phi18 7   70   70   ok
+E8    Phi1^8 Phi2^8 Phi3^4 Phi4^4 Phi5^2 Phi6^4 Phi7 Phi8^2 Phi9 Phi10^2 Phi12^2 Phi14 Phi15 Phi18 Phi20 Phi24 Phi30 8   128  128  ok
+
+Sp/O towers: claim M = n
+  C3   M=3   (claim 3) ok  sum=12 a-N=12 ok
+  C4   M=4   (claim 4) ok  sum=20 a-N=20 ok
+  C5   M=5   (claim 5) ok  sum=30 a-N=30 ok
+  C6   M=6   (claim 6) ok  sum=42 a-N=42 ok
+  C7   M=7   (claim 7) ok  sum=56 a-N=56 ok
+  C8   M=8   (claim 8) ok  sum=72 a-N=72 ok
+  C9   M=9   (claim 9) ok  sum=90 a-N=90 ok
+  C10  M=10  (claim 10) ok  sum=110 a-N=110 ok
+  C11  M=11  (claim 11) ok  sum=132 a-N=132 ok
+  C12  M=12  (claim 12) ok  sum=156 a-N=156 ok
+  D4   M=4    2D4   M=4   (claim 4 each)  ok
+  D5   M=5    2D5   M=5   (claim 5 each)  ok
+  D6   M=6    2D6   M=6   (claim 6 each)  ok
+  D7   M=7    2D7   M=7   (claim 7 each)  ok
+  D8   M=8    2D8   M=8   (claim 8 each)  ok
+  D9   M=9    2D9   M=9   (claim 9 each)  ok
+  D10  M=10   2D10  M=10  (claim 10 each)  ok
+  D11  M=11   2D11  M=11  (claim 11 each)  ok
+  D12  M=12   2D12  M=12  (claim 12 each)  ok

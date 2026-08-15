@@ -1,0 +1,35 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 1011331 points.
+#I  Have 1508778 points.
+#I  Have 1750477 points.
+#I  Have 1866873 points.
+#I  Have 1921275 points.
+#I  Have 1947035 points.
+#I  Have 1959097 points.
+#I  Have 1964511 points.
+#I  Have 1966934 points.
+#I  Have 1968054 points.
+#I  Have 1968558 points.
+#I  Have 1968751 points.
+#I  Have 1968821 points.
+#I  Have 1968856 points.
+#I  Have 1968868 points.
+#I  Have 1968870 points.
+#I  Have 1968873 points.
+#I  Have 1968874 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.
+#I  Have 1968876 points.

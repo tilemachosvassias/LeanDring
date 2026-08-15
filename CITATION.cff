@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+title: "LeanDring: a Lean 4 formalization of the monomial representation ring and of species-table rigidity"
+abstract: >-
+  A Lean 4 + Mathlib formalization of the monomial representation ring D(G)
+  (the complex-fibered Burnside ring), of species-table rigidity for groups of
+  order p^4, and of the order-5^5 counterexample to D-ring rigidity: the
+  unconditional, kernel-checked theorem
+  Nonempty (DRing (Coordinate 1) ≃+* DRing (Coordinate 2)),
+  i.e. the two groups of order 5^5 labelled SmallGroup(3125,68) and
+  SmallGroup(3125,69) by GAP have isomorphic D-rings. Everything compiled by
+  lake build is sorry-free and uses no custom axioms and no native_decide; the
+  declarations cited by the accompanying paper are collected in
+  LeanDring/MainResults.lean.
+type: software
+authors:
+  - family-names: Vassias
+    given-names: Tilemachos
+    email: tilemachos.vassias@gmail.com
+license: Apache-2.0
+version: 1.0.0
+date-released: 2026-08-15
+# doi: added after the Zenodo-linked GitHub release mints it
+repository-code: "https://github.com/tilemachosvassias/LeanDring"
+keywords:
+  - Lean 4
+  - Mathlib
+  - formalization
+  - Burnside ring
+  - monomial representation ring
+  - species table
+  - finite group theory
+  - p-groups

@@ -1,0 +1,56 @@
+###################################################################
+# v_task16: order-twin EXISTENCE + separation for the 5 sporadics
+# flagged FACTORIZATION in v_task15
+###################################################################
+
+=== M22 vs (L2(7)xL2(11)) order-twin ===
+Sporadic: M22  order=443520
+Twin:     L2(7).2 x L2(11).2  [= PGL(2,7) x PGL(2,11)]  order=443520
+Order match: OK (443520 = 443520)
+NrConjugacyClasses: sporadic=12  twin=117  true-> DIFFER=true
+InvolutionCount:    sporadic=1155  twin=6099  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+=== J2 vs (A5xA7) order-twin ===
+Sporadic: J2  order=604800
+Twin:     A5.2 x A7.2  [= S5 x S7]  order=604800
+Order match: OK (604800 = 604800)
+NrConjugacyClasses: sporadic=21  twin=105  true-> DIFFER=true
+InvolutionCount:    sporadic=2835  twin=6031  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+=== Suz vs (L3(3)xA11) order-twin ===
+Sporadic: Suz  order=448345497600
+Twin:     L3(3).2 x A11.2  [= Aut(L3(3)) x S11]  order=448345497600
+Order match: OK (448345497600 = 448345497600)
+NrConjugacyClasses: sporadic=43  twin=840  true-> DIFFER=true
+InvolutionCount:    sporadic=2915055  twin=12564991  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+=== M24 vs (L2(23)xA8) order-twin, witness (a) ===
+Sporadic: M24  order=244823040
+Twin:     L2(23).2 x A8  order=244823040
+Order match: OK (244823040 = 244823040)
+NrConjugacyClasses: sporadic=26  twin=350  true-> DIFFER=true
+InvolutionCount:    sporadic=43263  twin=167479  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+=== M24 vs (L2(23)xA8) order-twin, witness (b) ===
+Sporadic: M24  order=244823040
+Twin:     L2(23) x A8.2  [= L2(23) x S8]  order=244823040
+Order match: OK (244823040 = 244823040)
+NrConjugacyClasses: sporadic=26  twin=308  true-> DIFFER=true
+InvolutionCount:    sporadic=43263  twin=194055  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+=== Th vs (L3(3)xL2(125)xU3(8)) order-twin ===
+Sporadic: Th  order=90745943887872000
+Twin:     L3(3) x L2(125) x U3(8).3_1  order=90745943887872000
+Order match: OK (90745943887872000 = 90745943887872000)
+NrConjugacyClasses: sporadic=48  twin=28080  true-> DIFFER=true
+InvolutionCount:    sporadic=976841775  twin=3338289855  DIFFER=true
+VERDICT: SEPARATED (class-count and/or involution-count differ)
+
+###################################################################
+# END v_task16
+###################################################################

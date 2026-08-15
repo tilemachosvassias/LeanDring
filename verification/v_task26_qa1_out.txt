@@ -1,0 +1,9 @@
+6*q^a = (n-3)(n^2+2) with q = p^f, n = 4..300000
+complete solution set:
+   n=4 a=1 q=3 p=3  p<=n
+   n=5 a=1 q=9 p=3  p<=n
+   n=5 a=2 q=3 p=3  p<=n
+   n=6 a=1 q=19 p=19  p>n : |S| cannot divide n!/2
+   n=9 a=1 q=83 p=83  p>n : |S| cannot divide n!/2
+
+none with n >= 10.

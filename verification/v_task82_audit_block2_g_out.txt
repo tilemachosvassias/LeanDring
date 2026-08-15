@@ -1,0 +1,106 @@
+=========== PART A : L_3 iota-witness at TWO NEW q ===============
+  (v_task55 tested q in {3,4,5,7,8,9,11,13,16,17,25,27}; 19 and 23
+   are new.  ind*(A) = [S:N_S(A)] * |A'| .)
+  q=19  |S|=5644682640
+     |O_p(P)| = 361 (q^2 = 361)  elem.abelian? true   N_S(A)=P? true
+     ind*(O_p(P)) = 381   q^2+q+1 = 381   ok? true
+     TRAP: ind*(Z(Syl_p)) = 7620   (q+1)(q^2+q+1) = 7620   ok? true
+  q=23  |S|=78156525216
+     |O_p(P)| = 529 (q^2 = 529)  elem.abelian? true   N_S(A)=P? true
+     ind*(O_p(P)) = 553   q^2+q+1 = 553   ok? true
+     TRAP: ind*(Z(Syl_p)) = 13272   (q+1)(q^2+q+1) = 13272   ok? true
+
+=========== PART B : the unitary iota formulas ==================
+  claim (v_task56 Trap 3):  iota(U_4(q)) = (q+1)(q^3+1)  [P_2],
+  NOT the P_1 index (q^2+1)(q^3+1);  and for d >= 5
+  iota(U_d(q)) = (q^d-(-1)^d)(q^{d-1}-(-1)^{d-1})/(q^2-1)  [P_1].
+
+  d=4 : P_2 vs P_1
+     q=2  (q+1)(q^3+1) = 27   (q^2+1)(q^3+1) = 45   ratio = 1.666666666666667
+     q=3  (q+1)(q^3+1) = 112   (q^2+1)(q^3+1) = 280   ratio = 2.5
+     q=4  (q+1)(q^3+1) = 325   (q^2+1)(q^3+1) = 1105   ratio = 3.4
+     q=5  (q+1)(q^3+1) = 756   (q^2+1)(q^3+1) = 
+3276   ratio = 4.333333333333333
+     q=7  (q+1)(q^3+1) = 2752   (q^2+1)(q^3+1) = 17200   ratio = 6.25
+     q=8  (q+1)(q^3+1) = 4617   (q^2+1)(q^3+1) = 
+33345   ratio = 7.222222222222222
+     q=9  (q+1)(q^3+1) = 7300   (q^2+1)(q^3+1) = 
+59860   ratio = 8.199999999999999
+
+  general formula evaluated at d=4 gives the P_1 value:
+     q=2 general 45 = P_1 45? true
+     q=3 general 280 = P_1 280? true
+     q=4 general 1105 = P_1 1105? true
+     q=5 general 3276 = P_1 3276? true
+
+  against the CTblLib minimal degrees (= [S:P_min]):
+Syntax warning: Unbound global variable in v_task82_audit_block2.g:66
+  idx := List(Maxes(t), n -> Size(t)/Size(CharacterTable(n)));
+                                  ^
+     U4(2) maximal indices (first 5) [ 27, 36, 40, 40, 45 ]  -> m = 
+27 ; formula = 27   equal? true
+     U4(3) maximal indices (first 5) [ 112, 126, 126, 162, 162 ]  -> m = 
+112 ; formula = 112   equal? true
+     U5(2) maximal indices (first 5) [ 165, 176, 297, 1408, 3520 ]  -> m = 
+165 ; formula = 165   equal? true
+     U5(4) : no stored Maxes ; formula = 17425
+     U6(2) maximal indices (first 5) [ 672, 693, 891, 1408, 1408 ]  -> m = 
+672 ; formula = 693   equal? false
+     U6(4) : no stored Maxes ; formula = 279825
+     U7(2) : no stored Maxes ; formula = 2709
+     U8(2) : no table
+
+  EXACT iota over the whole subgroup lattice, where feasible:
+     U4(2)  I(S) first six: [ 27, 40, 45, 90, 120, 135 ]   iota = 
+27   (q+1)(q^3+1) = 27
+
+=========== PART C : the U_6(2) minimal-degree exception ========
+  U6(2) maximal indices [ 672, 693, 891, 1408, 1408, 1408, 6237, 6336, 6336, 
+  6336, 20736, 20736, 20736, 59136, 98560, 228096 ]
+  m = 672   [S:P_1] = 693   exception (m < [S:P_1])? true
+
+=========== PART D : Lemma X' at d = 25 (exact) =================
+  X  d   q    ppmax_{p'}(|S|)          2^{d-1}(q+1)^{d-1}      ok?
+  L  25  2   129140163   4738381338321616896   true
+  L  25  3   288230376151711744   4722366482869645213696   true
+  L  25  4   16677181699666569   1000000000000000000000000   true
+  L  25  5   1180591620717411303424   79496847203390844133441536   true
+  U  25  2   16677181699666569   4738381338321616896   true
+  U  25  3   1180591620717411303424   4722366482869645213696   true
+  U  24  2   1853020188851841   789730223053602816   true
+  U  26  2   50031545098999707   28430288029929701376   true
+  L  21  2   5764801   3656158440062976   true
+  L  21  3   281474976710656   1152921504606846976   true
+  L  30  2   10460353203   36845653286788892983296   true
+
+  the q = 2 sharpening  ppmax_{2'} <= 2^{3d/2-2}:
+  L_21(2)   ppmax_{2'} = 5764801   2^(3d/2-2) = 536870912   ok? true
+  U_21(2)   ppmax_{2'} = 22876792454961   2^(3d/2-2) = 536870912   ok? false
+  L_23(2)   ppmax_{2'} = 14348907   2^(3d/2-2) = 4294967296   ok? true
+  U_23(2)   ppmax_{2'} = 617673396283947   2^(3d/2-2) = 4294967296   ok? false
+  L_25(2)   ppmax_{2'} = 129140163   2^(3d/2-2) = 34359738368   ok? true
+  U_25(2)   ppmax_{2'} = 16677181699666569   2^(3d/2-2) = 
+34359738368   ok? false
+  L_30(2)   ppmax_{2'} = 10460353203   2^(3d/2-2) = 8796093022208   ok? true
+  U_30(2)   ppmax_{2'} = 109418989131512359209   2^(3d/2-2) = 
+8796093022208   ok? false
+  L_40(2)   ppmax_{2'} = 22876792454961   2^(3d/2-2) = 288230376151711744
+    ok? true
+  U_40(2)   ppmax_{2'} = 1570042899082081611640534563   2^(3d/2-2) = 
+288230376151711744   ok? false
+  L_46(2)   ppmax_{2'} = 1853020188851841   2^(3d/2-2) = 147573952589676412928
+ ok? true
+  U_46(2)   ppmax_{2'} = 30903154382632612361920641803529   2^(3d/2-2) = 
+147573952589676412928   ok? false
+
+DONE
+
+=========== PART E : the m-count, linear vs unitary at r = 3 ====
+  d=10  m_L(r=3) = 5 (= |d/2| = 5)   m_U(r=3) = 9 (= d-1 = 9)
+  d=21  m_L(r=3) = 10 (= |d/2| = 10)   m_U(r=3) = 20 (= d-1 = 20)
+  d=25  m_L(r=3) = 12 (= |d/2| = 12)   m_U(r=3) = 24 (= d-1 = 24)
+  d=46  m_L(r=3) = 23 (= |d/2| = 23)   m_U(r=3) = 45 (= d-1 = 45)
+  So 'k >= 2 hence m <= d/2' is a LINEAR-tower count; in the
+  unitary tower m = d-1 at r = 3 and the sharpening is false.
+
+DONE2

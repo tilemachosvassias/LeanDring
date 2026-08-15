@@ -1,0 +1,22 @@
+# Lake build tree and package cache
+/.lake
+/build
+*.olean
+*.ilean
+*.trace
+*.hash
+
+# Build logs (note: NOT a blanket *.log — verification/ keeps captured
+# GAP output as tracked provenance, including one .log file)
+/build.log
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Python helpers in scripts/ and verification/
+__pycache__/
+*.pyc

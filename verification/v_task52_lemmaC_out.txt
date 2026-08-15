@@ -1,0 +1,99 @@
+========================================================================
+PART 1 -- degrees, and the two structural bounds (T1), (T2)
+========================================================================
+  (T1)  |G| >= q^D/(12 d)   <=>   prod(terms) >= q^(D-N)/12
+  (T2)  iotabar <= 4 q^mu
+  Both ratios are monotone increasing (T1) / decreasing (T2) in q,
+  so q = 2 is the extremal case; q = 2,3,4,5 are all checked.
+
+  family n         D     mu e=2D-3mu   3mu/2D                  
+  A1     -         3      1      3       0.5000  e>0 OK
+  A      n         8      2     10       0.3750  e>0 OK
+  2A     n         8      3      7       0.5625  e>0 OK
+  C      n        10      3     11       0.4500  e>0 OK
+  B      n        21      5     27       0.3571  e>0 OK
+  D      n        28      6     38       0.3214  e>0 OK
+  2D     n        28      6     38       0.3214  e>0 OK
+  G2     -        14      5     13       0.5357  e>0 OK
+  3D4    -        28      9     29       0.4821  e>0 OK
+  F4     -        52     15     59       0.4327  e>0 OK
+  E6     -        78     16    108       0.3077  e>0 OK
+  2E6    -        78     16    108       0.3077  e>0 OK
+  E7     -       133     27    185       0.3045  e>0 OK
+  E8     -       248     57    325       0.3448  e>0 OK
+  2B2    -         5      2      4       0.6000  e>0 OK
+  2G2    -         7      3      5       0.6429  e>0 OK
+  2F4    -        26     10     22       0.5769  e>0 OK
+
+  (T1)/(T2) violations: 0
+  worst asymptotic ratio 3mu/2D = 9/14 = 0.6429  (Ree, alpha=7/3)
+
+========================================================================
+PART 2 -- Lie type: the finite window where (*) fails, checked
+========================================================================
+  A1   window  30 groups; tightest: L2(9)(0.790), L2(5)(0.783), L2(4)(0.652)
+  A    window   3 groups; tightest: L3(2)(0.460), L3(4)(0.340), L3(3)(0.082)
+  2A   window   6 groups; tightest: U3(5)(0.301), U3(8)(0.296), U3(3)(0.169)
+  C    window   1 groups; tightest: S4(3)(0.183)
+  2B2  window   2 groups; tightest: Sz(8)(0.206), Sz(32)(0.050)
+
+  total groups in the (*)-window: 42
+  Lemma C failures in the window: 0
+  tightest window ratio |Out|*iota / |G|^(2/3) = 0.790 at L2(9)
+
+========================================================================
+PART 3 -- alternating groups
+========================================================================
+  A5..A60 checked exactly, failures: 0, tightest A6 ratio 0.790
+  induction base  m=9:  27*(9!/2)^2 = 888852787200  >  9^9 = 387420489  : True
+  induction step  m>=9: R(m+1)/R(m) = (m+1)^2 (m/(m+1))^9
+                        >= (m+1)^2 * (9/10)^9 > 1  since
+                        100 * 387420489 > 1000000000 : True
+  hence (2*C(m,3))^3 <= (m!/2)^2 for all m >= 9;
+  m = 5,6,7,8 are in the exact table above.
+
+========================================================================
+PART 4 -- sporadic groups (exact iota, v_task39 / v_task50)
+========================================================================
+  27 groups (26 sporadics + Tits) checked exactly, failures: 0
+  tightest: J1 at ratio 0.333
+
+========================================================================
+PART 5 -- (G2): the residual branches (E1), (E2), (E3)
+========================================================================
+  (E1) generic sub-branch  (km != p^j):  q <= 2c(k+1) with
+       c <= 2 f1 <= 2 log2(2q+2),  k <= 4(q+1)/q1,
+       q1^3 >= q(q^2-1)/(2c)  ==>  finite window in q.
+       the window inequality q <= 2c(k+1) fails for every q > 600
+       ==> (E1) generic sub-branch has no solution with q > 600,
+           and q <= 600 is inside the full census q <= 10^6.  OK
+
+  (E1) exceptional sub-branch q1 = q +- 1, solved exactly:
+       integer solutions of c*|L2(q+-1)| = |L2(q)| with c >= 2:
+         q=8 q1=7 c=3
+       (q1 = q+1 is impossible: c*d*(q+2) = d1*(q-1) needs
+        c*d >= 2 hence 2(q+2) <= 2(q-1) -- false;
+        q1 = q-1 gives c*d*(q-2) = d1*(q+1), i.e. c*d <= 3 for
+        q >= 8, and the only prime-power solution is
+        q=8, q1=7, c=3, killed by c | |Out(L2(7))| = 2.)
+
+  (E2) l = 2:  c*|L2(q1)|^2 = |L2(q)|, c | 2(d1 f1)^2,
+       floor 2*d1*f1*(q1+1) >= q+1  and  |L2(q1)|^2 <= |L2(q)|:
+       the floor 4 f1 (q1+1) >= q+1 fails for every q > 839
+       ==> (E2) has no solution with q > 839 (inside the census).
+
+  (E3) alternating socle A_m^l, l <= 2:
+       Lemma K: 2-part of |L2(q)| <= q+1, and 2-part of |A_m|^l
+       is 2^(l(v2(m!)-1)) >= 2^(m - log2(m+1) - 1);
+       floor: l*2*C(m,3) >= q+1  (l <= 2, |Out(A_m)| <= 4).
+       2^(v2(m!)-1) <= 2*|Out(A_m)|*iota(A_m) fails for all m > 15
+       ==> m <= 15; that range is exhausted by the v_task51 scan
+           (m <= 47), which found 0 hits.
+
+  (E4) sporadic socle: 27 groups x l in {1,2} x c | 2^l l!,
+       each (S1,l,c) determines |L2(q)| hence q -- a complete
+       finite list, scanned in v_task51 with 0 hits.
+
+========================================================================
+TOTAL violations: 0
+========================================================================

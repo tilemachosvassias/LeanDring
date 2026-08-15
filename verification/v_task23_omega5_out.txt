@@ -1,0 +1,8 @@
+Omega(5,5) degree 781 size 4680000
+  perfect classes: 13
+  PSN |U|=60  irred5=false  dim(fixed space)=1  A5
+  PSN |U|=60  irred5=true  dim(fixed space)=0  A5
+  PSN |U|=360  irred5=true  dim(fixed space)=0  A6
+  PSN |U|=960  irred5=true  dim(fixed space)=0  (C2 x C2 x C2 x C2) : A5
+  PSN |U|=4680000  irred5=true  dim(fixed space)=0  O(5,5)
+Omega(5,7) degree 2801 size 138297600

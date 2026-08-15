@@ -1,0 +1,129 @@
+============================================================
+PART A -- orders against the formulas
+============================================================
+  PSp_{2n}(q) order-formula matches : 8  mismatches 0
+  Omega^e_{2n}(q) (up to the centre) matches : 16  mismatches 0
+  Omega_{2n+1}(q) matches |C_n(q)| formula : 6  mismatches 
+0     <-- |B_n(q)| = |C_n(q)|
+
+============================================================
+PART B -- the iota witnesses  Z(U_P),  N_S(Z(U_P)) = P
+============================================================
+  target        deg  |Syl_p| |O_p(P)| ab? |Z(U_P)| N_S(Z)=P ind*(Z) ind*(O_p(P\
+)) ind*(Z(Syl))
+  Sp6(2)   deg=63 |Syl_p|=512 |O_p(P)|=32 ab=true |Z(U_P)|=
+32 N_S(Z)=P:true ind*(Z(U_P))=63 ind*(O_p(P))=63 ind*(Z(Syl))=945
+  Sp6(3)   deg=364 |Syl_p|=19683 |O_p(P)|=243 ab=false |Z(U_P)|=
+3 N_S(Z)=P:true ind*(Z(U_P))=364 ind*(O_p(P))=364 ind*(Z(Syl))=364
+  Sp8(2)   deg=255 |Syl_p|=65536 |O_p(P)|=128 ab=true |Z(U_P)|=
+128 N_S(Z)=P:true ind*(Z(U_P))=255 ind*(O_p(P))=255 ind*(Z(Syl))=16065
+  Sp6(4)   deg=1365 |Syl_p|=262144 |O_p(P)|=1024 ab=true |Z(U_P)|=
+1024 N_S(Z)=P:true ind*(Z(U_P))=1365 ind*(O_p(P))=1365 ind*(Z(Syl))=116025
+  O7(3)    deg=364 |Syl_p|=19683 |O_p(P)|=243 ab=true |Z(U_P)|=
+243 N_S(Z)=P:true ind*(Z(U_P))=364 ind*(O_p(P))=364 ind*(Z(Syl))=3640
+  O8+(2)   deg=135 |Syl_p|=4096 |O_p(P)|=64 ab=true |Z(U_P)|=
+64 N_S(Z)=P:true ind*(Z(U_P))=135 ind*(O_p(P))=135 ind*(Z(Syl))=1575
+  O8-(2)   deg=119 |Syl_p|=4096 |O_p(P)|=64 ab=true |Z(U_P)|=
+64 N_S(Z)=P:true ind*(Z(U_P))=119 ind*(O_p(P))=119 ind*(Z(Syl))=1071
+  O10+(2)  deg=527 |Syl_p|=1048576 |O_p(P)|=256 ab=true |Z(U_P)|=
+256 N_S(Z)=P:true ind*(Z(U_P))=527 ind*(O_p(P))=527 ind*(Z(Syl))=23715
+  O10-(2)  deg=495 |Syl_p|=1048576 |O_p(P)|=256 ab=true |Z(U_P)|=
+256 N_S(Z)=P:true ind*(Z(U_P))=495 ind*(O_p(P))=495 ind*(Z(Syl))=19635
+  O9(3)    deg=3280 |Syl_p|=43046721 |O_p(P)|=2187 ab=true |Z(U_P)|=
+2187 N_S(Z)=P:true ind*(Z(U_P))=3280 ind*(O_p(P))=3280 ind*(Z(Syl))=298480
+
+  predicted parabolic indices:
+   C3(2) (q^{2n}-1)/(q-1) = 63   D3(2) = 35   2D3(2) = 27
+   C3(3) (q^{2n}-1)/(q-1) = 364   D3(3) = 130   2D3(3) = 112
+   C3(4) (q^{2n}-1)/(q-1) = 1365   D3(4) = 357   2D3(4) = 325
+   C3(5) (q^{2n}-1)/(q-1) = 3906   D3(5) = 806   2D3(5) = 756
+   C4(2) (q^{2n}-1)/(q-1) = 255   D4(2) = 135   2D4(2) = 119
+   C4(3) (q^{2n}-1)/(q-1) = 3280   D4(3) = 1120   2D4(3) = 1066
+   C4(4) (q^{2n}-1)/(q-1) = 21845   D4(4) = 5525   2D4(4) = 5397
+   C4(5) (q^{2n}-1)/(q-1) = 97656   D4(5) = 19656   2D4(5) = 19406
+   C5(2) (q^{2n}-1)/(q-1) = 1023   D5(2) = 527   2D5(2) = 495
+   C5(3) (q^{2n}-1)/(q-1) = 29524   D5(3) = 9922   2D5(3) = 9760
+   C5(4) (q^{2n}-1)/(q-1) = 349525   D5(4) = 87637   2D5(4) = 87125
+   C5(5) (q^{2n}-1)/(q-1) = 2441406   D5(5) = 488906   2D5(5) = 487656
+
+============================================================
+PART C -- minimal permutation degrees from stored Maxes
+============================================================
+  S6(2) : maximal-subgroup indices [ 28, 36, 63, 120, 135, 315, 336, 960 
+ ]   m(S) = 28
+  S6(3) : maximal-subgroup indices [ 364, 1120, 3640, 7371, 110565, 155520, 
+  189540, 408240 ]   m(S) = 364
+  S8(2) : maximal-subgroup indices [ 120, 136, 255, 2295, 5355, 5440, 11475, 
+  13056 ]   m(S) = 120
+  O7(3) : maximal-subgroup indices [ 351, 364, 378, 1080, 1080, 1120, 3159, 
+  3159 ]   m(S) = 351
+  O8+(2) : maximal-subgroup indices [ 120, 120, 120, 135, 135, 135, 960, 960 
+ ]   m(S) = 120
+  O8-(2) : maximal-subgroup indices [ 119, 136, 765, 1071, 1632, 24192, 
+  45696, 1175040 ]   m(S) = 119
+  S6(4) : table present, NO stored Maxes
+  O10+(2) : table present, NO stored Maxes
+  O10-(2) : table present, NO stored Maxes
+  U4(2) : maximal-subgroup indices [ 27, 36, 40, 40, 45 ]   m(S) = 27
+  S4(4) : maximal-subgroup indices [ 85, 85, 120, 120, 136, 136, 1360 
+ ]   m(S) = 85
+
+============================================================
+PART D -- the same-ratio / order-identity hunt
+============================================================
+  (D1)  |B_n(q)| = |C_n(q)| for q odd -- the PARKED pair:
+        both are q^{n^2} prod_{i<=n}(q^{2i}-1)/2 -- identical polynomials, c =\
+ 1 exactly.
+  (D2)  |SO_{2n+1}(q)| = |Sp_{2n}(q)| (classical, c = 1):
+        n=3 q=3 |SO| = 9170703360 |Sp| = 9170703360 equal: true
+        n=3 q=5 |SO| = 457002000000000 |Sp| = 457002000000000 equal: true
+        n=4 q=3 |SO| = 131569513308979200 |Sp| = 131569513308979200
+  equal: true
+        n=4 q=5 |SO| = 13946558535000000000000000 |Sp| = 
+13946558535000000000000000 equal: true
+  (D3)  the a/N = 2+1/(n-1) block: |D_n(q)| / |C_{n-1}(q)| (equal q-degree 2n^\
+2-n):
+        n=4 q=2 c = 120.   (2D: 136.)
+        n=4 q=3 c = 1080.   (2D: 2214.)
+        n=4 q=4 c = 16320.   (2D: 16448.)
+        n=4 q=5 c = 39000.   (2D: 78250.)
+        n=4 q=7 c = 411600.   (2D: 823886.)
+        n=4 q=8 c = 2096640.   (2D: 2097664.)
+        n=4 q=9 c = 2391120.   (2D: 4783698.)
+        n=5 q=2 c = 496.   (2D: 528.)
+        n=5 q=3 c = 19602.   (2D: 9882.)
+        n=5 q=4 c = 261888.   (2D: 262400.)
+        n=5 q=5 c = 976250.   (2D: 1953750.)
+        n=5 q=7 c = 40351206.   (2D: 20178004.)
+        n=5 q=8 c = 134213632.   (2D: 134221824.)
+        n=5 q=9 c = 193706964.   (2D: 387427050.)
+        n=6 q=2 c = 2016.   (2D: 2080.)
+        n=6 q=3 c = 88452.   (2D: 177390.)
+        n=6 q=4 c = 4193280.   (2D: 4195328.)
+        n=6 q=5 c = 24412500.   (2D: 48831250.)
+        n=6 q=7 c = 988654968.   (2D: 1977343550.)
+        n=6 q=8 c = 8589901824.   (2D: 8589967360.)
+        n=6 q=9 c = 15690500280.   (2D: 31381118658.)
+  (D4)  |2D_n(q)| / |D_n(q)| :
+        n=4 q=2 = 1.133333333333333
+        n=4 q=3 = 2.05
+        n=4 q=4 = 1.007843137254902
+        n=4 q=5 = 2.006410256410256
+        n=5 q=2 = 1.064516129032258
+        n=5 q=3 = 0.5041322314049587
+        n=5 q=4 = 1.001955034213099
+        n=5 q=5 = 2.001280409731114
+
+============================================================
+PART E -- |Out| spot checks
+============================================================
+  S6(2) ExtensionInfo [ "2", "" ]
+  O7(3) ExtensionInfo [ "6", "2" ]
+  O8+(2) ExtensionInfo [ "2^2", "3.2" ]
+  O8-(2) ExtensionInfo [ "", "2" ]
+  S6(3) ExtensionInfo [ "2", "2" ]
+  S8(2) ExtensionInfo [ "", "" ]
+  |Out(POmega^+_8(q))| = gcd(4,q^4-1)*f*6  (S_3 triality x diagonal)
+  |Out(POmega^+_8(2))| = 1*1*6 = 6  [LIT: ATLAS]
+
+DONE

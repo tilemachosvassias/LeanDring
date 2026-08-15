@@ -1,0 +1,9 @@
+squeeze:  (t^2-37)^2 < D(t) < (t^2-36)^2  for t >= 83 ?
+   counterexamples in 83..10^5: [] (none = squeeze holds)
+   [(t^2-36)^2 - D(t) = 144t+1584 > 0;  D(t) - (t^2-37)^2 = 2t^2-144t-1657 > 0 iff t >= 83]
+
+finite check t = 1..82:
+   D(t) a perfect square at t = []
+   integer (t,n) solutions: []
+
+direct scan n = 4..2*10^6 with 4*C(n,3)-3 a perfect square: []

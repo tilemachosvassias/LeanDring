@@ -1,0 +1,9 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+RESULT O q=17 idx=12 sizeM=1451520 index=1 zInD=false isG2order=false rounds=6

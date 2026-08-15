@@ -1,0 +1,54 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 112423 points.
+#I  Have 188041 points.
+#I  Have 235473 points.
+#I  Have 264441 points.
+#I  Have 280736 points.
+#I  Have 288064 points.
+#I  Have 291044 points.
+#I  Have 291901 points.
+#I  Have 292028 points.
+#I  Have 80713 points.
+#I  Have 144235 points.
+#I  Have 192284 points.
+#I  Have 227582 points.
+#I  Have 251818 points.
+#I  Have 267151 points.
+#I  Have 275497 points.
+#I  Have 279039 points.
+#I  Have 279828 points.
+#I  Have 70794 points.
+#I  Have 110893 points.
+#I  Have 129029 points.
+#I  Have 133933 points.
+#I  Have 112423 points.
+#I  Have 188041 points.
+#I  Have 235473 points.
+#I  Have 264441 points.
+#I  Have 280736 points.
+#I  Have 288064 points.
+#I  Have 291044 points.
+#I  Have 291901 points.
+#I  Have 292028 points.
+#I  Have 80830 points.
+#I  Have 144127 points.
+#I  Have 192407 points.
+#I  Have 227614 points.
+#I  Have 251831 points.
+#I  Have 267076 points.
+#I  Have 275442 points.
+#I  Have 279047 points.
+#I  Have 279826 points.
+#I  Have 70533 points.
+#I  Have 110762 points.
+#I  Have 128870 points.
+#I  Have 133894 points.
+RESULT O q=23 idx=9 sizeM=266152121213607383040 index=
+2 zInD=false isG2order=false rounds=1

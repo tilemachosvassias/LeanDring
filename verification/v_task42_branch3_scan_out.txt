@@ -1,0 +1,72 @@
+=== NUMODE=mu (nu >= mu, Lemma TR-4 only), q<=20000, n<=10^7 ===
+# v_task42 sweep 2: branch (III), families q <= 20000, n <= 10000000
+(n, S) pairs examined            : 104507
+pairs passing the ORDER cap      : 98423
+SURVIVORS of branch (III)        : 34700
+  grouped by socle factor (name : #n, n-range, n-range with n>70):
+    M11     :      1 values, n in 11..11;  n>70: -- none --
+    M12     :      8 values, n in 11..22;  n>70: -- none --
+    M22     :     19 values, n in 16..35;  n>70: -- none --
+    M23     :      7 values, n in 23..29;  n>70: -- none --
+    M24     :     26 values, n in 23..52;  n>70: -- none --
+    HS      :     32 values, n in 41..75;  n>70: 71..75 (2)
+    McL     :     67 values, n in 78..144;  n>70: 78..144 (67)
+    Co3     :    128 values, n in 79..210;  n>70: 79..210 (128)
+    Fi24'   :  34412 values, n in 8270..42681;  n>70: 8270..42681 (34412)
+
+ASYMPTOTIC CERTIFICATE (why q > QMAX needs no scan):
+  trigger  C(n,3) >= min(mu^2,|S|) >= mu^2 = iota1^2 (Lie type)
+      =>   n^3/6 >= iota1^2,  n >= (6*iota1^2)^(1/3).
+  ORDER    ell_min*log|S| <= log(n!/2) < n*log n, ell_min >= C(n,3)/(|Out|*iota1)
+      =>   n^2*log|S| < 6*|Out|*iota1*log n.
+  Combining, with |S| >= iota1^2 (verified for every family below) and
+  |Out| <= 4*log|S| (verified below):
+      (6*iota1^2)^(2/3) * 2*log iota1 < 24*log|S|*iota1*log n
+  which fails once iota1 exceeds an absolute constant; the table shows
+  the largest iota1 with a non-empty window per family.
+  L2: largest q with a non-empty window at n = n0 : None
+  L3: largest q with a non-empty window at n = n0 : 16
+  U3: largest q with a non-empty window at n = n0 : None
+  S4: largest q with a non-empty window at n = n0 : None
+  L4: largest q with a non-empty window at n = n0 : None
+  U4: largest q with a non-empty window at n = n0 : None
+  G2: largest q with a non-empty window at n = n0 : None
+  Sp6: largest q with a non-empty window at n = n0 : None
+  L5: largest q with a non-empty window at n = n0 : None
+  U5: largest q with a non-empty window at n = n0 : None
+
+  |S| >= iota1^2 and |Out| <= 4*log|S| checks:
+  violations of |S| >= iota1^2 : 0
+  violations of |Out| <= 4log|S|: 0
+
+=== NUMODE=iota (nu = iota1, i.e. assuming iota=mu for the sporadics too), q<=20000, n<=4*10^8 ===
+# v_task42 sweep 2: branch (III), families q <= 20000, n <= 400000000
+(n, S) pairs examined            : 10757
+pairs passing the ORDER cap      : 4
+SURVIVORS of branch (III)        : 0
+  -- none --
+
+ASYMPTOTIC CERTIFICATE (why q > QMAX needs no scan):
+  trigger  C(n,3) >= min(mu^2,|S|) >= mu^2 = iota1^2 (Lie type)
+      =>   n^3/6 >= iota1^2,  n >= (6*iota1^2)^(1/3).
+  ORDER    ell_min*log|S| <= log(n!/2) < n*log n, ell_min >= C(n,3)/(|Out|*iota1)
+      =>   n^2*log|S| < 6*|Out|*iota1*log n.
+  Combining, with |S| >= iota1^2 (verified for every family below) and
+  |Out| <= 4*log|S| (verified below):
+      (6*iota1^2)^(2/3) * 2*log iota1 < 24*log|S|*iota1*log n
+  which fails once iota1 exceeds an absolute constant; the table shows
+  the largest iota1 with a non-empty window per family.
+  L2: largest q with a non-empty window at n = n0 : None
+  L3: largest q with a non-empty window at n = n0 : 16
+  U3: largest q with a non-empty window at n = n0 : None
+  S4: largest q with a non-empty window at n = n0 : None
+  L4: largest q with a non-empty window at n = n0 : None
+  U4: largest q with a non-empty window at n = n0 : None
+  G2: largest q with a non-empty window at n = n0 : None
+  Sp6: largest q with a non-empty window at n = n0 : None
+  L5: largest q with a non-empty window at n = n0 : None
+  U5: largest q with a non-empty window at n = n0 : None
+
+  |S| >= iota1^2 and |Out| <= 4*log|S| checks:
+  violations of |S| >= iota1^2 : 0
+  violations of |Out| <= 4log|S|: 0

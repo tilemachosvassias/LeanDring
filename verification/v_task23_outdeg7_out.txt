@@ -1,0 +1,27 @@
+--- 2^3:L3(2) = AGL(3,2) (split) ---
+2^3:L3(2) split  |G|=1344  #faithful deg-7 orthogonal chars: 2
+   |Aut|=2688  |Out|=2
+   chi_5: moved by some generator of Aut = true
+   chi_7: moved by some generator of Aut = true
+--- perfect groups of order 1344 ---
+PerfectGroup(1344,1)  |G|=1344  #faithful deg-7 orthogonal chars: 2
+   |Aut|=2688  |Out|=2
+   chi_5: moved by some generator of Aut = true
+   chi_7: moved by some generator of Aut = true
+PerfectGroup(1344,2)  |G|=1344  #faithful deg-7 orthogonal chars: 2
+   |Aut|=2688  |Out|=2
+   chi_6: moved by some generator of Aut = true
+   chi_7: moved by some generator of Aut = true
+--- perfect groups of order 10752 ---
+PerfectGroup(10752,1)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,2)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,3)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,4)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,5)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,6)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,7)  |G|=10752  #faithful deg-7 orthogonal chars: 0
+PerfectGroup(10752,8)  |G|=10752  #faithful deg-7 orthogonal chars: 2
+   |Aut|=21504  |Out|=2
+   chi_7: moved by some generator of Aut = true
+   chi_8: moved by some generator of Aut = true
+PerfectGroup(10752,9)  |G|=10752  #faithful deg-7 orthogonal chars: 0

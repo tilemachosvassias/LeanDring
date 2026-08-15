@@ -1,0 +1,6 @@
+=== PSU(3,8) ===
+975
+built (matrix group), order=5515776 time=13
+988
+converted to perm group, degree=4161 time=1
+989

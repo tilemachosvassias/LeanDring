@@ -1,0 +1,33 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+== arithmetic behind the A_5 exclusion ==
+  f = 
+1  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 2  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+  f = 
+3  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 4  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+  f = 
+5  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 6  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+  f = 
+7  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 8  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+  f = 
+9  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 10  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+  f = 
+11  5 | 4^f-1 : false   5 | |L2(2^f)| = 2^f(4^f-1) : false   f even : false
+  f = 12  5 | 4^f-1 : true   5 | |L2(2^f)| = 2^f(4^f-1) : true   f even : true
+
+== strong census-triviality: proper nontrivial PERFECT subgroups ==
+q = 2^f, f odd prime (claimed strongly census-trivial):
+  L2(2^3) order 504 : proper nontrivial perfect subgroups = 0 [  ]
+  L2(2^5) order 32736 : proper nontrivial perfect subgroups = 0 [  ]
+  L2(2^7) order 2097024 : proper nontrivial perfect subgroups = 0 [  ]
+control, f = 2 (NOT claimed): L2(4) = A5 order 60 : 0 [  ]
+control, f = 4 (composite, NOT claimed): L2(16) order 4080 : 1 
+[ 60 ]  (expect A5's, since 5 | 4^4-1)
+control, f = 6: L2(64) order 262080 : 2 [ 60, 504 ]
+Error, reached the pre-set memory limit
+(change it with the -o command line option)

@@ -1,0 +1,56 @@
+# v_task53 --sub : the residual  c*|S_1| = |S|,  2 <= c | |Out(S_1)|
+#   (Step 3 has already reduced the socle to a SINGLE simple S_1,
+#    so this equation is the WHOLE residual problem.)
+#   The target q is SOLVED FOR from (S_1,c) -- so each row is
+#   COMPLETE IN q, i.e. it covers ALL q, not a q-range.
+
+  _iroot selftest (k = 3,5,7,8 up to the 10^200 scale): OK
+  positive controls:
+     solve_U3  (|U3(3)| = 6048) = [3]  OK
+     solve_U3  (|U3(5)| = 126000) = [5]  OK
+     solve_U3  (|U3(8)| = 5515776) = [8]  OK
+     solve_Sz  (|Sz(8)| = 29120) = [8]  OK
+     solve_Sz  (|Sz(32)| = 32537600) = [32]  OK
+     solve_Ree (|Ree(27)| = 10073444472) = [27]  OK
+     solve_Ree (|Ree(243)| = 49825657439340552) = [243]  OK
+
+  socle candidates enumerated: 281331  (Lie q1 <= 100000 rank <= 6,
+   all A_m with |A_m| <= 10^80, all 27 sporadics + Tits)
+
+  U3   : 574745 (S_1,c) pairs tested -> 0 hits 
+  Sz   : 574745 (S_1,c) pairs tested -> 0 hits 
+  Ree  : 574745 (S_1,c) pairs tested -> 0 hits 
+
+## NEGATIVE CONTROL / robustness.  The same scan with the
+## Fitting-free constraint  c | |Out(S_1)|  DROPPED and replaced by
+## the weak bound c <= 10^4: these are the pairs that the ORDER
+## arithmetic alone permits, i.e. what the c-constraint is buying.
+## (It also shows the order-inverters do fire when a solution
+##  exists -- an all-empty scan would otherwise be untestable.)
+## candidate set for the control: 7716 groups (Lie q1 <= 2000,
+## rank <= 5, all A_m, all sporadics), c <= 2000.
+  U3   : 16 order-only near-misses
+        U3(q=3) = 36 * |L3(2)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=5) = 750 * |L3(2)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=8) = 912 * |U3(3)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=4) = 1040 * |L2(4)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=4) = 1040 * |L2(5)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=3) = 36 * |L2(7)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=5) = 750 * |L2(7)|   [c | |Out| ? no , |Out| = 2]
+        U3(q=3) = 12 * |L2(8)|   [c | |Out| ? no , |Out| = 3]
+        U3(q=5) = 250 * |L2(8)|   [c | |Out| ? no , |Out| = 3]
+        U3(q=5) = 350 * |L2(9)|   [c | |Out| ? no , |Out| = 4]
+        U3(q=4) = 8 * |L2(25)|   [c | |Out| ? no , |Out| = 4]
+        U3(q=27) = 28 * |R(27)|   [c | |Out| ? no , |Out| = 3]
+        U3(q=243) = 244 * |R(243)|   [c | |Out| ? no , |Out| = 5]
+        U3(q=4) = 1040 * |A5|   [c | |Out| ? no , |Out| = 2]
+        U3(q=5) = 350 * |A6|   [c | |Out| ? no , |Out| = 4]
+        U3(q=5) = 50 * |A7|   [c | |Out| ? no , |Out| = 2]
+  Sz   : 0 order-only near-misses
+  Ree  : 0 order-only near-misses
+
+  NOTE on completeness: the equation determines q from (S_1,c), so
+  the only incompleteness is the range of S_1 (Lie q1 <= 100000,
+  rank <= 6).  Larger S_1 is excluded by |S_1| = |S|/c together
+  with Lemma R (--rank) for U3 and Ree; for Sz it is a scanned
+  bound only.  See the write-up, gap (G3).

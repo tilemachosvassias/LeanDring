@@ -1,0 +1,51 @@
+/-
+Copyright (c) 2026 Tilemachos Vassias. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Tilemachos Vassias (formalization assisted by Claude)
+-/
+import LeanDring.P5.Certificate.SpeciesTable.Twin1.ColCert
+import LeanDring.P5.Data.EntryK.C010
+
+/-!
+# Species-table cell data, stage 2 — twin-coincident columns (heavy tier)
+
+Per-column certified exponent-vector data (`ColCert`/`ColCertDiv`) with kernel
+`decide` bindings. Emitted; the embedded lists are what the kernel certifies.
+rest tier, chunk 42: 2 columns.
+-/
+
+-- machine-emitted data: silence style linters (generated long lines, file-level options)
+set_option linter.style.longLine false
+
+namespace LeanDring.P5Presentation
+
+-- machine-emitted certificate: file-level heartbeat raise is intentional
+set_option linter.style.setOption false
+set_option maxHeartbeats 4000000
+set_option maxRecDepth 100000
+
+def colCert_9_9_3 : ColCert where
+  rK := ⟨9, by decide⟩
+  rH := ⟨9, by decide⟩
+  m := 125
+  T1 := T9_9
+  T2 := Q2.T9_9_2
+  h1 := (0,0,3,0,2)
+  h2 := (0,0,3,0,2)
+  D := [[3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3], [3]]
+  bind1 := by decide
+  bind2 := by decide
+
+def colCert_9_9_4 : ColCert where
+  rK := ⟨9, by decide⟩
+  rH := ⟨9, by decide⟩
+  m := 125
+  T1 := T9_9
+  T2 := Q2.T9_9_2
+  h1 := (0,0,4,0,1)
+  h2 := (0,0,4,0,1)
+  D := [[4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4], [4]]
+  bind1 := by decide
+  bind2 := by decide
+
+end LeanDring.P5Presentation

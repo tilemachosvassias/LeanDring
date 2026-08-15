@@ -1,0 +1,69 @@
+### PART A -- exact ind* spectrum of L_2(q), all subgroups
+# q | |S| | iota(S) | q+1 | iota_2 | first 6 values of I(S)
+4 | 60 | 5 | 5 | 6 | [ 5, 6, 10, 15, 20, 30 ] | iota=q+1? true
+5 | 60 | 5 | 6 | 6 | [ 5, 6, 10, 15, 20, 30 ] | iota=q+1? false
+7 | 168 | 7 | 8 | 8 | [ 7, 8, 21, 28, 42, 56 ] | iota=q+1? false
+8 | 504 | 9 | 9 | 28 | [ 9, 28, 36, 63, 72, 252 ] | iota=q+1? true
+9 | 360 | 10 | 10 | 15 | [ 10, 15, 20, 36, 45, 60 ] | iota=q+1? true
+11 | 660 | 12 | 12 | 55 | [ 12, 55, 66, 132, 165, 220 ] | iota=q+1? true
+13 | 1092 | 14 | 14 | 78 | [ 14, 78, 91, 182, 273, 364 ] | iota=q+1? true
+16 | 4080 | 17 | 17 | 85 | [ 17, 85, 120, 136, 255, 272 ] | iota=q+1? true
+17 | 2448 | 18 | 18 | 102 | [ 18, 102, 136, 153, 306, 408 ] | iota=q+1? true
+19 | 3420 | 20 | 20 | 171 | [ 20, 171, 190, 285, 380, 855 ] | iota=q+1? true
+23 | 6072 | 24 | 24 | 253 | [ 24, 253, 276, 552, 759, 1012 ] | iota=q+1? true
+25 | 7800 | 26 | 26 | 78 | [ 26, 78, 300, 325, 650, 975 ] | iota=q+1? true
+27 | 9828 | 28 | 28 | 351 | [ 28, 351, 364, 378, 756, 819 ] | iota=q+1? true
+29 | 12180 | 30 | 30 | 406 | [ 30, 406, 435, 870, 1015, 3045 
+ ] | iota=q+1? true
+31 | 14880 | 32 | 32 | 465 | [ 32, 465, 496, 620, 992, 1860 ] | iota=q+1? true
+32 | 32736 | 33 | 33 | 496 | [ 33, 496, 528, 1023, 1056, 16368 
+ ] | iota=q+1? true
+
+### PART B -- mult_1(L_2(q)) (perfect self-normalising classes)
+q = 4  mult_1 = 1  psn orders = [ 60 ]
+q = 5  mult_1 = 1  psn orders = [ 60 ]
+q = 7  mult_1 = 1  psn orders = [ 168 ]
+q = 8  mult_1 = 1  psn orders = [ 504 ]
+q = 9  mult_1 = 3  psn orders = [ 60, 60, 360 ]
+q = 11  mult_1 = 3  psn orders = [ 60, 60, 660 ]
+q = 13  mult_1 = 1  psn orders = [ 1092 ]
+q = 16  mult_1 = 2  psn orders = [ 60, 4080 ]
+q = 17  mult_1 = 1  psn orders = [ 2448 ]
+q = 19  mult_1 = 3  psn orders = [ 60, 60, 3420 ]
+q = 23  mult_1 = 1  psn orders = [ 6072 ]
+q = 25  mult_1 = 1  psn orders = [ 7800 ]
+q = 27  mult_1 = 1  psn orders = [ 9828 ]
+q = 29  mult_1 = 3  psn orders = [ 60, 60, 12180 ]
+q = 31  mult_1 = 3  psn orders = [ 60, 60, 14880 ]
+q = 32  mult_1 = 1  psn orders = [ 32736 ]
+q = 37  mult_1 = 1  psn orders = [ 25308 ]
+q = 41  mult_1 = 3  psn orders = [ 60, 60, 34440 ]
+q = 43  mult_1 = 1  psn orders = [ 39732 ]
+q = 49  mult_1 = 3  psn orders = [ 60, 60, 58800 ]
+q = 64  mult_1 = 3  psn orders = [ 60, 504, 262080 ]
+
+### PART C1 -- (K): largest prime power dividing |L_2(q)| vs q+1
+violations of (K) for 4 <= q <= 2000: [  ]
+
+### PART C2 -- (C3): |G| >= iota(G)^3/2 for simple G in reach
+# G | |G| | iota(G) | |G|/iota^3
+A5 | 60
+A6 | 360
+A7 | 2520
+A8 | 20160
+A9 | 181440
+L3(2) | 168
+L3(3) | 5616
+L3(4) | 20160
+U3(3) | 6048
+U4(2) | 25920
+M11 | 7920
+M12 | 95040
+M22 | 443520
+J1 | 175560
+J2 | 604800
+Sz(8) | 29120
+U3(4) | 62400
+S4(4) | 979200
+# (numeric C3 check is done in the python script from the tabulated
+#  iota values of v_task39 / v_task50; GAP only supplies the sizes.)

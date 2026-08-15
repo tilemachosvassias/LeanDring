@@ -1,0 +1,13 @@
+Read("gap/dring_sieve_standalone.g");
+Wr := function(s) local o; o:=OutputTextFile("/tmp/hunt128_run/gram.out", true);
+  SetPrintFormattingStatus(o,false); WriteLine(o,s); CloseStream(o); end;;
+a:=SmallGroup(128,1597);; b:=SmallGroup(128,1598);;
+Wr(Concatenation("exponent: 1597=", String(Exponent(a)), " 1598=", String(Exponent(b))));
+Wr("computing Gram SNF 1597 (this is the slow one) ...");
+g1 := TraceGramSNFD(a);;
+Wr(Concatenation("1597 GramSNF collected = ", String(Collected(g1))));
+Wr("computing Gram SNF 1598 ...");
+g2 := TraceGramSNFD(b);;
+Wr(Concatenation("1598 GramSNF collected = ", String(Collected(g2))));
+Wr(Concatenation("GRAM SNF EQUAL = ", String(g1=g2)));
+Wr("DONE"); QUIT;

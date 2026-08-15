@@ -1,0 +1,11 @@
+=== A10 ===
+A10: |A10|=1814400 nrClasses=24 involutions=5355
+
+=== twin#2 = S6 x A7 ===
+|T2|=1814400 (expect 1814400)
+ConjugacyClasses computed, time(ms)=197 nrClasses=99
+twin#2 (S6 x A7): nrClasses=99 involutions=8055
+
+=== VERDICT ===
+SEPARATED by nr classes: A10=24 vs twin#2=99
+=== DONE a10_tiebreak ===

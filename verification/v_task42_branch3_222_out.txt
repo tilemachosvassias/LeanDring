@@ -1,0 +1,445 @@
+# v_task42 sweep 1: branch (III) over admissible factorizations n=5..70, k<=4
+total factorizations           : 222
+excluded by BOTH (E1) and (E2) : 5
+excluded by (E1) only  [C(n,3) in P, Phi_lo > C(n,3)] : 0
+excluded by (E2) only  [Lemma TO-0 separation]        : 217
+LIVE in branch (III)           : 0
+
+--- (E2)-only rows (branch (III) not excludable by the floor; separated by TO-0) ---
+  n=  8 c=2    L2(7) * L2(5)
+        Phi_lo=36  C(n,3)=56  minP_ub=12
+  n=  8 c=2    L2(7) * L2(4)
+        Phi_lo=25  C(n,3)=56  minP_ub=10
+  n=  8 c=2    L3(2) * L2(5)
+        Phi_lo=36  C(n,3)=56  minP_ub=12
+  n=  8 c=2    L3(2) * L2(4)
+        Phi_lo=25  C(n,3)=56  minP_ub=10
+  n=  8 c=2    L3(2) * A5
+        Phi_lo=49  C(n,3)=56  minP_ub=10
+  n=  9 c=6    L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=84  minP_ub=12
+  n=  9 c=6    L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=84  minP_ub=10
+  n=  9 c=6    L2(8) * A5
+        Phi_lo=60  C(n,3)=84  minP_ub=10
+  n=  9 c=1    L2(8) * L2(9)
+        Phi_lo=81  C(n,3)=84  minP_ub=27
+  n=  9 c=1    L2(8) * A6
+        Phi_lo=81  C(n,3)=84  minP_ub=27
+  n= 10 c=1    L2(8) * L2(5)^2
+        Phi_lo=36  C(n,3)=120  minP_ub=24
+  n= 10 c=1    L2(8) * L2(4) * L2(5)
+        Phi_lo=25  C(n,3)=120  minP_ub=10
+  n= 10 c=1    L2(8) * L2(4)^2
+        Phi_lo=25  C(n,3)=120  minP_ub=20
+  n= 10 c=1    L2(8) * A5 * L2(5)
+        Phi_lo=36  C(n,3)=120  minP_ub=10
+  n= 10 c=1    L2(8) * A5 * L2(4)
+        Phi_lo=25  C(n,3)=120  minP_ub=10
+  n= 10 c=1    L2(8) * A5^2
+        Phi_lo=60  C(n,3)=120  minP_ub=20
+  n= 10 c=2    A7 * L2(9)
+        Phi_lo=100  C(n,3)=120  minP_ub=40
+  n= 11 c=1    L2(11) * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=165  minP_ub=12
+  n= 11 c=1    L2(11) * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=165  minP_ub=10
+  n= 11 c=1    L2(11) * L2(8) * A5
+        Phi_lo=60  C(n,3)=165  minP_ub=10
+  n= 11 c=1    M11 * A7
+        Phi_lo=121  C(n,3)=165  minP_ub=70
+  n= 12 c=12   L2(11) * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=220  minP_ub=12
+  n= 12 c=12   L2(11) * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=220  minP_ub=10
+  n= 12 c=12   L2(11) * L2(8) * A5
+        Phi_lo=60  C(n,3)=220  minP_ub=10
+  n= 12 c=2    L2(11) * L2(8) * L2(9)
+        Phi_lo=81  C(n,3)=220  minP_ub=24
+  n= 12 c=2    L2(11) * L2(8) * A6
+        Phi_lo=81  C(n,3)=220  minP_ub=24
+  n= 12 c=1    U3(3) * L2(11) * L2(5)
+        Phi_lo=36  C(n,3)=220  minP_ub=12
+  n= 12 c=1    U3(3) * L2(11) * L2(4)
+        Phi_lo=25  C(n,3)=220  minP_ub=10
+  n= 12 c=1    U3(3) * L2(11) * A5
+        Phi_lo=60  C(n,3)=220  minP_ub=10
+  n= 12 c=1    M11 * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=220  minP_ub=12
+  n= 12 c=1    M11 * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=220  minP_ub=10
+  n= 12 c=1    M11 * L2(8) * A5
+        Phi_lo=60  C(n,3)=220  minP_ub=10
+  n= 12 c=1    M12 * A7
+        Phi_lo=144  C(n,3)=220  minP_ub=70
+  n= 12 c=2    A9 * L2(11)
+        Phi_lo=144  C(n,3)=220  minP_ub=24
+  n= 13 c=1    M11 * L2(13) * L2(9)
+        Phi_lo=100  C(n,3)=286  minP_ub=28
+  n= 13 c=1    M11 * L2(13) * A6
+        Phi_lo=121  C(n,3)=286  minP_ub=28
+  n= 13 c=8    L2(27) * L2(11) * L2(5)
+        Phi_lo=36  C(n,3)=286  minP_ub=12
+  n= 13 c=8    L2(27) * L2(11) * L2(4)
+        Phi_lo=25  C(n,3)=286  minP_ub=10
+  n= 13 c=8    L2(27) * L2(11) * A5
+        Phi_lo=60  C(n,3)=286  minP_ub=10
+  n= 14 c=1    L2(13) * L2(11) * L2(9) * L2(7)
+        Phi_lo=64  C(n,3)=364  minP_ub=16
+  n= 14 c=1    L2(13) * L2(11) * L2(9) * L3(2)
+        Phi_lo=49  C(n,3)=364  minP_ub=14
+  n= 14 c=1    L2(13) * L2(11) * A6 * L2(7)
+        Phi_lo=64  C(n,3)=364  minP_ub=16
+  n= 14 c=1    L2(13) * L2(11) * A6 * L3(2)
+        Phi_lo=49  C(n,3)=364  minP_ub=14
+  n= 14 c=2    L2(13) * L2(11) * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=364  minP_ub=12
+  n= 14 c=2    L2(13) * L2(11) * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=364  minP_ub=10
+  n= 14 c=2    L2(13) * L2(11) * L2(8) * A5
+        Phi_lo=60  C(n,3)=364  minP_ub=10
+  n= 14 c=2    M11 * A7 * L2(13)
+        Phi_lo=121  C(n,3)=364  minP_ub=28
+  n= 14 c=3    L3(4) * L2(13) * L2(11)
+        Phi_lo=144  C(n,3)=364  minP_ub=24
+  n= 14 c=2    A11 * L2(13)
+        Phi_lo=196  C(n,3)=364  minP_ub=28
+  n= 15 c=1    A7 * L2(13) * L2(11) * L2(9)
+        Phi_lo=100  C(n,3)=455  minP_ub=24
+  n= 15 c=1    A7 * L2(13) * L2(11) * A6
+        Phi_lo=144  C(n,3)=455  minP_ub=24
+  n= 16 c=16   A7 * L2(13) * L2(11) * L2(9)
+        Phi_lo=100  C(n,3)=560  minP_ub=24
+  n= 16 c=16   A7 * L2(13) * L2(11) * A6
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=24   L2(25) * L2(11) * L2(8) * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=24   L2(25) * L2(11) * L2(8) * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=8    L2(25) * L2(11) * L2(8)^2
+        Phi_lo=81  C(n,3)=560  minP_ub=24
+  n= 16 c=2    L2(25) * U3(3) * L2(11) * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=2    L2(25) * U3(3) * L2(11) * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=8    M11 * A7 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=8    M11 * A7 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=8    M11 * A7 * L2(13) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=2    M11 * L2(25) * L2(8) * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=2    M11 * L2(25) * L2(8) * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=12   L3(4) * L2(13) * L2(11) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=12   L3(4) * L2(13) * L2(11) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=12   L3(4) * L2(13) * L2(11) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=2    L3(4) * L2(13) * L2(11) * L2(9)
+        Phi_lo=100  C(n,3)=560  minP_ub=24
+  n= 16 c=2    L3(4) * L2(13) * L2(11) * A6
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=1    L3(4) * M11 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=1    L3(4) * M11 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=1    L3(4) * M11 * L2(13) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=2    L4(2) * L2(13) * L2(11) * L2(9)
+        Phi_lo=100  C(n,3)=560  minP_ub=24
+  n= 16 c=2    L4(2) * L2(13) * L2(11) * A6
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=1    L4(2) * M11 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=1    L4(2) * M11 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=1    L4(2) * M11 * L2(13) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=2    A8 * L2(13) * L2(11) * L2(9)
+        Phi_lo=100  C(n,3)=560  minP_ub=24
+  n= 16 c=2    A8 * L2(13) * L2(11) * A6
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=1    A8 * M11 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=1    A8 * M11 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=1    A8 * M11 * L2(13) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=18   Sz(8) * L2(11) * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=18   Sz(8) * L2(11) * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=18   Sz(8) * L2(11) * L2(8) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=3    Sz(8) * L2(11) * L2(8) * L2(9)
+        Phi_lo=81  C(n,3)=560  minP_ub=24
+  n= 16 c=3    Sz(8) * L2(11) * L2(8) * A6
+        Phi_lo=81  C(n,3)=560  minP_ub=24
+  n= 16 c=4    L2(49) * M11 * L3(3)
+        Phi_lo=121  C(n,3)=560  minP_ub=26
+  n= 16 c=3    U3(4) * L2(11) * L2(8) * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=3    U3(4) * L2(11) * L2(8) * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=1    U3(4) * L2(11) * L2(8)^2
+        Phi_lo=81  C(n,3)=560  minP_ub=24
+  n= 16 c=3    A9 * Sz(8) * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=6    L2(64) * L2(11) * L2(7) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=6    L2(64) * L2(11) * L2(7) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=6    L2(64) * L2(11) * L2(7) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=6    L2(64) * L2(11) * L3(2) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=6    L2(64) * L2(11) * L3(2) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=6    L2(64) * L2(11) * L3(2) * A5
+        Phi_lo=49  C(n,3)=560  minP_ub=10
+  n= 16 c=1    L2(64) * L2(11) * L2(9) * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=1    L2(64) * L2(11) * L2(9) * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=1    L2(64) * L2(11) * A6 * L2(7)
+        Phi_lo=64  C(n,3)=560  minP_ub=16
+  n= 16 c=1    L2(64) * L2(11) * A6 * L3(2)
+        Phi_lo=49  C(n,3)=560  minP_ub=14
+  n= 16 c=2    L2(64) * L2(11) * L2(8) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=2    L2(64) * L2(11) * L2(8) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=2    L2(64) * L2(11) * L2(8) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=24   L2(64) * A7 * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=2    L2(64) * M11 * A7
+        Phi_lo=121  C(n,3)=560  minP_ub=70
+  n= 16 c=3    L2(64) * L3(4) * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=3    L2(64) * L4(2) * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=3    L2(64) * A8 * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=1    M22 * L2(13) * L2(9) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=1    M22 * L2(13) * L2(9) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=1    M22 * L2(13) * L2(9) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=1    M22 * L2(13) * A6 * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=1    M22 * L2(13) * A6 * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=1    M22 * L2(13) * A6 * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=6    M22 * L2(25) * L2(8)
+        Phi_lo=81  C(n,3)=560  minP_ub=27
+  n= 16 c=2    J2 * M11 * L2(13)
+        Phi_lo=121  C(n,3)=560  minP_ub=28
+  n= 16 c=8    A10 * L2(13) * L2(11)
+        Phi_lo=144  C(n,3)=560  minP_ub=24
+  n= 16 c=8    A11 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=8    A11 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=8    A11 * L2(13) * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 16 c=4    A14 * L2(5)
+        Phi_lo=36  C(n,3)=560  minP_ub=12
+  n= 16 c=4    A14 * L2(4)
+        Phi_lo=25  C(n,3)=560  minP_ub=10
+  n= 16 c=4    A14 * A5
+        Phi_lo=60  C(n,3)=560  minP_ub=10
+  n= 17 c=2    M11 * L2(16) * A7 * L2(13)
+        Phi_lo=121  C(n,3)=680  minP_ub=28
+  n= 17 c=3    L3(4) * L2(16) * L2(13) * L2(11)
+        Phi_lo=144  C(n,3)=680  minP_ub=24
+  n= 17 c=2    A11 * L2(16) * L2(13)
+        Phi_lo=196  C(n,3)=680  minP_ub=28
+  n= 17 c=1    A14 * L2(16)
+        Phi_lo=289  C(n,3)=680  minP_ub=68
+  n= 18 c=48   L2(27) * L2(16) * A7 * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=4    L2(27) * M11 * L2(16) * A7
+        Phi_lo=121  C(n,3)=816  minP_ub=68
+  n= 18 c=6    L3(4) * L2(27) * L2(16) * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=6    L4(2) * L2(27) * L2(16) * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=6    A8 * L2(27) * L2(16) * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=3    L2(64) * A7 * L2(17) * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=9    L2(64) * L2(16) * L2(11) * L2(8)
+        Phi_lo=81  C(n,3)=816  minP_ub=24
+  n= 18 c=3    M22 * L2(27) * L2(16) * L2(5)
+        Phi_lo=36  C(n,3)=816  minP_ub=12
+  n= 18 c=3    M22 * L2(27) * L2(16) * L2(4)
+        Phi_lo=25  C(n,3)=816  minP_ub=10
+  n= 18 c=3    M22 * L2(27) * L2(16) * A5
+        Phi_lo=60  C(n,3)=816  minP_ub=10
+  n= 18 c=3    S4(4) * L2(27) * L2(11) * L2(7)
+        Phi_lo=64  C(n,3)=816  minP_ub=16
+  n= 18 c=3    S4(4) * L2(27) * L2(11) * L3(2)
+        Phi_lo=49  C(n,3)=816  minP_ub=14
+  n= 18 c=1    S4(4) * L2(27) * L2(11) * L2(8)
+        Phi_lo=81  C(n,3)=816  minP_ub=24
+  n= 18 c=1    A10 * L2(17) * L2(13) * L2(11)
+        Phi_lo=144  C(n,3)=816  minP_ub=24
+  n= 18 c=1    A11 * L2(17) * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=816  minP_ub=12
+  n= 18 c=1    A11 * L2(17) * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=816  minP_ub=10
+  n= 18 c=1    A11 * L2(17) * L2(13) * A5
+        Phi_lo=60  C(n,3)=816  minP_ub=10
+  n= 18 c=4    A11 * L2(27) * L2(16)
+        Phi_lo=289  C(n,3)=816  minP_ub=68
+  n= 18 c=3    HS * L2(27) * L2(17)
+        Phi_lo=324  C(n,3)=816  minP_ub=36
+  n= 18 c=2    A15 * L2(17)
+        Phi_lo=324  C(n,3)=816  minP_ub=36
+  n= 19 c=24   J1 * L2(27) * L2(16) * L2(9)
+        Phi_lo=100  C(n,3)=969  minP_ub=40
+  n= 19 c=24   J1 * L2(27) * L2(16) * A6
+        Phi_lo=225  C(n,3)=969  minP_ub=40
+  n= 19 c=1    M22 * L2(27) * L2(16) * L2(19)
+        Phi_lo=289  C(n,3)=969  minP_ub=40
+  n= 19 c=2    L3(9) * J1 * L2(16)
+        Phi_lo=289  C(n,3)=969  minP_ub=68
+  n= 20 c=4    J1 * U3(5) * L3(3) * L2(17)
+        Phi_lo=169  C(n,3)=1140  minP_ub=26
+  n= 20 c=2    A9 * J1 * L2(25) * L2(17)
+        Phi_lo=324  C(n,3)=1140  minP_ub=36
+  n= 20 c=12   S4(4) * J1 * L2(27) * L2(5)
+        Phi_lo=36  C(n,3)=1140  minP_ub=12
+  n= 20 c=12   S4(4) * J1 * L2(27) * L2(4)
+        Phi_lo=25  C(n,3)=1140  minP_ub=10
+  n= 20 c=12   S4(4) * J1 * L2(27) * A5
+        Phi_lo=60  C(n,3)=1140  minP_ub=10
+  n= 20 c=2    S4(4) * J1 * L2(27) * L2(9)
+        Phi_lo=100  C(n,3)=1140  minP_ub=40
+  n= 20 c=2    S4(4) * J1 * L2(27) * A6
+        Phi_lo=225  C(n,3)=1140  minP_ub=40
+  n= 20 c=4    A11 * L2(16) * L2(19) * L2(13)
+        Phi_lo=196  C(n,3)=1140  minP_ub=28
+  n= 20 c=2    A14 * L2(16) * L2(19)
+        Phi_lo=289  C(n,3)=1140  minP_ub=40
+  n= 20 c=2    A17 * L2(19)
+        Phi_lo=400  C(n,3)=1140  minP_ub=40
+  n= 21 c=6    J2 * J1 * L2(27) * L2(16)
+        Phi_lo=289  C(n,3)=1330  minP_ub=68
+  n= 21 c=6    S4(4) * J1 * L2(27) * A7
+        Phi_lo=441  C(n,3)=1330  minP_ub=70
+  n= 21 c=2    A10 * J1 * L2(27) * L2(16)
+        Phi_lo=289  C(n,3)=1330  minP_ub=68
+  n= 21 c=1    J3 * L2(49) * M11 * L2(13)
+        Phi_lo=121  C(n,3)=1330  minP_ub=28
+  n= 22 c=4    A11 * J1 * L2(27) * L2(16)
+        Phi_lo=289  C(n,3)=1540  minP_ub=68
+  n= 22 c=3    HS * J1 * L2(27) * L2(17)
+        Phi_lo=324  C(n,3)=1540  minP_ub=36
+  n= 22 c=2    A15 * J1 * L2(17)
+        Phi_lo=324  C(n,3)=1540  minP_ub=36
+  n= 24 c=1    L3(9) * M23 * J1 * L2(16)
+        Phi_lo=289  C(n,3)=2024  minP_ub=68
+  n= 24 c=2    A21 * L2(23)
+        Phi_lo=576  C(n,3)=2024  minP_ub=48
+  n= 26 c=2    A23 * L2(25)
+        Phi_lo=676  C(n,3)=2600  minP_ub=104
+  n= 27 c=1    Co3 * L2(169) * J1 * S4(3)
+        Phi_lo=729  C(n,3)=2925  minP_ub=54
+  n= 27 c=1    Co3 * L2(169) * J1 * U4(2)
+        Phi_lo=729  C(n,3)=2925  minP_ub=54
+  n= 28 c=4    Co3 * L2(169) * A9 * J1
+        Phi_lo=1296  C(n,3)=3276  minP_ub=168
+  n= 28 c=3    A19 * U3(5) * L2(23) * L2(13)
+        Phi_lo=196  C(n,3)=3276  minP_ub=28
+  n= 28 c=3    A23 * L2(25) * L2(8)
+        Phi_lo=81  C(n,3)=3276  minP_ub=27
+  n= 28 c=2    A25 * L2(27)
+        Phi_lo=784  C(n,3)=3276  minP_ub=168
+  n= 30 c=2    A27 * L2(29)
+        Phi_lo=900  C(n,3)=4060  minP_ub=60
+  n= 32 c=2    A29 * L2(31)
+        Phi_lo=1024  C(n,3)=4960  minP_ub=64
+  n= 33 c=2    A27 * L2(32) * L2(29)
+        Phi_lo=900  C(n,3)=5456  minP_ub=60
+  n= 33 c=1    A30 * L2(32)
+        Phi_lo=1089  C(n,3)=5456  minP_ub=165
+  n= 38 c=2    A35 * L2(37)
+        Phi_lo=1444  C(n,3)=8436  minP_ub=76
+  n= 42 c=2    A39 * L2(41)
+        Phi_lo=1764  C(n,3)=11480  minP_ub=84
+  n= 44 c=2    A41 * L2(43)
+        Phi_lo=1936  C(n,3)=13244  minP_ub=88
+  n= 48 c=2    A45 * L2(47)
+        Phi_lo=2304  C(n,3)=17296  minP_ub=96
+  n= 50 c=2    A47 * L2(49)
+        Phi_lo=2500  C(n,3)=19600  minP_ub=200
+  n= 54 c=2    A51 * L2(53)
+        Phi_lo=2916  C(n,3)=24804  minP_ub=108
+  n= 57 c=2    A51 * J1 * L2(53)
+        Phi_lo=2916  C(n,3)=29260  minP_ub=108
+  n= 60 c=4    A51 * J1 * L2(59) * L2(53)
+        Phi_lo=2916  C(n,3)=34220  minP_ub=108
+  n= 60 c=2    A54 * J1 * L2(59)
+        Phi_lo=3600  C(n,3)=34220  minP_ub=120
+  n= 60 c=2    A57 * L2(59)
+        Phi_lo=3600  C(n,3)=34220  minP_ub=120
+  n= 60 c=1    A59 * L2(5)
+        Phi_lo=36  C(n,3)=34220  minP_ub=12
+  n= 60 c=1    A59 * L2(4)
+        Phi_lo=25  C(n,3)=34220  minP_ub=10
+  n= 60 c=1    A59 * A5
+        Phi_lo=60  C(n,3)=34220  minP_ub=10
+  n= 62 c=2    A59 * L2(61)
+        Phi_lo=3844  C(n,3)=37820  minP_ub=124
+  n= 65 c=16   A57 * L2(61) * L2(59) * L2(13)
+        Phi_lo=196  C(n,3)=43680  minP_ub=28
+  n= 65 c=8    A59 * L2(61) * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=43680  minP_ub=12
+  n= 65 c=8    A59 * L2(61) * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=43680  minP_ub=10
+  n= 65 c=8    A59 * L2(61) * L2(13) * A5
+        Phi_lo=60  C(n,3)=43680  minP_ub=10
+  n= 65 c=2    A59 * L2(64) * L2(61)
+        Phi_lo=3844  C(n,3)=43680  minP_ub=124
+  n= 65 c=8    A60 * L2(61) * L2(13)
+        Phi_lo=196  C(n,3)=43680  minP_ub=28
+  n= 65 c=1    A61 * L2(31) * L2(13)
+        Phi_lo=196  C(n,3)=43680  minP_ub=28
+  n= 65 c=4    A62 * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=43680  minP_ub=12
+  n= 65 c=4    A62 * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=43680  minP_ub=10
+  n= 65 c=4    A62 * L2(13) * A5
+        Phi_lo=60  C(n,3)=43680  minP_ub=10
+  n= 65 c=1    A62 * L2(64)
+        Phi_lo=4225  C(n,3)=43680  minP_ub=390
+  n= 66 c=4    A59 * L2(61) * M11 * L2(13)
+        Phi_lo=121  C(n,3)=45760  minP_ub=28
+  n= 66 c=2    A62 * M11 * L2(13)
+        Phi_lo=121  C(n,3)=45760  minP_ub=28
+  n= 68 c=4    A59 * L2(64) * L2(67) * L2(61)
+        Phi_lo=3844  C(n,3)=50116  minP_ub=124
+  n= 68 c=16   A60 * L2(67) * L2(61) * L2(13)
+        Phi_lo=196  C(n,3)=50116  minP_ub=28
+  n= 68 c=2    A61 * L2(67) * L2(31) * L2(13)
+        Phi_lo=196  C(n,3)=50116  minP_ub=28
+  n= 68 c=8    A62 * L2(67) * L2(13) * L2(5)
+        Phi_lo=36  C(n,3)=50116  minP_ub=12
+  n= 68 c=8    A62 * L2(67) * L2(13) * L2(4)
+        Phi_lo=25  C(n,3)=50116  minP_ub=10
+  n= 68 c=8    A62 * L2(67) * L2(13) * A5
+        Phi_lo=60  C(n,3)=50116  minP_ub=10
+  n= 68 c=2    A62 * L2(64) * L2(67)
+        Phi_lo=4225  C(n,3)=50116  minP_ub=136
+  n= 68 c=2    A65 * L2(67)
+        Phi_lo=4624  C(n,3)=50116  minP_ub=136
+
+--- LIVE rows (would need a genuine branch-(III) argument) ---
+  -- none: branch (III) is empty on all 222 --

@@ -1,0 +1,1820 @@
+/-
+Copyright (c) 2026 Tilemachos Vassias. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Tilemachos Vassias (formalization assisted by Claude)
+-/
+import LeanDring.Even.SpeciesRationality
+import LeanDring.Even.MullerIsolation
+import LeanDring.Even.SpeciesSeparation
+import LeanDring.Theory.OddOrder.OddOrder
+import LeanDring.Theory.DRing.FreeBasis
+import Mathlib.RingTheory.IntegralDomain
+
+/-!
+# Müller Satz 2.3.3: the conductor at a species
+
+**EVEN-ORDER LAYER.** Inside the root module's build closure and audit:
+no `sorry`, three standard axioms. The results here are verified
+*implications*; their hypotheses are named `Prop`s.
+
+`LeanDring/Even/SpeciesSurjectivity.lean` reduced the conductor dictionary to two
+named inputs, `EnoughSpecies` and `ConductorAtSpecies`. This file
+
+* **removes `EnoughSpecies` entirely** — the corpus already proves the
+  surjectivity of the species map, unconditionally, in
+  `LeanDring/Theory/OddOrder/OddOrder.lean`
+  (`OddOrder.everyComplexPointIsSpecies`); so
+  `conductorPairDictionary'` needs only `ConductorAtSpecies`;
+* **proves Satz 2.3.3 at the trivial pair**, unconditionally
+  (`conductorAtSpecies_trivial`);
+* **splits `ConductorAtSpecies` into Müller's own two halves** and proves
+  the split is exact (`conductorAtSpecies_of`): the *witness* half
+  (`SpeciesIsolatingWitness`, Müller's `(N_G(H,hH'): H') · e_{(H,hH')} =
+  ind^G_H((H: H')·e^{D(H)}_{(H,hH')}) ∈ D(G)`) and the *lower bound*
+  half (`SpeciesConductorLowerBound`, Müller's coefficient computation:
+  the coefficient of `[H,1]_G` in `e_{(H,hH')}` is `|H'|/|N_G(H,hH')|`);
+* proves the two structural lemmas about Müller's species formula that
+  the witness half consumes: the **vanishing lemma**
+  (`species_basisElt_eq_zero_of_not_subconj` — `φ_{K,k}[H,λ] = 0` unless
+  a conjugate of `K` lies in `H`, because the index set of fixed cosets
+  is then empty) and the **Fourier form** of the value of an integral
+  combination `∑_λ c_λ [H,λ]` (`species_sum_basisElt`);
+* proves the **arithmetic core** of the coefficient computation: the
+  `H`-fixed cosets `q` of `G/H` whose conjugate `s(q)⁻¹ h s(q)` stays in
+  `hH'` are exactly the cosets contained in `N_G(H, hH')`, so their
+  number times `|H|` is `|N_G(H, hH')|`
+  (`card_pairNormalizer_eq_mul`).
+
+The total-species functional and its consequences:
+
+* the **total-species functional** `∑_{h ∈ H} φ_{H,h}` and the theorem
+  that it takes values in `|H|·ℤ` on all of `D(G)`
+  (`exists_sum_species`): on a basis element `[K,λ]` each `H`-fixed coset
+  contributes a *character sum* `∑_{h∈H} λ(s(q)⁻¹ h s(q))` over `H`
+  (`conjHom` — conjugation is a homomorphism `H →* K`), hence `|H|` or
+  `0` (`sum_hom_units`);
+* the resulting **fusion bound** (`card_dvd_mul_fusionCount`): if `x`
+  isolates `φ_{H,h₀}` with value `n`, then
+  `|H| ∣ n · #{h ∈ H: φ_{H,h} = φ_{H,h₀}}`;
+* `species_eq_of_mul_inv_mem_commutator` (the species only depends on
+  `hH'`) and `dring_ringHom_ext` (ring homs agreeing on all `[K,λ]` are
+  equal), giving at `H = ⊤` the exact fusion class (`species_top_eq_iff`,
+  with `speciesPairSeparation` for the other inclusion);
+* whence **`SpeciesConductorLowerBound` at the top pair `(G, gG')`**,
+  unconditionally (`speciesConductorLowerBound_top`) — the counterpart at
+  the other end of the subgroup lattice of `conductorAtSpecies_trivial`.
+
+The fusion count and its consequences:
+
+* the **fusion count** (`card_fusionClass_mul_card_pairNormalizer`), by a
+  double count of the incidence relation `Fuses` (`g ∈ N_G(H)` carries
+  `h₀H'` to `hH'`): the fusion class of `h₀` is the `N_G(H)`-orbit of the
+  coset `h₀H'`, so
+  `#{h: φ_{H,h} = φ_{H,h₀}} · |N_G(H,h₀H')| = |N_G(H)| · |H'|`
+  (left fibres are cosets of `H'`, `card_fuses_left`; right fibres are
+  cosets of `N_G(H,h₀H')`, `card_fuses_right`, nonempty exactly on the
+  fusion class by `speciesPairSeparation`, `isEmpty_fuses`);
+* whence the unconditional sharpening
+  `|H|·|N_G(H,h₀H')| ∣ n·|H'|·|N_G(H)|` (`card_mul_card_pairNormalizer_dvd`)
+  and **`SpeciesConductorLowerBound` at every self-normalizing `H`**
+  (`speciesConductorLowerBound_of_selfNormalizing`), which contains
+  `speciesConductorLowerBound_top` as the case `H = ⊤`;
+* the **`λ`-twisted column sums** `twistedSum H λ = ∑_{h∈H} λ(h)⁻¹ φ_{H,h}`,
+  with the same integrality as the untwisted one — on `[K,μ]` the value is
+  `|H|` times the number of `H`-fixed cosets `q` with `μ ∘ conj_q = λ`
+  (`exists_twistedSum_basisElt`), hence `|H|·ℤ` on all of `D(G)`
+  (`exists_twistedSum`); on an isolating element
+  `n · ∑_{h ∈ fusion class} λ(h)⁻¹ ∈ |H|·ℤ` (`exists_twisted_fusion_sum`).
+  No cyclotomic ring is needed: the values are rational integers.
+  *These relations do not sharpen §8*: every `λ: H →* ℂˣ` kills `⁅H,H⁆`,
+  so the twisted fusion sum is `|H'|·∑_{orbit} λ(·)⁻¹`, and the resulting
+  family of divisibilities is generated by the untwisted one — the missing
+  factor `(N_G(H,h₀H'): H)` is invisible to the `H`-column of the species
+ table, twisted or not. It lives in the *inverse* table, i.e. in
+  `ind^G_H`.
+
+§10:
+
+* **the induction map `ind^G_H: D(H) →+ D(G)`** (`dringInd`), defined on
+  the `ℤ`-basis of `D(H)` (`basisOfCharPairClass`, i.e. conjugacy classes
+  of character pairs of `H`) by pushing the pair `(K, λ)` forward along
+  `H ↪ G` to `(K^G, λ^G)` (`indPair`, `indChar`); well defined because
+  `H`-conjugacy of pairs implies `G`-conjugacy of the pushed pairs
+  (`isConjPair_map`, `indPair_congr`);
+* its defining property `ind^G_H [K, λ] = [K^G, λ^G]`
+  (`dringInd_basisElt`), the Burnside compatibility
+  `ind^G_H [K, 1] = [K^G, 1]` (`dringInd_basisElt_one`, via
+  `indChar_one`), and Müller's species formula for an induced basis
+  element (`species_dringInd_basisElt`);
+* **subconjugacy vanishing along `ind^G_H`**
+  (`species_dringInd_eq_zero_of_not_subconj`): if no `G`-conjugate of `K`
+  lies in `H`, then `φ^G_{K,k}` annihilates the entire image of `ind^G_H`
+  — the vanishing half of Müller's witness argument, for the species
+  outside `H`.
+
+§11:
+
+* the **element-wise form of Müller's formula** (`sum_condWeight`):
+  `|M| · φ_{K,k}[M, λ] = ∑_{g ∈ G, K^g ≤ M} λ(g⁻¹ k g)` — the coset sum
+  traded for a sum over all of `G`, each fixed coset contributing its
+  `|M|` elements with the same weight (`condWeight`, `cosetSplit`,
+ `sum_cosetSplit`). This is what removes the two layers of
+  `Quotient.out` bookkeeping from the Mackey regrouping;
+* **the Mackey formula** (`species_dringInd_basisElt_mackey` on a basis
+  element, `species_dringInd` on all of `D(H)`):
+  `φ^G_{K,k}(ind^G_H y) = ∑_{q ∈ (G/H)^K} φ^H_{K^{s(q)}, k^{s(q)}}(y)`,
+  with `K^{s(q)} = indSub H K q ≤ H` the conjugated subgroup (the range
+  of `conjHom`) and `k^{s(q)} = indElt H K k q`;
+* its **specialization `K = H`** (`species_dringInd_self`), the
+  `N_G(H)/H`-average Müller's witness computation consumes:
+  `φ^G_{H,h}(ind^G_H y) = ∑_{q ∈ (G/H)^H} φ^H_{H, h^{s(q)}}(y)`
+  (conjugation by `s(q)` is an injective endomorphism of the finite
+  group `H`, hence an automorphism: `indSub_self_eq_top`; and the
+  `H`-fixed cosets of `G ⧸ H` are the cosets of `H` in `N_G(H)`).
+
+§12:
+
+* `IsolatingValue H h n` — the species-theoretic form of "`n·e_{(H,hH')}`
+  is integral": some `x ∈ D(G)` has `φ_{H,h}(x) = n` and `φ_{K,k}(x) = 0`
+ at every other species. It is the same as `Isolates` at any integer
+  point with complexification `φ_{H,h}` (`isolates_of_isolatingValue`,
+  `isolatingValue_of_isolates`), because every complex point is a species;
+* **the single remaining named `Prop`** `BoltjeIntegralityFor G`:
+ `IsolatingValue H h n ↔ |N_G(H,hH')| ∣ n·|H'|`, for every pair. Its `←`
+  half is Boltje's integrality congruence (and by
+  `IsolatingValue.mul_left` has content only at the single value
+  `n₀ = (N_G(H,hH'): H')`), its `→` half is Müller's
+  idempotent-coefficient lower bound; `boltjeIntegralityFor_of` proves
+  that this is exactly the conjunction of the two;
+* both of Müller's halves derived from it
+  (`speciesIsolatingWitness_of_boltje`,
+  `speciesConductorLowerBound_of_boltje`), hence **Satz 2.3.3 as a
+  theorem** `conductorAtSpecies_of_boltje`, hence the dictionary
+  `conductorPairDictionary_of_boltje` and the two-sided
+  `isIndexValue_iff_of_boltje: IsIndexValue G x ↔ IsIndStarValue G x`
+ (the statement `BCSeparation`/`ATSeparation` consume). The consumers
+  are upgraded in `LeanDring/Even/BoltjeAssembly.lean`.
+
+What is still *not* here: the proof of `BoltjeIntegrality` itself — the
+Möbius/Boltje integrality congruence for `ind^G_H` of the `ℚ`-idempotent
+multiple, and Müller's coefficient computation for the reverse
+divisibility. That single `Prop` is now the *only* unproven input of the
+whole conductor dictionary.
+
+No `sorry`, no custom axiom.
+-/
+
+set_option linter.unusedFintypeInType false
+
+namespace LeanDring
+
+namespace Even
+
+open MulAction Finset
+
+universe u
+
+variable {G : Type u} [Group G] [Fintype G]
+
+/-! ## 1. `EnoughSpecies` is not needed: the species map is onto -/
+
+section Surjectivity
+
+/-- **Every complex point of `D(G)` is a species** — unconditionally.
+This is `OddOrder.everyComplexPointIsSpecies` (kernel-checked in the
+corpus, and *not* restricted to odd order), so the hypothesis
+`EnoughSpecies` of `LeanDring/Even/SpeciesSurjectivity.lean` — which was going to
+be Brauer's permutation lemma — is redundant. -/
+theorem ringHom_eq_species (p : DRing G →+* ℂ) :
+    ∃ (H : Subgroup G) (m : H), p = DRing.species H m :=
+  OddOrder.everyComplexPointIsSpecies G p
+
+/-- The forward direction of the conductor dictionary, with
+`EnoughSpecies` discharged. -/
+theorem conductorPairDictionary_forward' (hC : ConductorAtSpecies G) (c : ℕ)
+    (hc : conductorMultiplicity (DRing G) c ≠ 0) :
+    ∃ (H : Subgroup G) (h : H), FullyFused H h ∧
+      c * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) := by
+  obtain ⟨⟨p, hp⟩⟩ := (Nat.card_ne_zero.mp hc).1
+  obtain ⟨H, h, hHh⟩ := ringHom_eq_species (complexify (DRing G) p)
+  exact ⟨H, h, fullyFused_of_intPoint' H h hHh, by rw [← hp]; exact hC H h p hHh⟩
+
+/-- **The conductor dictionary for `G`, now resting on a single input**:
+Müller's Satz 2.3.3 (`ConductorAtSpecies`). -/
+theorem conductorPairDictionary' (hC : ConductorAtSpecies G) (c : ℕ) :
+    conductorMultiplicity (DRing G) c ≠ 0 ↔
+      ∃ (H : Subgroup G) (h : H), FullyFused H h ∧
+        c * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) :=
+  ⟨conductorPairDictionary_forward' hC c,
+    fun ⟨H, h, hff, hidx⟩ => conductorPairDictionary_backward hC c H h hff hidx⟩
+
+end Surjectivity
+
+/-! ## 2. Satz 2.3.3 at the trivial pair -/
+
+section TrivialPair
+
+omit [Fintype G] in
+/-- An integer point is determined by its complexification. -/
+theorem intPoint_ext {p q : DRing G →+* ℤ}
+    (h : complexify (DRing G) p = complexify (DRing G) q) : p = q := by
+  refine RingHom.ext fun x => ?_
+  have h1 := DFunLike.congr_fun h x
+  simp only [complexify, RingHom.coe_comp, Function.comp_apply, eq_intCast] at h1
+  exact_mod_cast h1
+
+/-- **Satz 2.3.3 at the trivial pair `(1, 1)`, unconditionally**:
+the conductor of the trivial point is `|G| = |N_G(1, 1)| / |⁅1,1⁆|`. -/
+theorem conductorAtSpecies_trivial (p : DRing G →+* ℤ)
+    (hp : complexify (DRing G) p = DRing.species (⊥ : Subgroup G) 1) :
+    conductor (DRing G) p * Nat.card ↥⁅(⊥ : Subgroup G), (⊥ : Subgroup G)⁆ =
+      Nat.card (pairNormalizer (⊥ : Subgroup G) 1) := by
+  have hpt : p = trivialPoint G :=
+    intPoint_ext (by rw [hp, complexify_trivialPoint])
+  subst hpt
+  rw [conductor_trivialPoint, pairNormalizer_bot, Subgroup.commutator_bot_left]
+  simp
+
+end TrivialPair
+
+/-! ## 3. Müller's species formula: vanishing and the Fourier form -/
+
+section Formula
+
+open DRing MonGSet
+
+/-- Canonical (noncomputable) `Fintype` on the `K`-fixed cosets of `G ⧸ H`,
+so that the species sums below elaborate with one fixed instance. -/
+noncomputable instance instFintypeFixedQuot (K H : Subgroup G) :
+    Fintype (fixedPoints ↥K (G ⧸ H)) :=
+  Fintype.ofFinite _
+
+/-- The fixed cosets of `G ⧸ H` under a subgroup `K` — the index set of
+Müller's formula for `φ_{K,k}[H, λ]`. -/
+abbrev FixCosetOf (K H : Subgroup G) : Type u := fixedPoints ↥K (G ⧸ H)
+
+/-- The conjugated representative `s(q)⁻¹ · k · s(q) ∈ H` attached to a
+`K`-fixed coset of `G ⧸ H`. -/
+noncomputable def conjRepOf (H K : Subgroup G) (k : K) (q : FixCosetOf K H) : H :=
+  ⟨q.1.out⁻¹ * k * q.1.out, MonGSet.sectionConj_mem H K k q.1 (q.2 k)⟩
+
+/-- **Müller's species formula**, in the shape used below:
+`φ_{K,k}[H, λ] = ∑_{q ∈ (G/H)^K} λ(s(q)⁻¹ · k · s(q))`. -/
+theorem species_basisElt_gen (H K : Subgroup G) (l : H →* ℂˣ) (k : K) :
+    DRing.species K k (DRing.basisElt H l) =
+      ∑ q : FixCosetOf K H, ((l (conjRepOf H K k q) : ℂˣ) : ℂ) := by
+  rw [DRing.species_basisElt]
+  exact Fintype.sum_equiv (Equiv.refl _) _ _ fun _ => rfl
+
+/-- **The vanishing lemma.** If no `G`-conjugate of `K` lies inside `H`,
+then every basis element `[H, λ]` is killed by the species `φ_{K,k}`:
+the index set of Müller's formula — the `K`-fixed cosets of `G ⧸ H` — is
+empty. -/
+theorem species_basisElt_eq_zero_of_not_subconj (H K : Subgroup G) (l : H →* ℂˣ)
+    (k : K) (hsub : ∀ g : G, ∃ u : K, g⁻¹ * (u : G) * g ∉ H) :
+    DRing.species K k (DRing.basisElt H l) = 0 := by
+  rw [species_basisElt_gen]
+  haveI : IsEmpty (FixCosetOf K H) := by
+    refine ⟨fun q => ?_⟩
+    obtain ⟨u, hu⟩ := hsub q.1.out
+    exact hu (MonGSet.sectionConj_mem H K u q.1 (q.2 u))
+  simp
+
+/-- Contrapositive: a nonvanishing species value on `[H, λ]` forces `K`
+to be subconjugate to `H`. -/
+theorem exists_conj_le_of_species_basisElt_ne_zero (H K : Subgroup G)
+    (l : H →* ℂˣ) (k : K) (hne : DRing.species K k (DRing.basisElt H l) ≠ 0) :
+    ∃ g : G, ∀ u : K, g⁻¹ * (u : G) * g ∈ H := by
+  by_contra hcon
+  refine hne (species_basisElt_eq_zero_of_not_subconj H K l k fun g => ?_)
+  by_contra hg
+  exact hcon ⟨g, fun u => by
+    by_contra hu
+    exact hg ⟨u, hu⟩⟩
+
+/-- **The Fourier form**: the species value of an integral combination
+`∑_λ c_λ [H, λ]` of the basis elements at `H` is the sum, over the
+`K`-fixed cosets, of the "Fourier transform" `ĉ(u) = ∑_λ c_λ λ(u)`
+evaluated at the conjugated representative. This is the inner sum of
+Müller's formula (2.8). -/
+theorem species_sum_basisElt (H K : Subgroup G) (k : K)
+    [Fintype (H →* ℂˣ)] (c : (H →* ℂˣ) → ℤ) :
+    DRing.species K k (∑ l : H →* ℂˣ, c l • DRing.basisElt H l) =
+      ∑ q : FixCosetOf K H, ∑ l : H →* ℂˣ,
+        (c l : ℂ) * ((l (conjRepOf H K k q) : ℂˣ) : ℂ) := by
+  rw [map_sum, Finset.sum_comm]
+  refine Finset.sum_congr rfl fun l _ => ?_
+  rw [map_zsmul, species_basisElt_gen, zsmul_eq_mul, Finset.mul_sum]
+
+end Formula
+
+/-! ## 4. The arithmetic core: counting the good fixed cosets -/
+
+section Counting
+
+variable (H : Subgroup G) (h : H)
+
+/-- A `H`-fixed coset of `G ⧸ H` is **good** for `h` when the conjugated
+representative stays in the coset `h⁅H,H⁆` — the condition selected by
+the character orthogonality in Müller's (2.8). -/
+def IsGoodCoset (q : FixCosetOf H H) : Prop :=
+  ((conjRepOf H H h q : G)) * (h : G)⁻¹ ∈ ⁅H, H⁆
+
+/-- **The good cosets are exactly the cosets lying inside `N_G(H, hH')`.**
+This is the group-theoretic content of Müller's coefficient computation:
+after the character orthogonality has collapsed the inner sum of (2.8) to
+the indicator of `hH'`, what is left to count is `N_G(H, hH')/H`. -/
+theorem isGoodCoset_iff_out_mem (q : FixCosetOf H H) :
+    IsGoodCoset H h q ↔ (q.1.out : G)⁻¹ ∈ pairNormalizer H (h : G) := by
+  have hval : ((conjRepOf H H h q : G)) * (h : G)⁻¹ =
+      (q.1.out)⁻¹ * (h : G) * ((q.1.out)⁻¹)⁻¹ * (h : G)⁻¹ := by
+    simp [conjRepOf]
+  constructor
+  · intro hq
+    exact ⟨inv_out_mem_normalizer H q, by rw [← hval]; exact hq⟩
+  · intro hq
+    change ((conjRepOf H H h q : G)) * (h : G)⁻¹ ∈ ⁅H, H⁆
+    rw [hval]
+    exact hq.2
+
+/-- The same condition, stated for the representative itself (the pair
+normalizer is a subgroup, so it is closed under inversion). -/
+theorem isGoodCoset_iff_mem (q : FixCosetOf H H) :
+    IsGoodCoset H h q ↔ (q.1.out : G) ∈ pairNormalizer H (h : G) := by
+  rw [isGoodCoset_iff_out_mem]
+  exact ⟨fun hq => by simpa using Subgroup.inv_mem _ hq, fun hq => Subgroup.inv_mem _ hq⟩
+
+omit [Fintype G] in
+/-- The chosen representative of a coset `gH` with `g ∈ N_G(H, hH')`
+again lies in `N_G(H, hH')` (the pair normalizer contains `H`). -/
+theorem out_mem_pairNormalizer {g : G} (hg : g ∈ pairNormalizer H (h : G)) :
+    ((g : G ⧸ H).out : G) ∈ pairNormalizer H (h : G) := by
+  have hq : (((g : G ⧸ H).out : G) : G ⧸ H) = (g : G ⧸ H) := QuotientGroup.out_eq' _
+  have hmem : ((g : G ⧸ H).out)⁻¹ * g ∈ H := QuotientGroup.eq.mp hq
+  have hval : ((g : G ⧸ H).out : G) = g * (((g : G ⧸ H).out)⁻¹ * g)⁻¹ := by group
+  rw [hval]
+  exact mul_mem hg (inv_mem (le_pairNormalizer H h hmem))
+
+omit [Fintype G] in
+/-- The coset of an element of `N_G(H)` is `H`-fixed. -/
+theorem mem_fixCosetOf_of_mem_normalizer {g : G} (hg : g ∈ Subgroup.normalizer H) :
+    ((g : G ⧸ H)) ∈ fixedPoints ↥H (G ⧸ H) := by
+  intro u
+  change ((u : G) * g : G ⧸ H) = (g : G ⧸ H)
+  refine QuotientGroup.eq.mpr ?_
+  have hg' : g⁻¹ ∈ Subgroup.normalizer H := inv_mem hg
+  have := (Subgroup.mem_normalizer_iff.mp hg' ((u : G)⁻¹)).mp (inv_mem u.2)
+  have heq : ((u : G) * g)⁻¹ * g = g⁻¹ * (u : G)⁻¹ * g⁻¹⁻¹ := by group
+  rw [heq]
+  exact this
+
+/-- The good cosets, as a subtype. -/
+abbrev GoodCoset : Type u := {q : FixCosetOf H H // IsGoodCoset H h q}
+
+/-- The good coset attached to an element of `N_G(H, hH')`. -/
+noncomputable def goodOfMem (g : ↥(pairNormalizer H (h : G))) : GoodCoset H h :=
+  ⟨⟨(((g : G)) : G ⧸ H),
+      mem_fixCosetOf_of_mem_normalizer H (pairNormalizer_le_normalizer' H (h : G) g.2)⟩,
+    (isGoodCoset_iff_mem H h _).mpr (out_mem_pairNormalizer H h g.2)⟩
+
+theorem goodOfMem_surjective : Function.Surjective (goodOfMem H h) := by
+  intro q
+  refine ⟨⟨(q.1.1.out : G), (isGoodCoset_iff_mem H h q.1).mp q.2⟩, ?_⟩
+  exact Subtype.ext (Subtype.ext (QuotientGroup.out_eq' _))
+
+theorem goodOfMem_eq_iff (a b : ↥(pairNormalizer H (h : G))) :
+    goodOfMem H h a = goodOfMem H h b ↔ a⁻¹ * b ∈ H.subgroupOf (pairNormalizer H (h : G)) := by
+  constructor
+  · intro hab
+    have h1 : (((a : G)) : G ⧸ H) = (((b : G)) : G ⧸ H) := congrArg (fun x => x.1.1) hab
+    have h2 : ((a : G))⁻¹ * (b : G) ∈ H := QuotientGroup.eq.mp h1
+    exact Subgroup.mem_subgroupOf.mpr (by simpa using h2)
+  · intro hab
+    have h2 : ((a : G))⁻¹ * (b : G) ∈ H := by
+      simpa using Subgroup.mem_subgroupOf.mp hab
+    exact Subtype.ext (Subtype.ext (QuotientGroup.eq.mpr h2))
+
+/-- **The arithmetic core of the coefficient computation**: the good
+`H`-fixed cosets are the cosets of `H` inside `N_G(H, hH')`, so there are
+`(N_G(H, hH'): H)` of them. -/
+theorem card_pairNormalizer_eq_mul :
+    Nat.card (pairNormalizer H (h : G)) = Nat.card (GoodCoset H h) * Nat.card ↥H := by
+  classical
+  set P := pairNormalizer H (h : G) with hP
+  have hresp : ∀ a b : ↥P, QuotientGroup.leftRel (H.subgroupOf P) a b →
+      goodOfMem H h a = goodOfMem H h b := fun a b hab =>
+    (goodOfMem_eq_iff H h a b).mpr (QuotientGroup.leftRel_apply.mp hab)
+  set F : ↥P ⧸ H.subgroupOf P → GoodCoset H h :=
+    fun x => Quotient.liftOn' x (goodOfMem H h) hresp with hF
+  have hinj : Function.Injective F := by
+    intro x y
+    refine Quotient.inductionOn₂' x y ?_
+    intro a b hxy
+    exact Quotient.sound'
+      (QuotientGroup.leftRel_apply.mpr ((goodOfMem_eq_iff H h a b).mp hxy))
+  have hsurj : Function.Surjective F := by
+    intro q
+    obtain ⟨g, hg⟩ := goodOfMem_surjective H h q
+    exact ⟨Quotient.mk'' g, hg⟩
+  have hquot : Nat.card (↥P ⧸ H.subgroupOf P) = Nat.card (GoodCoset H h) :=
+    Nat.card_congr (Equiv.ofBijective F ⟨hinj, hsurj⟩)
+  have hsub : Nat.card ↥(H.subgroupOf P) = Nat.card ↥H :=
+    Nat.card_congr (Subgroup.subgroupOfEquivOfLe (le_pairNormalizer H h)).toEquiv
+  rw [Subgroup.card_eq_card_quotient_mul_card_subgroup (H.subgroupOf P), hquot, hsub]
+
+end Counting
+
+/-! ## 5. Müller's two halves, and that they suffice -/
+
+section Split
+
+variable (G) in
+/-- **The witness half of Satz 2.3.3** (Müller Lemma 2.2.2 (ii) + formula
+(2.8) + Boltje's integrality congruence): for each pair `(H, hH')` the
+element `(N_G(H,hH'): H') · e_{(H,hH')} = ind^G_H((H: H')·e^{D(H)}_{(H,hH')})`
+lies in `D(G)`. Stated species-theoretically and division-free: some
+`x ∈ D(G)` takes the value `n` at `φ_{H,h}` and `0` at every other
+species. -/
+def SpeciesIsolatingWitness : Prop :=
+  ∀ (H : Subgroup G) (h : H) (n : ℕ),
+    n * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) →
+      ∃ x : DRing G, DRing.species H h x = (n : ℂ) ∧
+        ∀ (K : Subgroup G) (k : K), DRing.species K k ≠ DRing.species H h →
+          DRing.species K k x = 0
+
+variable (G) in
+/-- **The lower-bound half of Satz 2.3.3** (Müller: the coefficient of
+`[H, 1]_G` in `e_{(H,hH')}` is `|H'| / |N_G(H,hH')|`, so no smaller
+multiple of the idempotent is integral): every value isolated at the
+species `φ_{H,h}` is divisible by `(N_G(H,hH'): H')`. -/
+def SpeciesConductorLowerBound : Prop :=
+  ∀ (H : Subgroup G) (h : H) (p : DRing G →+* ℤ),
+    complexify (DRing G) p = DRing.species H h →
+      ∀ (x : DRing G) (n : ℕ), Isolates p x n →
+        Nat.card (pairNormalizer H (h : G)) ∣ n * Nat.card ↥⁅H, H⁆
+
+/-- The witness half upgrades to genuine isolation, because *every*
+complex point is a species (`ringHom_eq_species`). -/
+theorem isolates_of_witness (hW : SpeciesIsolatingWitness G) (H : Subgroup G)
+    (h : H) (p : DRing G →+* ℤ) (hp : complexify (DRing G) p = DRing.species H h)
+    (n : ℕ) (hn : n * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G))) :
+    ∃ x : DRing G, Isolates p x n := by
+  obtain ⟨x, hx, hzero⟩ := hW H h n hn
+  refine ⟨x, ?_, fun q hq => ?_⟩
+  · have h1 : ((p x : ℤ) : ℂ) = (n : ℂ) := by
+      have := DFunLike.congr_fun hp x
+      simpa [complexify] using this.trans hx
+    exact_mod_cast h1
+  · obtain ⟨K, k, rfl⟩ := ringHom_eq_species q
+    exact hzero K k (by rw [← hp]; exact hq)
+
+/-- **The split is exact**: Müller's two halves give `ConductorAtSpecies`
+(Satz 2.3.3) outright. -/
+theorem conductorAtSpecies_of (hW : SpeciesIsolatingWitness G)
+    (hL : SpeciesConductorLowerBound G) : ConductorAtSpecies G := by
+  intro H h p hp
+  have hdpos : 0 < Nat.card ↥⁅H, H⁆ := Nat.card_pos
+  have hNpos : 0 < Nat.card (pairNormalizer H (h : G)) := Nat.card_pos
+  obtain ⟨n, hnN⟩ := card_commutator_dvd_card_pairNormalizer H h
+  have hn : n * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) := by
+    rw [hnN]; ring
+  have hnpos : 0 < n := by
+    rcases Nat.eq_zero_or_pos n with rfl | hp'
+    · rw [zero_mul] at hn
+      omega
+    · exact hp'
+  obtain ⟨x, hx⟩ := isolates_of_witness hW H h p hp n hn
+  have hdvd : conductor (DRing G) p ∣ n := conductor_dvd p hnpos hx
+  obtain ⟨hcpos, y, hy⟩ := conductor_spec p hnpos hx
+  have hlow : Nat.card (pairNormalizer H (h : G)) ∣
+      conductor (DRing G) p * Nat.card ↥⁅H, H⁆ := hL H h p hp y _ hy
+  have hdvd2 : n ∣ conductor (DRing G) p := by
+    rw [← hn] at hlow
+    exact (Nat.mul_dvd_mul_iff_right hdpos).mp hlow
+  rw [Nat.dvd_antisymm hdvd hdvd2]
+  exact hn
+
+end Split
+
+/-! ## 6. The total-species functional, and the lower bound at the top pair -/
+
+section TotalSpecies
+
+open DRing MonGSet
+
+/-- Conjugation by the chosen representative of an `H`-fixed coset of
+`G ⧸ K`, packaged as a group homomorphism `H →* K`. -/
+noncomputable def conjHom (K H : Subgroup G) (q : FixCosetOf H K) : H →* K where
+  toFun h := conjRepOf K H h q
+  map_one' := by
+    refine Subtype.ext ?_
+    simp [conjRepOf]
+  map_mul' a b := by
+    refine Subtype.ext ?_
+    simp only [conjRepOf, Subgroup.coe_mul]
+    group
+
+/-- **The `H`-column sum of the species table on a basis element is a
+multiple of `|H|`.** For each `H`-fixed coset `q` of `G ⧸ K` the inner
+sum `∑_{h ∈ H} λ(s(q)⁻¹ h s(q))` is a character sum over `H` (the
+conjugation is a homomorphism `H →* K`), hence `|H|` or `0`. -/
+theorem exists_sum_species_basisElt (H K : Subgroup G) [Fintype ↥H]
+    (l : K →* ℂˣ) :
+    ∃ m : ℕ, ∑ h : H, DRing.species H h (DRing.basisElt K l) =
+      (Nat.card ↥H : ℂ) * m := by
+  classical
+  refine ⟨(Finset.univ.filter fun q : FixCosetOf H K =>
+      (Units.coeHom ℂ).comp (l.comp (conjHom K H q)) = 1).card, ?_⟩
+  have hsum : ∀ h : H, DRing.species H h (DRing.basisElt K l) =
+      ∑ q : FixCosetOf H K, ((l (conjRepOf K H h q) : ℂˣ) : ℂ) :=
+    fun h => species_basisElt_gen K H l h
+  rw [Finset.sum_congr rfl fun h _ => hsum h, Finset.sum_comm]
+  have hq : ∀ q : FixCosetOf H K,
+      ∑ h : H, ((l (conjRepOf K H h q) : ℂˣ) : ℂ) =
+        if (Units.coeHom ℂ).comp (l.comp (conjHom K H q)) = 1 then (Nat.card ↥H : ℂ)
+        else 0 := by
+    intro q
+    have h1 := sum_hom_units ((Units.coeHom ℂ).comp (l.comp (conjHom K H q)))
+    have h2 : ∀ h : H, ((l (conjRepOf K H h q) : ℂˣ) : ℂ) =
+        ((Units.coeHom ℂ).comp (l.comp (conjHom K H q))) h := fun _ => rfl
+    rw [Finset.sum_congr rfl fun h _ => h2 h, Nat.card_eq_fintype_card]
+    rw [h1]
+    split_ifs <;> simp
+  rw [Finset.sum_congr rfl fun q _ => hq q, Finset.sum_ite, Finset.sum_const,
+    Finset.sum_const_zero, add_zero, nsmul_eq_mul, mul_comm]
+
+/-- The sum of the species of `H` over all `h ∈ H`, as an additive map. -/
+noncomputable def speciesTotal (H : Subgroup G) [Fintype ↥H] : DRing G →+ ℂ :=
+  ∑ h : H, (DRing.species H h).toAddMonoidHom
+
+omit [Fintype G] in
+theorem speciesTotal_apply (H : Subgroup G) [Fintype ↥H] (y : DRing G) :
+    speciesTotal H y = ∑ h : H, DRing.species H h y := by
+  simp [speciesTotal, AddMonoidHom.finsetSum_apply]
+
+/-- **The `H`-column sum is a multiple of `|H|` on all of `D(G)`** — the
+basis elements generate `D(G)` as an additive group. -/
+theorem exists_sum_species (H : Subgroup G) [Fintype ↥H] (y : DRing G) :
+    ∃ m : ℤ, ∑ h : H, DRing.species H h y = (Nat.card ↥H : ℂ) * m := by
+  classical
+  set S : AddSubgroup (DRing G) :=
+    (AddSubgroup.zmultiples ((Nat.card ↥H : ℂ))).comap (speciesTotal H) with hS
+  have hmem : ∀ z : DRing G, z ∈ S ↔
+      ∃ m : ℤ, ∑ h : H, DRing.species H h z = (Nat.card ↥H : ℂ) * m := by
+    intro z
+    simp only [hS, AddSubgroup.mem_comap, AddSubgroup.mem_zmultiples_iff,
+      speciesTotal_apply]
+    constructor
+    · rintro ⟨m, hm⟩
+      exact ⟨m, by rw [← hm, zsmul_eq_mul, mul_comm]⟩
+    · rintro ⟨m, hm⟩
+      exact ⟨m, by rw [hm, zsmul_eq_mul, mul_comm]⟩
+  have hbasis : ∀ (K : Subgroup G) (l : K →* ℂˣ), DRing.basisElt K l ∈ S := by
+    intro K l
+    obtain ⟨m, hm⟩ := exists_sum_species_basisElt H K l
+    exact (hmem _).mpr ⟨(m : ℤ), by rw [hm]; push_cast; ring⟩
+  refine (hmem y).mp ?_
+  obtain ⟨s, t, rfl⟩ := DRing.exists_basisElt_decomposition y
+  refine sub_mem ?_ ?_ <;>
+  · refine multiset_sum_mem _ fun a ha => ?_
+    obtain ⟨p, -, rfl⟩ := Multiset.mem_map.mp ha
+    exact hbasis p.1 p.2
+
+/-- Two ring homomorphisms out of `D(G)` agreeing on all basis elements
+are equal (the basis elements generate `D(G)` additively). -/
+theorem dring_ringHom_ext {f g : DRing G →+* ℂ}
+    (hgen : ∀ (K : Subgroup G) (l : K →* ℂˣ),
+      f (DRing.basisElt K l) = g (DRing.basisElt K l)) : f = g := by
+  refine RingHom.ext fun y => ?_
+  have hms : ∀ u : Multiset ((K : Subgroup G) × (K →* ℂˣ)),
+      f ((u.map fun p => DRing.basisElt p.1 p.2).sum) =
+        g ((u.map fun p => DRing.basisElt p.1 p.2).sum) := by
+    intro u
+    induction u using Multiset.induction_on with
+    | empty => simp
+    | cons a u ih => simp [map_add, hgen, ih]
+  obtain ⟨s, t, rfl⟩ := DRing.exists_basisElt_decomposition y
+  rw [map_sub, map_sub, hms, hms]
+
+/-- **The species depends only on the class of `h` modulo `⁅H, H⁆`.**
+For each fixed coset the conjugation `H →* K` composed with `λ` is a
+homomorphism into the *commutative* group `ℂˣ`, so it kills the derived
+subgroup of `H`. -/
+theorem species_eq_of_mul_inv_mem_commutator (H : Subgroup G) (h k : H)
+    (hk : (h : G) * (k : G)⁻¹ ∈ ⁅H, H⁆) :
+    DRing.species H h = DRing.species H k := by
+  refine dring_ringHom_ext fun K l => ?_
+  rw [species_basisElt_gen K H l h, species_basisElt_gen K H l k]
+  refine Finset.sum_congr rfl fun q _ => ?_
+  set φ : H →* ℂˣ := l.comp (conjHom K H q) with hφ
+  have hcomm : (h * k⁻¹ : H) ∈ commutator (H : Type u) :=
+    mem_commutator_of_coe (by simpa using hk)
+  have hker : φ (h * k⁻¹) = 1 :=
+    MonoidHom.mem_ker.mp (Abelianization.commutator_subset_ker φ hcomm)
+  have hhk : φ h = φ k := by
+    rw [map_mul, map_inv] at hker
+    exact mul_inv_eq_one.mp hker
+  exact congrArg (fun u : ℂˣ => (u : ℂ)) hhk
+
+/-- **The fusion bound**: if `x` isolates the integer point `φ_{H,h₀}`
+with value `n`, then `|H|` divides `n` times the number of `h ∈ H` with
+`φ_{H,h} = φ_{H,h₀}`. (Summing the whole `H`-column of the species table
+against `x`: the left side is a multiple of `|H|` by
+`exists_sum_species`, the right side is `n` on the fusion class of `h₀`
+and `0` elsewhere.) -/
+theorem card_dvd_mul_fusionCount (H : Subgroup G) (h₀ : H) (p : DRing G →+* ℤ)
+    (hp : complexify (DRing G) p = DRing.species H h₀)
+    (x : DRing G) (n : ℕ) (hx : Isolates p x n) :
+    Nat.card ↥H ∣ n * Nat.card {h : H // DRing.species H h = DRing.species H h₀} := by
+  classical
+  haveI : Fintype ↥H := Fintype.ofFinite _
+  obtain ⟨m, hm⟩ := exists_sum_species H x
+  have hval : ∀ h : H, DRing.species H h x =
+      if DRing.species H h = DRing.species H h₀ then (n : ℂ) else 0 := by
+    intro h
+    by_cases hh : DRing.species H h = DRing.species H h₀
+    · rw [if_pos hh, hh, ← hp]
+      have := congrArg (fun z : ℤ => (z : ℂ)) hx.1
+      simpa [complexify] using this
+    · rw [if_neg hh]
+      exact hx.2 _ (fun hcon => hh (by rw [← hp]; exact hcon))
+  rw [Finset.sum_congr rfl fun h _ => hval h, Finset.sum_ite, Finset.sum_const,
+    Finset.sum_const_zero, add_zero, nsmul_eq_mul] at hm
+  have hcard : Nat.card {h : H // DRing.species H h = DRing.species H h₀} =
+      (Finset.univ.filter fun h : H => DRing.species H h = DRing.species H h₀).card := by
+    rw [Nat.card_eq_fintype_card, Fintype.card_subtype]
+  have hZ : ((Nat.card ↥H : ℤ) * m : ℤ) =
+      ((n * Nat.card {h : H // DRing.species H h = DRing.species H h₀} : ℕ) : ℤ) := by
+    have : ((Nat.card ↥H : ℤ) * m : ℂ) =
+        (((n * Nat.card {h : H // DRing.species H h = DRing.species H h₀} : ℕ) : ℤ) : ℂ) := by
+      rw [hcard]
+      push_cast
+      rw [← hm]
+      ring
+    exact_mod_cast this
+  exact Int.natCast_dvd_natCast.mp ⟨m, hZ.symm⟩
+
+end TotalSpecies
+
+/-! ## 7. Satz 2.3.3 at the top pair -/
+
+section TopPair
+
+open DRing
+
+omit [Fintype G] in
+@[simp] theorem pairNormalizer_top (g : G) :
+    pairNormalizer (⊤ : Subgroup G) g = ⊤ :=
+  eq_top_iff.mpr (le_pairNormalizer (⊤ : Subgroup G) ⟨g, Subgroup.mem_top g⟩)
+
+/-- **The fusion class at the top pair is exactly the coset `h₀·G'`.**
+`⊇` is `species_eq_of_mul_inv_mem_commutator`; `⊆` is
+`speciesPairSeparation` together with the fact that conjugation is
+trivial modulo the derived subgroup. -/
+theorem species_top_eq_iff (h k : (⊤ : Subgroup G)) :
+    DRing.species (⊤ : Subgroup G) h = DRing.species (⊤ : Subgroup G) k ↔
+      (h : G) * (k : G)⁻¹ ∈ ⁅(⊤ : Subgroup G), (⊤ : Subgroup G)⁆ := by
+  constructor
+  · intro hspec
+    obtain ⟨g, -, hg⟩ := speciesPairSeparation G (⊤ : Subgroup G) h k hspec
+    have hcomm : (h : G) * g * (h : G)⁻¹ * g⁻¹ ∈ ⁅(⊤ : Subgroup G), (⊤ : Subgroup G)⁆ := by
+      have := Subgroup.commutator_mem_commutator (H₁ := (⊤ : Subgroup G))
+        (H₂ := (⊤ : Subgroup G)) (Subgroup.mem_top (h : G)) (Subgroup.mem_top g)
+      rwa [commutatorElement_def] at this
+    have hprod := mul_mem hcomm hg
+    have heq : ((h : G) * g * (h : G)⁻¹ * g⁻¹) * ((g * (h : G) * g⁻¹) * (k : G)⁻¹) =
+        (h : G) * (k : G)⁻¹ := by group
+    rwa [heq] at hprod
+  · exact species_eq_of_mul_inv_mem_commutator (⊤ : Subgroup G) h k
+
+/-- **Satz 2.3.3, lower-bound half, at the top pair `(G, gG')`** — the
+counterpart of `conductorAtSpecies_trivial` at the other end of the
+subgroup lattice, and unconditional: every value isolated at `φ_{G,h₀}`
+is divisible by `(G: G')`. -/
+theorem speciesConductorLowerBound_top (h₀ : (⊤ : Subgroup G))
+    (p : DRing G →+* ℤ) (hp : complexify (DRing G) p = DRing.species (⊤ : Subgroup G) h₀)
+    (x : DRing G) (n : ℕ) (hx : Isolates p x n) :
+    Nat.card (pairNormalizer (⊤ : Subgroup G) (h₀ : G)) ∣
+      n * Nat.card ↥⁅(⊤ : Subgroup G), (⊤ : Subgroup G)⁆ := by
+  classical
+  have hfusion : Nat.card {h : (⊤ : Subgroup G) //
+      DRing.species (⊤ : Subgroup G) h = DRing.species (⊤ : Subgroup G) h₀} =
+      Nat.card ↥⁅(⊤ : Subgroup G), (⊤ : Subgroup G)⁆ := by
+    refine Nat.card_congr ?_
+    refine
+      { toFun := fun h => ⟨(h.1 : G) * (h₀ : G)⁻¹, (species_top_eq_iff h.1 h₀).mp h.2⟩
+        invFun := fun c => ⟨⟨(c : G) * (h₀ : G), Subgroup.mem_top _⟩,
+          (species_top_eq_iff _ h₀).mpr (by simp)⟩
+        left_inv := ?_
+        right_inv := ?_ }
+    · rintro ⟨⟨h, -⟩, -⟩
+      apply Subtype.ext
+      apply Subtype.ext
+      simp
+    · rintro ⟨c, hc⟩
+      apply Subtype.ext
+      simp
+  have hdvd := card_dvd_mul_fusionCount (⊤ : Subgroup G) h₀ p hp x n hx
+  rw [hfusion] at hdvd
+  rwa [pairNormalizer_top]
+
+end TopPair
+
+/-! ## 8. The fusion count: orbit–stabilizer on the coset `h₀⁅H,H⁆` -/
+
+section FusionCount
+
+open DRing
+
+variable (H : Subgroup G) (h₀ : H)
+
+omit [Fintype G] in
+/-- `⁅H, H⁆ ≤ H`. -/
+theorem commutator_le_self : ⁅H, H⁆ ≤ H :=
+  Subgroup.commutator_le.mpr fun _p hp _q hq =>
+    mul_mem (mul_mem (mul_mem hp hq) (inv_mem hp)) (inv_mem hq)
+
+/-- The incidence relation of the double count: `g ∈ N_G(H)` carries the
+coset `h₀⁅H,H⁆` to the coset `h⁅H,H⁆`. -/
+def Fuses (h : H) (g : ↥(Subgroup.normalizer (H : Set G))) : Prop :=
+  (g : G) * (h₀ : G) * (g : G)⁻¹ * (h : G)⁻¹ ∈ ⁅H, H⁆
+
+omit [Fintype G] in
+/-- Conjugation by a normalizer element lands in `H`. -/
+theorem conj_mem_of_mem_normalizer {g : G} (hg : g ∈ Subgroup.normalizer (H : Set G)) :
+    (g : G) * (h₀ : G) * (g : G)⁻¹ ∈ H :=
+  (Subgroup.mem_normalizer_iff.mp hg (h₀ : G)).mp h₀.2
+
+omit [Fintype G] in
+/-- **Left fibre of the incidence relation**: for each `g ∈ N_G(H)` the
+elements `h ∈ H` fused to `h₀` *by `g`* form the coset
+`g h₀ g⁻¹ ⁅H,H⁆`, of size `|⁅H,H⁆|`. -/
+theorem card_fuses_left (g : ↥(Subgroup.normalizer (H : Set G))) :
+    Nat.card {h : H // Fuses H h₀ h g} = Nat.card ↥⁅H, H⁆ := by
+  have hc : (g : G) * (h₀ : G) * (g : G)⁻¹ ∈ H := conj_mem_of_mem_normalizer H h₀ g.2
+  refine Nat.card_congr ?_
+  refine
+    { toFun := fun x => ⟨(g : G) * (h₀ : G) * (g : G)⁻¹ * ((x.1 : H) : G)⁻¹, x.2⟩
+      invFun := fun d =>
+        ⟨⟨((d : G))⁻¹ * ((g : G) * (h₀ : G) * (g : G)⁻¹),
+            mul_mem (inv_mem (commutator_le_self H d.2)) hc⟩, ?_⟩
+      left_inv := ?_
+      right_inv := ?_ }
+  · change (g : G) * (h₀ : G) * (g : G)⁻¹ *
+      (((d : G))⁻¹ * ((g : G) * (h₀ : G) * (g : G)⁻¹))⁻¹ ∈ ⁅H, H⁆
+    have heq : (g : G) * (h₀ : G) * (g : G)⁻¹ *
+        (((d : G))⁻¹ * ((g : G) * (h₀ : G) * (g : G)⁻¹))⁻¹ = (d : G) := by group
+    rw [heq]
+    exact d.2
+  · rintro ⟨x, hx⟩
+    apply Subtype.ext
+    apply Subtype.ext
+    simp only
+    group
+  · rintro ⟨d, hd⟩
+    apply Subtype.ext
+    simp only
+    group
+
+omit [Fintype G] in
+/-- Off the fusion class the right fibre is empty. -/
+theorem isEmpty_fuses (h : H) (hne : DRing.species H h ≠ DRing.species H h₀) :
+    IsEmpty {g : ↥(Subgroup.normalizer (H : Set G)) // Fuses H h₀ h g} := by
+  refine ⟨fun g => hne ?_⟩
+  have hc : (g : G) * (h₀ : G) * (g : G)⁻¹ ∈ H :=
+    conj_mem_of_mem_normalizer H h₀ (g.1).2
+  have h1 : DRing.species H ⟨(g : G) * (h₀ : G) * (g : G)⁻¹, hc⟩ = DRing.species H h₀ :=
+    species_conj_of_mem_normalizer H h₀ (g.1).2 hc
+  have h2 : DRing.species H ⟨(g : G) * (h₀ : G) * (g : G)⁻¹, hc⟩ = DRing.species H h :=
+    DRing.species_congr_coset H _ h g.2
+  rw [← h2, h1]
+
+/-- **Right fibre of the incidence relation**: for `h` in the fusion class
+of `h₀` the set of `g ∈ N_G(H)` fusing `h₀` to `h` is a coset of
+`N_G(H, h₀⁅H,H⁆)`, hence of size `|N_G(H, h₀⁅H,H⁆)|`. -/
+theorem card_fuses_right (h : H) (hf : DRing.species H h = DRing.species H h₀) :
+    Nat.card {g : ↥(Subgroup.normalizer (H : Set G)) // Fuses H h₀ h g} =
+      Nat.card ↥(pairNormalizer H (h₀ : G)) := by
+  obtain ⟨g, hgN, hg⟩ := speciesPairSeparation G H h h₀ hf
+  have hg₀N : g⁻¹ ∈ Subgroup.normalizer (H : Set G) := inv_mem hgN
+  have hg₀ : Fuses H h₀ h ⟨g⁻¹, hg₀N⟩ := by
+    have := conj_mem_commutator_of_mem_normalizer hg₀N (inv_mem hg)
+    have heq : g⁻¹ * ((g * (h : G) * g⁻¹) * (h₀ : G)⁻¹)⁻¹ * g⁻¹⁻¹ =
+        g⁻¹ * (h₀ : G) * g⁻¹⁻¹ * (h : G)⁻¹ := by group
+    rw [heq] at this
+    exact this
+  set g₀ : ↥(Subgroup.normalizer (H : Set G)) := ⟨g⁻¹, hg₀N⟩ with hg₀def
+  refine Nat.card_congr
+    { toFun := fun x =>
+        ⟨(g₀ : G)⁻¹ * ((x.1 : ↥(Subgroup.normalizer (H : Set G))) : G),
+          ⟨mul_mem (inv_mem g₀.2) (x.1).2, by
+            set xg : G := ((x.1 : ↥(Subgroup.normalizer (H : Set G))) : G) with hxg
+            have hx : xg * (h₀ : G) * xg⁻¹ * (h : G)⁻¹ ∈ ⁅H, H⁆ := x.2
+            change ((g₀ : G)⁻¹ * xg) * (h₀ : G) * ((g₀ : G)⁻¹ * xg)⁻¹ * (h₀ : G)⁻¹ ∈ ⁅H, H⁆
+            have heq : ((g₀ : G)⁻¹ * xg) * (h₀ : G) * ((g₀ : G)⁻¹ * xg)⁻¹ * (h₀ : G)⁻¹ =
+                (g₀ : G)⁻¹ * ((xg * (h₀ : G) * xg⁻¹ * (h : G)⁻¹) *
+                  ((g₀ : G) * (h₀ : G) * (g₀ : G)⁻¹ * (h : G)⁻¹)⁻¹) * (g₀ : G)⁻¹⁻¹ := by
+              group
+            rw [heq]
+            exact conj_mem_commutator_of_mem_normalizer (inv_mem g₀.2)
+              (mul_mem hx (inv_mem hg₀))⟩⟩
+      invFun := fun p =>
+        ⟨⟨(g₀ : G) * ((p : ↥(pairNormalizer H (h₀ : G))) : G),
+            mul_mem g₀.2 (pairNormalizer_le_normalizer' H (h₀ : G) p.2)⟩, by
+          change ((g₀ : G) * ((p : ↥(pairNormalizer H (h₀ : G))) : G)) * (h₀ : G) *
+            ((g₀ : G) * ((p : ↥(pairNormalizer H (h₀ : G))) : G))⁻¹ * (h : G)⁻¹ ∈ ⁅H, H⁆
+          set pg : G := ((p : ↥(pairNormalizer H (h₀ : G))) : G) with hpg
+          have heq : ((g₀ : G) * pg) * (h₀ : G) * ((g₀ : G) * pg)⁻¹ * (h : G)⁻¹ =
+              ((g₀ : G) * (pg * (h₀ : G) * pg⁻¹ * (h₀ : G)⁻¹) * (g₀ : G)⁻¹) *
+                ((g₀ : G) * (h₀ : G) * (g₀ : G)⁻¹ * (h : G)⁻¹) := by group
+          rw [heq]
+          exact mul_mem (conj_mem_commutator_of_mem_normalizer g₀.2 p.2.2) hg₀⟩
+      left_inv := ?_
+      right_inv := ?_ }
+  · rintro ⟨x, hx⟩
+    apply Subtype.ext
+    apply Subtype.ext
+    simp only
+    group
+  · rintro ⟨p, hp⟩
+    apply Subtype.ext
+    simp only
+    group
+
+/-- **The fusion count** (orbit–stabilizer, by double counting the
+incidence relation `Fuses`): the fusion class of `h₀` in `H` is the union
+of the `N_G(H)`-conjugates of the coset `h₀⁅H,H⁆`, so
+
+`#{h ∈ H: φ_{H,h} = φ_{H,h₀}} · |N_G(H, h₀H')| = |N_G(H)| · |H'|`.
+
+Equivalently `#fusion = |H'| · (N_G(H): N_G(H, h₀H'))`. -/
+theorem card_fusionClass_mul_card_pairNormalizer :
+    Nat.card {h : H // DRing.species H h = DRing.species H h₀} *
+        Nat.card ↥(pairNormalizer H (h₀ : G)) =
+      Nat.card ↥(Subgroup.normalizer (H : Set G)) * Nat.card ↥⁅H, H⁆ := by
+  classical
+  haveI : Fintype ↥H := Fintype.ofFinite _
+  haveI : Fintype ↥(Subgroup.normalizer (H : Set G)) := Fintype.ofFinite _
+  have key : ∑ _g : ↥(Subgroup.normalizer (H : Set G)),
+        (Finset.univ.filter fun h : H => Fuses H h₀ h _g).card =
+      ∑ h : ↥H,
+        (Finset.univ.filter fun g : ↥(Subgroup.normalizer (H : Set G)) => Fuses H h₀ h g).card := by
+    simp only [Finset.card_filter]
+    exact Finset.sum_comm
+  have hL : ∀ g : ↥(Subgroup.normalizer (H : Set G)),
+      (Finset.univ.filter fun h : H => Fuses H h₀ h g).card = Nat.card ↥⁅H, H⁆ := by
+    intro g
+    rw [← card_fuses_left H h₀ g, Nat.card_eq_fintype_card, Fintype.card_subtype]
+  have hR : ∀ h : ↥H,
+      (Finset.univ.filter fun g : ↥(Subgroup.normalizer (H : Set G)) => Fuses H h₀ h g).card =
+        if DRing.species H h = DRing.species H h₀ then
+          Nat.card ↥(pairNormalizer H (h₀ : G)) else 0 := by
+    intro h
+    by_cases hf : DRing.species H h = DRing.species H h₀
+    · rw [if_pos hf, ← card_fuses_right H h₀ h hf, Nat.card_eq_fintype_card,
+        Fintype.card_subtype]
+    · rw [if_neg hf]
+      refine Finset.card_eq_zero.mpr (Finset.eq_empty_of_forall_notMem fun g hg => ?_)
+      exact (isEmpty_fuses H h₀ h hf).false ⟨g, (Finset.mem_filter.mp hg).2⟩
+  rw [Finset.sum_congr rfl fun g _ => hL g, Finset.sum_congr rfl fun h _ => hR h,
+    Finset.sum_const, Finset.sum_ite, Finset.sum_const, Finset.sum_const_zero,
+    add_zero, smul_eq_mul, smul_eq_mul] at key
+  have hcard : Nat.card {h : H // DRing.species H h = DRing.species H h₀} =
+      (Finset.univ.filter fun h : H => DRing.species H h = DRing.species H h₀).card := by
+    rw [Nat.card_eq_fintype_card, Fintype.card_subtype]
+  rw [hcard, ← key, Nat.card_eq_fintype_card, Finset.card_univ,
+    Nat.card_eq_fintype_card]
+
+/-- **The sharpened fusion bound, unconditional**: `|H| · |N_G(H,h₀H')|`
+divides `n · |H'| · |N_G(H)|` whenever `x` isolates `φ_{H,h₀}` with value
+`n`. ('s `card_dvd_mul_fusionCount` with the fusion count
+substituted.) -/
+theorem card_mul_card_pairNormalizer_dvd (p : DRing G →+* ℤ)
+    (hp : complexify (DRing G) p = DRing.species H h₀)
+    (x : DRing G) (n : ℕ) (hx : Isolates p x n) :
+    Nat.card ↥H * Nat.card ↥(pairNormalizer H (h₀ : G)) ∣
+      n * (Nat.card ↥(Subgroup.normalizer (H : Set G)) * Nat.card ↥⁅H, H⁆) := by
+  obtain ⟨c, hc⟩ := card_dvd_mul_fusionCount H h₀ p hp x n hx
+  refine ⟨c, ?_⟩
+  calc n * (Nat.card ↥(Subgroup.normalizer (H : Set G)) * Nat.card ↥⁅H, H⁆)
+      = n * (Nat.card {h : H // DRing.species H h = DRing.species H h₀} *
+          Nat.card ↥(pairNormalizer H (h₀ : G))) := by
+        rw [card_fusionClass_mul_card_pairNormalizer]
+    _ = (n * Nat.card {h : H // DRing.species H h = DRing.species H h₀}) *
+          Nat.card ↥(pairNormalizer H (h₀ : G)) := by ring
+    _ = Nat.card ↥H * Nat.card ↥(pairNormalizer H (h₀ : G)) * c := by rw [hc]; ring
+
+/-- **`SpeciesConductorLowerBound` at every self-normalizing subgroup**,
+unconditionally. If `N_G(H) = H` then `N_G(H, h₀H') = H` as well, the
+fusion class of `h₀` is exactly the coset `h₀H'`, and the fusion bound
+`|H| ∣ n·|H'|` *is* Müller's `(N_G(H,h₀H'): H') ∣ n`. (At `H = ⊤` this
+recovers `speciesConductorLowerBound_top`.) -/
+theorem speciesConductorLowerBound_of_selfNormalizing
+    (hself : Subgroup.normalizer (H : Set G) = H) (p : DRing G →+* ℤ)
+    (hp : complexify (DRing G) p = DRing.species H h₀)
+    (x : DRing G) (n : ℕ) (hx : Isolates p x n) :
+    Nat.card ↥(pairNormalizer H (h₀ : G)) ∣ n * Nat.card ↥⁅H, H⁆ := by
+  have hPH : pairNormalizer H (h₀ : G) = H := by
+    refine le_antisymm (fun g hg => ?_) (le_pairNormalizer H h₀)
+    have hgN : g ∈ Subgroup.normalizer (H : Set G) :=
+      pairNormalizer_le_normalizer' H (h₀ : G) hg
+    rwa [hself] at hgN
+  have hcount := card_fusionClass_mul_card_pairNormalizer H h₀
+  rw [hPH, hself] at hcount
+  have hpos : 0 < Nat.card ↥H := Nat.card_pos
+  have hfus : Nat.card {h : H // DRing.species H h = DRing.species H h₀} =
+      Nat.card ↥⁅H, H⁆ := Nat.eq_of_mul_eq_mul_right hpos (by rw [hcount]; ring)
+  have hdvd := card_dvd_mul_fusionCount H h₀ p hp x n hx
+  rw [hfus] at hdvd
+  rwa [hPH]
+
+end FusionCount
+
+/-! ## 9. The `λ`-twisted column sums -/
+
+section Twisted
+
+open DRing MonGSet
+
+variable (H : Subgroup G) [Fintype ↥H]
+
+/-- The **`λ`-twisted `H`-column sum** of the species table,
+`y ↦ ∑_{h ∈ H} λ(h)⁻¹ · φ_{H,h}(y)`. For `λ = 1` this is
+`speciesTotal`. -/
+noncomputable def twistedSum (lam : H →* ℂˣ) : DRing G →+ ℂ where
+  toFun y := ∑ h : H, (((lam h)⁻¹ : ℂˣ) : ℂ) * DRing.species H h y
+  map_zero' := by simp
+  map_add' a b := by
+    simp only [map_add, mul_add]
+    exact Finset.sum_add_distrib
+
+omit [Fintype G] in
+theorem twistedSum_apply (lam : H →* ℂˣ) (y : DRing G) :
+    twistedSum H lam y = ∑ h : H, (((lam h)⁻¹ : ℂˣ) : ℂ) * DRing.species H h y := rfl
+
+/-- **The twisted column sum on a basis element is `|H|` times a
+non-negative integer** — namely the number of `H`-fixed cosets `q` of
+`G ⧸ K` whose twisted character `μ ∘ conj_q` equals `λ`. (The inner sum
+`∑_{h ∈ H} λ(h)⁻¹ μ(s(q)⁻¹ h s(q))` is a character sum over `H` for the
+homomorphism `(μ ∘ conj_q)·λ⁻¹: H →* ℂˣ`, hence `|H|` or `0`.)
+
+Note that no cyclotomic ring is needed: the *value* is a rational
+integer even though the summands are roots of unity. -/
+theorem exists_twistedSum_basisElt (K : Subgroup G) (lam : H →* ℂˣ)
+    (l : K →* ℂˣ) :
+    ∃ m : ℕ, twistedSum H lam (DRing.basisElt K l) = (Nat.card ↥H : ℂ) * m := by
+  classical
+  refine ⟨(Finset.univ.filter fun q : FixCosetOf H K =>
+      (Units.coeHom ℂ).comp ((l.comp (conjHom K H q)) * lam⁻¹) = 1).card, ?_⟩
+  rw [twistedSum_apply]
+  have hsum : ∀ h : H, DRing.species H h (DRing.basisElt K l) =
+      ∑ q : FixCosetOf H K, ((l (conjRepOf K H h q) : ℂˣ) : ℂ) :=
+    fun h => species_basisElt_gen K H l h
+  rw [Finset.sum_congr rfl fun h _ => by rw [hsum h, Finset.mul_sum], Finset.sum_comm]
+  have hq : ∀ q : FixCosetOf H K,
+      ∑ h : H, (((lam h)⁻¹ : ℂˣ) : ℂ) * ((l (conjRepOf K H h q) : ℂˣ) : ℂ) =
+        if (Units.coeHom ℂ).comp ((l.comp (conjHom K H q)) * lam⁻¹) = 1 then
+          (Nat.card ↥H : ℂ) else 0 := by
+    intro q
+    have h1 := sum_hom_units ((Units.coeHom ℂ).comp ((l.comp (conjHom K H q)) * lam⁻¹))
+    have h2 : ∀ h : H, (((lam h)⁻¹ : ℂˣ) : ℂ) * ((l (conjRepOf K H h q) : ℂˣ) : ℂ) =
+        ((Units.coeHom ℂ).comp ((l.comp (conjHom K H q)) * lam⁻¹)) h := by
+      intro h
+      simp only [MonoidHom.coe_comp, Function.comp_apply, MonoidHom.mul_apply,
+        MonoidHom.inv_apply, Units.coeHom_apply, Units.val_mul]
+      rw [mul_comm]
+      rfl
+    rw [Finset.sum_congr rfl fun h _ => h2 h, Nat.card_eq_fintype_card, h1]
+    split_ifs <;> simp
+  rw [Finset.sum_congr rfl fun q _ => hq q, Finset.sum_ite, Finset.sum_const,
+    Finset.sum_const_zero, add_zero, nsmul_eq_mul, mul_comm]
+
+/-- **The twisted column sum takes values in `|H|·ℤ` on all of `D(G)`.** -/
+theorem exists_twistedSum (lam : H →* ℂˣ) (y : DRing G) :
+    ∃ m : ℤ, twistedSum H lam y = (Nat.card ↥H : ℂ) * m := by
+  classical
+  set S : AddSubgroup (DRing G) :=
+    (AddSubgroup.zmultiples ((Nat.card ↥H : ℂ))).comap (twistedSum H lam) with hS
+  have hmem : ∀ z : DRing G, z ∈ S ↔
+      ∃ m : ℤ, twistedSum H lam z = (Nat.card ↥H : ℂ) * m := by
+    intro z
+    simp only [hS, AddSubgroup.mem_comap, AddSubgroup.mem_zmultiples_iff]
+    constructor
+    · rintro ⟨m, hm⟩
+      exact ⟨m, by rw [← hm, zsmul_eq_mul, mul_comm]⟩
+    · rintro ⟨m, hm⟩
+      exact ⟨m, by rw [hm, zsmul_eq_mul, mul_comm]⟩
+  have hbasis : ∀ (K : Subgroup G) (l : K →* ℂˣ), DRing.basisElt K l ∈ S := by
+    intro K l
+    obtain ⟨m, hm⟩ := exists_twistedSum_basisElt H K lam l
+    exact (hmem _).mpr ⟨(m : ℤ), by rw [hm]; push_cast; ring⟩
+  refine (hmem y).mp ?_
+  obtain ⟨s, t, rfl⟩ := DRing.exists_basisElt_decomposition y
+  refine sub_mem ?_ ?_ <;>
+  · refine multiset_sum_mem _ fun a ha => ?_
+    obtain ⟨p, -, rfl⟩ := Multiset.mem_map.mp ha
+    exact hbasis p.1 p.2
+
+/-- **The twisted fusion relation.** If `x` isolates `φ_{H,h₀}` with
+value `n`, then for every linear character `λ` of `H`
+
+`n · ∑_{h ∈ fusion class of h₀} λ(h)⁻¹ ∈ |H| · ℤ`.
+
+Since every `λ: H →* ℂˣ` is trivial on `⁅H,H⁆`, the sum on the left is
+`|H'| · ∑_{N_G(H)-orbit of h₀H'} λ(·)⁻¹`; at `λ = 1` the relation is
+exactly `card_dvd_mul_fusionCount`. -/
+theorem exists_twisted_fusion_sum (h₀ : H) (lam : H →* ℂˣ)
+    [DecidablePred fun h : H => DRing.species H h = DRing.species H h₀]
+    (p : DRing G →+* ℤ) (hp : complexify (DRing G) p = DRing.species H h₀)
+    (x : DRing G) (n : ℕ) (hx : Isolates p x n) :
+    ∃ m : ℤ, (n : ℂ) *
+        ∑ h ∈ Finset.univ.filter (fun h : H => DRing.species H h = DRing.species H h₀),
+          (((lam h)⁻¹ : ℂˣ) : ℂ) = (Nat.card ↥H : ℂ) * m := by
+  obtain ⟨m, hm⟩ := exists_twistedSum H lam x
+  refine ⟨m, ?_⟩
+  rw [← hm, twistedSum_apply]
+  have hval : ∀ h : H, DRing.species H h x =
+      if DRing.species H h = DRing.species H h₀ then (n : ℂ) else 0 := by
+    intro h
+    by_cases hh : DRing.species H h = DRing.species H h₀
+    · rw [if_pos hh, hh, ← hp]
+      have := congrArg (fun z : ℤ => (z : ℂ)) hx.1
+      simpa [complexify] using this
+    · rw [if_neg hh]
+      exact hx.2 _ (fun hcon => hh (by rw [← hp]; exact hcon))
+  symm
+  calc ∑ h : H, (((lam h)⁻¹ : ℂˣ) : ℂ) * DRing.species H h x
+      = ∑ h : H, if DRing.species H h = DRing.species H h₀ then
+          (((lam h)⁻¹ : ℂˣ) : ℂ) * (n : ℂ) else 0 := by
+        refine Finset.sum_congr rfl fun h _ => ?_
+        rw [hval h]
+        split_ifs <;> ring
+    _ = ∑ h ∈ Finset.univ.filter
+          (fun h : H => DRing.species H h = DRing.species H h₀),
+            (((lam h)⁻¹ : ℂˣ) : ℂ) * (n : ℂ) := (Finset.sum_filter _ _).symm
+    _ = (n : ℂ) * ∑ h ∈ Finset.univ.filter
+          (fun h : H => DRing.species H h = DRing.species H h₀),
+            (((lam h)⁻¹ : ℂˣ) : ℂ) := by
+        rw [Finset.mul_sum]
+        exact Finset.sum_congr rfl fun h _ => by ring
+
+end Twisted
+
+/-! ## 10. Induction `ind^G_H: D(H) →+ D(G)` -/
+
+section Induction
+
+open DRing MonGSet
+
+variable (H : Subgroup G) [Fintype ↥H]
+
+/-- The character of the pushed-forward subgroup `K ↦ K^G:= K.map H.subtype`
+attached to a character `λ` of `K ≤ H`: transport along the isomorphism
+`K ≃* K^G`. -/
+noncomputable def indChar {K : Subgroup ↥H} (l : K →* ℂˣ) : ↥(K.map H.subtype) →* ℂˣ :=
+  l.comp
+    (Subgroup.equivMapOfInjective K H.subtype (Subgroup.subtype_injective H)).symm.toMonoidHom
+
+omit [Fintype G] [Fintype ↥H] in
+theorem indChar_apply {K : Subgroup ↥H} (l : K →* ℂˣ) (k : ↥H) (hk : k ∈ K) :
+    indChar H l ⟨(k : G), ⟨k, hk, rfl⟩⟩ = l ⟨k, hk⟩ := by
+  have hfwd : (Subgroup.equivMapOfInjective K H.subtype (Subgroup.subtype_injective H))
+      ⟨k, hk⟩ = ⟨(k : G), ⟨k, hk, rfl⟩⟩ := rfl
+  rw [indChar, MonoidHom.comp_apply, MulEquiv.coe_toMonoidHom, ← hfwd,
+    MulEquiv.symm_apply_apply]
+
+omit [Fintype G] [Fintype ↥H] in
+/-- The trivial character of `K` induces the trivial character of `K^G`. -/
+theorem indChar_one (K : Subgroup ↥H) :
+    indChar H (1 : K →* ℂˣ) = (1 : ↥(K.map H.subtype) →* ℂˣ) := by
+  rw [indChar, MonoidHom.one_comp]
+
+/-- **Induction on character pairs**: `(K, λ) ↦ (K^G, λ^G)`, the basis
+element of `D(G)` induced from the basis element `[K, λ]` of `D(H)`. -/
+noncomputable def indPair (p : CharPair ↥H ℂˣ) : DRing G :=
+  DRing.basisElt (p.1.map H.subtype) (indChar H p.2)
+
+omit [Fintype G] [Fintype ↥H] in
+/-- Pushing forward preserves conjugacy of pairs: an `H`-conjugacy of
+pairs of `H` is in particular a `G`-conjugacy of the pushed pairs. -/
+theorem isConjPair_map {K K' : Subgroup ↥H} {l : K →* ℂˣ} {l' : K' →* ℂˣ}
+    (hc : IsConjPair K K' l l') :
+    IsConjPair (K.map H.subtype) (K'.map H.subtype) (indChar H l) (indChar H l') := by
+  obtain ⟨a, hmem, hl⟩ := hc
+  have hconj : ∀ u : ↥H, ((a * u * a⁻¹ : ↥H) : G) = (a : G) * (u : G) * (a : G)⁻¹ := by
+    intro u; push_cast; rfl
+  have hmemG : ∀ k : G, k ∈ K.map H.subtype ↔
+      (a : G) * k * (a : G)⁻¹ ∈ K'.map H.subtype := by
+    intro k
+    constructor
+    · rintro ⟨u, hu, rfl⟩
+      refine ⟨a * u * a⁻¹, (hmem u).mp hu, ?_⟩
+      change ((a * u * a⁻¹ : ↥H) : G) = (a : G) * ((u : ↥H) : G) * (a : G)⁻¹
+      exact hconj u
+    · rintro ⟨v, hv, hvk⟩
+      have hvk' : (v : G) = (a : G) * k * (a : G)⁻¹ := hvk
+      refine ⟨a⁻¹ * v * a, ?_, ?_⟩
+      · refine (hmem (a⁻¹ * v * a)).mpr ?_
+        have : a * (a⁻¹ * v * a) * a⁻¹ = v := by group
+        rwa [this]
+      · change ((a⁻¹ * v * a : ↥H) : G) = k
+        have hc2 : ((a⁻¹ * v * a : ↥H) : G) = (a : G)⁻¹ * (v : G) * (a : G) := by
+          push_cast; rfl
+        rw [hc2, hvk']
+        group
+  refine ⟨(a : G), hmemG, ?_⟩
+  rintro k hk
+  obtain ⟨u, hu, rfl⟩ := hk
+  have hkey : ((⟨(a : G) * (H.subtype u) * (a : G)⁻¹, (hmemG _).mp ⟨u, hu, rfl⟩⟩ :
+      ↥(K'.map H.subtype))) = ⟨((a * u * a⁻¹ : ↥H) : G), ⟨a * u * a⁻¹, (hmem u).mp hu, rfl⟩⟩ := by
+    refine Subtype.ext ?_
+    rw [hconj u]; rfl
+  rw [hkey, indChar_apply H l' (a * u * a⁻¹) ((hmem u).mp hu)]
+  have : (⟨(H.subtype u : G), ⟨u, hu, rfl⟩⟩ : ↥(K.map H.subtype)) =
+      ⟨(u : G), ⟨u, hu, rfl⟩⟩ := rfl
+  rw [this, indChar_apply H l u hu]
+  exact hl u hu
+
+omit [Fintype ↥H] in
+/-- `indPair` is constant on conjugacy classes of pairs of `H`. -/
+theorem indPair_congr {p q : CharPair ↥H ℂˣ} (hpq : p ≈ q) :
+    indPair H p = indPair H q :=
+  (DRing.basisElt_eq_iff _ _ _ _).mpr (isConjPair_map H hpq)
+
+/-- **The induction map `ind^G_H: D(H) →+ D(G)`** — defined on the
+`ℤ`-basis of `D(H)` (conjugacy classes of character pairs of `H`) by
+pushing the pair forward along `H ↪ G`. -/
+noncomputable def dringInd : DRing ↥H →+ DRing G :=
+  ((DRing.basisOfCharPairClass (G := ↥H)).constr ℤ
+    (fun c => indPair H (Quotient.out c))).toAddMonoidHom
+
+/-- **The defining property of `ind^G_H`**: it sends the basis element
+`[K, λ]` of `D(H)` to the basis element `[K^G, λ^G]` of `D(G)`. -/
+theorem dringInd_basisElt (K : Subgroup ↥H) (l : K →* ℂˣ) :
+    dringInd H (DRing.basisElt K l) =
+      DRing.basisElt (K.map H.subtype) (indChar H l) := by
+  have hb : (DRing.basisOfCharPairClass (G := ↥H)) (⟦⟨K, l⟩⟧ : CharPairClass ↥H ℂˣ) =
+      DRing.basisElt K l := by
+    rw [DRing.basisOfCharPairClass, Module.Basis.mk_apply, DRing.classElt_mk]
+  have hval := Module.Basis.constr_basis (DRing.basisOfCharPairClass (G := ↥H)) ℤ
+    (fun c => indPair H (Quotient.out c)) (⟦⟨K, l⟩⟧ : CharPairClass ↥H ℂˣ)
+  rw [hb] at hval
+  change ((DRing.basisOfCharPairClass (G := ↥H)).constr ℤ
+    (fun c => indPair H (Quotient.out c))) (DRing.basisElt K l) = _
+  rw [hval]
+  have hcg := indPair_congr H (Quotient.mk_out (⟨K, l⟩ : CharPair ↥H ℂˣ))
+  rw [hcg]
+  rfl
+
+/-- **The species of an induced basis element**, by Müller's formula for
+`D(G)` applied to the pushed pair:
+`φ^G_{K,k}(ind^G_H [L, λ]) = ∑_{q ∈ (G/L^G)^K} λ^G(s(q)⁻¹ k s(q))`. -/
+theorem species_dringInd_basisElt (K : Subgroup G) (k : K) (L : Subgroup ↥H)
+    (l : L →* ℂˣ) :
+    DRing.species K k (dringInd H (DRing.basisElt L l)) =
+      ∑ q : FixCosetOf K (L.map H.subtype),
+        ((indChar H l (conjRepOf (L.map H.subtype) K k q) : ℂˣ) : ℂ) := by
+  rw [dringInd_basisElt, species_basisElt_gen]
+
+/-- The trivial character induces to the trivial character of the pushed
+subgroup, so `ind^G_H` matches induction of `G`-sets on the Burnside part:
+`ind^G_H [K, 1] = [K^G, 1]`. -/
+theorem dringInd_basisElt_one (K : Subgroup ↥H) :
+    dringInd H (DRing.basisElt K (1 : K →* ℂˣ)) =
+      DRing.basisElt (K.map H.subtype) (1 : ↥(K.map H.subtype) →* ℂˣ) := by
+  rw [dringInd_basisElt, indChar_one]
+
+/-- **Subconjugacy vanishing for induced elements.** If no `G`-conjugate
+of `K` lies inside `H`, then `φ^G_{K,k}` kills the whole image of
+`ind^G_H`: every induced element is an integral combination of basis
+elements `[L^G, λ^G]` with `L^G ≤ H`, and Müller's index set is empty for
+each of them. This is the vanishing half of the witness argument of
+Satz 2.3.3, for the *outer* species. -/
+theorem species_dringInd_eq_zero_of_not_subconj (K : Subgroup G) (k : K)
+    (hsub : ∀ g : G, ∃ u : K, g⁻¹ * (u : G) * g ∉ H) (y : DRing ↥H) :
+    DRing.species K k (dringInd H y) = 0 := by
+  classical
+  set S : AddSubgroup (DRing ↥H) :=
+    ((DRing.species K k).toAddMonoidHom.comp (dringInd H)).ker with hS
+  have hmem : ∀ z : DRing ↥H, z ∈ S ↔ DRing.species K k (dringInd H z) = 0 := by
+    intro z; simp [hS, AddMonoidHom.mem_ker]
+  have hbasis : ∀ (L : Subgroup ↥H) (l : L →* ℂˣ), DRing.basisElt L l ∈ S := by
+    intro L l
+    refine (hmem _).mpr ?_
+    rw [dringInd_basisElt]
+    refine species_basisElt_eq_zero_of_not_subconj _ K _ k fun g => ?_
+    obtain ⟨u, hu⟩ := hsub g
+    refine ⟨u, fun hcon => hu ?_⟩
+    obtain ⟨w, -, hw⟩ := hcon
+    rw [← hw]
+    exact w.2
+  refine (hmem y).mp ?_
+  obtain ⟨s, t, rfl⟩ := DRing.exists_basisElt_decomposition y
+  refine sub_mem ?_ ?_ <;>
+  · refine multiset_sum_mem _ fun a ha => ?_
+    obtain ⟨p, -, rfl⟩ := Multiset.mem_map.mp ha
+    exact hbasis p.1 p.2
+
+end Induction
+
+/-! ## 11. The Mackey formula for `ind^G_H` -/
+
+section Mackey
+
+open DRing MonGSet
+
+/-! ### 11.1 Müller's formula as a sum over group elements
+
+The index set of Müller's formula is a set of cosets, chosen by a section
+`Quotient.out`; regrouping it along `L ≤ H ≤ G` would need two layers of
+section bookkeeping. We avoid this by trading the coset sum for a sum
+over *all* of `G`, at the cost of a factor `|M|`: each fixed coset
+contributes its `|M|` elements, all with the same weight (conjugating the
+argument by an element of `M` does not change the value of the character
+`λ`, because `ℂˣ` is commutative). -/
+
+/-- Canonical (noncomputable) `Fintype` on a coset space, so that the
+element-wise sums below elaborate with one fixed instance. -/
+noncomputable instance (priority := 2000) instFintypeQuotSubgroup (M : Subgroup G) :
+    Fintype (G ⧸ M) :=
+  Fintype.ofFinite _
+
+open scoped Classical in
+/-- The weight of a group element `g` in the element-wise form of
+Müller's formula: `λ(g⁻¹ k g)` if `K^g ≤ M`, and `0` otherwise. -/
+noncomputable def condWeight (M K : Subgroup G) (l : M →* ℂˣ) (k : K) (g : G) : ℂ :=
+  if h : ∀ u : K, g⁻¹ * (u : G) * g ∈ M then ((l ⟨g⁻¹ * (k : G) * g, h k⟩ : ℂˣ) : ℂ) else 0
+
+theorem condWeight_of_forall (M K : Subgroup G) (l : M →* ℂˣ) (k : K) {g : G}
+    (h : ∀ u : K, g⁻¹ * (u : G) * g ∈ M) :
+    condWeight M K l k g = ((l ⟨g⁻¹ * (k : G) * g, h k⟩ : ℂˣ) : ℂ) := by
+  classical
+  simp only [condWeight, dif_pos h]
+
+theorem condWeight_of_not_forall (M K : Subgroup G) (l : M →* ℂˣ) (k : K) {g : G}
+    (h : ¬ ∀ u : K, g⁻¹ * (u : G) * g ∈ M) :
+    condWeight M K l k g = 0 := by
+  classical
+  simp only [condWeight, dif_neg h]
+
+omit [Fintype G] in
+/-- Membership in the index set of Müller's formula, elementwise. -/
+theorem mem_fixCoset_iff (M K : Subgroup G) (q : G ⧸ M) :
+    q ∈ fixedPoints ↥K (G ⧸ M) ↔ ∀ u : K, (q.out)⁻¹ * (u : G) * q.out ∈ M := by
+  constructor
+  · intro hq u
+    exact MonGSet.sectionConj_mem M K u q (hq u)
+  · intro hq
+    have hmk : ((q.out : G) : G ⧸ M) ∈ fixedPoints ↥K (G ⧸ M) := by
+      intro u
+      change ((u : G) * q.out : G ⧸ M) = ((q.out : G) : G ⧸ M)
+      refine QuotientGroup.eq.mpr ?_
+      have hu := hq u⁻¹
+      have heq : ((u : G) * q.out)⁻¹ * q.out = (q.out)⁻¹ * ((u⁻¹ : K) : G) * q.out := by
+        push_cast; group
+      rw [heq]
+      exact hu
+    rwa [QuotientGroup.out_eq'] at hmk
+
+/-- The splitting of `G` along a subgroup `M` given by the section
+`Quotient.out`: `g ↦ (gM, s(gM)⁻¹ g)`. -/
+noncomputable def cosetSplit (M : Subgroup G) : G ≃ (G ⧸ M) × ↥M where
+  toFun g := (((g : G ⧸ M)), ⟨((g : G ⧸ M)).out⁻¹ * g,
+    QuotientGroup.eq.mp (QuotientGroup.out_eq' ((g : G ⧸ M)))⟩)
+  invFun p := p.1.out * (p.2 : G)
+  left_inv g := mul_inv_cancel_left _ _
+  right_inv p := by
+    have h1 : (((p.1.out * (p.2 : G) : G)) : G ⧸ M) = p.1 := by
+      rw [QuotientGroup.mk_mul_of_mem _ p.2.2, QuotientGroup.out_eq']
+    refine Prod.ext h1 (Subtype.ext ?_)
+    change (((p.1.out * (p.2 : G) : G) : G ⧸ M)).out⁻¹ * (p.1.out * (p.2 : G)) = (p.2 : G)
+    rw [h1, inv_mul_cancel_left]
+
+/-- Summing over `G` by cosets of `M` and the chosen representatives. -/
+theorem sum_cosetSplit (M : Subgroup G) [Fintype ↥M] (f : G → ℂ) :
+    ∑ g : G, f g = ∑ q : G ⧸ M, ∑ m : ↥M, f (q.out * (m : G)) := by
+  classical
+  have h1 : ∑ p : (G ⧸ M) × ↥M, f (p.1.out * (p.2 : G))
+      = ∑ q : G ⧸ M, ∑ m : ↥M, f (q.out * (m : G)) := Fintype.sum_prod_type _
+  rw [← h1]
+  exact Fintype.sum_equiv (cosetSplit M) _ _
+    fun g => congrArg f ((cosetSplit M).left_inv g).symm
+
+/-- **Müller's formula, element-wise**: `|M| · φ_{K,k}[M, λ]` is the sum
+of `λ(g⁻¹ k g)` over all `g ∈ G` with `K^g ≤ M`. -/
+theorem sum_condWeight (M K : Subgroup G) [Fintype ↥M] (l : M →* ℂˣ) (k : K) :
+    ∑ g : G, condWeight M K l k g =
+      (Nat.card ↥M : ℂ) * DRing.species K k (DRing.basisElt M l) := by
+  classical
+  have hcomm : ∀ a b : ℂˣ, b⁻¹ * a * b = a := by
+    intro a b
+    rw [mul_comm b⁻¹ a, mul_assoc, inv_mul_cancel, mul_one]
+  -- the weight only depends on the coset
+  have hconst : ∀ (q : G ⧸ M) (m : ↥M),
+      condWeight M K l k (q.out * (m : G)) = condWeight M K l k q.out := by
+    intro q m
+    by_cases hq : ∀ u : K, (q.out)⁻¹ * (u : G) * q.out ∈ M
+    · have hq2 : ∀ u : K, (q.out * (m : G))⁻¹ * (u : G) * (q.out * (m : G)) ∈ M := by
+        intro u
+        have hrw : (q.out * (m : G))⁻¹ * (u : G) * (q.out * (m : G))
+            = (m : G)⁻¹ * ((q.out)⁻¹ * (u : G) * q.out) * (m : G) := by group
+        rw [hrw]
+        exact M.mul_mem (M.mul_mem (M.inv_mem m.2) (hq u)) m.2
+      rw [condWeight_of_forall _ _ _ _ hq2, condWeight_of_forall _ _ _ _ hq]
+      have hel : (⟨(q.out * (m : G))⁻¹ * (k : G) * (q.out * (m : G)), hq2 k⟩ : ↥M)
+          = m⁻¹ * ⟨(q.out)⁻¹ * (k : G) * q.out, hq k⟩ * m := by
+        refine Subtype.ext ?_
+        push_cast
+        group
+      rw [hel, map_mul, map_mul, map_inv, hcomm]
+    · have hq2 : ¬ ∀ u : K, (q.out * (m : G))⁻¹ * (u : G) * (q.out * (m : G)) ∈ M := by
+        intro hcon
+        refine hq fun u => ?_
+        have hu := hcon u
+        have hrw : (q.out)⁻¹ * (u : G) * q.out
+            = (m : G) * ((q.out * (m : G))⁻¹ * (u : G) * (q.out * (m : G))) * (m : G)⁻¹ := by
+          group
+        rw [hrw]
+        exact M.mul_mem (M.mul_mem m.2 hu) (M.inv_mem m.2)
+      rw [condWeight_of_not_forall _ _ _ _ hq2, condWeight_of_not_forall _ _ _ _ hq]
+  rw [sum_cosetSplit M, species_basisElt_gen]
+  have h1 : ∀ q : G ⧸ M, ∑ m : ↥M, condWeight M K l k (q.out * (m : G))
+      = (Nat.card ↥M : ℂ) * condWeight M K l k q.out := by
+    intro q
+    rw [Finset.sum_congr rfl fun m _ => hconst q m, Finset.sum_const, Finset.card_univ,
+      nsmul_eq_mul, Nat.card_eq_fintype_card]
+  rw [Finset.sum_congr rfl fun q _ => h1 q, ← Finset.mul_sum]
+  congr 1
+  -- the remaining cosets contribute `0`
+  have hval : ∀ q : FixCosetOf K M,
+      condWeight M K l k q.1.out = ((l (conjRepOf M K k q) : ℂˣ) : ℂ) := by
+    intro q
+    rw [condWeight_of_forall _ _ _ _ ((mem_fixCoset_iff M K q.1).mp q.2)]
+    rfl
+  have hsubtype := @Finset.sum_subtype (G ⧸ M) ℂ _
+    (fun q : G ⧸ M => q ∈ fixedPoints ↥K (G ⧸ M)) (instFintypeFixedQuot K M)
+    (Finset.univ.filter (fun q : G ⧸ M => q ∈ fixedPoints ↥K (G ⧸ M)))
+    (by intro x; simp) (fun q : G ⧸ M => condWeight M K l k q.out)
+  have hsub : ∑ q ∈ Finset.univ.filter (fun q : G ⧸ M => q ∈ fixedPoints ↥K (G ⧸ M)),
+      condWeight M K l k q.out = ∑ q : G ⧸ M, condWeight M K l k q.out := by
+    refine Finset.sum_subset (Finset.filter_subset _ _) fun q _ hq => ?_
+    refine condWeight_of_not_forall _ _ _ _ fun hcon => hq ?_
+    exact Finset.mem_filter.mpr ⟨Finset.mem_univ _, (mem_fixCoset_iff M K q).mpr hcon⟩
+  rw [← hsub, hsubtype]
+  exact Finset.sum_congr rfl fun q _ => hval q
+
+/-! ### 11.2 The Mackey formula -/
+
+variable (H : Subgroup G) [Fintype ↥H]
+
+/-- The conjugated subgroup `K^{s(q)} = s(q)⁻¹ K s(q) ≤ H` attached to a
+`K`-fixed coset `q` of `G ⧸ H`. -/
+noncomputable def indSub (K : Subgroup G) (q : FixCosetOf K H) : Subgroup ↥H :=
+  (conjHom H K q).range
+
+/-- The conjugated element `k^{s(q)} ∈ K^{s(q)}`. -/
+noncomputable def indElt (K : Subgroup G) (k : K) (q : FixCosetOf K H) :
+    ↥(indSub H K q) :=
+  ⟨conjHom H K q k, ⟨k, rfl⟩⟩
+
+omit [Fintype G] [Fintype ↥H] in
+theorem coe_indElt (K : Subgroup G) (k : K) (q : FixCosetOf K H) :
+    ((indElt H K k q : ↥H) : G) = (q.1.out)⁻¹ * (k : G) * q.1.out := rfl
+
+/-- **The Mackey formula on a basis element**:
+`φ^G_{K,k}(ind^G_H [L, λ]) = ∑_{q ∈ (G/H)^K} φ^H_{K^{s(q)}, k^{s(q)}}[L, λ]`. -/
+theorem species_dringInd_basisElt_mackey (K : Subgroup G) (k : K) (L : Subgroup ↥H)
+    (l : L →* ℂˣ) :
+    DRing.species K k (dringInd H (DRing.basisElt L l)) =
+      ∑ q : FixCosetOf K H,
+        DRing.species (indSub H K q) (indElt H K k q) (DRing.basisElt L l) := by
+  classical
+  haveI hLf : Fintype ↥L := Fintype.ofFinite _
+  haveI hL'f : Fintype ↥(L.map H.subtype) := Fintype.ofFinite _
+  have hcard : (Nat.card ↥(L.map H.subtype) : ℂ) = (Nat.card ↥L : ℂ) := by
+    rw [Subgroup.card_subtype]
+  have hLpos : (Nat.card ↥L : ℂ) ≠ 0 := by
+    have h0 : 0 < Nat.card ↥L := Nat.card_pos
+    exact_mod_cast h0.ne'
+  -- the pointwise identity between the two element-wise weights
+  have hkey : ∀ (q : FixCosetOf K H) (y : ↥H),
+      condWeight (L.map H.subtype) K (indChar H l) k (q.1.out * (y : G))
+        = condWeight L (indSub H K q) l (indElt H K k q) y := by
+    intro q y
+    -- the conjugation identity
+    have hconj : ∀ u : K, (q.1.out * (y : G))⁻¹ * (u : G) * (q.1.out * (y : G))
+        = ((y⁻¹ * conjHom H K q u * y : ↥H) : G) := by
+      intro u
+      push_cast
+      change _ = (y : G)⁻¹ * ((q.1.out)⁻¹ * (u : G) * q.1.out) * (y : G)
+      group
+    have hiff : (∀ u : K, (q.1.out * (y : G))⁻¹ * (u : G) * (q.1.out * (y : G))
+          ∈ L.map H.subtype) ↔ ∀ v : ↥(indSub H K q), y⁻¹ * (v : ↥H) * y ∈ L := by
+      constructor
+      · rintro hc ⟨v, u, rfl⟩
+        have := hc u
+        rw [hconj u] at this
+        exact (Subgroup.mem_map_iff_mem (Subgroup.subtype_injective H)).mp this
+      · intro hc u
+        rw [hconj u]
+        exact (Subgroup.mem_map_iff_mem (Subgroup.subtype_injective H)).mpr
+          (hc ⟨conjHom H K q u, ⟨u, rfl⟩⟩)
+    by_cases hc : ∀ u : K, (q.1.out * (y : G))⁻¹ * (u : G) * (q.1.out * (y : G))
+        ∈ L.map H.subtype
+    · have hc' := hiff.mp hc
+      rw [condWeight_of_forall _ _ _ _ hc, condWeight_of_forall _ _ _ _ hc']
+      have hmem : y⁻¹ * conjHom H K q k * y ∈ L := hc' (indElt H K k q)
+      have hel : (⟨(q.1.out * (y : G))⁻¹ * (k : G) * (q.1.out * (y : G)), hc k⟩ :
+          ↥(L.map H.subtype))
+          = ⟨((y⁻¹ * conjHom H K q k * y : ↥H) : G),
+              ⟨y⁻¹ * conjHom H K q k * y, hmem, rfl⟩⟩ := by
+        exact Subtype.ext (hconj k)
+      rw [hel, indChar_apply H l _ hmem]
+      rfl
+    · have hc' := fun hcon => hc (hiff.mpr hcon)
+      rw [condWeight_of_not_forall _ _ _ _ hc, condWeight_of_not_forall _ _ _ _ hc']
+  -- cosets that are not `K`-fixed contribute nothing
+  have hzero : ∀ q : G ⧸ H, q ∉ fixedPoints ↥K (G ⧸ H) →
+      ∀ y : ↥H, condWeight (L.map H.subtype) K (indChar H l) k (q.out * (y : G)) = 0 := by
+    intro q hq y
+    refine condWeight_of_not_forall _ _ _ _ fun hcon => hq ?_
+    refine (mem_fixCoset_iff H K q).mpr fun u => ?_
+    have hu : (q.out * (y : G))⁻¹ * (u : G) * (q.out * (y : G)) ∈ H := by
+      obtain ⟨w, -, hw⟩ := hcon u
+      rw [← hw]; exact w.2
+    have hrw : (q.out)⁻¹ * (u : G) * q.out
+        = (y : G) * ((q.out * (y : G))⁻¹ * (u : G) * (q.out * (y : G))) * (y : G)⁻¹ := by
+      group
+    rw [hrw]
+    exact H.mul_mem (H.mul_mem y.2 hu) (H.inv_mem y.2)
+  have hRHS : ∀ q : FixCosetOf K H,
+      (Nat.card ↥L : ℂ) * DRing.species (indSub H K q) (indElt H K k q) (DRing.basisElt L l)
+        = ∑ y : ↥H, condWeight L (indSub H K q) l (indElt H K k q) y := by
+    intro q
+    rw [sum_condWeight L (indSub H K q) l (indElt H K k q)]
+  refine mul_left_cancel₀ hLpos ?_
+  rw [Finset.mul_sum, Finset.sum_congr rfl fun q _ => hRHS q, dringInd_basisElt, ← hcard,
+    ← sum_condWeight (L.map H.subtype) K (indChar H l) k, sum_cosetSplit H]
+  have hsubtype := @Finset.sum_subtype (G ⧸ H) ℂ _
+    (fun q : G ⧸ H => q ∈ fixedPoints ↥K (G ⧸ H)) (instFintypeFixedQuot K H)
+    (Finset.univ.filter (fun q : G ⧸ H => q ∈ fixedPoints ↥K (G ⧸ H)))
+    (by intro x; simp)
+    (fun q : G ⧸ H => ∑ y : ↥H,
+      condWeight (L.map H.subtype) K (indChar H l) k (q.out * (y : G)))
+  have hsub : ∑ q ∈ Finset.univ.filter (fun q : G ⧸ H => q ∈ fixedPoints ↥K (G ⧸ H)),
+      ∑ y : ↥H, condWeight (L.map H.subtype) K (indChar H l) k (q.out * (y : G))
+      = ∑ q : G ⧸ H, ∑ y : ↥H,
+          condWeight (L.map H.subtype) K (indChar H l) k (q.out * (y : G)) := by
+    refine Finset.sum_subset (Finset.filter_subset _ _) fun q _ hq => ?_
+    refine Finset.sum_eq_zero fun y _ => hzero q (fun hcon => hq ?_) y
+    exact Finset.mem_filter.mpr ⟨Finset.mem_univ _, hcon⟩
+  rw [← hsub, hsubtype]
+  exact Finset.sum_congr rfl fun q _ => Finset.sum_congr rfl fun y _ => hkey q y
+
+/-- **The Mackey formula for `ind^G_H`**, on all of `D(H)`:
+`φ^G_{K,k} ∘ ind^G_H = ∑_{q ∈ (G/H)^K} φ^H_{K^{s(q)}, k^{s(q)}}`. -/
+theorem species_dringInd (K : Subgroup G) (k : K) (y : DRing ↥H) :
+    DRing.species K k (dringInd H y) =
+      ∑ q : FixCosetOf K H, DRing.species (indSub H K q) (indElt H K k q) y := by
+  classical
+  set F : DRing ↥H →+ ℂ := (DRing.species K k).toAddMonoidHom.comp (dringInd H) with hF
+  set F' : DRing ↥H →+ ℂ :=
+    ∑ q : FixCosetOf K H, (DRing.species (indSub H K q) (indElt H K k q)).toAddMonoidHom
+    with hF'
+  have happ : ∀ z : DRing ↥H, F' z =
+      ∑ q : FixCosetOf K H, DRing.species (indSub H K q) (indElt H K k q) z := by
+    intro z
+    simp [hF', AddMonoidHom.finsetSum_apply]
+  have hbasis : ∀ (L : Subgroup ↥H) (l : L →* ℂˣ), DRing.basisElt L l ∈ (F - F').ker := by
+    intro L l
+    have h := species_dringInd_basisElt_mackey H K k L l
+    rw [AddMonoidHom.mem_ker, AddMonoidHom.sub_apply, happ, hF]
+    rw [sub_eq_zero]
+    exact h
+  have hy : y ∈ (F - F').ker := by
+    obtain ⟨s, t, rfl⟩ := DRing.exists_basisElt_decomposition y
+    refine sub_mem ?_ ?_ <;>
+    · refine multiset_sum_mem _ fun a ha => ?_
+      obtain ⟨p, -, rfl⟩ := Multiset.mem_map.mp ha
+      exact hbasis p.1 p.2
+  have hz := AddMonoidHom.mem_ker.mp hy
+  rw [AddMonoidHom.sub_apply, sub_eq_zero, happ, hF] at hz
+  exact hz
+
+/-! ### 11.3 The case `K = H`: the `N_G(H)/H`-average
+
+For `K = H` the conjugation `u ↦ s(q)⁻¹ u s(q)` is an injective
+endomorphism of the finite group `H`, hence an automorphism: the
+conjugated subgroup is all of `H`, and the `H`-fixed cosets of `G ⧸ H`
+are exactly the cosets of `H` in `N_G(H)`. Müller's witness computation
+uses precisely this form. -/
+
+omit [Fintype ↥H] in
+/-- Conjugation by `s(q)` is an automorphism of `H` for an `H`-fixed
+coset `q` of `G ⧸ H`. -/
+theorem indSub_self_eq_top (q : FixCosetOf H H) : indSub H H q = ⊤ := by
+  have hinj : Function.Injective (conjHom H H q) := by
+    intro a b hab
+    have h1 : ((conjHom H H q a : ↥H) : G) = ((conjHom H H q b : ↥H) : G) :=
+      congrArg (fun z : ↥H => (z : G)) hab
+    simp only [conjHom, conjRepOf, MonoidHom.coe_mk, OneHom.coe_mk] at h1
+    exact Subtype.ext (by
+      have := mul_left_cancel (mul_right_cancel h1)
+      exact this)
+  have hsurj : Function.Surjective (conjHom H H q) :=
+    Finite.injective_iff_surjective.mp hinj
+  exact MonoidHom.range_eq_top.mpr hsurj
+
+/-- **The `N_G(H)/H`-average**: the species of an induced element at a
+pair of `H` itself is the sum, over the `H`-fixed cosets `q` of `G ⧸ H`
+(i.e. over `N_G(H)/H`), of the species of `H` at the conjugated element
+`h^{s(q)}`. This is the form Müller's witness computation consumes. -/
+theorem species_dringInd_self (h : ↥H) (y : DRing ↥H) :
+    DRing.species H h (dringInd H y) =
+      ∑ q : FixCosetOf H H,
+        DRing.species (⊤ : Subgroup ↥H) ⟨conjRepOf H H h q, Subgroup.mem_top _⟩ y := by
+  rw [species_dringInd H H h y]
+  refine Finset.sum_congr rfl fun q _ => ?_
+  exact DFunLike.congr_fun
+    (species_congr_subgroup (indSub_self_eq_top H q) (indElt H H h q)
+      ⟨conjRepOf H H h q, Subgroup.mem_top _⟩ rfl) y
+
+end Mackey
+
+/-! ## 12. Boltje integrality: the ONE remaining named `Prop`, and the
+assembly of the dictionary from it -/
+
+section Boltje
+
+open DRing
+
+/-- **`n` is an isolating value at the pair `(H, hH')`**: some `x ∈ D(G)`
+takes the value `n` at the species `φ_{H,h}` and `0` at every species
+outside the fusion class of `(H, hH')`. (By `ringHom_eq_species` — every
+complex point of `D(G)` is a species — this is the same as `x` isolating
+the point `φ_{H,h}` in the sense of `Isolates`; see
+`isolates_of_isolatingValue`.)
+
+For the primitive idempotent `e_{(H,hH')}` of `ℚ ⊗ D(G)` the isolating
+values are exactly the `n` with `n · e_{(H,hH')} ∈ D(G)`. -/
+def IsolatingValue (H : Subgroup G) (h : H) (n : ℕ) : Prop :=
+  ∃ x : DRing G, DRing.species H h x = (n : ℂ) ∧
+    ∀ (K : Subgroup G) (k : K), DRing.species K k ≠ DRing.species H h →
+      DRing.species K k x = 0
+
+variable (G) in
+/-- **Boltje integrality at the species — the single remaining input of
+the conductor dictionary.**
+
+For every pair `(H, hH')` the isolating values at `φ_{H,h}` are *exactly*
+the multiples of the index `(N_G(H, hH'): H')`, in division-free form:
+
+`IsolatingValue H h n ↔ |N_G(H, hH')| ∣ n · |H'|`.
+
+The two directions are Müller's two halves of Satz 2.3.3:
+
+* `←` (at the single value `n₀ = (N_G(H,hH'): H')`, everything else
+  following by scaling — `boltjeIntegralityFor_of`) is **Boltje's
+  integrality congruence**: `ind^G_H((H: H')·e^{D(H)}_{(H,hH')})` is
+ `ℤ`-integral and equals `(N_G(H,hH'): H')·e^{D(G)}_{(H,hH')}`. All the
+  structure this consumes is proved in §10–§11 (the induction map
+  `dringInd`, the vanishing `species_dringInd_eq_zero_of_not_subconj`, the
+  Mackey formula `species_dringInd` and the `N_G(H)/H`-average
+  `species_dringInd_self`); what is missing is the integrality of the
+  `ℚ`-idempotent multiple itself.
+* `→` is Müller's **coefficient computation**: the coefficient of `[H,1]_G`
+  in `e_{(H,hH')}` is `|H'|/|N_G(H,hH')|`, so no smaller multiple of the
+ idempotent is integral. It is proved here unconditionally for
+  self-normalizing `H` (`speciesConductorLowerBound_of_selfNormalizing`,
+  §8), in particular at the top pair. -/
+def BoltjeIntegralityFor : Prop :=
+  ∀ (H : Subgroup G) (h : H) (n : ℕ),
+    IsolatingValue H h n ↔
+      Nat.card (pairNormalizer H (h : G)) ∣ n * Nat.card ↥⁅H, H⁆
+
+omit [Fintype G] in
+/-- `0` is an isolating value at every pair. -/
+theorem isolatingValue_zero (H : Subgroup G) (h : H) : IsolatingValue H h 0 :=
+  ⟨0, by simp, fun _ _ _ => by simp⟩
+
+omit [Fintype G] in
+/-- The isolating values are closed under multiplication by a natural
+number (multiply the witness by `m`): this is why the `←` direction of
+`BoltjeIntegralityFor` has content only at the single value
+`n₀ = (N_G(H,hH'): H')`. -/
+theorem IsolatingValue.mul_left {H : Subgroup G} {h : H} {n : ℕ}
+    (hn : IsolatingValue H h n) (m : ℕ) : IsolatingValue H h (m * n) := by
+  obtain ⟨x, hx, hzero⟩ := hn
+  refine ⟨(m : DRing G) * x, ?_, fun K k hK => ?_⟩
+  · rw [map_mul, map_natCast, hx]; push_cast; ring
+  · rw [map_mul, hzero K k hK, mul_zero]
+
+/-- An element realizing an isolating value isolates the integer point in
+the sense of `Isolates` — because every complex point is a species
+(`ringHom_eq_species`). -/
+theorem isolates_of_isolatingValue {H : Subgroup G} {h : H} {n : ℕ}
+    (p : DRing G →+* ℤ) (hp : complexify (DRing G) p = DRing.species H h)
+    (hn : IsolatingValue H h n) : ∃ x : DRing G, Isolates p x n := by
+  obtain ⟨x, hx, hzero⟩ := hn
+  refine ⟨x, ?_, fun q hq => ?_⟩
+  · have h1 : ((p x : ℤ) : ℂ) = (n : ℂ) := by
+      have := DFunLike.congr_fun hp x
+      simpa [complexify] using this.trans hx
+    exact_mod_cast h1
+  · obtain ⟨K, k, rfl⟩ := ringHom_eq_species q
+    exact hzero K k (by rw [← hp]; exact hq)
+
+omit [Fintype G] in
+/-- Conversely, an element isolating the integer point at `φ_{H,h}`
+realizes its value as an isolating value. -/
+theorem isolatingValue_of_isolates {H : Subgroup G} {h : H} {n : ℕ}
+    {p : DRing G →+* ℤ} (hp : complexify (DRing G) p = DRing.species H h)
+    {x : DRing G} (hx : Isolates p x n) : IsolatingValue H h n := by
+  refine ⟨x, ?_, fun K k hK => ?_⟩
+  · have := congrArg (fun z : ℤ => (z : ℂ)) hx.1
+    rw [← hp]
+    simpa [complexify] using this
+  · exact hx.2 _ fun hcon => hK (by rw [← hp]; exact hcon)
+
+/-! ### 12.1 The witness half: what is proved, and why the obvious
+attempt fails
+
+`boltjeIntegralityFor_of` below splits the `Prop` into a *witness* half
+`hW` and a *lower-bound* half `hL`. The state of each:
+
+* `hL` is proved unconditionally at the top pair
+  (`speciesConductorLowerBound_top`, §7) and for self-normalizing `H`
+  (`speciesConductorLowerBound_of_selfNormalizing`, §8);
+* `hW` is proved at the trivial pair (`isolatingValue_bot`, below) and
+ nowhere else. It is the hard direction of Müller Satz 2.3.3, i.e.
+  Boltje's Cor. 2.8, and it is the whole residual content of the lane.
+
+**The reduction §10–§11 is set up for, and where it stops.** The Mackey
+machinery (`dringInd`, `species_dringInd`, `species_dringInd_self`) is
+designed to push `hW` at `(H, hH')` in `G` down to `hW` at the *top* pair
+of the group `H`, via
+`ind^G_H((H: H')·e^{D(H)}_{(H,hH')}) = (N_G(H,hH'): H')·e^{D(G)}_{(H,hH')}`.
+So a top-pair witness, for an arbitrary group, would give the general
+case.
+
+**The obvious top-pair witness does not work**, and it is worth recording
+why, so the next attempt does not repeat it. For a group `K` with
+`h₀ ∈ K`, the character-sum candidate
+
+`x = Σ_{λ ∈ Hom(K,ℂˣ)} λ(h₀)⁻¹ · [K, λ]_K`
+
+has the right values *at the top*: `φ_{⊤,k}(x) = (K: K')` when
+`k h₀⁻¹ ∈ K'` and `0` otherwise, by orthogonality of the characters of
+`K/K'`. But it is not isolating. For `L < K` the fixed-point set
+`(K/K)^L` is a single point, so `φ_{L,l}([K,λ]) = λ(l)` — the same sum —
+and hence `φ_{L,l}(x) = (K: K')` for *every* `L` with `l h₀⁻¹ ∈ K'`.
+Killing those requires inclusion–exclusion over the subgroup lattice with
+the Möbius function, which is exactly Boltje's Theorem 2.2 (the
+congruence characterization of the image of the mark homomorphism), and
+is what remains to be formalized. -/
+
+/-- **The witness half at the trivial pair, unconditionally.** The class
+of the regular `G`-set isolates the trivial point at the value `|G|`, and
+`|G| · |⁅1,1⁆| = |N_G(1,1)|`, so this is `hW` at `(1,1)`. -/
+theorem isolatingValue_bot :
+    IsolatingValue (⊥ : Subgroup G) (1 : (⊥ : Subgroup G)) (Nat.card G) :=
+  isolatingValue_of_isolates complexify_trivialPoint (isolates_trivialPoint G)
+
+/-- **The exact content of `BoltjeIntegralityFor`**: it is equivalent to
+the conjunction of Müller's witness half — *at the single value
+`(N_G(H,hH'): H')`* — and Müller's lower-bound half. (The `←` direction
+of the `iff` at a general `n` follows by scaling the witness,
+`IsolatingValue.mul_left`.) -/
+theorem boltjeIntegralityFor_of
+    (hW : ∀ (H : Subgroup G) (h : H) (n : ℕ),
+      n * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) →
+        IsolatingValue H h n)
+    (hL : ∀ (H : Subgroup G) (h : H) (n : ℕ), IsolatingValue H h n →
+      Nat.card (pairNormalizer H (h : G)) ∣ n * Nat.card ↥⁅H, H⁆) :
+    BoltjeIntegralityFor G := by
+  intro H h n
+  refine ⟨hL H h n, fun hdvd => ?_⟩
+  obtain ⟨n₀, hn₀⟩ := card_commutator_dvd_card_pairNormalizer H h
+  have hcomm : 0 < Nat.card ↥⁅H, H⁆ := Nat.card_pos
+  have hn₀' : n₀ * Nat.card ↥⁅H, H⁆ = Nat.card (pairNormalizer H (h : G)) := by
+    rw [hn₀]; ring
+  have hdvd' : n₀ ∣ n := by
+    rw [← hn₀'] at hdvd
+    exact (Nat.mul_dvd_mul_iff_right hcomm).mp hdvd
+  obtain ⟨m, rfl⟩ := hdvd'
+  rw [mul_comm]
+  exact (hW H h n₀ hn₀').mul_left m
+
+omit [Fintype G] in
+/-- **Müller's witness half, from Boltje integrality.** -/
+theorem speciesIsolatingWitness_of_boltje (hB : BoltjeIntegralityFor G) :
+    SpeciesIsolatingWitness G := by
+  intro H h n hn
+  exact (hB H h n).mpr (by rw [hn])
+
+omit [Fintype G] in
+/-- **Müller's lower-bound half, from Boltje integrality.** -/
+theorem speciesConductorLowerBound_of_boltje (hB : BoltjeIntegralityFor G) :
+    SpeciesConductorLowerBound G := by
+  intro H h p hp x n hx
+  exact (hB H h n).mp (isolatingValue_of_isolates hp hx)
+
+/-- **Müller Satz 2.3.3 (`ConductorAtSpecies`) is a theorem given Boltje
+integrality**: both halves consumed by `conductorAtSpecies_of` come from
+the single `Prop`. -/
+theorem conductorAtSpecies_of_boltje (hB : BoltjeIntegralityFor G) :
+    ConductorAtSpecies G :=
+  conductorAtSpecies_of (speciesIsolatingWitness_of_boltje hB)
+    (speciesConductorLowerBound_of_boltje hB)
+
+/-- **Boltje integrality, uniformly in the group** — the shape
+`ConductorPairDictionary` needs. -/
+def BoltjeIntegrality : Prop :=
+  ∀ (G : Type u) [Group G] [Fintype G], BoltjeIntegralityFor G
+
+/-- **The conductor dictionary, from Boltje integrality alone**
+(`EnoughSpecies` was discharged in §1 by
+`OddOrder.everyComplexPointIsSpecies`). -/
+theorem conductorPairDictionary_of_boltje (hB : BoltjeIntegrality.{u}) :
+    ConductorPairDictionary.{u} :=
+  fun G _ _ c => conductorPairDictionary' (conductorAtSpecies_of_boltje (hB G)) c
+
+/-- **The two-sided dictionary `IsIndexValue ↔ IsIndStarValue`, from
+Boltje integrality alone.** This is the statement `BCSeparation` and
+`ATSeparation` consume. -/
+theorem isIndexValue_iff_of_boltje (hB : BoltjeIntegrality.{u})
+    (G : Type u) [Group G] [Fintype G] (x : ℕ) :
+    IsIndexValue G x ↔ IsIndStarValue G x :=
+  isIndexValue_iff (conductorPairDictionary_of_boltje hB) G x
+
+end Boltje
+
+end Even
+
+end LeanDring
+
+/-! ## Axiom audit -/
+
+#print axioms LeanDring.Even.ringHom_eq_species
+#print axioms LeanDring.Even.conductorPairDictionary_forward'
+#print axioms LeanDring.Even.conductorPairDictionary'
+#print axioms LeanDring.Even.intPoint_ext
+#print axioms LeanDring.Even.conductorAtSpecies_trivial
+#print axioms LeanDring.Even.species_basisElt_gen
+#print axioms LeanDring.Even.species_basisElt_eq_zero_of_not_subconj
+#print axioms LeanDring.Even.exists_conj_le_of_species_basisElt_ne_zero
+#print axioms LeanDring.Even.species_sum_basisElt
+#print axioms LeanDring.Even.isGoodCoset_iff_out_mem
+#print axioms LeanDring.Even.isGoodCoset_iff_mem
+#print axioms LeanDring.Even.out_mem_pairNormalizer
+#print axioms LeanDring.Even.mem_fixCosetOf_of_mem_normalizer
+#print axioms LeanDring.Even.goodOfMem_surjective
+#print axioms LeanDring.Even.goodOfMem_eq_iff
+#print axioms LeanDring.Even.card_pairNormalizer_eq_mul
+#print axioms LeanDring.Even.isolates_of_witness
+#print axioms LeanDring.Even.conductorAtSpecies_of
+#print axioms LeanDring.Even.exists_sum_species_basisElt
+#print axioms LeanDring.Even.speciesTotal_apply
+#print axioms LeanDring.Even.exists_sum_species
+#print axioms LeanDring.Even.dring_ringHom_ext
+#print axioms LeanDring.Even.species_eq_of_mul_inv_mem_commutator
+#print axioms LeanDring.Even.card_dvd_mul_fusionCount
+#print axioms LeanDring.Even.pairNormalizer_top
+#print axioms LeanDring.Even.species_top_eq_iff
+#print axioms LeanDring.Even.speciesConductorLowerBound_top
+#print axioms LeanDring.Even.commutator_le_self
+#print axioms LeanDring.Even.card_fuses_left
+#print axioms LeanDring.Even.isEmpty_fuses
+#print axioms LeanDring.Even.card_fuses_right
+#print axioms LeanDring.Even.card_fusionClass_mul_card_pairNormalizer
+#print axioms LeanDring.Even.card_mul_card_pairNormalizer_dvd
+#print axioms LeanDring.Even.speciesConductorLowerBound_of_selfNormalizing
+#print axioms LeanDring.Even.exists_twistedSum_basisElt
+#print axioms LeanDring.Even.exists_twistedSum
+#print axioms LeanDring.Even.exists_twisted_fusion_sum
+#print axioms LeanDring.Even.indChar_apply
+#print axioms LeanDring.Even.indChar_one
+#print axioms LeanDring.Even.isConjPair_map
+#print axioms LeanDring.Even.indPair_congr
+#print axioms LeanDring.Even.dringInd_basisElt
+#print axioms LeanDring.Even.species_dringInd_basisElt
+#print axioms LeanDring.Even.dringInd_basisElt_one
+#print axioms LeanDring.Even.species_dringInd_eq_zero_of_not_subconj
+#print axioms LeanDring.Even.mem_fixCoset_iff
+#print axioms LeanDring.Even.sum_cosetSplit
+#print axioms LeanDring.Even.sum_condWeight
+#print axioms LeanDring.Even.species_dringInd_basisElt_mackey
+#print axioms LeanDring.Even.species_dringInd
+#print axioms LeanDring.Even.indSub_self_eq_top
+#print axioms LeanDring.Even.species_dringInd_self
+#print axioms LeanDring.Even.isolatingValue_zero
+#print axioms LeanDring.Even.IsolatingValue.mul_left
+#print axioms LeanDring.Even.isolates_of_isolatingValue
+#print axioms LeanDring.Even.isolatingValue_of_isolates
+#print axioms LeanDring.Even.isolatingValue_bot
+#print axioms LeanDring.Even.boltjeIntegralityFor_of
+#print axioms LeanDring.Even.speciesIsolatingWitness_of_boltje
+#print axioms LeanDring.Even.speciesConductorLowerBound_of_boltje
+#print axioms LeanDring.Even.conductorAtSpecies_of_boltje
+#print axioms LeanDring.Even.conductorPairDictionary_of_boltje
+#print axioms LeanDring.Even.isIndexValue_iff_of_boltje

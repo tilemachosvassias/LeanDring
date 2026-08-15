@@ -1,0 +1,270 @@
+==========================================================================
+PART 2  (E1) of v_task52 §4.1 -- the closed form, re-derived
+==========================================================================
+Equation: c*|L2(q1)| = |L2(q)|, i.e. c*q1(q1^2-1)/d1 = q(q^2-1)/d,
+with 2 <= c | |Out(L2(q1))| = d1*f1.
+
+(i)  q1 = q+1 :  q1^2-1 = q(q+2)  =>  c*d*(q+2) = d1*(q-1)
+(ii) q1 = q-1 :  q1^2-1 = q(q-2)  =>  c*d*(q-2) = d1*(q+1)
+  [derived by cancelling q(q+1) resp. q(q-1) on both sides]
+
+  identity check (q<400, c<200, both sign families): 0 mismatches
+
+(i) c*d*(q+2) = d1*(q-1) with c>=2, d>=1, d1<=2:
+      LHS >= 2(q+2) > 2(q-1) >= RHS  ==>  NO SOLUTION, all q. OK
+
+(ii) complete integer solve of c*d*(q-2) = d1*(q+1), c >= 2,
+     over ALL prime powers q (not a scan: closed form).
+   * q even  : d = 1, q1 = q-1 odd so d1 = 2  =>  c = 2(q+1)/(q-2)
+               = 2 + 6/(q-2), integral iff (q-2) | 6, i.e.
+               q-2 in {1,2,3,6} i.e. q in {3,4,5,8}; q even: q=4,8.
+   * q odd   : d = 2, q1 = q-1 even so d1 = 1  =>  2c(q-2) = q+1;
+               c >= 2 gives 4(q-2) <= q+1 i.e. q <= 3.
+   brute-force over 4 <= q <= 10^6 (all integers q, a superset of
+   prime powers): solutions (q,q1,c) = [(8, 7, 3)]
+   filter to q, q1 both prime powers with L2 simple (q,q1 >= 4):
+      [(8, 7, 3)]
+      q=8 q1=7 c=3 ; |Out(L2(7))| = d1*f1 = 2*1 = 2 ; c | |Out| ? NO -> configuration is NOT Fitting-free-admissible
+
+  ==> the ONLY solution of the q1 = q +- 1 sub-branch is
+      (q,q1,c) = (8,7,3), killed by c=3 nmid |Out(L2(7))| = 2.
+
+(iii) the km != p^j branch of v_task52 §4.1(d): q <= 2c(k+1)
+      with c <= d1 f1 <= 2 log2(q1), q1 >= 0.777 q / c^(1/3),
+      k <= 4(q+1)/q1.  Largest q consistent with the system:
+      largest q for which the system is satisfiable: 650
+      (v_task52 claims 600; anything <= 10^6 is inside the census)
+
+==========================================================================
+PART 3  Lemma EQ and Lemma W (v_task54 §2, §4), re-derived
+==========================================================================
+Lemma EQ: S1 of Lie type in the DEFINING characteristic p of a
+rank-1 target S.  (E) gives |S1|_p | |S|_p i.e. q1^{N1} <= q^N;
+(F) gives |Out(S1)| * iota(S1) >= iota(S) = q^N + 1.
+With iota(S1) <= 4 q1^{mu1} and |Out(S1)| = d1 f1 g1:
+    4 d1 f1 g1 q1^{mu1} >= q^N + 1 > q^N >= q1^{N1}
+    ==>  q1^{N1-mu1} < 4 d1 f1 g1 .                (Lemma EQ)
+VERDICT on the derivation: valid, PROVIDED iota(S1) <= 4 q1^{mu1},
+i.e. (T2).  Check (T2) exactly, all families, all ranks <= 14, q<=64:
+   (T2) violations: [('E7', 2, 260538849, 134217728)]
+
+Lemma P: N - mu = 0 exactly for the rank-1 families; >= 1 else.
+     A1    N=1    mu=1   N-mu=0     theta=D/mu=3
+     L3    N=3    mu=2   N-mu=1     theta=D/mu=4
+     L4    N=6    mu=3   N-mu=3     theta=D/mu=5
+     U3    N=3    mu=3   N-mu=0     theta=D/mu=8/3
+     U4    N=6    mu=5   N-mu=1     theta=D/mu=3
+     U5    N=10   mu=7   N-mu=3     theta=D/mu=24/7
+     C2    N=4    mu=3   N-mu=1     theta=D/mu=10/3
+     C3    N=9    mu=5   N-mu=4     theta=D/mu=21/5
+     B3    N=9    mu=5   N-mu=4     theta=D/mu=21/5
+     D4+   N=12   mu=6   N-mu=6     theta=D/mu=14/3
+     G2    N=6    mu=5   N-mu=1     theta=D/mu=14/5
+     F4    N=24   mu=15  N-mu=9     theta=D/mu=52/15
+     E6    N=36   mu=16  N-mu=20    theta=D/mu=39/8
+     E7    N=63   mu=25  N-mu=38    theta=D/mu=133/25
+     E8    N=120  mu=55  N-mu=65    theta=D/mu=248/55
+     3D4   N=12   mu=9   N-mu=3     theta=D/mu=28/9
+     2B2   N=2    mu=2   N-mu=0     theta=D/mu=5/2
+     2G2   N=3    mu=3   N-mu=0     theta=D/mu=7/3
+     2F4   N=12   mu=10  N-mu=2     theta=D/mu=13/5
+
+Lemma EQ window (rank >= 2, so N1-mu1 >= 1): all (family,q1) with
+   q1^{N1-mu1} < 4 d1 f1 g1 :
+     L3    N-mu=1    q1 in [2, 4, 8, 16, 32, 64, 3, 9, 5, 25, 7, 13, 19]
+     U4    N-mu=1    q1 in [2, 4, 8, 16, 32, 3, 9, 27, 5, 25, 7, 11, 13, 19, 23, 31]
+     U5    N-mu=3    q1 in [4]
+     C2    N-mu=1    q1 in [4, 8, 16, 32, 3, 9, 5, 7]
+     G2    N-mu=1    q1 in [4, 8, 3, 9]
+     3D4   N-mu=3    q1 in [2]
+   TOTAL window: 43  (v_task54 reports 71 triples)
+
+==========================================================================
+PART 4  rank-1 specifics
+==========================================================================
+(a) 3 nmid |Sz(q)|, q = 2^f, f odd:
+    q = 2^f with f odd => q = 2*4^{(f-1)/2} == 2*1 == 2 (mod 3)
+    q-1 == 1, q^2 == 4 == 1 so q^2+1 == 2, and q^2 is a 2-power.
+    exact check f odd, 3 <= f <= 401 : divisible-by-3 = NONE
+
+(b) Sz subfield count (Lemma Sz-subfield). f1 | f, f/f1 odd >= 3,
+    so q/q1 >= q1^2 and c = |Sz(q)|/|Sz(q1)| must be <= f1.
+    pairs with c <= |Out(Sz(q1))| = f1 : NONE
+    smallest ratio c/f1 seen: 1205899264/3 at (f,f1)=(9,3), c=1205899264
+
+(c) U3 / R cross-characteristic ppmax_{p'}^3 kill (v_task53 §5.2).
+    Claim: c * ppmax_{p'}(|S|)^3 < |S| for q >= 179 (U3), q >= 2187 (R).
+    c <= |Out(S1)| <= 78*f1 with f1 <= log2(ppmax_{p'}).
+    U3   : kill valid for all q > 173  (first q from which it holds for all larger scanned q: 179)
+    R    : kill valid for all q > 243  (first q from which it holds for all larger scanned q: 2187)
+
+(d) exact ppmax bounds of v_task53 Input 4, re-derived numerically:
+     U3   : max ppmax/bound = 1 at q=4  (<=1 means bound holds)
+     Sz   : max ppmax/bound = 16384/16385 at q=128  (<=1 means bound holds)
+     R    : max ppmax/bound = 1 at q=27  (<=1 means bound holds)
+
+(e) THE ALTERNATING-SOCLE BRANCH for U3 / R  (v_task53 §5.4 claims
+    'complete in q' because |Out(A_m)| <= 4; but the scan only
+    enumerated A_m with |A_m| <= 10^80, which is NOT all m).
+    Independent uniform repair: the floor (F) with iota_ab(A_m)
+    <= C(m,3) forces  |Out(A_m)| * C(m,3) >= iota(S) = q^N+1,
+    hence m is bounded BELOW by ~ (3 q^N / |Out|)^{1/3}; while
+    (E) forces c*|A_m| = |S| <= q^a, bounding m ABOVE.
+    U3   : q where the floor does NOT already kill every alternating socle: [(4, 7), (3, 6)]
+    R    : q where the floor does NOT already kill every alternating socle: NONE
+    (a non-empty list means those q need the finite scan; an empty
+     list means the alternating branch is closed for ALL q by proof)
+
+==========================================================================
+PART 5  (E2) and (E3) windows of v_task52 §4.2 / §4.3
+==========================================================================
+(E2): Soc T = L2(q1)^2.  |L2(q1)|^2 <= |L2(q)| and the floor
+      2*|Out(L2(q1))|*(q1+1) >= q+1, i.e. 4 f1 (q1+1) >= q+1.
+      largest q for which SOME q1 satisfies both: 438
+      (v_task52 claims the branch is empty for q > 839)
+
+(E3): Soc T = A_m^l, l <= 2.  Lemma K: 2-part of |L2(q)| <= q+1,
+      while |A_m|^l contributes 2^{l(v2(m!)-1)} >= 2^{v2(m!)-1};
+      and the floor gives q+1 <= 2*|Out(A_m)|*C(m,3).
+      So 2^{v2(m!)-1} <= 2*|Out(A_m)|*C(m,3):
+      m satisfying the inequality: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      (v_task52 claims it fails for every m > 15)
+
+==========================================================================
+PART 1  Lemma C  |Out(G)|*iota(G) <= |G|^{2/3}, independent route
+==========================================================================
+Elementary bound used (NO Borel-Tits, NO minimal-degree theorems):
+  A := Z(Syl_p(G)) is abelian, != 1, and Syl_p(G) <= N_G(A), so
+  iota_ab(G) <= [G : Syl_p(G)] = |G| / |G|_p .
+  Hence Lemma C is implied by the EXACT integer inequality
+      (SC)   |Out(G)|^3 * |G|  <=  (|G|_p)^3 .
+
+Failure window of (SC) (i.e. groups where (SC) does NOT already
+prove Lemma C), searched over q <= 10000000 for the families with
+3N-D <= 1 and q <= 4096 for the rest:
+   A1     : 665132 groups  q = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049, 177147, 531441, 1594323, 4782969, 5, 25, 125, 625, 3125]
+   L3     : 43 groups  q = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 65536, 262144, 3, 9, 27, 81, 243, 729, 2187, 5, 25, 125, 625, 7, 49, 343, 2401, 121, 13, 169, 289, 19, 361, 529, 31, 37]
+   L4     : 2 groups  q = [3, 9]
+   U3     : 38 groups  q = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 131072, 3, 9, 27, 81, 243, 729, 2187, 5, 25, 125, 3125, 7, 49, 11, 1331, 17, 23, 29, 41, 47, 53, 59, 71]
+   U4     : 1 groups  q = [3]
+   C2     : 3 groups  q = [4, 8, 16]
+   2B2    : 4 groups  q = [8, 32, 128, 512]
+   TOTAL window size: 665223
+
+Tail proof (uniform, no computation):  |G| <= 5.69 * q^D / d and
+  |Out| = d*f*g*tw, so (SC) follows from  5.69 * d^2 f^3 (g*tw)^3
+  <= q^{3N-D}.  The table of 3N-D:
+     A1     N=1    D=3    3N-D = 0
+     L3     N=3    D=8    3N-D = 1
+     L4     N=6    D=15   3N-D = 3
+     L5     N=10   D=24   3N-D = 6
+     L6     N=15   D=35   3N-D = 10
+     L7     N=21   D=48   3N-D = 15
+     L8     N=28   D=63   3N-D = 21
+     L9     N=36   D=80   3N-D = 28
+     L10    N=45   D=99   3N-D = 36
+     L11    N=55   D=120  3N-D = 45
+     L12    N=66   D=143  3N-D = 55
+     L13    N=78   D=168  3N-D = 66
+     L14    N=91   D=195  3N-D = 78
+     U3     N=3    D=8    3N-D = 1
+     U4     N=6    D=15   3N-D = 3
+     U5     N=10   D=24   3N-D = 6
+     U6     N=15   D=35   3N-D = 10
+     U7     N=21   D=48   3N-D = 15
+     U8     N=28   D=63   3N-D = 21
+     U9     N=36   D=80   3N-D = 28
+     U10    N=45   D=99   3N-D = 36
+     U11    N=55   D=120  3N-D = 45
+     U12    N=66   D=143  3N-D = 55
+     U13    N=78   D=168  3N-D = 66
+     U14    N=91   D=195  3N-D = 78
+     C2     N=4    D=10   3N-D = 2
+     C3     N=9    D=21   3N-D = 6
+     C4     N=16   D=36   3N-D = 12
+     C5     N=25   D=55   3N-D = 20
+     C6     N=36   D=78   3N-D = 30
+     C7     N=49   D=105  3N-D = 42
+     C8     N=64   D=136  3N-D = 56
+     C9     N=81   D=171  3N-D = 72
+     C10    N=100  D=210  3N-D = 90
+     C11    N=121  D=253  3N-D = 110
+     C12    N=144  D=300  3N-D = 132
+     C13    N=169  D=351  3N-D = 156
+     C14    N=196  D=406  3N-D = 182
+     B3     N=9    D=21   3N-D = 6
+     B4     N=16   D=36   3N-D = 12
+     B5     N=25   D=55   3N-D = 20
+     B6     N=36   D=78   3N-D = 30
+     B7     N=49   D=105  3N-D = 42
+     B8     N=64   D=136  3N-D = 56
+     B9     N=81   D=171  3N-D = 72
+     B10    N=100  D=210  3N-D = 90
+     B11    N=121  D=253  3N-D = 110
+     B12    N=144  D=300  3N-D = 132
+     B13    N=169  D=351  3N-D = 156
+     B14    N=196  D=406  3N-D = 182
+     D4+    N=12   D=28   3N-D = 8
+     D4-    N=12   D=28   3N-D = 8
+     D5+    N=20   D=45   3N-D = 15
+     D5-    N=20   D=45   3N-D = 15
+     D6+    N=30   D=66   3N-D = 24
+     D6-    N=30   D=66   3N-D = 24
+     D7+    N=42   D=91   3N-D = 35
+     D7-    N=42   D=91   3N-D = 35
+     D8+    N=56   D=120  3N-D = 48
+     D8-    N=56   D=120  3N-D = 48
+     D9+    N=72   D=153  3N-D = 63
+     D9-    N=72   D=153  3N-D = 63
+     D10+   N=90   D=190  3N-D = 80
+     D10-   N=90   D=190  3N-D = 80
+     D11+   N=110  D=231  3N-D = 99
+     D11-   N=110  D=231  3N-D = 99
+     D12+   N=132  D=276  3N-D = 120
+     D12-   N=132  D=276  3N-D = 120
+     D13+   N=156  D=325  3N-D = 143
+     D13-   N=156  D=325  3N-D = 143
+     D14+   N=182  D=378  3N-D = 168
+     D14-   N=182  D=378  3N-D = 168
+     G2     N=6    D=14   3N-D = 4
+     F4     N=24   D=52   3N-D = 20
+     E6     N=36   D=78   3N-D = 30
+     2E6    N=36   D=78   3N-D = 30
+     E7     N=63   D=133  3N-D = 56
+     E8     N=120  D=248  3N-D = 112
+     3D4    N=12   D=28   3N-D = 8
+     2B2    N=2    D=5    3N-D = 1
+     2G2    N=3    D=7    3N-D = 2
+     2F4    N=12   D=26   3N-D = 10
+
+Now check Lemma C EXACTLY on every window group, with the sharper
+minimal-parabolic bound ibar_P (Borel-Tits) -- (|Out|*ibar_P)^3 <= |G|^2 :
+   window groups checked: 665223 ;  FAILURES: 0
+   tightest 12 rows (ratio = |Out|*ibar / |G|^{2/3}):
+     A1     q=9      |Out|=4    ibar=10         |G|=360            ratio=0.790
+     A1     q=5      |Out|=2    ibar=6          |G|=60             ratio=0.783
+     A1     q=4      |Out|=2    ibar=5          |G|=60             ratio=0.652
+     A1     q=7      |Out|=2    ibar=8          |G|=168            ratio=0.526
+     L3     q=2      |Out|=2    ibar=7          |G|=168            ratio=0.460
+     A1     q=8      |Out|=3    ibar=9          |G|=504            ratio=0.426
+     A1     q=27     |Out|=6    ibar=28         |G|=9828           ratio=0.366
+     L3     q=4      |Out|=12   ibar=21         |G|=20160          ratio=0.340
+     A1     q=11     |Out|=2    ibar=12         |G|=660            ratio=0.317
+     U3     q=5      |Out|=6    ibar=126        |G|=126000         ratio=0.301
+     U3     q=8      |Out|=18   ibar=513        |G|=5515776        ratio=0.296
+     A1     q=16     |Out|=4    ibar=17         |G|=4080           ratio=0.266
+
+  alternating: iota_ab(A_m) <= C(m,3) (witness <(123)>); check
+     A_m, 5 <= m <= 199 : failures = NONE
+  sporadic: exact iota table of v_task39 (the value under audit):
+     sporadic failures = NONE ; tightest = J1 at ratio 0.333
+
+  A1 TAIL: Lemma C for L2(q) with ibar=q+1 is exactly d^5 f^3 (q+1) <= q^2 (q-1)^2 ;
+        exact failures for prime powers q <= 3*10^6 : NONE
+        tail: d<=2, f<=log2 q, so it follows from 32 (log2 q)^3 (q+1) <= q^2(q-1)^2,
+        whose RHS/LHS ~ q^3/log^3 q is increasing; true from q=17 on.
+
+  sporadic Lemma C using ONLY the elementary bound
+        iota_ab(S) <= |S|/|S|_r (no ATLAS input at all):
+        failures = ['M11', 'M12', 'M22', 'M23', 'J1', 'J2', 'J3', 'J4', 'HS', 'McL', 'He', 'Suz', 'ON', 'Co3', 'Fi23', "Fi24'", 'HN', 'Ly', 'Th', 'M']
+

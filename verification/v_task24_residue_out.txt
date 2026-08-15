@@ -1,0 +1,19 @@
+  n   C(n,3)  #cand  #bad   surviving all-large-iota factorizations (k<=5, exact Out)
+  5        5      0     0   -- none --
+  6       10      3     0   -- none --
+  7       35      8     0   -- none --
+  8       15      9     0   -- none --
+  9       84     15     0   -- none --
+ 10      120     17     1   -- none --
+ 11      165     22     4   -- none --
+ 20     1140     62     7   -- none --
+ 30     4060     92    13   -- none --
+ 40     9880    122    16   -- none --
+ 50    19600    149    18   -- none --
+ 60    34220    166    11   -- none --
+ 70    54740    193    12   -- none --
+ 80    82160    225    13   -- none --
+ 90   117480    240    13   -- none --
+100   161700    255    14   -- none --
+
+TOTAL surviving all-large-iota factorizations, n = 5..100:  0

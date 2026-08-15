@@ -1,0 +1,12 @@
+# v_task53 --census U3 : Fitting-free NON-SIMPLE twins
+# U_3(q) = PSU(3,q), q >= 3
+# 5216 targets, q from 3 to 49999
+
+## rows with a NON-EMPTY non-simple census (all others: empty)
+   (none)
+
+## SUMMARY  family U3
+   positive control (|S| a simple order, uniquely, = U3) : PASS, all 5216 targets
+   targets with EMPTY non-simple census : 5216 / 5216
+   candidates killed by the orbit floor : 0
+   *** LIVE survivors ***               : 0

@@ -1,0 +1,702 @@
+==========================================================================
+PART 0 -- ERRATUM in the shared FAM table (v_task52): the E7 and
+          E8 minimal-parabolic indices were WRONG
+==========================================================================
+
+  deg_q [S : P] = dim U_P for every parabolic P, and the minimal maximal
+  parabolic is the one with the LARGEST Levi:
+
+     F4 : P_1 , Levi B_3 , dim U_P = 15
+     E6 : P_1 , Levi D_5 , dim U_P = 16   (U_P ABELIAN, the 27-dim node)
+     E7 : P_7 , Levi E_6 , dim U_P = 27   (U_P ABELIAN, the 56-dim node)
+     E8 : P_8 , Levi E_7 , dim U_P = 57
+
+  v_task52's FAM carried mu(E7) = 25 and mu(E8) = 51 with iota expressions
+  divided by a spurious (q^2-1) resp. (q^2-1)(q^4-1).  Both are corrected
+  here (and at source in v_task52_lemmaC.py).  Direct check against
+  |S| / (q^{dim U_P} |Levi|_univ (q-1)) :
+
+   q = 2   F4 69615                  E6 139503                   E7 277347807                      E8 293091386578365375
+   q = 3   F4 21789040               E6 65373763                 E7 11486048937664                 E8 2358339265121800120812652000
+   q = 4   F4 1437248085             E6 5749058133               E7 24042745886583125              E8 27699038782213342504516130875024725
+   q = 5   F4 38208007656            E6 191040429531             E7 9316210746764647656            E8 8674173415161025332277640103301938472656
+   q = 7   F4 5541128642400          E6 38787906264003           E7 76668986115162531149312        E8 1727980206426444800773838862111071899017360600000
+   q = 8   F4 40220528026185         E6 321764240990793          E7 2763343364822801920365129      E8 3420762027504446762240495707062165353272294809047625
+   q = 9   F4 231662827297720        E6 2084965488732763         E7 65419562164541488375015000     E8 2773169262080379507809783652725414677918815272826305200
+   parabolic-index vs target-table mismatches : 0
+
+  Impact of the erratum on the finished notes:
+    E7  : Lemma C sufficient condition 2D-3mu = 185 > 0  (was 2D-3mu = 191)
+    E8  : Lemma C sufficient condition 2D-3mu = 325 > 0  (was 2D-3mu = 343)
+    v_task57 PARTs 4/4.5 re-run with the corrected table: the
+    surviving-family lists are UNCHANGED (E7/E8 are killed by
+    Lemma EQ' with either value of mu).  No verdict moves.
+
+==========================================================================
+PART 1 -- the five targets: invariants, spectra, Lemma K-exc,
+          and the strain diagnostic
+==========================================================================
+
+  a := deg_q |S| = dim S ,  b := deg_q iota(S) = dim U_P ,  N := deg_q |S|_p.
+
+  S        a    b    N        a/b        a/N        N/b     3b-a
+  F4      52   15   24      52/15       13/6        8/5       -7
+  E6      78   16   36       39/8       13/6        9/4      -30
+  2E6     78   16   36       39/8       13/6        9/4      -30
+  E7     133   27   63     133/27       19/9        7/3      -52
+  E8     248   57  120     248/57      31/15      40/19      -77
+
+  3b - a < 0 for EVERY target: the rank-1 Step 2 (iota^3 > |S|) fails for
+  all five, so Lemma Q is genuinely needed (PART 2).  [v_task57 sec.10
+  predicted -58 / -95 for E7 / E8 from the erroneous b = 25 / 51; the
+  correct values are -52 / -77.]
+
+  Cyclotomic spectra of |S|_{p'} = prod_e Phi_e(q)^{m_e}, and
+  M := max_e m_e * phi(e) :
+
+   F4    Phi1^4 Phi2^4 Phi3^2 Phi4^2 Phi6^2 Phi8^1 Phi12^1
+         sum m_e phi(e) = 28 (= a - N = 28) OK ; M = 4 ; C_2 = 2048 , C_odd = 9 , C = 2048
+   E6    Phi1^6 Phi2^4 Phi3^3 Phi4^2 Phi5^1 Phi6^2 Phi8^1 Phi9^1 Phi12^1
+         sum m_e phi(e) = 42 (= a - N = 42) OK ; M = 6 ; C_2 = 8192 , C_odd = 81 , C = 8192
+   2E6   Phi1^4 Phi2^6 Phi3^2 Phi4^2 Phi6^3 Phi8^1 Phi10^1 Phi12^1 Phi18^1
+         sum m_e phi(e) = 42 (= a - N = 42) OK ; M = 6 ; C_2 = 8192 , C_odd = 81 , C = 8192
+   E7    Phi1^7 Phi2^7 Phi3^3 Phi4^2 Phi5^1 Phi6^3 Phi7^1 Phi8^1 Phi9^1 Phi10^1 Phi12^1 Phi14^1 Phi18^1
+         sum m_e phi(e) = 70 (= a - N = 70) OK ; M = 7 ; C_2 = 131072 , C_odd = 81 , C = 131072
+   E8    Phi1^8 Phi2^8 Phi3^4 Phi4^4 Phi5^2 Phi6^4 Phi7^1 Phi8^2 Phi9^1 Phi10^2 Phi12^2 Phi14^1 Phi15^1 Phi18^1 Phi20^1 Phi24^1 Phi30^1
+         sum m_e phi(e) = 128 (= a - N = 128) OK ; M = 8 ; C_2 = 4194304 , C_odd = 243 , C = 4194304
+
+  Lemma K-exc(tower) [PROVEN].  ppmax_{p'}(|S|) <= P(q) := C(S) (q+1)^M.
+
+  Proof.  (odd r != p)  Let e = ord_r(q).  Then r | Phi_d(q) only for
+  d = e or d = e r^k (k >= 1), and in the latter case r || Phi_d(q)
+  (Lucas / lifting-the-exponent).  So the r-part of |S| is at most
+  Phi_e(q)^{m_e} * r^{s} with s = sum_{k>=1} m_{e r^k}.  Now
+  Phi_e(q) < (q+1)^{phi(e)}, hence Phi_e(q)^{m_e} <= (q+1)^{m_e phi(e)}
+  <= (q+1)^M; and e r^k must itself be a block index, so r <= e_max and
+  r^s <= C_odd, a constant computed from the spectrum alone.
+  (r = 2, q odd)  Every factor of |S|_{p'} is q^d -+ 1, and
+  |q^d -+ 1|_2 divides |q^{2d}-1|_2 = |q^2-1|_2 |d|_2 <= 2(q+1)|d|_2
+  because min(|q-1|_2, |q+1|_2) = 2.  Multiplying over the k terms gives
+  |S|_2 <= 2^k (prod |d|_2) (q+1)^k = C_2 (q+1)^k <= C_2 (q+1)^M, since
+  k <= M in all five families (k = M for E6, 2E6, E7, E8 and k = 4 = M
+  for F4).
+  (r = 2, q even)  2 = p is excluded from ppmax_{p'}. []
+
+  The constants are small: C = C_2 in every family.
+
+   F4    : Lemma K-exc violations over admissible q <= 200 : 0
+   E6    : Lemma K-exc violations over admissible q <= 200 : 0
+   2E6   : Lemma K-exc violations over admissible q <= 200 : 0
+   E7    : Lemma K-exc violations over admissible q <= 100 : 0
+   E8    : Lemma K-exc violations over admissible q <= 60 : 0
+
+  the targets themselves satisfy Lemma K' (a < 3N):
+    F4    a =  52  <  3N =  72   OK
+    E6    a =  78  <  3N = 108   OK
+    2E6   a =  78  <  3N = 108   OK
+    E7    a = 133  <  3N = 189   OK
+    E8    a = 248  <  3N = 360   OK
+
+  sample orders and iota:
+    F4    q=2  |S| = 3311126603366400               iota = 69615
+    F4    q=3  |S| = 5734420792816671844761600      iota = 21789040
+    F4    q=4  |S| = 19009825523840945451297669120000 iota = 1437248085
+    E6    q=2  |S| = 214841575522005575270400       iota = 139503
+    E6    q=3  |S| = 14515406695082926420056516790429286400 iota = 65373763
+    E6    q=4  |S| = 28509570260447546701277873018380921822248960000 iota = 5749058133
+    2E6   q=2  |S| = 76532479683774853939200        iota = 46683
+    2E6   q=3  |S| = 14636855916969695633965120680532377600 iota = 32690203
+    2E6   q=4  |S| = 85696576147617709485896772387584983695360000000 iota = 3449461197
+    E7    q=2  |S| = 7997476042075799759100487262680802918400 iota = 277347807
+    E7    q=3  |S| = 1271375236818136742240479751139021644554379203770766254617395200 iota = 11486048937664
+    E7    q=4  |S| = 111131458114940385379597233477884941280664199527155056307251745263504588800000000 iota = 24042745886583125
+    E8    q=2  |S| = 337804753143634806261388190614085595079991692242467651576160959909068800000 iota = 293091386578365375
+    E8    q=3  |S| = 18830052912953932311099032439972660332140886784940152038522449391826616580150109878711243949982163694448626420940800000 iota = 2358339265121800120812652000
+    E8    q=4  |S| = 191797292142671717754639757897512906421357507604216557533558287598236977154127870984484770345340348298409697395609822849492217656441474908160000000000 iota = 27699038782213342504516130875024725
+
+==========================================================================
+PART 2 -- the MULTI-ORBIT branch: Lemma MO-EX
+==========================================================================
+
+  *** This is where the large tower differs from everything before it. ***
+
+  v_task55's Lemma Q reduces `T not almost simple' to a Lemma-B violator by
+  the step:  l <= 2 gives |G|^2 <= |S| and 2 rho(G) >= iota(S), hence
+  |G| <= |S|^{1/2} <= iota(S)^2 <= 4 rho(G)^2 -- which needs  4b >= a.
+
+     target   4b    a     4b >= a ?
+     L3        8     8    yes (equality)
+     S4       12    10    yes        G2   20  14  yes
+     3D4      36    28    yes        2F4  40  26  yes
+     F4       60    52    YES
+     E6/2E6   64    78    NO         E7  108 133  NO     E8  228 248  NO
+
+  So Lemma Q as stated does NOT apply to E6, 2E6, E7, E8: for these
+  targets iota(S) is far too small relative to |S| (b/a = 16/78, 27/133,
+  57/248 < 1/4) for the floor to squeeze a socle factor into the violator
+  list.  v_task57 sec.10's forecast "l >= 2 will be vacuous for the whole
+  F4-E8 tower" is WRONG -- it read the window off q^b <= 2 rho_max only.
+
+  The replacement is a CONVEXITY argument on the exponents, and it is
+  uniform in q, needs no violator list, and is strictly stronger.
+
+  > Lemma MO-EX [PROVEN, this note].  Let T be Fitting-free, |T| = |S|,
+  > D(T) = D(S), T NOT almost simple; Soc T = prod_O G_O^{l_O} over the
+  > socle orbits O, and suppose every G_O is of Lie type in the DEFINING
+  > characteristic p (PART 2C disposes of the other cases).  Put
+  > r_O := D_O/N_O and u_O := l_O N_O f_O.  Then
+  >
+  >   (i)  [floor + p-part]   sum_O l_O (N_O/mu_O)  <=  N/b + E1 ,
+  >        E1 = (1/(b f)) sum_O l_O (N_O/mu_O) A_O ,
+  >        A_O = log_p(4 l_O d_O f_O g_O / kappa_i) .
+  >        Since N_O/mu_O >= 1 in EVERY family and there are >= 2 factors,
+  >        each single family obeys  N_O/mu_O  <=  N/b - 1 + E1 .
+  >   (ii) [p-part EQUALITY, Lemma EQ-EX]   sum_O u_O = N f - delta ,
+  >        delta = v_p(c) , c | prod |Out(G_O)|^{l_O} prod l_O! .
+  >   (iii)[order]   a f - B  <=  sum_O r_O u_O  <=  a f ,
+  >        B = log_p(prod (12 d_O)^{l_O}) .
+  >
+  > Combining (ii) and (iii):
+  >
+  >        sum_O ( r_O - a/N ) u_O   <=   B + (a/N) delta .            (*)
+  >
+  > Every term on the left is >= 0 as soon as every admissible family has
+  > r_O >= a/N, and each u_O >= (N_O/mu_O)(b f - A_O) >= b f - A.  So if
+  > SOME factor has r_O > a/N strictly, (*) forces
+  >
+  >        (min strict gap) * (b f - A)  <=  B + (a/N) delta ,
+  >
+  > an explicit threshold in q.  And if EVERY factor has r_O = a/N exactly,
+  > (i) has to be satisfied by same-ratio families alone -- a purely
+  > combinatorial condition on the family tables.  []
+
+  The tables (exact, no q anywhere):
+
+  global min over ALL families of N/mu = 1  (attained by L2, U3, Sz, R)
+
+  ---- F4   : N/b = 8/5      cap = N/b - 1 = 3/5      a/N = 13/6
+       admissible families (N1/mu1 <= cap) : NONE
+       ==> NO family can carry a socle factor: the multi-orbit branch is
+           EMPTY for EVERY q, with no threshold and no exceptional list.
+
+  ---- E6   : N/b = 9/4      cap = N/b - 1 = 5/4      a/N = 13/6
+       admissible families (N1/mu1 <= cap) : ['2F4: N/mu=6/5, D/N=13/6', 'G2: N/mu=6/5, D/N=7/3', 'L2: N/mu=1, D/N=3', 'R: N/mu=1, D/N=7/3', 'Sz: N/mu=1, D/N=5/2', 'U3: N/mu=1, D/N=8/3', 'U4: N/mu=6/5, D/N=5/2']
+       every admissible r = D1/N1 >= a/N : True
+       same-ratio admissible (r = a/N)   : [('2F4', '6/5')]
+       an ALL-same-ratio configuration needs sum l_O (N_O/mu_O) >= 2 * 6/5 = 12/5  >  N/b = 9/4 : IMPOSSIBLE
+       min strict gap r - a/N over the admissible list : 1/6
+       SHARP weight W = min over configurations of sum l(N/mu)(r - a/N)  =  1/6   (attained by 2F4^1 x R^1)
+       kappa_i = min_q iota(S)/q^b = 1.015873
+
+  ---- 2E6  : N/b = 9/4      cap = N/b - 1 = 5/4      a/N = 13/6
+       admissible families (N1/mu1 <= cap) : ['2F4: N/mu=6/5, D/N=13/6', 'G2: N/mu=6/5, D/N=7/3', 'L2: N/mu=1, D/N=3', 'R: N/mu=1, D/N=7/3', 'Sz: N/mu=1, D/N=5/2', 'U3: N/mu=1, D/N=8/3', 'U4: N/mu=6/5, D/N=5/2']
+       every admissible r = D1/N1 >= a/N : True
+       same-ratio admissible (r = a/N)   : [('2F4', '6/5')]
+       an ALL-same-ratio configuration needs sum l_O (N_O/mu_O) >= 2 * 6/5 = 12/5  >  N/b = 9/4 : IMPOSSIBLE
+       min strict gap r - a/N over the admissible list : 1/6
+       SHARP weight W = min over configurations of sum l(N/mu)(r - a/N)  =  1/6   (attained by 2F4^1 x R^1)
+       kappa_i = min_q iota(S)/q^b = 0.712326
+
+  ---- E7   : N/b = 7/3      cap = N/b - 1 = 4/3      a/N = 19/9
+       admissible families (N1/mu1 <= cap) : ['2F4: N/mu=6/5, D/N=13/6', '3D4: N/mu=4/3, D/N=7/3', 'G2: N/mu=6/5, D/N=7/3', 'L2: N/mu=1, D/N=3', 'R: N/mu=1, D/N=7/3', 'S4: N/mu=4/3, D/N=5/2', 'Sz: N/mu=1, D/N=5/2', 'U3: N/mu=1, D/N=8/3', 'U4: N/mu=6/5, D/N=5/2']
+       every admissible r = D1/N1 >= a/N : True
+       same-ratio admissible (r = a/N)   : NONE
+       min strict gap r - a/N over the admissible list : 1/18
+       SHARP weight W = min over configurations of sum l(N/mu)(r - a/N)  =  13/45   (attained by 2F4^1 x R^1)
+       kappa_i = min_q iota(S)/q^b = 1.015873
+
+  ---- E8   : N/b = 40/19    cap = N/b - 1 = 21/19    a/N = 31/15
+       admissible families (N1/mu1 <= cap) : ['L2: N/mu=1, D/N=3', 'R: N/mu=1, D/N=7/3', 'Sz: N/mu=1, D/N=5/2', 'U3: N/mu=1, D/N=8/3']
+       every admissible r = D1/N1 >= a/N : True
+       same-ratio admissible (r = a/N)   : NONE
+       min strict gap r - a/N over the admissible list : 4/15
+       SHARP weight W = min over configurations of sum l(N/mu)(r - a/N)  =  8/15   (attained by R^2)
+       kappa_i = min_q iota(S)/q^b = 1.015873
+
+
+  The explicit form of (*).  With l_O <= 2, |Out(G_O)| = d_O f_O g_O <= 8 f_O
+  for every admissible family, f_O <= N f (from sum l_O N_O f_O <= N f and
+  N_O >= 1), and c | prod |Out|^{l_O} prod l_O! so c <= 2 (8 N f)^2 = 128
+  (N f)^2 :
+
+     A       <=  log_p( 4 * 2 * 8 N f / kappa_i )  =  log_p( 64 N f/kappa_i )
+     B       <=  log_p( (12*4)^2 )                 =  log_p( 2304 )
+     delta   <=  log_p( 128 (N f)^2 )
+
+  and MO-EX closes at (p,f) as soon as
+
+     W * ( b f - A )   >   B + (a/N) * delta ,
+
+  W being the sharp configuration weight of the table above.
+
+  The set of (p,f) where this FAILS is finite and is swept exactly in
+  PART 2B.  (It is monotone: the left side grows linearly in f and in
+  log p, the right side only logarithmically.)
+
+==========================================================================
+  PART 2B -- the EXACT residual sweep of the (p,f) window where
+             MO-EX does not yet close
+==========================================================================
+
+  For each target the failing (p,f) set is computed from the displayed
+  inequality and then swept EXACTLY: every admissible family F_O, every
+  orbit length l_O <= 2, every f_O in the band forced by the floor, and the
+  exact tests
+
+     prod |G_O|^{l_O}  |  |S| ,
+     c := |S| / prod |G_O|^{l_O}   divides   prod |Out(G_O)|^{l_O} prod l_O! ,
+     l_O |Out(G_O)| iota(G_O)  >=  iota(S)    (exact iota from the tables).
+
+  No factorisation of |S| is used anywhere.
+
+    F4    : window VACUOUS (no admissible family)
+    E6    : MO-EX fails only for 42979 pairs (p,f), p <= 514939, f <= 26 ; sweeping them exactly...
+             0 (family, l, f_O) candidates past the floor ; SURVIVORS 0
+    2E6   : MO-EX fails only for 43874 pairs (p,f), p <= 526483, f <= 27 ; sweeping them exactly...
+             12 (family, l, f_O) candidates past the floor ; SURVIVORS 0
+    E7    : MO-EX fails only for 47 pairs (p,f), p <= 127, f <= 8 ; sweeping them exactly...
+             0 (family, l, f_O) candidates past the floor ; SURVIVORS 0
+    E8    : MO-EX fails only for 3 pairs (p,f), p <= 3, f <= 2 ; sweeping them exactly...
+             0 (family, l, f_O) candidates past the floor ; SURVIVORS 0
+
+
+  PART 2C -- socle factors NOT of Lie type in characteristic p.
+
+  (a) CROSS characteristic.  |G|_{p1} <= ppmax_{p'}(|S|) <= P(q) (Lemma
+      K-exc), so by Lemma K' |G| < P^3 and by Lemma C
+      |Out(G)| iota(G) <= |G|^{2/3} < P^2.  The floor needs
+      l |Out| iota >= iota(S) >= kappa_i q^b with l <= N/b < 3, so
+                 3 P(q)^2  >  kappa_i q^b .
+      Exponents 2M vs b:
+
+        F4     2M =  8   vs   b = 15   DEAD (2M < b)
+        E6     2M = 12   vs   b = 16   DEAD (2M < b)
+        2E6    2M = 12   vs   b = 16   DEAD (2M < b)
+        E7     2M = 14   vs   b = 27   DEAD (2M < b)
+        E8     2M = 16   vs   b = 57   DEAD (2M < b)
+      exact evaluation over all admissible q, with the bound
+      P(q) and then with the EXACT ppmax_{p'}(|S|) (Q below):
+        F4    : with P(q) : q <= 9 ;  with the exact Q : [(2, 729), (3, 32768)]
+        E6    : with P(q) : q <= 109 ;  with the exact Q : [(2, 729), (3, 131072), (4, 59049), (5, 524288), (9, 33554432)]
+        2E6   : with P(q) : q <= 109 ;  with the exact Q : [(2, 59049), (3, 524288), (4, 78125), (7, 33554432), (8, 43046721)]
+        E7    : with P(q) : q <= 7 ;  with the exact Q : [(2, 177147), (3, 16777216)]
+        E8    : with P(q) : q <= 2 ;  with the exact Q : NONE -- empty for EVERY q
+      ==> the multi-orbit cross-characteristic residue is the
+          tiny window {'F4': [2, 3], 'E6': [2, 3, 4, 5, 9], '2E6': [2, 3, 4, 7, 8], 'E7': [2, 3], 'E8': []}, censused exactly in PART 6.
+
+  (b) ALTERNATING socle factor A_m.  iota(A_m) = C(m,3) for m >= 9 and the
+      floor needs l * 2 * C(m,3) >= iota(S) >= kappa_i q^b, so
+      m^3 >= 3 kappa_i q^b / l ; while |G|^2 <= |S| gives m!/2 <= |S|^{1/2}
+      = q^{a/2}, i.e. m log m <= (a/2) log q * (1+o(1)).  The first forces
+      m >= (kappa_i q^b)^{1/3} and the second m <= a log q, so
+                 q^{b/3}  <=  a log q  ,
+      impossible for every q >= 2 and every one of the five b's (b/3 >= 5).
+      Exact check:
+
+        F4    : (q, m) surviving : NONE -- empty for EVERY q
+        E6    : (q, m) surviving : NONE -- empty for EVERY q
+        2E6   : (q, m) surviving : NONE -- empty for EVERY q
+        E7    : (q, m) surviving : NONE -- empty for EVERY q
+        E8    : (q, m) surviving : NONE -- empty for EVERY q
+
+  (c) SPORADIC socle factor.  Finite list; the floor needs
+      l |Out(G)| iota(G) >= iota(S) with l <= 2 (Lemma MO-EX (i)) and
+      |G|^2 <= |S|.  Exact:
+
+        F4    : (q, G) surviving : NONE -- empty for EVERY q
+        E6    : (q, G) surviving : NONE -- empty for EVERY q
+        2E6   : (q, G) surviving : [(2, 'J3')]
+        E7    : (q, G) surviving : NONE -- empty for EVERY q
+        E8    : (q, G) surviving : NONE -- empty for EVERY q
+
+==========================================================================
+PART 3 -- almost simple, CROSS characteristic: the ppmax^3 kill
+==========================================================================
+
+  S_1 of Lie type over F_{q1}, p1 != p.  |S_1|_{p1} <= ppmax_{p'}(|S|)
+  <= P(q); Lemma K' gives |S_1| < P^3; with |S| = c|S_1|, c <= |Out(S_1)|
+  = d1 f1 g1 <= 6 n_max log2 P :
+
+        |S|  <  c * P(q)^3 .
+
+  Exponents: a vs 3(M+1) --
+
+    F4    a =  52   vs   3(M+1) = 15   margin 37
+    E6    a =  78   vs   3(M+1) = 21   margin 57
+    2E6   a =  78   vs   3(M+1) = 21   margin 57
+    E7    a = 133   vs   3(M+1) = 24   margin 109
+    E8    a = 248   vs   3(M+1) = 27   margin 221
+
+   F4    : with the bound P(q), survives for q in [2] ; with the EXACT ppmax_{p'}(|S|) = Q, survives for NONE -- EVERY q dies
+   E6    : with the bound P(q), survives for q in NONE ; with the EXACT ppmax_{p'}(|S|) = Q, survives for NONE -- EVERY q dies
+   2E6   : with the bound P(q), survives for q in [2] ; with the EXACT ppmax_{p'}(|S|) = Q, survives for NONE -- EVERY q dies
+   E7    : with the bound P(q), survives for q in NONE ; with the EXACT ppmax_{p'}(|S|) = Q, survives for NONE -- EVERY q dies
+   E8    : with the bound P(q), survives for q in NONE ; with the EXACT ppmax_{p'}(|S|) = Q, survives for NONE -- EVERY q dies
+
+==========================================================================
+PART 4 -- almost simple, EQUAL characteristic: Lemma EQ' + D/N
+==========================================================================
+
+  Lemma EQ' [PROVEN, v_task57].   q1^{(b/N) N_1 - mu_1} <= 4 d_1 f_1 g_1 ,
+  so a socle family dies uniformly as soon as  N_1/mu_1 > N/b.
+  Lemma EQ-EX [PROVEN, v_task57].  q1^{N_1} c_p = q^N exactly, so only
+  families with  D_1/N_1 = a/N  EXACTLY survive.
+
+  ---- F4   : a/N = 13/6    N/b = 8/5   
+       survive Lemma EQ' (N1/mu1 <= N/b) : ['L2', 'L3', 'U3', 'U4', 'U5', 'S4', 'G2', '3D4', 'F4', 'Sz', 'R', '2F4']
+       survive EQ-EX    (D1/N1 =  a/N)   : ['L12', 'U12', 'S12', 'O13', 'O14+', 'O14-', 'F4', 'E6', '2E6', '2F4']
+       survive BOTH                      : ['F4(q1)', '2F4(q1)']
+  ---- E6   : a/N = 13/6    N/b = 9/4   
+       survive Lemma EQ' (N1/mu1 <= N/b) : ['L2', 'L3', 'L4', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'S4', 'S6', 'O7', 'O8+', 'O8-', 'G2', '3D4', 'F4', 'E6', '2E6', 'E8', 'Sz', 'R', '2F4']
+       survive EQ-EX    (D1/N1 =  a/N)   : ['L12', 'U12', 'S12', 'O13', 'O14+', 'O14-', 'F4', 'E6', '2E6', '2F4']
+       survive BOTH                      : ['F4(q1)', 'E6(q1)', '2E6(q1)', '2F4(q1)']
+  ---- 2E6  : a/N = 13/6    N/b = 9/4   
+       survive Lemma EQ' (N1/mu1 <= N/b) : ['L2', 'L3', 'L4', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'S4', 'S6', 'O7', 'O8+', 'O8-', 'G2', '3D4', 'F4', 'E6', '2E6', 'E8', 'Sz', 'R', '2F4']
+       survive EQ-EX    (D1/N1 =  a/N)   : ['L12', 'U12', 'S12', 'O13', 'O14+', 'O14-', 'F4', 'E6', '2E6', '2F4']
+       survive BOTH                      : ['F4(q1)', 'E6(q1)', '2E6(q1)', '2F4(q1)']
+  ---- E7   : a/N = 19/9    N/b = 7/3   
+       survive Lemma EQ' (N1/mu1 <= N/b) : ['L2', 'L3', 'L4', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'S4', 'S6', 'S8', 'O7', 'O9', 'O8+', 'O8-', 'G2', '3D4', 'F4', 'E6', '2E6', 'E7', 'E8', 'Sz', 'R', '2F4']
+       survive EQ-EX    (D1/N1 =  a/N)   : ['L18', 'U18', 'S18', 'O19', 'O20+', 'O20-', 'E7']
+       survive BOTH                      : ['E7(q1)']
+  ---- E8   : a/N = 31/15   N/b = 40/19 
+       survive Lemma EQ' (N1/mu1 <= N/b) : ['L2', 'L3', 'L4', 'U3', 'U4', 'U5', 'U6', 'U7', 'S4', 'S6', 'O7', 'O8+', 'O8-', 'G2', '3D4', 'F4', 'E8', 'Sz', 'R', '2F4']
+       survive EQ-EX    (D1/N1 =  a/N)   : ['L30', 'U30', 'S30', 'O31', 'O32+', 'O32-', 'E8']
+       survive BOTH                      : ['E8(q1)']
+
+  The a/N = 13/6 BLOCK is  { 2F4, F4, E6, 2E6 }  among the exceptional
+  families and  { L12, U12, S12=C6, O13=B6, O14+=D7, O14-=2D7 }  among the
+  classical ones -- and EVERY classical member is removed by Lemma EQ'
+  (their N1/mu1 is 6, 3.14, 3.27, 3.27, 3.5, 3.5, all > 9/4).  The
+  a/N = 19/9 block is { E7, L18, U18, S18, O19, O20+- } and the
+  a/N = 31/15 block is { E8, L30, U30, S30, O31, O32+- }; again only the
+  exceptional member survives EQ'.
+
+==========================================================================
+PART 4.5 -- the matched case c_p = 1, in closed form
+==========================================================================
+
+  Within a same-ratio block the MATCHED exponent is f_1 = N f / N_1, and
+  then a_1 f_1 = (a/N) N_1 f_1 = a f : the two orders have EXACTLY the same
+  q-degree.  This is new: in every earlier note (sec.4bd, 4be, 4bf) the
+  residual c was a positive POWER of q and died on c | |Out| = O(log q).
+  Here c(q) tends to a CONSTANT, so the `c does not divide |Out|' pattern
+  gives nothing and each pair must be evaluated exactly.
+
+  ---- target F4    socle F4(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [1, 1] ~ [1.000000, 1.000000]
+        integer c >= 2 : NONE
+  ---- target F4    socle 2F4(q1)   (matched f1 = 2 f)
+        NO admissible (q,q1) pair at all (589 rejected: parity / field form)
+  ---- target E6    socle F4(q1)   (matched f1 = 3/2 f)
+        26 admissible pairs (563 rejected) ; c = |S|/|S_1| in [37245725/117469191, 11988938385830222217245375077059127014400/11988960914229825465799395495304950887473] ~ [0.317068, 0.999998]
+        integer c >= 2 : NONE
+  ---- target E6    socle E6(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [1, 1] ~ [1.000000, 1.000000]
+        integer c >= 2 : NONE
+  ---- target E6    socle 2E6(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [89390763/268698625, 64570852019894073851036044550410570122563037754996/21523617339964691326299822956582197646898912322875] ~ [0.332680, 3.000000]
+        integer c >= 2 : NONE
+  ---- target E6    socle 2F4(q1)   (matched f1 = 3 f)
+        6 admissible pairs (583 rejected) ; c = |S|/|S_1| in [807891/996151, 2355794963040335732391482516732616781219069457896699825236556804761758379/2355795524431506757809349008522387224914425144830408578508761504299002539] ~ [0.811013, 1.000000]
+        integer c >= 2 : NONE
+  ---- target 2E6   socle F4(q1)   (matched f1 = 3/2 f)
+        26 admissible pairs (563 rejected) ; c = |S|/|S_1| in [7277115625/7635439161, 1351413177165402359916066856528408795012451645727071600704/1351413274743446859747303735170813252521587531479132765841] ~ [0.953071, 1.000000]
+        integer c >= 2 : NONE
+  ---- target 2E6   socle E6(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [21523617339964691326299822956582197646898912322875/64570852019894073851036044550410570122563037754996, 268698625/89390763] ~ [0.333333, 3.005888]
+        integer c >= 2 : NONE
+  ---- target 2E6   socle 2E6(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [1, 1] ~ [1.000000, 1.000000]
+        integer c >= 2 : NONE
+  ---- target 2E6   socle 2F4(q1)   (matched f1 = 3 f)
+        6 admissible pairs (583 rejected) ; c = |S|/|S_1| in [15147/52429, 31926975214451048676878379184404233708984467735620267/95780948468160414868611253374585455905221663290032129] ~ [0.288905, 0.333333]
+        integer c >= 2 : NONE
+  ---- target E7    socle E7(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [1, 1] ~ [1.000000, 1.000000]
+        integer c >= 2 : NONE
+  ---- target E8    socle E8(q1)   (matched f1 = 1 f)
+        589 admissible pairs (0 rejected) ; c = |S|/|S_1| in [1, 1] ~ [1.000000, 1.000000]
+        integer c >= 2 : NONE
+
+==========================================================================
+PART 4.6 -- the NON-matched f1, killed uniformly
+==========================================================================
+
+  Let (S, S_1) be a same-ratio pair and put  delta := N f - N_1 f_1 >= 0.
+  Lemma EQ-EX gives c_p = p^delta, and non-matched means delta >= 1.
+
+  (i)  ZSYGMONDY.  Let E be the largest degree of the target (so
+       Phi_E(q) | |S|) and r a primitive prime divisor of p^{E f} - 1
+       (exists: E f >= 12 > 6).  Then r | |S|.  Since c <= |Out(S_1)| is a
+       polynomial-free O(f) quantity while r == 1 (mod E f), r | |S_1| for
+       all but the finitely many f with r <= |Out(S_1)|; hence
+       ord_r(p) = E f divides m f_1 for SOME m in the degree multiset
+       M(S_1).  This pins f_1 to a sparse set of rational multiples of f.
+
+  (ii) COUNTING.  |S| >= kappa q^a and |S_1| <= q1^{D_1} = p^{(a/N) N_1 f_1}
+       = q^a p^{-(a/N) delta}, so
+
+            c = |S| / |S_1|  >=  kappa * p^{(a/N) delta} ,
+
+       against  c <= |Out(S_1)| = d_1 f_1 g_1 <= 18 (N/N_1) f .
+
+  Below: the admissible ratios rho = f_1/f allowed by (i), and for the
+  non-matched ones the exact comparison of (ii) at f = 1, p = 2 (the
+  weakest case: the left side grows like p^{2.1 delta} = p^{2.1 f (N - N_1
+  rho)} while the right side grows linearly in f).
+
+  ---- F4   <- F4     : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['1']
+        rho = 1      MATCHED -- closed form, PART 4.5
+  ---- F4   <- 2F4    : matched f1/f = 2 ; Zsygmondy-admissible f1/f = ['1', '2']
+        rho = 1      delta/f = 12    : c >= kappa 2^{26 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 2      MATCHED -- closed form, PART 4.5
+  ---- E6   <- F4     : matched f1/f = 3/2 ; Zsygmondy-admissible f1/f = ['1', '3/2']
+        rho = 1      delta/f = 12    : c >= kappa 2^{26 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 3/2    MATCHED -- closed form, PART 4.5
+  ---- E6   <- E6     : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['1']
+        rho = 1      MATCHED -- closed form, PART 4.5
+  ---- E6   <- 2E6    : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['2/3', '1']
+        rho = 2/3    delta/f = 12    : c >= kappa 2^{26 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 1      MATCHED -- closed form, PART 4.5
+  ---- E6   <- 2F4    : matched f1/f = 3 ; Zsygmondy-admissible f1/f = ['1', '2', '3']
+        rho = 1      delta/f = 24    : c >= kappa 2^{52 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 2      delta/f = 12    : c >= kappa 2^{26 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 3      MATCHED -- closed form, PART 4.5
+  ---- 2E6  <- F4     : matched f1/f = 3/2 ; Zsygmondy-admissible f1/f = ['3/2']
+        rho = 3/2    MATCHED -- closed form, PART 4.5
+  ---- 2E6  <- E6     : matched f1/f = 1 ; Zsygmondy-admissible f1/f = []
+  ---- 2E6  <- 2E6    : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['1']
+        rho = 1      MATCHED -- closed form, PART 4.5
+  ---- 2E6  <- 2F4    : matched f1/f = 3 ; Zsygmondy-admissible f1/f = ['3/2', '3']
+        rho = 3/2    delta/f = 18    : c >= kappa 2^{39 f} > 18(N/N1) f for ALL f >= 1  -- DEAD
+        rho = 3      MATCHED -- closed form, PART 4.5
+  ---- E7   <- E7     : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['1']
+        rho = 1      MATCHED -- closed form, PART 4.5
+  ---- E8   <- E8     : matched f1/f = 1 ; Zsygmondy-admissible f1/f = ['1']
+        rho = 1      MATCHED -- closed form, PART 4.5
+
+  kappa = min_q |S|/q^a  (exact, over q <= 32): {'F4': '197358525/268435456', 'E6': '6037136330665109101306875/19342813113834066795298816', '2E6': '1113694156575/4398046511104', 'E7': '1110797006967720235307748661657600/2503155504993241601315571986085849', 'E8': '254136050560806452394291280512170128125/340282366920938463463374607431768211456'}
+
+==========================================================================
+PART 4.0 -- equal characteristic, decided EXACTLY, factorisation-
+            free, complete in f1 and in the socle type
+==========================================================================
+
+  q1^{N_1} | q^N bounds f_1 <= N f / N_1, so for each target parameter q
+  the equal-characteristic branch is a FINITE exact test with no
+  factorisation of |S| at all.  Every family, every rank <= 29, every f1.
+
+  F4    admissible q <= 50000  : 5217 targets, 137755 divisor pairs, control 5217/5217
+        order-only NEAR-MISS (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)     : NONE
+  E6    admissible q <= 30000  : 3320 targets, 109917 divisor pairs, control 3320/3320
+        order-only NEAR-MISS (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)     : NONE
+  2E6   admissible q <= 30000  : 3320 targets, 108275 divisor pairs, control 3320/3320
+        order-only NEAR-MISS (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)     : NONE
+  E7    admissible q <= 8000   : 1056 targets, 60450 divisor pairs, control 1056/1056
+        order-only NEAR-MISS (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)     : NONE
+  E8    admissible q <= 3000   : 466 targets, 46364 divisor pairs, control 466/466
+        order-only NEAR-MISS (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)     : NONE
+
+==========================================================================
+PART 5 -- almost simple with ALTERNATING or SPORADIC socle,
+          and the E8 sporadic FLOOR arithmetic
+==========================================================================
+
+  (E): c|S_1| = |S|, 2 <= c | |Out(S_1)| (c <= 4 for A_6, else <= 2 for
+  alternating and sporadic socles).  |S| = M is inverted exactly for q, so
+  each row is COMPLETE in q.
+
+  F4    (S_1,c) pairs tested : 177      hits : NONE           inverter self-check : OK
+  E6    (S_1,c) pairs tested : 177      hits : NONE           inverter self-check : OK
+  2E6   (S_1,c) pairs tested : 177      hits : NONE           inverter self-check : OK
+  E7    (S_1,c) pairs tested : 177      hits : NONE           inverter self-check : OK
+  E8    (S_1,c) pairs tested : 177      hits : NONE           inverter self-check : OK
+
+  THE E8 SPORADIC FLOOR, done honestly.  The brief asks whether a sporadic
+  socle factor can reach the E8 floor.  iota(E8(2)) = 293091386578365375 ~ 2.9e17, and the
+  largest sporadic iota is iota(M) = 97239461142009186000 ~ 9.7e19 > iota(E8(2)).  So the
+  FLOOR (F) alone does NOT exclude the Monster -- the floor is the wrong
+  test here.  Two other constraints do:
+
+    q = 2 : |E8(q)| = 337804753143634806261388190614085595079991692242467651576160959909068800000
+            |M| = 808017424794512875886459904961710757005754368000000000 ;  |M|^2 / |E8(q)| = 1.933e+33   (Lemma Q (Q1) needs |G|^2 <= |S|)
+            2|M| / |E8(q)| = 4.784e-21   (almost-simple (E) needs c|M| = |S|, c | |Out(M)| = 1)
+    q = 3 : |E8(q)| = 18830052912953932311099032439972660332140886784940152038522449391826616580150109878711243949982163694448626420940800000
+            |M| = 808017424794512875886459904961710757005754368000000000 ;  |M|^2 / |E8(q)| = 3.467e-11   (Lemma Q (Q1) needs |G|^2 <= |S|)
+            2|M| / |E8(q)| = 8.582e-65   (almost-simple (E) needs c|M| = |S|, c | |Out(M)| = 1)
+
+    Reading the numbers honestly:
+      * at q = 2 the Monster fails |G|^2 <= |S| by 33 orders of magnitude;
+      * at q = 3 it PASSES |G|^2 <= |S| (and passes the floor), so neither
+        the floor nor (Q1) rules it out -- exactly the trap the brief
+        warned about;
+      * what kills it is DIVISIBILITY: |M| does not divide |E8(q)| for any
+        q (|M| has the prime 41, 47, 59, 71 among others; GAP confirms
+        |M| does not divide |E8(2)| or |E8(3)|), and the almost-simple
+        equation c|M| = |S| with c | |Out(M)| = 1 is absurd.
+      The complete sporadic sweep is PART 2C(c) (multi-orbit, exact floor
+      AND exact divisibility: EMPTY for every q and every target) together
+      with PART 5's order inversion (almost simple: EMPTY for every q).
+
+
+==========================================================================
+PART 8 -- the a/N = 13/6 block: the hunt for hidden order
+          identities, in closed form
+==========================================================================
+
+  Structural observation [PROVEN].  If S and G lie in the same a/N block
+  and f_1 is matched (N_1 f_1 = N f), then
+
+        deg_q |S| - deg_q |G| = a f - a_1 f_1
+                              = (a/N) N f - (a_1/N_1) N_1 f_1  =  0 ,
+
+  so |S|/|G| tends to a CONSTANT as q -> infinity.  Every matched pair in a
+  same-ratio block is therefore a candidate order identity with BOUNDED c.
+  This is qualitatively different from the identities of sec.4bd/4be/4bf
+  (|U3(q)| = (q+1)|R(q)|, |L3(25)| = 7|L4(5)|, |S4(q^3)| = ((q^2+1)/d)
+  |3D4(q)|, |G2(q^2)| = (q^2+q+1)|2F4(q)|), where c was a POWER of q and
+  the rule `c | |Out|' killed it with a full power of q to spare.  Here
+  the rule gives nothing and the pairs must be settled exactly.
+
+  The block is  { 2F4 (N=12), F4 (N=24), E6 (N=36), 2E6 (N=36) }.
+
+  S      G      f1/f       c(q) = |S|/|G| over admissible q           verdict
+  2F4    F4     1/2        no admissible (q,q1) pair (field-form parity) IMPOSSIBLE
+  2F4    E6     1/3        c in [1.233026, 1.233026] (1 pairs) no integer c >= 2
+  2F4    2E6    1/3        c in [3.461345, 3.461345] (1 pairs) no integer c >= 2
+  F4     2F4    2          no admissible (q,q1) pair (field-form parity) IMPOSSIBLE
+  F4     E6     2/3        c in [1.000151, 3.153897] (6 pairs) no integer c >= 2
+  F4     2E6    2/3        c in [1.000151, 1.049240] (6 pairs) no integer c >= 2
+  E6     2F4    3          c in [0.811013, 0.999939] (4 pairs) no integer c >= 2
+  E6     F4     3/2        c in [0.317068, 0.999998] (11 pairs) no integer c >= 2
+  E6     2E6    1          c in [0.332680, 3.000000] (24 pairs) no integer c >= 2
+  2E6    2F4    3          c in [0.288905, 0.333313] (4 pairs) no integer c >= 2
+  2E6    F4     3/2        c in [0.953071, 1.000000] (11 pairs) no integer c >= 2
+  2E6    E6     1          c in [0.333333, 3.005888] (24 pairs) no integer c >= 2
+
+  Closed forms (all PROVEN by cancelling the order polynomials):
+
+  (I1)  |E6(m^2)| / |F4(m^3)|
+          = (m^16-1)(m^12-1)(m^10-1)(m^4-1)
+            / ( gcd(3,m^2-1) (m^36-1)(m^6-1) )          <  1 .
+        Both sides have q-degree 156 in m.  Since the numerator is
+        < m^42 and the denominator is > m^42 - m^36 - m^6, the quotient is
+        < (1 - m^{-6})^{-1} <= 8/7, and it is < 1 already for m >= 2.
+        ==>  c < 2 : DEAD, and NOT an integer identity.
+
+  (I2)  |E6(q)| / |2F4(q^3)|
+          = (q^9-1)(q^8-1)(q^6-1)(q^5-1)(q^2-1)
+            / ( gcd(3,q-1) (q^18+1)(q^9+1)(q^3-1) ) .
+        Numerator < q^30; denominator (d=1) = (q^18+1)(q^9+1)(q^3-1)
+        > q^30 - q^27.  Hence the quotient < (1-q^{-3})^{-1} <= 8/7 < 2.
+        ==>  c < 2 : DEAD.
+
+  (I3)  |2E6(q)| / |E6(q)|   (matched f1 = f, q1 = q)
+          = [gcd(3,q-1)/gcd(3,q+1)] (q^9+1)(q^5+1) / ((q^9-1)(q^5-1)) .
+        3 | q-1 and 3 | q+1 are mutually exclusive, so the bracket is
+        1, 3 or 1/3.  The interesting case is q == 1 (mod 3), where the
+        bracket is 3 and, writing A = q^9-1, B = q^5-1,
+
+              c = 3 (1 + 2/A)(1 + 2/B)  ,   so   3 < c < 4
+
+        for every q >= 4 (the smallest q == 1 mod 3 with q >= 3).
+        ==>  c is NEVER an integer -- and this is the CLOSEST CALL in the
+        whole programme so far: c = 3 would have divided
+        |Out(E6(q))| = 6f exactly.  It is killed by a strict inequality,
+        not by an arithmetic obstruction.
+        (The reverse direction |E6(q)|/|2E6(q)| < 1 is impossible outright.)
+
+  (I4)  |2E6(m^2)| / |F4(m^3)| and |2E6(q)| / |2F4(q^3)| : same shape,
+        both < 1 by the same cancellation.  DEAD.
+
+  (I5)  |F4(q^2)| / |2F4(q)| would need f1 = 2f EVEN, but 2F4 exists only
+        for f1 ODD.  IMPOSSIBLE -- no pair at all.  (Contrast Identity B of
+        v_task57, |G2(q^2)| = (q^2+q+1)|2F4(q)|, which does exist because
+        G2 and 2F4 are NOT in the same a/N block, so the degrees differ.)
+
+  Verdict: the 13/6 block produces FOUR near-identities (c -> 1/d or 3) and
+  NOT ONE exact one.  The block interacts exactly as v_task57 sec.10.4
+  predicted, but the interaction is benign.
+
+  exact confirmation of (I3), q == 1 mod 3 :
+     q = 4    c = 268698625/89390763 = 3.0058880357   integer: False
+     q = 7    c = 169565860816/56515225203 = 3.0003571641   integer: False
+     q = 13   c = 984346747642489/328113815069052 = 3.0000161604   integer: False
+     q = 16   c = 72057662758453249/24019175105800875 = 3.0000057221   integer: False
+     q = 19   c = 199751752118264500/66583863591059187 = 3.0000024232   integer: False
+     q = 25   c = 9313226699831542969/3104408264159342448 = 3.0000006144   integer: False
+     q = 31   c = 189235990415111777536/63078659065095460875 = 3.0000002096   integer: False
+     q = 37   c = 2253015356489204359681/751005097169433263388 = 3.0000000865   integer: False
+     q = 43   c = 18471339461682815677684/6157113070128812068347 = 3.0000000408   integer: False
+     q = 49   c = 114996634543288460340625/38332211243027173382592 = 3.0000000212   integer: False
+     q = 61   c = 2469208136263866258135721/823069376805597596473500 = 3.0000000071   integer: False
+     q = 64   c = 19342813131848466378522625/6447604365273222404025003 = 3.0000000056   integer: False
+     q = 67   c = 9183056297525857867088596/3061018761307529997959523 = 3.0000000044   integer: False
+     q = 73   c = 30511253524654544363758729/10170417831739583324362992 = 3.0000000029   integer: False
+     q = 79   c = 92197530117132497578312000/30732510019068899349491547 = 3.0000000019   integer: False
+  exact confirmation of (I1), q = m^2 :
+     m = 2   q = 4     q1 = 8      c = 0.3170680302  (< 1: True)
+     m = 3   q = 9     q1 = 27     c = 0.9889923561  (< 1: True)
+     m = 4   q = 16    q1 = 64     c = 0.3321119955  (< 1: True)
+     m = 5   q = 25    q1 = 125    c = 0.3328212651  (< 1: True)
+     m = 7   q = 49    q1 = 343    c = 0.3331973332  (< 1: True)
+     m = 8   q = 64    q1 = 512    c = 0.3332532241  (< 1: True)
+     m = 9   q = 81    q1 = 729    c = 0.9998494653  (< 1: True)
+  exact confirmation of (I2), q even, f odd :
+     f = 1   q = 2     q1 = 8         c = 0.8110125874  (< 2: True)
+     f = 3   q = 8     q1 = 512       c = 0.9862674345  (< 2: True)
+     f = 5   q = 32    q1 = 32768     c = 0.9990538955  (< 2: True)
+     f = 7   q = 128   q1 = 2097152   c = 0.9999394416  (< 2: True)
+
+  broad order-coincidence sweep |S| = c|G|, 2 <= c <= 10^4, over
+  the full Lie/alternating/sporadic candidate list, small q:
+     F4  (2) : |S| = 1 * |F4(2)|  (|Out(G)| = 2, c | |Out| : no)
+     F4  (3) : |S| = 1 * |F4(3)|  (|Out(G)| = 2, c | |Out| : no)
+     F4  (4) : |S| = 1 * |F4(4)|  (|Out(G)| = 4, c | |Out| : no)
+     F4  (5) : |S| = 1 * |F4(5)|  (|Out(G)| = 2, c | |Out| : no)
+     F4  (7) : |S| = 1 * |F4(7)|  (|Out(G)| = 2, c | |Out| : no)
+     F4  (8) : |S| = 1 * |F4(8)|  (|Out(G)| = 6, c | |Out| : no)
+     F4  (9) : |S| = 1 * |F4(9)|  (|Out(G)| = 4, c | |Out| : no)
+     E6  (2) : |S| = 1 * |E6(2)|  (|Out(G)| = 2, c | |Out| : no)
+     E6  (3) : |S| = 1 * |E6(3)|  (|Out(G)| = 2, c | |Out| : no)
+     E6  (4) : |S| = 1 * |E6(4)|  (|Out(G)| = 12, c | |Out| : no)
+     E6  (5) : |S| = 1 * |E6(5)|  (|Out(G)| = 2, c | |Out| : no)
+     E6  (7) : |S| = 1 * |E6(7)|  (|Out(G)| = 6, c | |Out| : no)
+     E6  (8) : |S| = 1 * |E6(8)|  (|Out(G)| = 6, c | |Out| : no)
+     E6  (9) : |S| = 1 * |E6(9)|  (|Out(G)| = 4, c | |Out| : no)
+     2E6 (2) : |S| = 1 * |2E6(2)|  (|Out(G)| = 6, c | |Out| : no)
+     2E6 (3) : |S| = 1 * |2E6(3)|  (|Out(G)| = 2, c | |Out| : no)
+     2E6 (4) : |S| = 1 * |2E6(4)|  (|Out(G)| = 4, c | |Out| : no)
+     2E6 (5) : |S| = 1 * |2E6(5)|  (|Out(G)| = 6, c | |Out| : no)
+     2E6 (7) : |S| = 1 * |2E6(7)|  (|Out(G)| = 2, c | |Out| : no)
+     2E6 (8) : |S| = 1 * |2E6(8)|  (|Out(G)| = 18, c | |Out| : no)
+     2E6 (9) : |S| = 1 * |2E6(9)|  (|Out(G)| = 4, c | |Out| : no)
+     E7  (2) : |S| = 1 * |E7(2)|  (|Out(G)| = 1, c | |Out| : no)
+     E7  (3) : |S| = 1 * |E7(3)|  (|Out(G)| = 2, c | |Out| : no)
+     E7  (4) : |S| = 1 * |E7(4)|  (|Out(G)| = 2, c | |Out| : no)
+     E8  (2) : |S| = 1 * |E8(2)|  (|Out(G)| = 1, c | |Out| : no)
+
+==========================================================================
+PART 6 -- the residual census: the multi-orbit cross-characteristic
+          window of PART 2C(a), the ONLY residue of the whole note
+==========================================================================
+
+  Phase 1 = the raw order census (all multisets of simple groups whose
+  orders multiply into |S| with the cofactor dividing prod |Out|^l prod l!)
+  Phase 2 = the orbit floor l |Out(S_i)| iota(S_i) >= iota(S).
+
+  ---- F4    : 2 targets, q in [2, 3]
+     RAW survivors 0 ; after the orbit floor 0 ; positive-control failures 0 / 2
+  ---- E6    : 5 targets, q in [2, 3, 4, 5, 9]
+     RAW survivors 0 ; after the orbit floor 0 ; positive-control failures 0 / 5
+  ---- 2E6   : 5 targets, q in [2, 3, 4, 7, 8]
+     RAW survivors 0 ; after the orbit floor 0 ; positive-control failures 0 / 5
+  ---- E7    : 2 targets, q in [2, 3]
+     RAW survivors 0 ; after the orbit floor 0 ; positive-control failures 0 / 2
+  E8    : residual window EMPTY -- no census needed.
+

@@ -1,0 +1,4 @@
+# v_task38 R1 scan -- complete over ALL q, for 10 <= n <= 20000000
+# shape hits (iota1 realised by some q): 117
+# gap windows entered: 73
+# SURVIVORS: 0

@@ -1,0 +1,12 @@
+# q-side R1 cross-check, prime powers q <= 2000
+# per-family n-coverage (max n whose gap can be met by some q <= QMAX):
+#   L3    n <= 2002
+#   L4    n <= 2002
+#   L5    n <= 3996004
+#   S4e   n <= 1025
+#   S4np  n <= 730
+#   S4p   n <= 1002
+#   Sp6   n <= 2048
+#   U4    n <= 2001
+#   U5    n <= 2001
+# SURVIVORS: 0

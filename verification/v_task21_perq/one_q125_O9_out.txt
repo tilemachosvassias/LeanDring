@@ -1,0 +1,81 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 119636 points.
+#I  Have 238839 points.
+#I  Have 357848 points.
+#I  Have 476156 points.
+#I  Have 594709 points.
+#I  Have 712223 points.
+#I  Have 829992 points.
+#I  Have 947901 points.
+#I  Have 1066037 points.
+#I  Have 1183444 points.
+#I  Have 1301528 points.
+#I  Have 1417694 points.
+#I  Have 1533757 points.
+#I  Have 1649454 points.
+#I  Have 1764506 points.
+#I  Have 1880641 points.
+#I  Have 1996555 points.
+#I  Have 2113454 points.
+#I  Have 2228776 points.
+#I  Have 2345458 points.
+#I  Have 2458237 points.
+#I  Have 2572854 points.
+#I  Have 2685370 points.
+#I  Have 2799512 points.
+#I  Have 2913884 points.
+#I  Have 3029683 points.
+#I  Have 3143577 points.
+#I  Have 3258916 points.
+#I  Have 3372488 points.
+#I  Have 3488021 points.
+#I  Have 3601350 points.
+#I  Have 3715986 points.
+#I  Have 3828621 points.
+#I  Have 3945423 points.
+#I  Have 4063329 points.
+#I  Have 4175919 points.
+#I  Have 4290560 points.
+#I  Have 4404632 points.
+#I  Have 4517416 points.
+#I  Have 4630518 points.
+#I  Have 4743211 points.
+#I  Have 4857028 points.
+#I  Have 4975386 points.
+#I  Have 5089083 points.
+#I  Have 5203263 points.
+#I  Have 5312294 points.
+#I  Have 5421848 points.
+#I  Have 5531107 points.
+#I  Have 5639897 points.
+#I  Have 5750724 points.
+#I  Have 5863468 points.
+#I  Have 5974233 points.
+#I  Have 6086377 points.
+#I  Have 6195702 points.
+#I  Have 6302840 points.
+#I  Have 6410877 points.
+#I  Have 6517515 points.
+#I  Have 6627888 points.
+#I  Have 6737397 points.
+#I  Have 6848906 points.
+#I  Have 6958145 points.
+#I  Have 7069596 points.
+#I  Have 7181753 points.
+#I  Have 7290329 points.
+#I  Have 7401969 points.
+#I  Have 7510679 points.
+#I  Have 7623271 points.
+#I  Have 7740572 points.
+#I  Have 7850311 points.
+#I  Have 7961088 points.
+#I  Have 8070670 points.
+#I  Have 8180155 points.
+#I  Have 8289476 points.

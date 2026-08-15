@@ -1,0 +1,943 @@
+============================================================================
+PART A -- the four towers: invariants and the iota lemma
+============================================================================
+
+  Lemma SPO-iota [PROVEN, all four towers, all ranks in scope, all q, with
+  the four exceptional rows below handled exactly].
+      iota(S) = [S : P_1] , the stabiliser of a singular 1-space,
+  with the Borel-Tits witness  A = Z(U_{P_1}),  N_S(A) = P_1.
+
+  (<=)  A := Z(O_p(P_1)) is a non-trivial ABELIAN subgroup with N_S(A) = P_1
+        (Borel-Tits: N_G(Z(U_P)) = P).  Hence ind*(A) = [S:P_1].
+        *** THE NON-ABELIAN TRAP (v_task56 Trap 2) IS REAL HERE: for the
+        symplectic and orthogonal P_1 the unipotent radical U_{P_1} is a
+        SPECIAL group of shape q^{1+2(n-1)} (C_n) resp. q^{2n-2} -- abelian
+        only in the orthogonal cases.  The witness must be Z(U_P), never
+        O_p(P).  Verified in GAP, _g_out.txt PART B. ***
+  (>=)  For 1 != H <= S, ind*(H) >= [S:N_S(H)] >= m(S), the minimal
+        permutation degree, and m(S) = [S:P_1] except in the rows below
+        [LIT: Kleidman-Liebeck Table 5.2.2; Cooperstein; Vasilyev].
+
+  The proof quantifies over ALL H, so (AB) IS NOT A DEBT for any of the four
+  towers, exactly as in v_task56 / v_task58.
+
+  EXCEPTIONAL minimal degrees, carried EXACTLY (the smaller value is used):
+      PSp_{2n}(2), n >= 3 : m = 2^{n-1}(2^n-1)  <  2^{2n}-1   [n=3: 28 < 63]
+      Omega_7(3)          : m = 351             <  364
+      POmega^+_8(2)       : m = 120             <  135
+      POmega^+_8(3)       : m = 1080            <  1120
+  Note PSp_{2n}(2) is an exception for EVERY n >= 3 (an infinite family of
+  exceptions, unlike the two isolated rows of v_task56) -- but the ratio is
+  bounded, m/[S:P_1] -> 1/2, so b = deg_q iota is UNCHANGED (2n-1) and every
+  degree argument below is untouched.  This is why the Sp_6(2) row costs
+  nothing.
+
+  X    n   a        N        b      K      a/N       b/K      N/b       4b>=a?  
+  C    3   21       9        5      6      7/3       5/6      9/5       NO      
+  C    4   36       16       7      8      9/4       7/8      16/7      NO      
+  C    5   55       25       9      10     11/5      9/10     25/9      NO      
+  C    6   78       36       11     12     13/6      11/12    36/11     NO      
+  C    7   105      49       13     14     15/7      13/14    49/13     NO      
+  C    8   136      64       15     16     17/8      15/16    64/15     NO      
+  C    9   171      81       17     18     19/9      17/18    81/17     NO      
+  C    10  210      100      19     20     21/10     19/20    100/19    NO      
+  B    3   21       9        5      6      7/3       5/6      9/5       NO      
+  B    4   36       16       7      8      9/4       7/8      16/7      NO      
+  B    5   55       25       9      10     11/5      9/10     25/9      NO      
+  B    6   78       36       11     12     13/6      11/12    36/11     NO      
+  B    7   105      49       13     14     15/7      13/14    49/13     NO      
+  B    8   136      64       15     16     17/8      15/16    64/15     NO      
+  B    9   171      81       17     18     19/9      17/18    81/17     NO      
+  B    10  210      100      19     20     21/10     19/20    100/19    NO      
+  D    4   28       12       6      6      7/3       1        2         NO      
+  D    5   45       20       8      8      9/4       1        5/2       NO      
+  D    6   66       30       10     10     11/5      1        3         NO      
+  D    7   91       42       12     12     13/6      1        7/2       NO      
+  D    8   120      56       14     14     15/7      1        4         NO      
+  D    9   153      72       16     16     17/8      1        9/2       NO      
+  D    10  190      90       18     18     19/9      1        5         NO      
+  2D   4   28       12       6      8      7/3       3/4      2         NO      
+  2D   5   45       20       8      10     9/4       4/5      5/2       NO      
+  2D   6   66       30       10     12     11/5      5/6      3         NO      
+  2D   7   91       42       12     14     13/6      6/7      7/2       NO      
+  2D   8   120      56       14     16     15/7      7/8      4         NO      
+  2D   9   153      72       16     18     17/8      8/9      9/2       NO      
+  2D   10  190      90       18     20     19/9      9/10     5         NO      
+
+  READ-OFF.
+  * a/N = 2 + 1/n for C_n and B_n (IDENTICAL: |B_n(q)| = |C_n(q)|), and
+    a/N = 2 + 1/(n-1) for D_n and ^2D_n -- i.e. THE D_n RATIO IS THE
+    C_{n-1} RATIO.  The same-a/N blocks are therefore populous; this is
+    exactly the bounded-c regime v_task58 sec.6 warned about.  PART C.
+  * b/K = 1 - 1/(2n) (C,B), 1 (D), 1 - 1/n (^2D).  D_n is the FIRST target
+    in the whole programme with b/K = 1: Lemma Z admits only the families
+    with mu/k >= 1, i.e. {D_m, F_4, E_6, E_7, E_8}.  PART B.
+  * 4b >= a FAILS for EVERY target here, including C_3 (20 < 21).  So the
+    classical Lemma Q of v_task55 is dead throughout and Lemma MO-EX is
+    mandatory from the first row.  (v_task58 sec.9 said "failure from n = 4";
+    the exact boundary is n = 3 -- C_3 fails too, by 1.)
+
+  iota table (E = exceptional minimal degree in force):
+  S            [S:P_1]        iota used      E
+  S6(2)        63             28             E
+  S6(3)        364            364            
+  S6(4)        1365           1365           
+  S8(2)        255            120            E
+  S10(2)       1023           496            E
+  O7(3)        364            351            E
+  O7(5)        3906           3906           
+  O9(3)        3280           3280           
+  O8+(2)       135            120            E
+  O8+(3)       1120           1080           E
+  O8+(4)       5525           5525           
+  O10+(2)      527            527            
+  O8-(2)       119            119            
+  O8-(3)       1066           1066           
+  O10-(2)      495            495            
+
+============================================================================
+PART B -- Lemma Z (the Zsygmondy ratio test), equal characteristic
+============================================================================
+
+  Lemma Z [PROVEN, v_task56, target-agnostic].  For a socle factor G of Lie
+  type over F_{q1} = F_{p^{f1}} in the SAME characteristic, in an orbit of
+  length l, with k1 the largest cyclotomic degree in |G| and
+  mu1 = deg_{q1} iotabar(G):
+      (Z1)  f1 k1 <= K f      (Z2)  f1 mu1 >= f b - log_p(4 l d1 f1 g1)
+  hence   mu1/k1 >= b/K - o(1).   Transfers VERBATIM; only (b,K) change.
+
+  b/K for the four towers:  C_n, B_n : 1 - 1/(2n)
+                            D_n      : 1              <-- new, the strongest
+                            ^2D_n    : 1 - 1/n
+
+  SURVIVING FAMILIES per target (mu1/k1 >= b/K, q -> infinity form;
+  the log-correction is carried exactly in PARTS C/D):
+   C    n=3   b/K = 5/6       live: A(n>=6), 2A(n>=4), C(n>=3), B(n>=3), D(n>=4), 2D(n>=6), G2, F4, E6, 2E6, E7, E8, 2F4
+   C    n=4   b/K = 7/8       live: A(n>=8), 2A(n>=6), C(n>=4), B(n>=4), D(n>=4), 2D(n>=8), F4, E6, 2E6, E7, E8
+   C    n=5   b/K = 9/10      live: A(n>=10), 2A(n>=6), C(n>=5), B(n>=5), D(n>=4), 2D(n>=10), F4, E6, E7, E8
+   C    n=6   b/K = 11/12     live: A(n>=12), 2A(n>=8), C(n>=6), B(n>=6), D(n>=4), 2D(n>=12), F4, E6, E7, E8
+   C    n=7   b/K = 13/14     live: A(n>=14), 2A(n>=8), C(n>=7), B(n>=7), D(n>=4), 2D(n>=14), F4, E6, E7, E8
+   C    n=8   b/K = 15/16     live: A(n>=16), 2A(n>=10), C(n>=8), B(n>=8), D(n>=4), 2D(n>=16), F4, E6, E7, E8
+   C    n=9   b/K = 17/18     live: A(n>=18), 2A(n>=10), C(n>=9), B(n>=9), D(n>=4), 2D(n>=18), F4, E6, E7, E8
+   C    n=10  b/K = 19/20     live: A(n>=20), 2A(n>=12), C(n>=10), B(n>=10), D(n>=4), 2D(n>=20), F4, E6, E7, E8
+   B    n=3   b/K = 5/6       live: A(n>=6), 2A(n>=4), C(n>=3), B(n>=3), D(n>=4), 2D(n>=6), G2, F4, E6, 2E6, E7, E8, 2F4
+   B    n=4   b/K = 7/8       live: A(n>=8), 2A(n>=6), C(n>=4), B(n>=4), D(n>=4), 2D(n>=8), F4, E6, 2E6, E7, E8
+   B    n=5   b/K = 9/10      live: A(n>=10), 2A(n>=6), C(n>=5), B(n>=5), D(n>=4), 2D(n>=10), F4, E6, E7, E8
+   B    n=6   b/K = 11/12     live: A(n>=12), 2A(n>=8), C(n>=6), B(n>=6), D(n>=4), 2D(n>=12), F4, E6, E7, E8
+   B    n=7   b/K = 13/14     live: A(n>=14), 2A(n>=8), C(n>=7), B(n>=7), D(n>=4), 2D(n>=14), F4, E6, E7, E8
+   B    n=8   b/K = 15/16     live: A(n>=16), 2A(n>=10), C(n>=8), B(n>=8), D(n>=4), 2D(n>=16), F4, E6, E7, E8
+   B    n=9   b/K = 17/18     live: A(n>=18), 2A(n>=10), C(n>=9), B(n>=9), D(n>=4), 2D(n>=18), F4, E6, E7, E8
+   B    n=10  b/K = 19/20     live: A(n>=20), 2A(n>=12), C(n>=10), B(n>=10), D(n>=4), 2D(n>=20), F4, E6, E7, E8
+   D    n=4   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=5   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=6   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=7   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=8   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=9   b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   D    n=10  b/K = 1         live: D(n>=4), F4, E6, E7, E8
+   2D   n=4   b/K = 3/4       live: A(n>=4), 2A(n>=4), C(n>=2), B(n>=3), D(n>=4), 2D(n>=4), G2, 3D4, F4, E6, 2E6, E7, E8, 2F4
+   2D   n=5   b/K = 4/5       live: A(n>=5), 2A(n>=4), C(n>=3), B(n>=3), D(n>=4), 2D(n>=5), G2, F4, E6, 2E6, E7, E8, 2F4
+   2D   n=6   b/K = 5/6       live: A(n>=6), 2A(n>=4), C(n>=3), B(n>=3), D(n>=4), 2D(n>=6), G2, F4, E6, 2E6, E7, E8, 2F4
+   2D   n=7   b/K = 6/7       live: A(n>=7), 2A(n>=6), C(n>=4), B(n>=4), D(n>=4), 2D(n>=7), F4, E6, 2E6, E7, E8
+   2D   n=8   b/K = 7/8       live: A(n>=8), 2A(n>=6), C(n>=4), B(n>=4), D(n>=4), 2D(n>=8), F4, E6, 2E6, E7, E8
+   2D   n=9   b/K = 8/9       live: A(n>=9), 2A(n>=6), C(n>=5), B(n>=5), D(n>=4), 2D(n>=9), F4, E6, 2E6, E7, E8
+   2D   n=10  b/K = 9/10      live: A(n>=10), 2A(n>=6), C(n>=5), B(n>=5), D(n>=4), 2D(n>=10), F4, E6, E7, E8
+
+  READ-OFF.
+  * The four rank-1 families (L_2, U_3, Sz, R) have mu/k = 1/2 and are DEAD
+    against every target here, as in v_task56.
+  * The D_n tower (b/K = 1) admits ONLY {D_m (m>=4), F_4, E_6, E_7, E_8}.
+    This is the shortest surviving list of any target in the programme.
+  * C_n/B_n (b/K = 1-1/(2n)) forces L_m to m >= 2n, U_m (m even) to
+    m >= n+1, C_m/B_m to m >= n, ^2D_m to m >= 2n: Lemma Z alone pushes the
+    socle factor to at least the target's own rank, as in the linear tower.
+  * CALIBRATION of the brief's prediction.  b/K = 1-1/(2n) is BETTER than
+    L_d at d = n, but it is EXACTLY EQUAL to L_d at d = 2n -- and 2n is the
+    natural dimension of S_{2n}(q).  So "Sp/Omega is easier than linear" is
+    true at equal RANK and false at equal natural DIMENSION.  The genuine
+    gain is at D_n, where b/K = 1 beats every linear value.
+
+============================================================================
+PART C.1 -- Lemma EQ-EX: the same-a/N blocks, and Lemma EQ'
+============================================================================
+
+  Lemma EQ-EX [PROVEN, v_task57].  In the equal-characteristic almost-simple
+  branch, |S| = c|S_1| with c | |Out(S_1)| gives the p-part EQUALITY
+  q1^{N1} c_p = q^N, i.e. N1 f1 = N f - v_p(c), and the full order gives
+  a1 f1 = a f - deg_q(c/kappa).  With c = O(log q) both corrections are
+  O(log_p) and the MATCHED case (v_p(c) = 0) forces
+                        D1/N1 = a/N   exactly.
+  Lemma EQ' [PROVEN, v_task57]:  N1/mu1 <= N/b + o(1).
+
+  a/N = 2 + 1/n  for C_n and B_n  ;  2 + 1/(n-1) for D_n and ^2D_n.
+  Hence  block(2+1/m) = { C_m, B_m, D_{m+1}, ^2D_{m+1}, L_{2m}, U_{2m} }
+         plus the exceptional families whose a/N equals 2+1/m:
+             m = 3 : G_2 , ^3D_4 , ^2G_2 = R      (all a/N = 7/3)
+             m = 6 : F_4 , E_6 , ^2E_6 , ^2F_4    (all a/N = 13/6)
+             m = 9 : E_7   ;   m = 15 : E_8
+  *** So the D_n block IS the C_{n-1} block: the a/N = 2+1/(n-1) ratio is
+  shared by D_n, ^2D_n, C_{n-1}, B_{n-1}, L_{2n-2}, U_{2n-2}.  This is the
+  same-ratio interaction the brief asked us to hunt. ***
+
+  X    n   a/N       N/b       b/K      block members surviving EQ' AND Z
+  C    3   7/3       9/5       5/6      2A(6), C(3), B(3), G2
+       (full block: A(6), 2A(6), C(3), B(3), D(4), 2D(4), G2, 3D4, 2G2)
+  C    4   9/4       16/7      7/8      2A(8), C(4), B(4)
+       (full block: A(8), 2A(8), C(4), B(4), D(5), 2D(5))
+  C    5   11/5      25/9      9/10     2A(10), C(5), B(5)
+       (full block: A(10), 2A(10), C(5), B(5), D(6), 2D(6))
+  C    6   13/6      36/11     11/12    2A(12), C(6), B(6), F4, E6
+       (full block: A(12), 2A(12), C(6), B(6), D(7), 2D(7), F4, E6, 2E6, 2F4)
+  C    7   15/7      49/13     13/14    2A(14), C(7), B(7)
+       (full block: A(14), 2A(14), C(7), B(7), D(8), 2D(8))
+  C    8   17/8      64/15     15/16    2A(16), C(8), B(8)
+       (full block: A(16), 2A(16), C(8), B(8), D(9), 2D(9))
+  C    9   19/9      81/17     17/18    2A(18), C(9), B(9), E7
+       (full block: A(18), 2A(18), C(9), B(9), D(10), 2D(10), E7)
+  C    10  21/10     100/19    19/20    2A(20), C(10), B(10)
+       (full block: A(20), 2A(20), C(10), B(10), D(11), 2D(11))
+  C    11  23/11     121/21    21/22    2A(22), C(11), B(11)
+       (full block: A(22), 2A(22), C(11), B(11), D(12), 2D(12))
+  C    12  25/12     144/23    23/24    2A(24), C(12), B(12)
+       (full block: A(24), 2A(24), C(12), B(12), D(13), 2D(13))
+  B    3   7/3       9/5       5/6      2A(6), C(3), B(3), G2
+       (full block: A(6), 2A(6), C(3), B(3), D(4), 2D(4), G2, 3D4, 2G2)
+  B    4   9/4       16/7      7/8      2A(8), C(4), B(4)
+       (full block: A(8), 2A(8), C(4), B(4), D(5), 2D(5))
+  B    5   11/5      25/9      9/10     2A(10), C(5), B(5)
+       (full block: A(10), 2A(10), C(5), B(5), D(6), 2D(6))
+  B    6   13/6      36/11     11/12    2A(12), C(6), B(6), F4, E6
+       (full block: A(12), 2A(12), C(6), B(6), D(7), 2D(7), F4, E6, 2E6, 2F4)
+  B    7   15/7      49/13     13/14    2A(14), C(7), B(7)
+       (full block: A(14), 2A(14), C(7), B(7), D(8), 2D(8))
+  B    8   17/8      64/15     15/16    2A(16), C(8), B(8)
+       (full block: A(16), 2A(16), C(8), B(8), D(9), 2D(9))
+  B    9   19/9      81/17     17/18    2A(18), C(9), B(9), E7
+       (full block: A(18), 2A(18), C(9), B(9), D(10), 2D(10), E7)
+  B    10  21/10     100/19    19/20    2A(20), C(10), B(10)
+       (full block: A(20), 2A(20), C(10), B(10), D(11), 2D(11))
+  B    11  23/11     121/21    21/22    2A(22), C(11), B(11)
+       (full block: A(22), 2A(22), C(11), B(11), D(12), 2D(12))
+  B    12  25/12     144/23    23/24    2A(24), C(12), B(12)
+       (full block: A(24), 2A(24), C(12), B(12), D(13), 2D(13))
+  D    4   7/3       2         1        D(4)
+       (full block: A(6), 2A(6), C(3), B(3), D(4), 2D(4), G2, 3D4, 2G2)
+  D    5   9/4       5/2       1        D(5)
+       (full block: A(8), 2A(8), C(4), B(4), D(5), 2D(5))
+  D    6   11/5      3         1        D(6)
+       (full block: A(10), 2A(10), C(5), B(5), D(6), 2D(6))
+  D    7   13/6      7/2       1        D(7), F4, E6
+       (full block: A(12), 2A(12), C(6), B(6), D(7), 2D(7), F4, E6, 2E6, 2F4)
+  D    8   15/7      4         1        D(8)
+       (full block: A(14), 2A(14), C(7), B(7), D(8), 2D(8))
+  D    9   17/8      9/2       1        D(9)
+       (full block: A(16), 2A(16), C(8), B(8), D(9), 2D(9))
+  D    10  19/9      5         1        D(10), E7
+       (full block: A(18), 2A(18), C(9), B(9), D(10), 2D(10), E7)
+  D    11  21/10     11/2      1        D(11)
+       (full block: A(20), 2A(20), C(10), B(10), D(11), 2D(11))
+  D    12  23/11     6         1        D(12)
+       (full block: A(22), 2A(22), C(11), B(11), D(12), 2D(12))
+  2D   4   7/3       2         3/4      2A(6), C(3), B(3), D(4), 2D(4), G2, 3D4
+       (full block: A(6), 2A(6), C(3), B(3), D(4), 2D(4), G2, 3D4, 2G2)
+  2D   5   9/4       5/2       4/5      2A(8), C(4), B(4), D(5), 2D(5)
+       (full block: A(8), 2A(8), C(4), B(4), D(5), 2D(5))
+  2D   6   11/5      3         5/6      2A(10), C(5), B(5), D(6), 2D(6)
+       (full block: A(10), 2A(10), C(5), B(5), D(6), 2D(6))
+  2D   7   13/6      7/2       6/7      2A(12), C(6), B(6), D(7), 2D(7), F4, E6, 2E6
+       (full block: A(12), 2A(12), C(6), B(6), D(7), 2D(7), F4, E6, 2E6, 2F4)
+  2D   8   15/7      4         7/8      2A(14), C(7), B(7), D(8), 2D(8)
+       (full block: A(14), 2A(14), C(7), B(7), D(8), 2D(8))
+  2D   9   17/8      9/2       8/9      2A(16), C(8), B(8), D(9), 2D(9)
+       (full block: A(16), 2A(16), C(8), B(8), D(9), 2D(9))
+  2D   10  19/9      5         9/10     2A(18), C(9), B(9), D(10), 2D(10), E7
+       (full block: A(18), 2A(18), C(9), B(9), D(10), 2D(10), E7)
+  2D   11  21/10     11/2      10/11    2A(20), C(10), B(10), D(11), 2D(11)
+       (full block: A(20), 2A(20), C(10), B(10), D(11), 2D(11))
+  2D   12  23/11     6         11/12    2A(22), C(11), B(11), D(12), 2D(12)
+       (full block: A(22), 2A(22), C(11), B(11), D(12), 2D(12))
+
+============================================================================
+PART C.2 -- the MATCHED same-ratio pairs, exact c(m) (bounded-c)
+============================================================================
+
+  For every matched pair the q-degrees agree exactly, so c(m) = |S|/|G| is a
+  bounded rational function of m.  The verdict must come from an exact
+  inequality, never from c | |Out|.  Columns: the exact range of c(m) over
+  all admissible m <= 4000, and whether any INTEGER c >= 2 dividing |Out(G)|
+  occurs.
+
+  target       socle        f1/f     c(m) range                     integer c>=2 | |Out|?
+  2D_4         2A(6)        4/5      [1.000000, 1.002711]           none
+  2D_4         C(3)         4/3      [0.988247, 1.000000]           none
+  2D_4         B(3)         4/3      [0.998781, 1.000000]           none
+  2D_4         D(4)         1/1      [1.000000, 2.050000]           none
+  2D_4         2D(4)        1/1      [1.000000, 1.000000]           none
+  2D_4         G2           2/1      [0.449315, 1.000000]           none
+  2D_4         3D4          1/1      [0.493753, 1.000000]           none
+  2D_5         2A(8)        5/7      [1.000000, 2.000000]           none
+  2D_5         C(4)         5/4      [0.997054, 1.000000]           none
+  2D_5         B(4)         5/4      [0.999864, 1.000000]           none
+  2D_5         D(5)         1/1      [0.500000, 2.001280]           none
+  2D_5         2D(5)        1/1      [1.000000, 1.000000]           none
+  2D_6         2A(10)       2/3      [1.000000, 5.184187]           none
+  2D_6         C(5)         6/5      [0.999267, 1.000000]           none
+  2D_6         B(5)         6/5      [0.999985, 1.000000]           none
+  2D_6         D(6)         1/1      [1.000000, 2.005495]           none
+  2D_6         2D(6)        1/1      [1.000000, 1.000000]           none
+  2D_7         2A(12)       7/11     [1.000000, 3.000181]           none
+  2D_7         C(6)         7/6      [0.999817, 1.000000]           none
+  2D_7         B(6)         7/6      [0.999998, 1.000000]           none
+  2D_7         D(7)         1/1      [0.500000, 2.000051]           none
+  2D_7         2D(7)        1/1      [1.000000, 1.000000]           none
+  2D_7         F4           7/4      [0.499924, 1.000000]           none
+  2D_7         E6           7/6      [0.499999, 3.000000]           none
+  2D_7         2E6          7/6      [0.499999, 3.000000]           none
+  2D_8         2A(14)       8/13     [1.000000, 1.000015]           none
+  2D_8         C(7)         8/7      [0.999954, 1.000000]           none
+  2D_8         B(7)         8/7      [1.000000, 1.000000]           none
+  2D_8         D(8)         1/1      [1.000000, 2.000610]           none
+  2D_8         2D(8)        1/1      [1.000000, 1.000000]           none
+  2D_9         2A(16)       3/5      [1.000000, 4.000000]           none
+  2D_9         C(8)         9/8      [0.999989, 1.000000]           none
+  2D_9         B(8)         9/8      [1.000000, 1.000000]           none
+  2D_9         D(9)         1/1      [0.500000, 2.000002]           none
+  2D_9         2D(9)        1/1      [1.000000, 1.000000]           none
+  2D_10        2A(18)       10/17    [1.000000, 1.000001]           none
+  2D_10        C(9)         10/9     [0.999997, 1.000000]           none
+  2D_10        B(9)         10/9     [1.000000, 1.000000]           none
+  2D_10        D(10)        1/1      [1.000000, 2.000068]           none
+  2D_10        2D(10)       1/1      [1.000000, 1.000000]           none
+  2D_10        E7           10/7     [0.999940, 1.000000]           none
+  2D_11        2A(20)       11/19    [1.000000, 5.000000]           none
+  2D_11        C(10)        11/10    [0.999999, 1.000000]           none
+  2D_11        B(10)        11/10    [1.000000, 1.000000]           none
+  2D_11        D(11)        1/1      [0.500000, 2.000000]           none
+  2D_11        2D(11)       1/1      [1.000000, 1.000000]           none
+  2D_12        2A(22)       4/7      [1.000000, 1.003630]           none
+  2D_12        C(11)        12/11    [1.000000, 1.000000]           none
+  2D_12        B(11)        12/11    [1.000000, 1.000000]           none
+  2D_12        D(12)        1/1      [1.000000, 2.000008]           none
+  2D_12        2D(12)       1/1      [1.000000, 1.000000]           none
+  B_3          2A(6)        3/5      [1.000000, 3.000190]           none
+  B_3          C(3)         1/1      [1.000000, 1.000000]           none
+  B_3          B(3)         1/1      [1.000000, 1.000000]           none
+  B_3          G2           3/2      [0.494429, 0.500000]           none
+  B_4          2A(8)        4/7      [1.000000, 1.000150]           none
+  B_4          C(4)         1/1      [1.000000, 1.000000]           none
+  B_4          B(4)         1/1      [1.000000, 1.000000]           none
+  B_5          2A(10)       5/9      [1.000000, 5.000000]           none
+  B_5          C(5)         1/1      [1.000000, 1.000000]           none
+  B_5          B(5)         1/1      [1.000000, 1.000000]           none
+  B_6          2A(12)       6/11     [1.000000, 1.000002]           none
+  B_6          C(6)         1/1      [1.000000, 1.000000]           none
+  B_6          B(6)         1/1      [1.000000, 1.000000]           none
+  B_6          F4           3/2      [0.494429, 0.500000]           none
+  B_6          E6           1/1      [0.495885, 1.500000]           none
+  B_7          2A(14)       7/13     [1.000000, 7.000000]           none
+  B_7          C(7)         1/1      [1.000000, 1.000000]           none
+  B_7          B(7)         1/1      [1.000000, 1.000000]           none
+  B_8          2A(16)       8/15     [1.000000, 1.000000]           none
+  B_8          C(8)         1/1      [1.000000, 1.000000]           none
+  B_8          B(8)         1/1      [1.000000, 1.000000]           none
+  B_9          2A(18)       9/17     [1.000000, 9.000000]           none
+  B_9          C(9)         1/1      [1.000000, 1.000000]           none
+  B_9          B(9)         1/1      [1.000000, 1.000000]           none
+  B_9          E7           9/7      [1.000000, 1.000000]           none
+  B_10         2A(20)       10/19    [1.000000, 5.000000]           none
+  B_10         C(10)        1/1      [1.000000, 1.000000]           none
+  B_10         B(10)        1/1      [1.000000, 1.000000]           none
+  B_11         2A(22)       11/21    [1.000000, 11.000000]          none
+  B_11         C(11)        1/1      [1.000000, 1.000000]           none
+  B_11         B(11)        1/1      [1.000000, 1.000000]           none
+  B_12         2A(24)       12/23    [1.000000, 1.000000]           none
+  B_12         C(12)        1/1      [1.000000, 1.000000]           none
+  B_12         B(12)        1/1      [1.000000, 1.000000]           none
+  C_3          2A(6)        3/5      [1.000000, 3.039366]           none
+  C_3          C(3)         1/1      [1.000000, 1.000000]           none
+  C_3          B(3)         1/1      [1.000000, 1.000000]           none
+  C_3          G2           3/2      [0.494429, 1.000000]           none
+  C_4          2A(8)        4/7      [1.000000, 1.003630]           none
+  C_4          C(4)         1/1      [1.000000, 1.000000]           none
+  C_4          B(4)         1/1      [1.000000, 1.000000]           none
+  C_5          2A(10)       5/9      [1.000000, 5.000005]           none
+  C_5          C(5)         1/1      [1.000000, 1.000000]           none
+  C_5          B(5)         1/1      [1.000000, 1.000000]           none
+  C_6          2A(12)       6/11     [1.000000, 1.000240]           none
+  C_6          C(6)         1/1      [1.000000, 1.000000]           none
+  C_6          B(6)         1/1      [1.000000, 1.000000]           none
+  C_6          F4           3/2      [0.494429, 1.000000]           none
+  C_6          E6           1/1      [0.495885, 3.000000]           none
+  C_7          2A(14)       7/13     [1.000000, 7.000000]           none
+  C_7          C(7)         1/1      [1.000000, 1.000000]           none
+  C_7          B(7)         1/1      [1.000000, 1.000000]           none
+  C_8          2A(16)       8/15     [1.000000, 1.000015]           none
+  C_8          C(8)         1/1      [1.000000, 1.000000]           none
+  C_8          B(8)         1/1      [1.000000, 1.000000]           none
+  C_9          2A(18)       9/17     [1.000000, 9.000034]           none
+  C_9          C(9)         1/1      [1.000000, 1.000000]           none
+  C_9          B(9)         1/1      [1.000000, 1.000000]           none
+  C_9          E7           9/7      [0.999943, 1.000000]           none
+  C_10         2A(20)       10/19    [1.000000, 5.000005]           none
+  C_10         C(10)        1/1      [1.000000, 1.000000]           none
+  C_10         B(10)        1/1      [1.000000, 1.000000]           none
+  C_11         2A(22)       11/21    [1.000000, 11.000000]          none
+  C_11         C(11)        1/1      [1.000000, 1.000000]           none
+  C_11         B(11)        1/1      [1.000000, 1.000000]           none
+  C_12         2A(24)       12/23    [1.000000, 1.000000]           none
+  C_12         C(12)        1/1      [1.000000, 1.000000]           none
+  C_12         B(12)        1/1      [1.000000, 1.000000]           none
+  D_4          D(4)         1/1      [1.000000, 1.000000]           none
+  D_5          D(5)         1/1      [1.000000, 1.000000]           none
+  D_6          D(6)         1/1      [1.000000, 1.000000]           none
+  D_7          D(7)         1/1      [1.000000, 1.000000]           none
+  D_7          F4           7/4      [0.249962, 1.000000]           none
+  D_7          E6           7/6      [0.250000, 3.000000]           none
+  D_8          D(8)         1/1      [1.000000, 1.000000]           none
+  D_9          D(9)         1/1      [1.000000, 1.000000]           none
+  D_10         D(10)        1/1      [1.000000, 1.000000]           none
+  D_10         E7           10/7     [0.500000, 1.000000]           none
+  D_11         D(11)        1/1      [1.000000, 1.000000]           none
+  D_12         D(12)        1/1      [1.000000, 1.000000]           none
+
+  MATCHED-pair HITS over all targets: NONE
+
+  The self-pairs (target against its own family, f1/f = 1) give c == 1
+  identically and die on c >= 2.  Every cross-family matched pair has
+  c(m) bounded and bounded AWAY from the integers >= 2 that divide |Out|;
+  the closest calls are printed above.
+
+============================================================================
+PART C.3 -- the exact order-identity hunt in the same-ratio blocks
+============================================================================
+
+  The brief predicted hits here, on the pattern of |U_3(q)| = (q+1)|R(q)|,
+  |L_3(25)| = 7|L_4(5)|, |S_4(q^3)| = ((q^2+1)/d)|^3D_4(q)|,
+  |G_2(q^2)| = (q^2+q+1)|^2F_4(q)|.  Result, stated up front:
+
+  (J1) |B_n(q)| = |C_n(q)| EXACTLY, for every odd q and every n >= 3.
+       This is the CFSG order coincidence itself, c = 1.  It is NOT a twin
+       candidate on the non-simple side (c >= 2 is required), and its
+       simple-simple side is the PARKED question.  Consequence for THIS
+       note: one order census serves both towers, and every kill below is
+       simultaneously a kill for B_n and for C_n.
+
+  (J2) |SO_{2n+1}(q)| = |Sp_{2n}(q)| exactly (classical).  The projective
+       simple quotients then satisfy |Omega_{2n+1}(q)| = |PSp_{2n}(q)|,
+       which is (J1).  GAP-checked, _g_out.txt PART D.
+
+  (J3) The D_n <-> C_{n-1} same-ratio pair (equal a/N = 2+1/(n-1)).  The
+       two orders do NOT have the same q-degree at the SAME q (2n^2-n vs
+       2n^2-5n+3), only at the matched fields; the computation:
+
+         |C_{n-1}(q)| = q^{(n-1)^2} prod_{i=1}^{n-1}(q^{2i}-1)/gcd(2,q-1)
+         |D_n(q)|     = q^{n(n-1)} (q^n-1) prod_{i=1}^{n-1}(q^{2i}-1)
+                        /gcd(4,q^n-1)
+       so
+         |D_n(q)|/|C_{n-1}(q)| = q^{n-1}(q^n-1) * gcd(2,q-1)/gcd(4,q^n-1) .
+
+       *** THIS IS NOT BOUNDED: it is q^{2n-1} up to a constant. ***
+       The resolution: q^{n(n-1)} vs q^{(n-1)^2} differ by q^{n-1}, i.e. the
+       two families have the same a/N but DIFFERENT N, so a matched pair
+       needs f1/f = N/N1 = n(n-1)/(n-1)^2 = n/(n-1) != 1.  At the MATCHED
+       fields q = m^{n-1}, q1 = m^n the degrees do agree and c is bounded;
+       that is the row computed in PART C.2.  The unmatched evaluation above
+       is exactly the "different field" case, killed by c | |Out| with a full
+       power of q to spare.
+
+  (J4) |^2D_n(q)| / |D_n(q)| -> 1 (both q-degree 2n^2-n, SAME field):
+         = [gcd(4,q^n-1)/gcd(4,q^n+1)] * (q^n+1)/(q^n-1)
+       -> 1, 4 or 1/4.  The gcd bracket can be 4 (q^n odd, q^n = 1 mod 4
+       against q^n = 3 mod 4 is impossible for the SAME q and n) -- computed
+       exactly below.  This is the sharpest same-block call of the note and
+       is the analogue of v_task58's (I3).
+
+  (J1)/(J2) machine check, |B_n(q)| = |C_n(q)| as integers:
+     212 (n,q) pairs, all equal.
+
+  (J3) the UNMATCHED quotient |D_n(q)|/|C_{n-1}(q)| (a power of q:
+       dies on c | |Out| = O(log q)):
+       n=4 q=2   c = 120                    closed form 120                    match True
+       n=4 q=3   c = 1080                   closed form 1080                   match True
+       n=4 q=4   c = 16320                  closed form 16320                  match True
+       n=4 q=5   c = 39000                  closed form 39000                  match True
+       n=4 q=9   c = 2391120                closed form 2391120                match True
+       n=5 q=2   c = 496                    closed form 496                    match True
+       n=5 q=3   c = 19602                  closed form 19602                  match True
+       n=5 q=4   c = 261888                 closed form 261888                 match True
+       n=5 q=5   c = 976250                 closed form 976250                 match True
+       n=5 q=9   c = 193706964              closed form 193706964              match True
+       n=6 q=2   c = 2016                   closed form 2016                   match True
+       n=6 q=3   c = 88452                  closed form 88452                  match True
+       n=6 q=4   c = 4193280                closed form 4193280                match True
+       n=6 q=5   c = 24412500               closed form 24412500               match True
+       n=6 q=9   c = 15690500280            closed form 15690500280            match True
+
+  (J4) |^2D_n(q)|/|D_n(q)| -- SAME field, SAME degree, bounded c:
+       integer values of |^2D_n(q)|/|D_n(q)| observed: NONE
+
+       Closed form:  |^2D_n(q)|/|D_n(q)|
+                       = [gcd(4,q^n-1)/gcd(4,q^n+1)] * (q^n+1)/(q^n-1).
+       For q even the bracket is 1 and the quotient is (q^n+1)/(q^n-1),
+       strictly between 1 and 2 for q^n > 2: NEVER an integer >= 2.
+       For q odd exactly one of q^n-1, q^n+1 is = 2 mod 4, so the bracket is
+       4/2 = 2 or 2/4 = 1/2, and the quotient is
+             2(q^n+1)/(q^n-1)  in  (2, 3)   [q^n = 1 mod 4]
+             (q^n+1)/(2(q^n-1)) in (1/2, 1) [q^n = 3 mod 4]
+       for every q^n >= 5.  *** 2 < c < 3 is the near-miss: c = 2 WOULD
+       divide |Out(D_n(q))|.  It is killed by a STRICT INEQUALITY, exactly
+       like v_task58's (I3). ***  (And the reverse direction is < 1.)
+
+  (J5) *** THE SHARPEST CALL OF THE NOTE: C_n / B_n against U_{2n}. ***
+       Lemma EQ' + Lemma Z leave U_{2n} in the block of C_n and B_n for
+       EVERY n >= 3.  The matched fields are f1/f = N/N1 = n/(2n-1), i.e.
+             q = m^{2n-1} ,  q1 = m^n ,
+       and then deg |S| = deg |G| = n(2n^2+n)... exactly equal.  Cancelling,
+
+         |C_n(m^{2n-1})| / |U_{2n}(m^n)|
+             =  [ gcd(2n, q1+1) / gcd(2, q-1) ]  *  R_n(m) ,
+         R_n(m) = prod_{i=1}^{n} (m^{2i(2n-1)} - 1)
+                  / prod_{i=2}^{2n} (m^{in} - (-1)^i ) .
+
+       The bracket is an integer (or half-integer) that DIVIDES
+       |Out(U_{2n}(q1))| = 2 f1 gcd(2n, q1+1) -- so if R_n(m) were 1 this
+       would be a genuine twin candidate.  It is not:
+             R_n(m) = 1 + m^{-(2n)} + O(m^{-(2n+1)})  >  1 ,
+       because the largest cyclotomic block missing from the numerator is
+       Phi_{2n}-type of degree 2n, and every correction in the numerator is
+       negative while the leading denominator correction is negative of
+       SMALLER degree.  Observed at n = 3: c = 3.0393658731 (m = 2),
+       3.0001901812 (m = 5), 3.0000000028 (m = 32) -- always STRICTLY above
+       3, and 3 | |Out(U_6(q1))| = 2 f1 gcd(6,q1+1).
+       *** This beats v_task58's (I3) as the closest call in the programme:
+       there the gap was 2/q^5 relative, here it is m^{-2n} = q^{-2n/(2n-1)}
+       relative, i.e. barely more than one power of q. ***
+       Exact confirmation: over ALL matched pairs of ALL four towers,
+       n <= 12, m <= 3000, the value c is NEVER an exact integer >= 2
+       (PART C.2, "MATCHED-pair HITS: NONE").
+
+  broad sweep for further exact identities |S| = c|G|, 2 <= c <= 10^4,
+  over the full Lie/alternating/sporadic list, q <= 9, n <= 6:
+     order identities with 2 <= c <= 10^4 : 55
+        ('S6(2)', 'A1', 8, 2880, 3, False)
+        ('S6(2)', 'A(3)', 2, 8640, 2, False)
+        ('S6(2)', 'A(3)', 4, 72, 12, False)
+        ('S6(2)', 'A(4)', 2, 72, 2, False)
+        ('S6(2)', '2A(4)', 2, 56, 2, False)
+        ('S6(3)', 'A(3)', 9, 108, 4, False)
+        ('S6(3)', 'A(4)', 3, 756, 4, False)
+        ('S6(3)', '2A(4)', 3, 1404, 8, False)
+        ('S6(3)', 'G2', 3, 1080, 2, False)
+        ('S6(4)', 'A(3)', 16, 2880, 24, False)
+        ('S6(4)', 'A(4)', 4, 4160, 4, False)
+        ('S6(4)', '2A(4)', 4, 4032, 4, False)
+     of which c | |Out(G)| (i.e. LIVE) : NONE
+
+============================================================================
+PART C.4 -- equal characteristic, almost simple: the exact
+            factorisation-free sweep (complete in f1 and in type)
+============================================================================
+
+  q1^{N1} | q^N bounds f1 <= f N/N1, so the branch is a FINITE exact test per
+  target with no factorisation of |S|.  Positive control: the self-solution
+  S_1 = S with c = 1 must be found for every target.
+
+  C   n=3  targets 2328    divisor pairs 28909     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  C   n=4  targets 2328    divisor pairs 45622     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  C   n=5  targets 2328    divisor pairs 65033     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  C   n=6  targets 2328    divisor pairs 105361    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  B   n=3  targets 2314    divisor pairs 28495     control 2314/2314
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  B   n=4  targets 2314    divisor pairs 44995     control 2314/2314
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  B   n=5  targets 2314    divisor pairs 64072     control 2314/2314
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  B   n=6  targets 2314    divisor pairs 103964    control 2314/2314
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  D   n=4  targets 2328    divisor pairs 31474     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  D   n=5  targets 2328    divisor pairs 50898     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  D   n=6  targets 2328    divisor pairs 72537     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  2D  n=4  targets 2328    divisor pairs 33623     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  2D  n=5  targets 2328    divisor pairs 50370     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  2D  n=6  targets 2328    divisor pairs 83823     control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+
+  TOTAL equal-characteristic almost-simple hits: NONE
+
+============================================================================
+PART D -- the multi-factor branch: Lemma Q dead, MO-EX BROKEN,
+          and the two-sided repair (Lemma MO-SPO)
+============================================================================
+
+  D.1  Lemma Q (v_task55) needs 4b >= a.  PART A shows 4b < a for EVERY
+       target of this note (C_3: 20 < 21 is the tightest).  Lemma Q is dead
+       throughout, so the multi-factor branch must be done by hand.
+
+  D.2  Lemma Z2 [PROVEN, v_task56].  In the equal-characteristic
+       multi-factor branch |G|_p^l = q1^{l N1} divides q^N, so
+       l f1 N1 <= f N, and with the floor  mu1/N1 >= l b/N - o(1).
+       Together with Lemma Z (mu1/k1 >= b/K) this is the ratio test:
+
+  X    n   2b/N (l=2)  b/K       families passing BOTH
+  C    3   10/9        5/6       NONE  <== branch empty
+  C    4   7/8         7/8       NONE  <== branch empty
+  C    5   18/25       9/10      NONE  <== branch empty
+  C    6   11/18       11/12     F4
+  C    7   26/49       13/14     F4
+  C    8   15/32       15/16     D(4), F4, E8
+  C    9   34/81       17/18     D(4), F4, E6, E7, E8
+  C    10  19/50       19/20     D(4), D(5), F4, E6, E7, E8
+  C    11  42/121      21/22     D(4), D(5), F4, E6, E7, E8
+  C    12  23/72       23/24     D(4), D(5), D(6), F4, E6, E7, E8
+  B    3   10/9        5/6       NONE  <== branch empty
+  B    4   7/8         7/8       NONE  <== branch empty
+  B    5   18/25       9/10      NONE  <== branch empty
+  B    6   11/18       11/12     F4
+  B    7   26/49       13/14     F4
+  B    8   15/32       15/16     D(4), F4, E8
+  B    9   34/81       17/18     D(4), F4, E6, E7, E8
+  B    10  19/50       19/20     D(4), D(5), F4, E6, E7, E8
+  B    11  42/121      21/22     D(4), D(5), F4, E6, E7, E8
+  B    12  23/72       23/24     D(4), D(5), D(6), F4, E6, E7, E8
+  D    4   1           1         NONE  <== branch empty
+  D    5   4/5         1         NONE  <== branch empty
+  D    6   2/3         1         NONE  <== branch empty
+  D    7   4/7         1         F4
+  D    8   1/2         1         D(4), F4
+  D    9   4/9         1         D(4), F4, E6, E8
+  D    10  2/5         1         D(4), D(5), F4, E6, E7, E8
+  D    11  4/11        1         D(4), D(5), F4, E6, E7, E8
+  D    12  1/3         1         D(4), D(5), D(6), F4, E6, E7, E8
+  2D   4   1           3/4       NONE  <== branch empty
+  2D   5   4/5         4/5       2A(4), G2, 2F4
+  2D   6   2/3         5/6       2A(4), G2, 2F4
+  2D   7   4/7         6/7       2A(6), F4
+  2D   8   1/2         7/8       2A(6), D(4), F4
+  2D   9   4/9         8/9       2A(6), 2A(8), D(4), F4, E6, 2E6, E8
+  2D   10  2/5         9/10      2A(6), 2A(8), D(4), D(5), F4, E6, E7, E8
+  2D   11  4/11        10/11     2A(8), 2A(10), D(4), D(5), F4, E6, E7, E8
+  2D   12  1/3         11/12     2A(8), 2A(10), D(4), D(5), D(6), F4, E6, E7, E8
+
+       C_3, C_4, C_5, B_3-B_5 and D_4/D_5/D_6/^2D_4 close by the ratio test
+       ALONE, for every q.  From n = 6 on 2b/N = 2(2n-1)/n^2 -> 0 and the
+       test admits families again -- exactly the degradation v_task58 sec.9
+       forecast.
+
+  D.3  *** LEMMA MO-EX, AS STATED IN v_task58, FAILS HERE. ***
+       Its convexity step needs every admissible family to satisfy
+       r_O = D_O/N_O >= a/N.  For these towers a/N = 2 + 1/n resp.
+       2 + 1/(n-1) is SMALL, and the admissible set contains families with
+       r_O BELOW it:  ^2F_4 (13/6) from n = 4, F_4 (13/6) from n = 5,
+       E_7 (19/9) from n = 7, E_8 (31/15) from n = 6.  The table below shows
+       the failure explicitly.  This is precisely the failure v_task58
+       sec.9(2) predicted ("W > 0 may genuinely fail at high rank") -- it
+       does, and it fails at LOW rank too.
+
+       THE REPAIR (Lemma MO-SPO, this note).  MO-EX's input (iii) is
+       TWO-SIDED:  a f - B <= sum_O r_O u_O <= a f.  With (ii)
+       sum_O u_O = N f - delta this gives BOTH
+            sum_O (r_O - a/N) u_O  <=  (a/N) delta               (upper)
+            sum_O (r_O - a/N) u_O  >=  -B + (a/N) delta          (lower)
+       and the u_O range over the polytope
+            u_O >= L_O := l_O (N_O/mu_O)(b f - A) ,  sum_O u_O = N f - delta.
+       On that polytope the linear functional sum (r_O - a/N) u_O has
+            min = sum (r_O-a/N) L_O + s * min_O (r_O - a/N)
+            max = sum (r_O-a/N) L_O + s * max_O (r_O - a/N) ,  s = slack.
+       Hence:
+         * ALL r_O > a/N  ==>  min > 0 grows like f  ==>  DEAD (v_task58 case)
+         * ALL r_O < a/N  ==>  max < 0 grows like f  ==>  DEAD (NEW: this is
+           what closes the ^2F_4 / F_4 / E_7 / E_8 configurations)
+         * MIXED signs, or all r_O = a/N  ==>  the two bounds straddle 0 and
+           MO-SPO is silent.  Those configurations are FINITELY MANY per
+           target and are settled exactly in D.4.
+
+  X    n   a/N       #adm    r_O vs a/N (sign pattern) MO-EX(v_task58) verdict
+  C    3   7/3       0       +0 / -0 / =0             vacuous
+  C    4   9/4       0       +0 / -0 / =0             vacuous
+  C    5   11/5      0       +0 / -0 / =0             vacuous
+  C    6   13/6      1       +0 / -0 / =1             OK (all r >= a/N)
+  C    7   15/7      1       +1 / -0 / =0             OK (all r >= a/N)
+  C    8   17/8      3       +2 / -1 / =0             *** FAILS: E8 below a/N
+  C    9   19/9      5       +3 / -1 / =1             *** FAILS: E8 below a/N
+  C    10  21/10     6       +5 / -1 / =0             *** FAILS: E8 below a/N
+  C    11  23/11     6       +5 / -1 / =0             *** FAILS: E8 below a/N
+  C    12  25/12     7       +6 / -1 / =0             *** FAILS: E8 below a/N
+  B    3   7/3       0       +0 / -0 / =0             vacuous
+  B    4   9/4       0       +0 / -0 / =0             vacuous
+  B    5   11/5      0       +0 / -0 / =0             vacuous
+  B    6   13/6      1       +0 / -0 / =1             OK (all r >= a/N)
+  B    7   15/7      1       +1 / -0 / =0             OK (all r >= a/N)
+  B    8   17/8      3       +2 / -1 / =0             *** FAILS: E8 below a/N
+  B    9   19/9      5       +3 / -1 / =1             *** FAILS: E8 below a/N
+  B    10  21/10     6       +5 / -1 / =0             *** FAILS: E8 below a/N
+  B    11  23/11     6       +5 / -1 / =0             *** FAILS: E8 below a/N
+  B    12  25/12     7       +6 / -1 / =0             *** FAILS: E8 below a/N
+  D    4   7/3       0       +0 / -0 / =0             vacuous
+  D    5   9/4       0       +0 / -0 / =0             vacuous
+  D    6   11/5      0       +0 / -0 / =0             vacuous
+  D    7   13/6      1       +0 / -0 / =1             OK (all r >= a/N)
+  D    8   15/7      2       +2 / -0 / =0             OK (all r >= a/N)
+  D    9   17/8      4       +3 / -1 / =0             *** FAILS: E8 below a/N
+  D    10  19/9      6       +4 / -1 / =1             *** FAILS: E8 below a/N
+  D    11  21/10     6       +5 / -1 / =0             *** FAILS: E8 below a/N
+  D    12  23/11     7       +6 / -1 / =0             *** FAILS: E8 below a/N
+  2D   4   7/3       0       +0 / -0 / =0             vacuous
+  2D   5   9/4       3       +2 / -1 / =0             *** FAILS: 2F4 below a/N
+  2D   6   11/5      3       +2 / -1 / =0             *** FAILS: 2F4 below a/N
+  2D   7   13/6      2       +1 / -0 / =1             OK (all r >= a/N)
+  2D   8   15/7      3       +3 / -0 / =0             OK (all r >= a/N)
+  2D   9   17/8      7       +6 / -1 / =0             *** FAILS: E8 below a/N
+  2D   10  19/9      8       +6 / -1 / =1             *** FAILS: E8 below a/N
+  2D   11  21/10     8       +7 / -1 / =0             *** FAILS: E8 below a/N
+  2D   12  23/11     9       +8 / -1 / =0             *** FAILS: E8 below a/N
+
+============================================================================
+PART D.4 -- the residual configurations of Lemma MO-SPO, exact
+============================================================================
+
+  Only MIXED-sign and all-same-ratio configurations survive D.3.  Each is
+  settled exactly by DEGREE ACCOUNTING plus, where the degrees are
+  consistent, the matched-field census:
+
+    (ii)  sum_O l_O N_O f_O = N f        (p-part EQUALITY, delta = 0)
+    (iii) sum_O l_O D_O f_O = a f        (order, c bounded so deg c = 0)
+
+  Two linear equations in the unknowns x_O := f_O/f > 0.  If they have no
+  positive rational solution the configuration is DEAD outright ("degree
+  accounting").  If they do, the matched fields are q = m^v, q1 = m^{u_O},
+  and c(m) = |S| / prod |G_O|^{l_O} is computed EXACTLY and tested against
+  c >= 2 and c | prod |Out(G_O)|^{l_O} prod l_O! .
+
+  X    n   #cfg    #mixed/=  #deg-dead surviving configs
+  C    3   -       -         -         branch vacuous (D.2/D.3)
+  C    4   -       -         -         branch vacuous (D.2/D.3)
+  C    5   -       -         -         branch vacuous (D.2/D.3)
+  C    6   1       1         0         NONE
+  C    7   1       0         0         NONE
+  C    8   6       2         0         NONE
+  C    9   15      8         4         NONE
+  C    10  23      5         0         NONE
+  C    11  29      7         1         NONE
+  C    12  50      14        4         NONE
+  B    3   -       -         -         branch vacuous (D.2/D.3)
+  B    4   -       -         -         branch vacuous (D.2/D.3)
+  B    5   -       -         -         branch vacuous (D.2/D.3)
+  B    6   1       1         0         NONE
+  B    7   1       0         0         NONE
+  B    8   6       2         0         NONE
+  B    9   15      8         4         NONE
+  B    10  23      5         0         NONE
+  B    11  29      7         1         NONE
+  B    12  50      14        4         NONE
+  D    4   -       -         -         branch vacuous (D.2/D.3)
+  D    5   -       -         -         branch vacuous (D.2/D.3)
+  D    6   -       -         -         branch vacuous (D.2/D.3)
+  D    7   1       1         0         NONE
+  D    8   3       0         0         NONE
+  D    9   10      3         0         NONE
+  D    10  22      10        5         NONE
+  D    11  25      6         0         NONE
+  D    12  41      10        2         NONE
+  2D   4   -       -         -         branch vacuous (D.2/D.3)
+  2D   5   6       2         0         NONE
+  2D   6   6       2         0         NONE
+  2D   7   3       2         1         NONE
+  2D   8   6       0         0         NONE
+  2D   9   28      6         0         NONE
+  2D   10  40      14        7         NONE
+  2D   11  41      8         0         NONE
+  2D   12  63      13        3         NONE
+
+  TOTAL surviving multi-factor configurations: NONE
+
+============================================================================
+PART E -- Lemma X for the symplectic / orthogonal towers
+============================================================================
+
+  Lemma X-SPO [PROVEN].  ppmax_{p'}(|S|) <= C(S) (q+1)^M, where
+  M := max_e m_e phi(e) over the cyclotomic factorisation
+  |S|_{p'} = prod_e Phi_e(q)^{m_e}.
+  Proof identical to v_task58's Lemma K-exc: for odd r != p with
+  e = ord_r(q), r | Phi_d(q) only for d = e or d = e r^k, and r || Phi_{er^k}
+  (LTE), so the r-part is <= Phi_e(q)^{m_e} r^{sum_{k>=1} m_{e r^k}} and
+  Phi_e(q) < (q+1)^{phi(e)}; for r = 2, q odd, each factor q^d -+ 1 has
+  2-part dividing |q^2-1|_2 |d|_2 <= 2(q+1)|d|_2.
+
+  m_e for C_n/B_n: m_e = #{i <= n : e | 2i}; for D_n an extra Phi_e | q^n-1;
+  for ^2D_n an extra Phi_e | q^n+1.  Exact values and M:
+
+  X    n   a        M        a-3(M+1)   2b vs M    verdict
+  C    3   21       3        9          10 vs 3    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    4   36       4        21         14 vs 4    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    5   55       5        37         18 vs 5    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    6   78       6        57         22 vs 6    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    7   105      7        81         26 vs 7    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    8   136      8        109        30 vs 8    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    9   171      9        141        34 vs 9    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  C    10  210      10       177        38 vs 10   cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    3   21       3        9          10 vs 3    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    4   36       4        21         14 vs 4    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    5   55       5        37         18 vs 5    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    6   78       6        57         22 vs 6    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    7   105      7        81         26 vs 7    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    8   136      8        109        30 vs 8    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    9   171      9        141        34 vs 9    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  B    10  210      10       177        38 vs 10   cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    4   28       4        13         12 vs 4    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    5   45       5        27         16 vs 5    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    6   66       6        45         20 vs 6    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    7   91       7        67         24 vs 7    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    8   120      8        93         28 vs 8    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    9   153      9        123        32 vs 9    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  D    10  190      10       157        36 vs 10   cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   4   28       4        13         12 vs 4    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   5   45       5        27         16 vs 5    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   6   66       6        45         20 vs 6    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   7   91       7        67         24 vs 7    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   8   120      8        93         28 vs 8    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   9   153      9        123        32 vs 9    cross-char almost simple DEAD; X-2 (2b > M) DEAD
+  2D   10  190      10       157        36 vs 10   cross-char almost simple DEAD; X-2 (2b > M) DEAD
+
+  Both margins are enormous and grow QUADRATICALLY in n (a ~ 2n^2 against
+  M ~ n), so the cross-characteristic branches are the most comfortable rows
+  of the note -- far better than the linear tower, where a - 3(d-1) grows
+  only like d^2 against 3d.
+
+  machine check of Lemma X (exact factorisation of the p'-part):
+     C    n=3 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 18.9630 at q = 3
+     C    n=4 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 202.2716 at q = 3
+     B    n=3 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 18.9630 at q = 3
+     D    n=4 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 50.5679 at q = 3
+     2D   n=4 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 12.6420 at q = 3
+     D    n=5 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 134.8477 at q = 3
+     2D   n=5 : violations of P <= 2^20 (q+1)^M : 0 ;  max P/q^M = 134.8477 at q = 3
+
+  the exact q-threshold of the cross-characteristic almost-simple
+  branch  |S| < c P^3  (Lemma K': |G| < (|G|_{p1})^3):
+  X    n   survives only for q <=
+  C    3   61
+  C    4   8
+  C    5   3
+  C    6   2
+  C    7   2
+  C    8   EMPTY
+  C    9   EMPTY
+  C    10  EMPTY
+  B    3   61
+  B    4   7
+  B    5   3
+  B    6   EMPTY
+  B    7   EMPTY
+  B    8   EMPTY
+  B    9   EMPTY
+  B    10  EMPTY
+  D    4   23
+  D    5   5
+  D    6   3
+  D    7   2
+  D    8   EMPTY
+  D    9   EMPTY
+  D    10  EMPTY
+  2D   4   23
+  2D   5   5
+  2D   6   3
+  2D   7   2
+  2D   8   EMPTY
+  2D   9   EMPTY
+  2D   10  EMPTY
+
+  Lemma X-2 (cross-characteristic MULTI-factor): needs
+  P >= (iota(S)/(8 d1 f1 g1))^2, i.e. exponent M >= 2b = 4n-2 resp
+  4n-4.  Since M ~ n this fails for every q above:
+  X    n   kill for all q >=
+  C    3   89
+  C    4   25
+  C    5   13
+  C    6   8
+  C    7   7
+  C    8   5
+  C    9   5
+  C    10  4
+  B    3   89
+  B    4   25
+  B    5   13
+  B    6   9
+  B    7   7
+  B    8   5
+  B    9   5
+  B    10  5
+  D    4   59
+  D    5   23
+  D    6   11
+  D    7   8
+  D    8   7
+  D    9   5
+  D    10  4
+  2D   4   59
+  2D   5   23
+  2D   6   11
+  2D   7   8
+  2D   8   7
+  2D   9   5
+  2D   10  4
+
+============================================================================
+PART F -- almost simple with ALTERNATING or SPORADIC socle
+============================================================================
+
+  (E): c|S_1| = |S|, 2 <= c | |Out(S_1)|.  The candidate list is COMPLETE
+  and |S| = M is inverted exactly for q (the order is strictly increasing in
+  q of degree a), so every row is complete in q -- ALL q, not a range.
+
+  (S_1, c) pairs tested : 3894      HITS : NONE
+  POSITIVE CONTROL (c = 1 self-solutions, alternating): none -- no A_m has a symplectic/orthogonal order
+  inverter self-check (target recovered from its own order): 62 ok
+
+  A uniform second kill, independent of the scan: the l = 1 floor reads
+  |Out(S_1)| iota(S_1) >= iota(S) > q^{b} with |Out| <= 4 and
+  iota(A_m) <= C(m,3), while c|S_1| = |S| pins m!/2 ~ q^{a}.  C(m,3) is
+  polylogarithmic in q^a, so the floor fails for every q with
+  q^{b} > 4 C(m,3) -- two lines, every n >= 3, both parities.
+
+============================================================================
+PART G -- the residual census (both characteristics, all socle
+          types), with positive controls
+============================================================================
+  C   n=3  q<=200    targets 60    raw divisors 1668    floor-passing 0      LIVE NONE
+  B   n=3  q<=200    targets 53    raw divisors 1475    floor-passing 0      LIVE NONE
+  C   n=4  q<=120    targets 40    raw divisors 1576    floor-passing 1      LIVE NONE
+  B   n=4  q<=120    targets 34    raw divisors 1313    floor-passing 0      LIVE NONE
+  D   n=4  q<=120    targets 40    raw divisors 1314    floor-passing 1      LIVE NONE
+  2D  n=4  q<=120    targets 40    raw divisors 1190    floor-passing 0      LIVE NONE
+  C   n=5  q<=60     targets 25    raw divisors 1369    floor-passing 0      LIVE NONE
+  D   n=5  q<=60     targets 25    raw divisors 1178    floor-passing 0      LIVE NONE
+  2D  n=5  q<=60     targets 25    raw divisors 1114    floor-passing 0      LIVE NONE
+
+  TOTAL survivors of the multi-factor condition: NONE
+
+============================================================================
+DONE
+============================================================================

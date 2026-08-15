@@ -1,0 +1,21 @@
+Suz: L3(3).2 x S11 -- does 13 divide |S11| = 11! ?
+  |L3(3)| = 5616  13 | |L3(3)|: true
+  |S11| = 39916800  13 | |S11|: false
+
+M24(a): L2(23).2 x A8 -- does 23 divide |A8|?
+  |L2(23)| = 6072  23 | |L2(23)|: true
+  |A8| = 20160  23 | |A8|: false
+
+M24(b): L2(23) x S8 -- does 23 divide |S8|?
+  |S8| = 40320  23 | |S8|: false
+
+Th: L2(125) x U3(8).3 -- does 31 divide |U3(8).3|?
+  |L2(125)| = 976500  31 | |L2(125)|: true
+  |U3(8).3| = 16547328  31 | |U3(8).3|: false
+
+Also: |L3(3)| = 5616 = 2^4.3^3.13 (13 is the private prime)
+|U3(8)| computed = 2^9 * 3^4 * 7 * 19 = 
+5515776  (matches PSU(3,8) order? true)
+|U3(8).3| = 3 * that = 16547328
+
+=== DONE coprimality_checks ===

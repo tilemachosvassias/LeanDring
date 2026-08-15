@@ -1,0 +1,44 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 512396 points.
+#I  Have 550115 points.
+#I  Have 552488 points.
+#I  Have 552604 points.
+#I  Have 552609 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 552610 points.
+#I  Have 512468 points in new orbit.
+#I  Have 550098 points in new orbit.
+#I  Have 552481 points in new orbit.
+#I  Have 552606 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.
+#I  Have 552610 points in new orbit.

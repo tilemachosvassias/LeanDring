@@ -1,0 +1,19 @@
+============================================================================
+PART C.2 -- equal characteristic, decided EXACTLY for every q
+            (factorisation-free, complete in f1 and in the type)
+============================================================================
+  L_9   targets 49298   divisor pairs 1293941   control 49298/49298
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  L_10  targets 49298   divisor pairs 1640988   control 49298/49298
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_9   targets 49298   divisor pairs 1285981   control 49298/49298
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_10  targets 49298   divisor pairs 1633070   control 49298/49298
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+
+  TOTAL equal-characteristic hits over both towers: NONE
+

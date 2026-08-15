@@ -1,0 +1,56 @@
+V_3 = [ 1 ]
+V_4 = [ 1, 3, 4 ]
+V_5 = [ 6, 30, 60 ]
+V_6 = [ 10, 15, 20, 45, 60, 90, 180, 360 ]
+V_7 = [ 35, 105, 120, 140, 280, 315, 630, 840, 1260, 2520, 5040 ]
+V_8 = [ 30, 35, 105, 210, 280, 315, 336, 420, 560, 630, 840, 1120, 1260, 
+  1680, 1920, 2520, 3360, 5040, 6720, 10080, 13440, 20160, 40320 ]
+V_9 = [ 280, 756, 840, 1120, 1260, 1680, 2268, 3024, 3360, 3780, 5040, 6720, 
+  7560, 10080, 11340, 15120, 22680, 30240, 45360, 60480, 90720, 120960, 
+  181440 ]
+
+-- mins --
+min V_3 = 1 ; s^6 = 729
+min V_4 = 1 ; s^6 = 4096
+min V_5 = 6 ; s^6 = 15625
+min V_6 = 10 ; s^6 = 46656
+min V_7 = 35 ; s^6 = 117649
+min V_8 = 30 ; s^6 = 262144
+min V_9 = 280 ; s^6 = 531441
+Syntax warning: Unbound global variable in v_task48_spec.g:55
+  Print("IN I BUT NOT IN UNION (SPEC failure): ", Filtered(I, x -> not x in U)\
+, "\n");
+                                                                            ^
+Syntax warning: Unbound global variable in v_task48_spec.g:56
+  Print("IN UNION BUT NOT IN I: ", Filtered(U, x -> not x in I), "\n");
+                                                             ^
+Syntax warning: Unbound global variable in v_task48_spec.g:59
+        Filtered(I, x -> x > lo and x < hi), "\n");
+                             ^^
+Syntax warning: Unbound global variable in v_task48_spec.g:59
+        Filtered(I, x -> x > lo and x < hi), "\n");
+                                        ^^
+Syntax warning: Unbound global variable in v_task48_spec.g:60
+  Print("hole intruders in UNION: ", Filtered(U, x -> x > lo and x < hi), "\n"\
+);
+                                                          ^^
+Syntax warning: Unbound global variable in v_task48_spec.g:60
+  Print("hole intruders in UNION: ", Filtered(U, x -> x > lo and x < hi), "\n"\
+);
+                                                                     ^^
+
+=== n = 9 ===
+V_9 (min) = 280 card 23
+|I(A_n)| = 34  |union| = 37
+IN I BUT NOT IN UNION (SPEC failure): [ 135, 8640 ]
+IN UNION BUT NOT IN I: [ 270, 6720, 17280, 120960, 362880 ]
+hole (504,756) intruders in I: [  ]
+hole intruders in UNION: [  ]
+
+=== n = 10 ===
+V_10 (min) = 945 card 32
+|I(A_n)| = 48  |union| = 50
+IN I BUT NOT IN UNION (SPEC failure): [  ]
+IN UNION BUT NOT IN I: [ 67200, 1209600 ]
+hole (840,1512) intruders in I: [ 945, 1350 ]
+hole intruders in UNION: [ 945, 1350 ]

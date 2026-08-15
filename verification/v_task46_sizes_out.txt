@@ -1,0 +1,112 @@
+==============================================================================
+v_task46_sizes.py  --  effective size lemmas for rows 2 and 3
+==============================================================================
+
+### STEP 0.  (LEG) v_p(n!) <= (n-1)/(p-1)   [exhaustive check]
+  checked p <= 200, n <= 20000 :  violations = 0   OK
+
+### STEP 1.  MASTER inequality
+
+  From (R1): c = M/F(q).   From (BP-p)+(LEG):  c = 6 f1 lstar <= 6 f1 (n-1)/(N f (p-1)).
+  Hence      M / F(q)  <=  6 f1 (n-1) / (N f (p-1))
+  i.e.       N f (p-1) * n(n-1)(n-2)  <=  6 f1 (n-1) F(q)
+  i.e.  (MASTER)   N f (p-1) n (n-2)  <=  6 f1 F(q).
+
+  Brute check of the derivation (not of solvability): over all integer
+  tuples with the hypotheses REPLACED by the two inequalities they imply,
+  MASTER is an algebraic consequence.  Direct numeric audit:
+  MASTER audited on 0 hypothesis-satisfying tuples, violations = 0  OK
+  (few/zero tuples is expected -- the rows have no known solutions; the
+   derivation above is a two-line implication and needs no search.)
+
+### STEP 2.  (SIZE-UP)  N f (p-1) <= (n-1)/Lmin
+
+  c = 6 f1 lstar >= 6 f1 Lmin, so F(q) = M/c <= M/(6 f1 Lmin).
+  Substituting into MASTER:
+      N f (p-1) n(n-2)  <=  6 f1 * M/(6 f1 Lmin)  =  n(n-1)(n-2)/Lmin
+  hence           N f (p-1)  <=  (n-1)/Lmin.
+  row 2 (N=3, Lmin=2):   f (p-1) <= (n-1)/6
+  row 3 (N=10,Lmin=1):   f (p-1) <= (n-1)/10
+
+### STEP 3.  Row 2, f = 1 is EMPTY for every n >= 5, uniformly in lstar.
+
+  f = 1 makes SIZE-UP read  q - 1 = p - 1 <= (n-1)/6, i.e. q <= (n+5)/6.
+  The R1 spectral gap gives q >= f1 (n-3) >= n-3.
+  n - 3 > (n+5)/6  <=>  6n - 18 > n + 5  <=>  n > 4.6.
+  Contradiction for every n >= 5.                                  [PROVEN]
+  (This re-proves Lemma R1-p in a form manifestly uniform in lstar; row 2 as
+   stated already assumes f >= 2, so nothing new is gained, but the same
+   computation applied to row 3 shows why f = 1 SURVIVES there -- see STEP 5.)
+
+  numeric crossover of  n-3 > (n+5)/6 :  n >= 5
+
+### STEP 4.  Lower bound on q  (the 'q > n' phenomenon), row 2
+
+  In MASTER use f1 <= 2, p-1 >= p/2 = q^(1/f)/2, and F(q) = q^2+q+1 <= K q^2
+  with K = 1 + 1/q + 1/q^2 <= 1.01 for q >= 128 (which holds since q >= n-3):
+       3 f (q^(1/f)/2) n(n-2)  <=  12 K q^2
+   =>  q^(2 - 1/f)  >=  f n(n-2) / (8K).
+  With n(n-2) >= (n-1)^2 - 1 >= 0.999 n^2 for n >= 40:
+       (Q-LB)   q  >=  ( f n^2 / (8.1) )^( f/(2f-1) ).
+
+  q > n  <=>  log n > f*log(8.1/f).  Values of f*log(8.1/f):
+     f= 2 :    2.7974    (=> q>n for n > e^2.7974 = 16.4)
+     f= 3 :    2.9798    (=> q>n for n > e^2.9798 = 19.7)
+     f= 4 :    2.8223    (=> q>n for n > e^2.8223 = 16.8)
+     f= 5 :    2.4121    (=> q>n for n > e^2.4121 = 11.2)
+     f= 6 :    1.8006    (=> q>n for n > e^1.8006 = 6.1)
+     f= 7 :    1.0217    (=> q>n for n > e^1.0217 = 2.8)
+     f= 8 :    0.0994    (=> q>n for n > e^0.0994 = 1.1)
+     f= 9 :   -0.9482    (=> q>n for n > e^-0.9482 = 0.4)
+     f=10 :   -2.1072    (=> q>n for n > e^-2.1072 = 0.1)
+     f=11 :   -3.3663    (=> q>n for n > e^-3.3663 = 0.0)
+     f=12 :   -4.7165    (=> q>n for n > e^-4.7165 = 0.0)
+     f=13 :   -6.1501    (=> q>n for n > e^-6.1501 = 0.0)
+     f=14 :   -7.6607    (=> q>n for n > e^-7.6607 = 0.0)
+  maximum over f >= 2 :  2.9798  at f = 3   =>   q > n for all n >= 20
+
+  Sanity: exponents/constants of (Q-LB) and the induced bound on c = M/F(q):
+     f=2 :  q >= (f n^2/8.1)^0.6667  ~  0.394 * n^1.3333 ;  c <= n^3/q^2 ~ 6.456 n^0.3333
+     f=3 :  q >= (f n^2/8.1)^0.6000  ~  0.551 * n^1.2000 ;  c <= n^3/q^2 ~ 3.293 n^0.6000
+     f=4 :  q >= (f n^2/8.1)^0.5714  ~  0.668 * n^1.1429 ;  c <= n^3/q^2 ~ 2.240 n^0.7143
+     f=5 :  q >= (f n^2/8.1)^0.5556  ~  0.765 * n^1.1111 ;  c <= n^3/q^2 ~ 1.709 n^0.7778
+     f=6 :  q >= (f n^2/8.1)^0.5455  ~  0.849 * n^1.0909 ;  c <= n^3/q^2 ~ 1.387 n^0.8182
+
+### STEP 5.  Row 3: the same chain gives q < n  --  no kill available
+
+  Row 3: N = 10, deg F = 4, F(q) <= 1.3 q^4 for q >= 5, Lmin = 1.
+  MASTER:  10 f (q^(1/f)/2) n(n-2) <= 12 * 1.3 q^4
+      =>   q^(4 - 1/f) >= f n(n-2)/3.12  ~  f n^2/3.13.
+  f = 1 :  q^3 >= n^2/3.13   =>   q >= 0.68 n^(2/3).
+  SIZE-UP: q - 1 <= (n-1)/10.
+  These are compatible for every n >= 636 (0.68 n^(2/3) < n/10 <=> n > 314).
+  So the f = 1 sub-row of row 3 is LIVE, with q ~ n^(2/3) and c ~ n^(1/3);
+  p = q < n, so no 'p does not divide n!' contradiction is available.
+
+     f=1 :  q >= (f n^2/3.13)^0.3333 ~ 0.684 n^0.6667   (exponent 0.6667 < 1)
+     f=2 :  q >= (f n^2/3.13)^0.2857 ~ 0.880 n^0.5714   (exponent 0.5714 < 1)
+     f=3 :  q >= (f n^2/3.13)^0.2727 ~ 0.988 n^0.5455   (exponent 0.5455 < 1)
+     f=4 :  q >= (f n^2/3.13)^0.2667 ~ 1.068 n^0.5333   (exponent 0.5333 < 1)
+     f=5 :  q >= (f n^2/3.13)^0.2632 ~ 1.131 n^0.5263   (exponent 0.5263 < 1)
+
+### STEP 6.  Lemma SM  (smoothness of n(n-1)(n-2)), row 2
+
+  Corollary BP-1: every prime r | |S*| has lstar <= v_r(n!) < n/(r-1),
+  i.e. r < n/lstar + 1.  Phi_e(q) divides |S*| * e, so every prime r | Phi_e(q)
+  with r != e obeys the same.  By (R1), for a prime r | M with r != e:
+       r >= n/lstar + 1  =>  v_r(Phi_e(q)) = 0  =>  r^{v_r(M)} | c  =>  r <= c.
+  (Lemma SM)  every prime r | n(n-1)(n-2), r != e, satisfies
+                    r < 6 f1 n / c + 1     or     r <= c.
+  In the f = 2 sub-row of row 2 the size lemmas give c <= n^3/q^2 <= 6.5 n^(1/3),
+  so 6 f1 n/c >= 6n/c >= 0.92 n^(2/3) > c, and therefore
+       n, n-1 and n-2 are ALL  0.92 n^(2/3)-smooth.                 [PROVEN]
+
+     f=2 :  c <= 6.456 n^0.3333  =>  smoothness bound 6n/c >= 0.929 n^0.6667
+     f=3 :  c <= 3.293 n^0.6000  =>  smoothness bound 6n/c >= 1.822 n^0.4000
+     f=4 :  c <= 2.240 n^0.7143  =>  smoothness bound 6n/c >= 2.679 n^0.2857
+     f=5 :  c <= 1.709 n^0.7778  =>  smoothness bound 6n/c >= 3.510 n^0.2222
+     f=6 :  c <= 1.387 n^0.8182  =>  smoothness bound 6n/c >= 4.325 n^0.1818
+
+==============================================================================
+DONE
+==============================================================================

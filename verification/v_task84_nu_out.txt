@@ -1,0 +1,20 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+nu_out(HS) = 1100   (class index [ 22, 2 ])
+nu_out(McL) = 113400   (class index [ 20, 2 ])
+nu_out(F3+) = 306936   (class index [ 98, 2 ])
+Co3: |Out| = 1, so nu = iota.
+
+R6-CERT: n_max = 2 + Int(Sqrt(6*|Out|*iota/v2(|S|))), trigger n0 from PhiV<=C(\
+n,3)
+HS: |S| = 44352000  v2 = 9  PhiV = 1210000  n0 = 195  n_max = 
+73  => EMPTY for all n
+McL: |S| = 898128000  v2 = 7  PhiV = 237160000  n0 = 1126  n_max = 
+164  => EMPTY for all n
+Co3: |S| = 495766656000  v2 = 10  PhiV = 16589440000  n0 = 4636  n_max = 
+279  => EMPTY for all n
+Fi24': |S| = 1255205709190661721292800  v2 = 21  PhiV = 94209708096  n0 = 
+8270  n_max = 52703  => window survives
+Fi24' (K2) ratio nu^2/(4|Out|iota) = 2.422847399829497  (claim 2.4228)
+nu^3 = 28916350964153856 vs C(52703,3) = 24396641219951
+DONE

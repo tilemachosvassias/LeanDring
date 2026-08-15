@@ -1,0 +1,74 @@
+Loading character tables...
+CharacterTable( "O7(3)" )
+CharacterTable( "S6(3)" )
+
+=== Step 1: Maximal Subgroup Names ===
+O7(3) maximal subgroups: [ "2.U4(3).2_2", "3^5:U4(2):2", "L4(3).2_2", 
+  "G2(3)", "O7(3)M5", "3^(3+3):L3(3)", "S6(2)", "O7(3)M8", "O7(3)N3A", 
+  "A9.2", "O7(3)M11", "(2^2xU4(2)):2", "2^6:A7", "S6xS4", "(A4x2(A4xA4).2).2" 
+ ]
+S6(3) maximal subgroups: [ "3^(1+4).2U4(2)", "3^6:L3(3)", "3^(3+4):2(S4xA4)", 
+  "2.(A4xU4(2))", "2^(2+6):3^3:S3", "L2(27).3", "2xU3(3).2", "L3(3).2", 
+  "L2(13)", "L2(13)", "A5" ]
+
+=== Step 2: O7(3) Maximal Subgroups Analysis ===
+Name			Order		Linear Chars	Perfect?
+--------		--------	--------	--------
+2.U4(3).2_2		13063680		2		false
+3^5:U4(2):2		12597120		2		false
+L4(3).2_2		12130560		2		false
+G2(3)		4245696		1		true
+O7(3)M5		4245696		1		true
+3^(3+3):L3(3)		4094064		1		true
+S6(2)		1451520		1		true
+O7(3)M8		1451520		1		true
+O7(3)N3A		1259712		2		false
+A9.2		362880		2		false
+O7(3)M11		362880		2		false
+(2^2xU4(2)):2		207360		4		false
+2^6:A7		161280		1		true
+S6xS4		17280		4		false
+(A4x2(A4xA4).2).2		13824		4		false
+
+=== Step 3: S6(3) Maximal Subgroups Analysis ===
+Name			Order		Linear Chars	Perfect?
+--------		--------	--------	--------
+3^(1+4).2U4(2)		12597120		1		true
+3^6:L3(3)		4094064		1		true
+3^(3+4):2(S4xA4)		1259712		6		false
+2.(A4xU4(2))		622080		3		false
+2^(2+6):3^3:S3		41472		6		false
+L2(27).3		29484		3		false
+2xU3(3).2		24192		4		false
+L3(3).2		11232		2		false
+L2(13)		1092		1		true
+L2(13)		1092		1		true
+A5		60		1		true
+
+=== Step 4: Summary and Verdict ===
+
+O7(3):
+  Total maximal subgroup classes: 15
+  Perfect maximal subgroup classes: 6
+  Perfect maximal subgroups:
+    G2(3) (order 4245696)
+    O7(3)M5 (order 4245696)
+    3^(3+3):L3(3) (order 4094064)
+    S6(2) (order 1451520)
+    O7(3)M8 (order 1451520)
+    2^6:A7 (order 161280)
+
+S6(3):
+  Total maximal subgroup classes: 11
+  Perfect maximal subgroup classes: 5
+  Perfect maximal subgroups:
+    3^(1+4).2U4(2) (order 12597120)
+    3^6:L3(3) (order 4094064)
+    L2(13) (order 1092)
+    L2(13) (order 1092)
+    A5 (order 60)
+
+=== VERDICT ===
+DIFFER: O7(3) has 6 perfect maximal classes; S6(3) has 5.
+
+=== End of Analysis ===

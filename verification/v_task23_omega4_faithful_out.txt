@@ -1,0 +1,8 @@
+Omega(+,4,5) faithful deg 624 size 7200
+   psn=1 orders=[ 7200 ]
+Omega(+,4,7) faithful deg 2400 size 56448
+   psn=1 orders=[ 56448 ]
+Omega(+,4,9) faithful deg 6560 size 259200
+   psn=9 orders=[ 7200, 7200, 7200, 7200, 43200, 43200, 43200, 43200, 259200 ]
+Omega(+,4,11) faithful deg 14640 size 871200
+   psn=9 orders=[ 7200, 7200, 7200, 7200, 79200, 79200, 79200, 79200, 871200 ]

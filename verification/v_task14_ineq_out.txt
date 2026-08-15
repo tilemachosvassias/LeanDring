@@ -1,0 +1,101 @@
+=== ANCHOR CHECKS: extraspecial r_eps(n) ===
+r_+(1) = 20  expected 20   match: true
+r_-(1) = 16  expected 16   match: true
+r_+(2) = 381  expected 381  match: true
+r_-(2) = 349  expected 349  match: true
+r_+(3) = 27632  expected 27632  match: true
+r_-(3) = 27136  expected 27136  match: true
+
+=== ANCHOR CHECKS: radical census r(2n,rho,eps') ===
+r(4,2,hyp) = 583  expected 583    match: true
+r(4,2,ell) = 407  expected 407    match: true
+r(6,2,hyp) = 30099  expected 30099  match: true
+r(6,2,ell) = 27827  expected 27827  match: true
+r(6,4,hyp) = 51395  expected 51395  match: true
+r(6,4,ell) = 31747  expected 31747  match: true
+
+ALL ANCHORS MATCH: true
+
+=== INEQ EXTENSION: n = 4..8 ===
+n=4  2n=8  r_+(n)=7912731
+    rho=2 eps=plus  r=7975999  margin over r_+=63268
+    rho=2 eps=minus  r=7913855  margin over r_+=1124
+    rho=4 eps=plus  r=8458227  margin over r_+=545496
+    rho=4 eps=minus  r=8007283  margin over r_+=94552
+    rho=6 eps=plus  r=15525331  margin over r_+=7612600
+    rho=6 eps=minus  r=8770259  margin over r_+=857528
+  MIN over (rho,eps'): 7913855  at [ [ 2, "minus" ] ]  margin=
+1124  VERDICT: true
+
+n=5  2n=10  r_+(n)=8707791758
+    rho=2 eps=plus  r=8711493579  margin over r_+=3701821
+    rho=2 eps=minus  r=8707552331  margin over r_+=-239427
+    rho=4 eps=plus  r=8735727779  margin over r_+=27936021
+    rho=4 eps=minus  r=8712670627  margin over r_+=4878869
+    rho=6 eps=plus  r=9040244883  margin over r_+=332453125
+    rho=6 eps=minus  r=8749025939  margin over r_+=41234181
+    rho=8 eps=plus  r=17292797075  margin over r_+=8585005317
+    rho=8 eps=minus  r=9237747859  margin over r_+=529956101
+  MIN over (rho,eps'): 8707552331  at [ [ 2, "minus" ] ]  margin=
+-239427  VERDICT: false
+
+n=6  2n=12  r_+(n)=37071670465857
+    rho=2 eps=plus  r=37072190662039  margin over r_+=520196182
+    rho=2 eps=minus  r=37071579116183  margin over r_+=-91349674
+    rho=4 eps=plus  r=37075110219987  margin over r_+=3439754130
+    rho=4 eps=minus  r=37072251701971  margin over r_+=581236114
+    rho=6 eps=plus  r=37105170656083  margin over r_+=33500190226
+    rho=6 eps=minus  r=37076427071315  margin over r_+=4756605458
+    rho=8 eps=plus  r=37795280201619  margin over r_+=723609735762
+    rho=8 eps=minus  r=37122972815251  margin over r_+=51302349394
+    rho=10 eps=plus  r=73897652742547  margin over r_+=36825982276690
+    rho=10 eps=minus  r=38247161805203  margin over r_+=1175491339346
+  MIN over (rho,eps'): 37071579116183  at [ [ 2, "minus" ] ]  margin=
+-91349674  VERDICT: false
+
+n=7  2n=14  r_+(n)=619403149450473428
+    rho=2 eps=plus  r=619403330356031715  margin over r_+=180905558287
+    rho=2 eps=minus  r=619403091954479843  margin over r_+=-57495993585
+    rho=4 eps=plus  r=619404211904688131  margin over r_+=1062454214703
+    rho=4 eps=minus  r=619403307752350723  margin over r_+=158301877295
+    rho=6 eps=plus  r=619411558886288403  margin over r_+=8409435814975
+    rho=6 eps=minus  r=619404514546521107  margin over r_+=1365096047679
+    rho=8 eps=plus  r=619545804980712083  margin over r_+=142655530238655
+    rho=8 eps=minus  r=619415485231678099  margin over r_+=12335781204671
+    rho=10 eps=plus  r=625482808624207251  margin over r_+=6079659173733823
+    rho=10 eps=minus  r=619629518523889043  margin over r_+=226369073415615
+    rho=12 eps=plus  r=1236768764159829395  margin over r_+=617365614709355967
+    rho=12 eps=minus  r=629400562204861843  margin over r_+=9997412754388415
+  MIN over (rho,eps'): 619403091954479843  at [ [ 2, "minus" ] ]  margin=
+-57495993585  VERDICT: false
+
+n=8  2n=16  r_+(n)=40994263762541080000743
+    rho=2 eps=plus  r=40994263920883670392111  margin over r_+=158342590391368
+    rho=2 eps=minus  r=40994263685142126915887  margin over r_+=
+-77398953084856
+    rho=4 eps=plus  r=40994264602729418765619  margin over r_+=840188338764876
+    rho=4 eps=minus  r=40994263854265655467315  margin over r_+=91724575466572
+    rho=6 eps=plus  r=40994269252139398736083  margin over r_+=
+5489598318735340
+    rho=6 eps=minus  r=40994264747577205258451  margin over r_+=
+985036125257708
+    rho=8 eps=plus  r=40994334942283915130259  margin over r_+=
+71179742835129516
+    rho=8 eps=minus  r=40994271442543503381907  margin over r_+=
+7680002423381164
+    rho=10 eps=plus  r=40996622026663942914451  margin over r_+=
+2358264122862913708
+    rho=10 eps=minus  r=40994373698007604314515  margin over r_+=
+109935466524313772
+    rho=12 eps=plus  r=41195873868232809436563  margin over r_+=
+201610105691729435820
+    rho=12 eps=minus  r=40998093228847637812627  margin over r_+=
+3829466306557811884
+    rho=14 eps=plus  r=81921162264675992810899  margin over r_+=
+40926898502134912810156
+    rho=14 eps=minus  r=41327986696622372697491  margin over r_+=
+333722934081292696748
+  MIN over (rho,eps'): 40994263685142126915887  at [ [ 2, "minus" ] ]  margin=
+-77398953084856  VERDICT: false
+
+DONE

@@ -1,0 +1,36 @@
+=== A. exact solutions of  l*m*iota_ub(S) = C(n,3), with the p-part filter ===
+  M11    l=1   m=1 n=11       *** LIVE COINCIDENCE ***
+  M22    l=12  m=2 n=56       KILLED by p-part at p=2
+  M23    l=4   m=1 n=46       KILLED by p-part at p=23
+  HS     l=14  m=2 n=100      KILLED by p-part at p=2
+  Suz    l=1   m=1 n=66       *** LIVE COINCIDENCE ***
+  live coincidences: 2
+
+=== B. largest n admitting a sporadic socle factor at all ===
+  M11     possible only for n <= 13
+  M12     possible only for n <= 33
+  M22     possible only for n <= 57
+  M23     possible only for n <= 67
+  M24     possible only for n <= 115
+  J1      possible only for n <= 45
+  J2      possible only for n <= 25
+  J3      possible only for n <= 287
+  HS      possible only for n <= 122
+  McL     possible only for n <= 241
+  He      possible only for n <= 247
+  Ru      possible only for n <= 897
+  Suz     possible only for n <= 312
+  Co1     possible only for n <= 1666
+  Co2     possible only for n <= 218
+  Co3     possible only for n <= 440
+  Fi22    possible only for n <= 64
+  Fi23    possible only for n <= 132
+  Fi24'   possible only for n <= 105383
+  HN      possible only for n <= 1908
+  Th      possible only for n <= 37844
+  ON      possible only for n <= 2991
+  Ly      possible only for n <= 4727
+  J4      possible only for n <= 72829
+  B       possible only for n <= 105425
+  M       possible only for n <= 10179020383
+  WORST: M -- no twin of A_n has a sporadic socle factor once n > 10179020383

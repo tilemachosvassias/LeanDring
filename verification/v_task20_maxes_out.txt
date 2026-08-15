@@ -1,0 +1,65 @@
+
+=== A9 (|A9|=181440) ===
+A9 maximal subgroups: [ "A8", "A7.2", "(3xA6).2_1", "L2(8).3", "A9M5", 
+  "(A4xA5):2", "3^3.S4", "3^2:2A4" ]
+  A8 order=20160 linChars=1 perfect=true
+  A7.2 order=5040 linChars=2 perfect=false
+  (3xA6).2_1 order=2160 linChars=2 perfect=false
+  L2(8).3 order=1512 linChars=3 perfect=false
+  A9M5 order=1512 linChars=3 perfect=false
+  (A4xA5):2 order=1440 linChars=2 perfect=false
+  3^3.S4 order=648 linChars=2 perfect=false
+  3^2:2A4 order=216 linChars=3 perfect=false
+A9: perfect maximal classes = 1 (of 8 total maximal classes)
+A9: mult1 LOWER BOUND = 1 + 1 (A_n itself, perfect & self-normalizing) = 2
+
+=== A10 (|A10|=1814400) ===
+A10 maximal subgroups: [ "A9", "A8.2", "(A7x3).2", "(A5xA5):4", "(A6xA4).2", 
+  "mo62", "A6.2_3" ]
+  A9 order=181440 linChars=1 perfect=true
+  A8.2 order=40320 linChars=2 perfect=false
+  (A7x3).2 order=15120 linChars=2 perfect=false
+  (A5xA5):4 order=14400 linChars=4 perfect=false
+  (A6xA4).2 order=8640 linChars=2 perfect=false
+  mo62 order=1920 linChars=2 perfect=false
+  A6.2_3 order=720 linChars=2 perfect=false
+A10: perfect maximal classes = 1 (of 7 total maximal classes)
+A10: mult1 LOWER BOUND = 1 + 1 (A_n itself, perfect & self-normalizing) = 2
+
+=== A11 (|A11|=19958400) ===
+A11 maximal subgroups: [ "A10", "A9.2", "(A8x3).2", "(A7xA4):2", "(A6xA5):2", 
+  "M11", "M11" ]
+  A10 order=1814400 linChars=1 perfect=true
+  A9.2 order=362880 linChars=2 perfect=false
+  (A8x3).2 order=120960 linChars=2 perfect=false
+  (A7xA4):2 order=60480 linChars=2 perfect=false
+  (A6xA5):2 order=43200 linChars=2 perfect=false
+  M11 order=7920 linChars=1 perfect=true
+  M11 order=7920 linChars=1 perfect=true
+A11: perfect maximal classes = 3 (of 7 total maximal classes)
+A11: mult1 LOWER BOUND = 3 + 1 (A_n itself, perfect & self-normalizing) = 4
+
+=== A12 (|A12|=239500800) ===
+A12 maximal subgroups: [ "A11", "A10.2", "(A9x3):2", "(A6xA6):2^2", 
+  "(A8xA4):2", "(A7xA5):2", "M12", "M12", "2^6:3^3:S4", "2^5:S6", 
+  "3^4:2^3.S4" ]
+  A11 order=19958400 linChars=1 perfect=true
+  A10.2 order=3628800 linChars=2 perfect=false
+  (A9x3):2 order=1088640 linChars=2 perfect=false
+  (A6xA6):2^2 order=518400 linChars=4 perfect=false
+  (A8xA4):2 order=483840 linChars=2 perfect=false
+  (A7xA5):2 order=302400 linChars=2 perfect=false
+  M12 order=95040 linChars=1 perfect=true
+  M12 order=95040 linChars=1 perfect=true
+  2^6:3^3:S4 order=41472 linChars=2 perfect=false
+  2^5:S6 order=23040 linChars=2 perfect=false
+  3^4:2^3.S4 order=15552 linChars=2 perfect=false
+A12: perfect maximal classes = 3 (of 11 total maximal classes)
+A12: mult1 LOWER BOUND = 3 + 1 (A_n itself, perfect & self-normalizing) = 4
+
+=== SUMMARY: mult1 lower bounds ===
+A9: mult1 >= 2
+A10: mult1 >= 2
+A11: mult1 >= 4
+A12: mult1 >= 4
+=== DONE maxes ===

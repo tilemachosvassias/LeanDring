@@ -1,0 +1,27 @@
+RAW M11      cands=4    total=1        nonsimple=0
+RAW M12      cands=5    total=1        nonsimple=0
+RAW M22      cands=10   total=2        nonsimple=1
+RAW M23      cands=12   total=1        nonsimple=0
+RAW M24      cands=15   total=4        nonsimple=3
+RAW J1       cands=4    total=1        nonsimple=0
+RAW J2       cands=9    total=3        nonsimple=2
+RAW J3       cands=7    total=1        nonsimple=0
+RAW J4       cands=22   total=1        nonsimple=0
+RAW HS       cands=12   total=1        nonsimple=0
+RAW McL      cands=20   total=1        nonsimple=0
+RAW He       cands=14   total=1        nonsimple=0
+RAW Ru       cands=21   total=1        nonsimple=0
+RAW Suz      cands=36   total=9        nonsimple=8
+RAW ON       cands=22   total=1        nonsimple=0
+RAW Co1      cands=56   total=120      nonsimple=119
+RAW Co2      cands=30   total=8        nonsimple=7
+RAW Co3      cands=28   total=1        nonsimple=0
+RAW Fi22     cands=40   total=12       nonsimple=11
+RAW Fi23     cands=52   total=4        nonsimple=3
+RAW Fi24'    cands=60   total=3        nonsimple=2
+RAW HN       cands=29   total=3        nonsimple=2
+RAW Ly       cands=26   total=1        nonsimple=0
+RAW Th       cands=41   total=7        nonsimple=6
+RAW B        cands=100  total=1226     nonsimple=1225
+RAW M        cands=140  TIMEOUT (unfiltered enumeration too large)
+RAW 2F4(2)'  cands=6    total=1        nonsimple=0

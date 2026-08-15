@@ -1,0 +1,12 @@
+# v_task53 --census Ree : Fitting-free NON-SIMPLE twins
+# R(q) = 2G_2(q), q = 3^(2m+1) >= 27
+# 30 targets, q from 27 to 127173474825648610542883299603
+
+## rows with a NON-EMPTY non-simple census (all others: empty)
+   (none)
+
+## SUMMARY  family Ree
+   positive control (|S| a simple order, uniquely, = Ree) : PASS, all 30 targets
+   targets with EMPTY non-simple census : 30 / 30
+   candidates killed by the orbit floor : 0
+   *** LIVE survivors ***               : 0

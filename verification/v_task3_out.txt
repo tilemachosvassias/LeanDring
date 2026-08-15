@@ -1,0 +1,17 @@
+
+=== Task alpha_3'' (corrected): canonical Gamma for SmallGroup(32,49) ===
+n (points) = 381
+|O| (recomputed collineation image) = 72
+O-orbits on points: 36 orbits, sizes = [ 1, 1, 1, 1, 2, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 18, 18, 18, 18, 18, 18, 18, 18, 36, 36 ]
+Candidate (ell,ell_vee) pairwise coloring: O-invariant (spot-checked)? true
+Candidate sorted-dual-row profile: O-invariant? true
+Candidate SNF height signature at r=5 (|inds|=32): O-invariant? false
+Candidate SNF height signature at r=4 (|inds|=78): O-invariant? false
+Candidate SNF height signature at r=3 (|inds|=242): O-invariant? false
+Candidate SNF height signature at r=2 (|inds|=355): O-invariant? false
+Candidate SNF height signature at r=1 (|inds|=380): O-invariant? false
+VALIDATED colors kept: [ "sorted-dual-row-profile" ]
+DISCARDED (non-canonical, would break O <= Gamma): false  [see per-candidate lines above for which ones failed]
+Number of validated-canonical point-profile classes: 21
+Class sizes: [ 1, 1, 1, 1, 6, 6, 6, 9, 9, 9, 9, 15, 15, 15, 15, 15, 18, 18, 20, 87, 105 ]
+|Aut(validated-canonically refined graph)| = 4991494870097067555578222573224689724859323678124228569138796816819592205644922558370463441907423417404727203607854902724945216532692735525384130737870548081531354912919955229135524993009783703054268529142340426266166704537292584239214660859027194059544377076762595799165464707137249931959025034638604798463253473013158140792725412249600000000000000000000000000000000000000000000000000000000000000000000

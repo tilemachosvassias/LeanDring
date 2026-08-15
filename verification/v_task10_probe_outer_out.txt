@@ -1,0 +1,159 @@
+=== Probe: outer automorphism access for O7(3) and S6(3) ===
+true
+--- O7(3).2 ---
+[ "O7(3).2", "O73d2", 
+  rec( size := 9170703360, sizesMaxes := [ 4585351680,,,,,,, 322560 ], 
+      structureMaxes := [ "O7(3)",,,,,,, "2^6:S7" ] ), 
+  rec( GNAN := "core", GRS := "core", MXO := "core", MXS := "core" ) ]
+[ "O7(3).2", "O73d2", rec(
+      size := 9170703360,
+      sizesMaxes := [ 4585351680,,,,,,, 322560 ],
+      structureMaxes := [ "O7(3)",,,,,,, "2^6:S7" ] ), rec(
+      GNAN := "core",
+      GRS := "core",
+      MXO := "core",
+      MXS := "core" ) ]
+AllAtlasGeneratingSetInfos O7(3).2: [ rec(
+      contents := "core",
+      groupname := "O7(3).2",
+      id := "",
+      identifier := 
+       [ "O7(3).2", [ "O73d2G1-p351B0.m1", "O73d2G1-p351B0.m2" ], 1, 351 ],
+      isPrimitive := true,
+      maxnr := 2,
+      p := 351,
+      rankAction := 3,
+      repname := "O73d2G1-p351B0",
+      repnr := 1,
+      size := 9170703360,
+      stabilizer := "2.U4(3).(2^2)_{122}",
+      standardization := 1,
+      transitivity := 1,
+      type := "perm" ), rec(
+      contents := "core",
+      dim := 78,
+      groupname := "O7(3).2",
+      id := "",
+      identifier := 
+       [ "O7(3).2", [ "O73d2G1-f2r78B0.m1", "O73d2G1-f2r78B0.m2" ], 1, 2 ],
+      repname := "O73d2G1-f2r78B0",
+      repnr := 2,
+      ring := GF(2),
+      size := 9170703360,
+      standardization := 1,
+      type := "matff" ), rec(
+      contents := "core",
+      dim := 7,
+      groupname := "O7(3).2",
+      id := "",
+      identifier := 
+       [ "O7(3).2", [ "O73d2G1-f3r7B0.m1", "O73d2G1-f3r7B0.m2" ], 1, 3 ],
+      repname := "O73d2G1-f3r7B0",
+      repnr := 3,
+      ring := GF(3),
+      size := 9170703360,
+      standardization := 1,
+      type := "matff" ) ]
+--- S6(3).2 ---
+[ "S6(3).2", "S63d2", 
+  rec( size := 9170703360, sizesMaxes := [ 25194240 ], 
+      structureMaxes := [ "3^(1+4).2U4(2).2" ] ), 
+  rec( GNAN := "core", GRS := "core", MXO := "core", MXS := "core" ) ]
+[ "S6(3).2", "S63d2", rec(
+      size := 9170703360,
+      sizesMaxes := [ 25194240 ],
+      structureMaxes := [ "3^(1+4).2U4(2).2" ] ), rec(
+      GNAN := "core",
+      GRS := "core",
+      MXO := "core",
+      MXS := "core" ) ]
+AllAtlasGeneratingSetInfos S6(3).2: [ rec(
+      contents := "core",
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-p364B0.m1", "S63d2G1-p364B0.m2" ], 1, 364 ],
+      isPrimitive := true,
+      maxnr := 2,
+      p := 364,
+      rankAction := 3,
+      repname := "S63d2G1-p364B0",
+      repnr := 1,
+      size := 9170703360,
+      stabilizer := "3^(1+4)_+:2.U4(2).2",
+      standardization := 1,
+      transitivity := 1,
+      type := "perm" ), rec(
+      contents := "core",
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-p1120B0.m1", "S63d2G1-p1120B0.m2" ], 1, 1120 ],
+      isPrimitive := true,
+      maxnr := 3,
+      p := 1120,
+      rankAction := 4,
+      repname := "S63d2G1-p1120B0",
+      repnr := 2,
+      size := 9170703360,
+      stabilizer := "3^6:(L3(3)x2)",
+      standardization := 1,
+      transitivity := 1,
+      type := "perm" ), rec(
+      contents := "core",
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-p3640B0.m1", "S63d2G1-p3640B0.m2" ], 1, 3640 ],
+      isPrimitive := true,
+      maxnr := 4,
+      p := 3640,
+      rankAction := 5,
+      repname := "S63d2G1-p3640B0",
+      repnr := 3,
+      size := 9170703360,
+      stabilizer := "3^(3+4):2(S4xS4)",
+      standardization := 1,
+      transitivity := 1,
+      type := "perm" ), rec(
+      contents := "core",
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-p7371B0.m1", "S63d2G1-p7371B0.m2" ], 1, 7371 ],
+      isPrimitive := true,
+      maxnr := 5,
+      p := 7371,
+      rankAction := 6,
+      repname := "S63d2G1-p7371B0",
+      repnr := 4,
+      size := 9170703360,
+      stabilizer := "2(A4xU4(2)).2",
+      standardization := 1,
+      transitivity := 1,
+      type := "perm" ), rec(
+      contents := "core",
+      dim := 26,
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-f2r26B0.m1", "S63d2G1-f2r26B0.m2" ], 1, 2 ],
+      repname := "S63d2G1-f2r26B0",
+      repnr := 5,
+      ring := GF(2),
+      size := 9170703360,
+      standardization := 1,
+      type := "matff" ), rec(
+      contents := "core",
+      dim := 13,
+      groupname := "S6(3).2",
+      id := "",
+      identifier := 
+       [ "S6(3).2", [ "S63d2G1-f3r13B0.m1", "S63d2G1-f3r13B0.m2" ], 1, 3 ],
+      repname := "S63d2G1-f3r13B0",
+      repnr := 6,
+      ring := GF(3),
+      size := 9170703360,
+      standardization := 1,
+      type := "matff" ) ]
+=== done ===

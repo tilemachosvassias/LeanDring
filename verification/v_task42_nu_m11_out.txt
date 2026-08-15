@@ -1,0 +1,3 @@
+new min 165 for abelian of order 2
+new min 55 for abelian of order 9
+nu(M11)=iota(M11)= 55

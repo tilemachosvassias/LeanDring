@@ -1,0 +1,158 @@
+### Sym^k SL_2(q): form type, multiplier of the diagonal outer, verdict
+Syntax warning: Unbound global variable in v_task63_sym.g:67
+  gens := List(GeneratorsOfGroup(SL(2,q)), m -> List(m, r -> List(r, x->x*One(\
+F))));
+                                                                              \
+^
+Syntax warning: Unbound global variable in v_task63_sym.g:91
+        mu := First(Elements(F), x -> not IsZero(x) and x^2*lam = One(F));
+                                                            ^^^
+Syntax warning: Unbound global variable in v_task63_sym.g:91
+        mu := First(Elements(F), x -> not IsZero(x) and x^2*lam = One(F));
+                                                                      ^
+  q=7 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=7 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=7 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+0  scale-is-square=true   det=Z(7)^3  theta=nu^
+3 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=11 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=11 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=11 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(11)^5  theta=nu^
+1 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=13 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=13 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=13 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(13)^6  theta=nu^
+0 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=17 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=17 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=17 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(17)^8  theta=nu^
+8 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=19 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=19 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=19 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(19)^9  theta=nu^
+17 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=23 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=23 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=23 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(23)^11  theta=nu^
+7 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=25 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=29 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=29 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=29 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(29)^14  theta=nu^
+20 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=31 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=31 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=31 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(31)^15  theta=nu^
+11 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=37 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=37 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=37 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(37)^18  theta=nu^
+14 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=41 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=41 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=41 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(41)^20  theta=nu^
+16 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=43 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=43 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=43 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(43)^21  theta=nu^
+15 square=false  => PGL_2 in Omega_7: false => psn: true
+  q=49 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=49 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=49 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(7)^3  theta=nu^
+30 square=true  => PGL_2 in Omega_7: true => psn: false
+  q=121 k=3  dim=4 absirr=true alt=true sym=false  form scales by nu^
+3
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=121 k=5  dim=6 absirr=true alt=true sym=false  form scales by nu^
+5
+   scale-is-square=false   => multiplier nonsquare: true  => PSN, 1 class: true
+  q=121 k=6  dim=7 absirr=true alt=false sym=true  form scales by nu^
+6  scale-is-square=true   det=Z(11)^5  theta=nu^
+42 square=true  => PGL_2 in Omega_7: true => psn: false
+
+### anchor for the spinor routine: Sym^2 (SO_3 = PGL_2 > Omega_3 = PSL_2)
+  q=
+7
+   theta(outer on Sym^2) square = false   (expected FALSE: PGL_2 = SO_3 > Omega\
+_3)
+  q=
+11
+   theta(outer on Sym^2) square = false   (expected FALSE: PGL_2 = SO_3 > Omeg\
+a_3)
+  q=
+13
+   theta(outer on Sym^2) square = true   (expected FALSE: PGL_2 = SO_3 > Omega\
+_3)
+  q=
+17
+   theta(outer on Sym^2) square = true   (expected FALSE: PGL_2 = SO_3 > Omega\
+_3)
+  q=
+19
+   theta(outer on Sym^2) square = false   (expected FALSE: PGL_2 = SO_3 > Omeg\
+a_3)
+  q=
+23
+   theta(outer on Sym^2) square = false   (expected FALSE: PGL_2 = SO_3 > Omeg\
+a_3)

@@ -1,0 +1,33 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+=== p^C_4(q) ===
+2.A5 q=5: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+2.A6 q=5: orbit [ 1, 2 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+C6 2^(1+4).A5 q=5: ABSENT
+==> p^C_4(5) = 3
+
+2.A5 q=7: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+2.A6 q=7: orbit [ 1, 2 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+Sym^3 SL(2,q) q=7: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+C6 2^(1+4).A5 q=7: ABSENT
+==> p^C_4(7) = 4
+
+2.A5 q=9: ABSENT
+2.A6 q=9: ABSENT
+C6 2^(1+4).A5 q=9: ABSENT
+==> p^C_4(9) = 1
+
+2.A5 q=11: orbit [ 1 ] |Stab_Out|=2 mult_square=true -> 0 class(es)
+2.A6 q=11: orbit [ 1, 2 ] |Stab_Out|=2 mult_square=true -> 0 class(es)
+Sym^3 SL(2,q) q=11: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+C6 2^(1+4).A5 q=11: ABSENT
+==> p^C_4(11) = 2
+
+2.A5 q=13: orbit [ 1 ] |Stab_Out|=2 mult_square=true -> 0 class(es)
+2.A6 q=13: orbit [ 1, 2 ] |Stab_Out|=2 mult_square=true -> 0 class(es)
+Sym^3 SL(2,q) q=13: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+C6 2^(1+4).A5 q=13: ABSENT
+==> p^C_4(13) = 2
+
+2.A5 q=19: orbit [ 1 ] |Stab_Out|=2 mult_square=false -> 1 class(es)
+2.A6 q=19: orbit [ 1, 2 ] |Stab_Out|=2 mult_square=false -> 1 class(es)

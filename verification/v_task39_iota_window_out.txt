@@ -1,0 +1,53 @@
+M11  iota=55  I(S) cap [1,2iota] = [ 55, 110 ]   unresolved=1
+     [ [ "3^2:Q8.2", 2, 2 ] ]
+M12  iota=220  I(S) cap [1,2iota] = [ 220, 396 ]   unresolved=4
+     [ [ "A6.2^2", 6, 6 ], [ "A6.2^2", 6, 6 ], [ "3^2.2.S4", 2, 2 ], 
+  [ "M12M7", 2, 2 ] ]
+M22  iota=77  I(S) cap [1,2iota] = [ 77 ]   unresolved=1
+     [ [ "2^4:a6", 2, 2 ] ]
+M23  iota=253  I(S) cap [1,2iota] = [ 253 ]   unresolved=2
+     [ [ "L3(4).2_2", 2, 2 ], [ "2^4:a7", 2, 2 ] ]
+M24  iota=759  I(S) cap [1,2iota] = [ 759 ]   unresolved=1
+     [ [ "2^4:a8", 2, 2 ] ]
+J1  iota=1045  I(S) cap [1,2iota] = [ 1045, 1463, 1540, 1596 ]   unresolved=1
+     [ [ "2^3.7.3", 2, 2 ] ]
+J2  iota=280  I(S) cap [1,2iota] = [ 280, 315, 525 ]   unresolved=1
+     [ [ "3.A6.2_2", 2, 2 ] ]
+J3  iota=17442  I(S) cap [1,2iota] = [ 17442, 23256, 25840, 26163 
+ ]   unresolved=1
+     [ [ "j3m4", 2, 2 ] ]
+HS  iota=3850  I(S) cap [1,2iota] = [ 3850, 4125, 5775, 7700 ]   unresolved=1
+     [ [ "2^4.s6", 2, 2 ] ]
+McL  iota=15400  I(S) cap [1,2iota] = [ 15400, 22275, 30800 ]   unresolved=2
+     [ [ "3^(1+4):2S5", 2, 2 ], [ "3^4:m10", 2, 2 ] ]
+He  iota=8330  I(S) cap [1,2iota] = [ 8330, 16660 ]   unresolved=0
+Ru  iota=188500  I(S) cap [1,2iota] = [ 188500 ]   unresolved=1
+     [ [ "2^6:u3(3):2", 2, 2 ] ]
+Suz  iota=22880  I(S) cap [1,2iota] = [ 22880 ]   unresolved=1
+     [ [ "3_2.U4(3).2_3'", 2, 2 ] ]
+Co1  iota=1545600  I(S) cap [1,2iota] = [ 1545600, 3091200 ]   unresolved=0
+Co2  iota=46575  I(S) cap [1,2iota] = [ 46575, 56925 ]   unresolved=1
+     [ [ "2^10:m22:2", 2, 2 ] ]
+Co3  iota=128800  I(S) cap [1,2iota] = [ 128800, 170775 ]   unresolved=2
+     [ [ "U4(3).2_3'", 3, 2 ], [ "3^5:(2xm11)", 2, 2 ] ]
+Fi22  iota=3510  I(S) cap [1,2iota] = [ 3510 ]   unresolved=0
+Fi23  iota=31671  I(S) cap [1,2iota] = [ 31671 ]   unresolved=0
+Fi24'  iota=4860485028  I(S) cap [1,2iota] = [ 4860485028, 9720970056 
+ ]   unresolved=1
+     [ [ "2.Fi22.2", 2, 2 ] ]
+HN  iota=1539000  I(S) cap [1,2iota] = [ 1539000 ]   unresolved=1
+     [ [ "2.HS.2", 2, 2 ] ]
+Th  iota=283599225  I(S) cap [1,2iota] = [ 283599225 ]   unresolved=1
+     [ [ "2^5.psl(5,2)", 2, 2 ] ]
+ON  iota=2857239  I(S) cap [1,2iota] = [ 2857239 ]   unresolved=1
+     [ [ "4_2.L3(4).2_1", 2, 2 ] ]
+Ly  iota=9606125  I(S) cap [1,2iota] = [ 9606125, 19212250 ]   unresolved=0
+J4  iota=173067389  I(S) cap [1,2iota] = [ 173067389 ]   unresolved=1
+     [ [ "mx1j4", 2, 2 ] ]
+B  iota=13571955000  I(S) cap [1,2iota] = [ 13571955000 ]   unresolved=1
+     [ [ "2.2E6(2).2", 2, 2 ] ]
+M  iota=97239461142009186000  I(S) cap [1,2iota] = [ 97239461142009186000 
+ ]   unresolved=1
+     [ [ "2.B", 2, 2 ] ]
+2F4(2)'  iota=1755  I(S) cap [1,2iota] = [ 1755, 2925 ]   unresolved=1
+     [ [ "2.2^8.f20", 2, 2 ] ]

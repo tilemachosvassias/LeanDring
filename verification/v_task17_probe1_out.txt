@@ -1,0 +1,15 @@
+=== probe: basic perfect-subgroup machinery ===
+PSL(2,7) order: 168
+PSL(2,7) # perfect subgroup classes: 2
+  order 168
+  order 1
+
+=== PGL(2,7) ===
+PGL(2,7) order: 336
+PGL(2,7) # perfect subgroup classes: 2
+  order 168  selfnorm=false
+  order 1  selfnorm=false
+
+=== timing DirectProduct(PGL(2,7),PGL(2,11)) construction ===
+PGL(2,11) order: 1320
+DirectProduct order: 443520 time(ms)=1

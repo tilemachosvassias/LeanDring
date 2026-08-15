@@ -1,0 +1,47 @@
+### C.4 equal-characteristic MULTI-FACTOR census, d = 21..24
+============================================================================
+PART C.4 -- equal characteristic, MULTI-FACTOR, FULL census
+============================================================================
+  L_21  targets 466      floor-passing factors 741     LIVE multi-factor configurations: NONE
+  L_22  targets 466      floor-passing factors 778     LIVE multi-factor configurations: NONE
+  L_23  targets 466      floor-passing factors 640     LIVE multi-factor configurations: NONE
+  L_24  targets 466      floor-passing factors 2923    LIVE multi-factor configurations: NONE
+  U_21  targets 466      floor-passing factors 0       LIVE multi-factor configurations: NONE
+  U_22  targets 466      floor-passing factors 0       LIVE multi-factor configurations: NONE
+  U_23  targets 466      floor-passing factors 0       LIVE multi-factor configurations: NONE
+  U_24  targets 466      floor-passing factors 0       LIVE multi-factor configurations: NONE
+
+  TOTAL equal-characteristic multi-factor twins: NONE
+
+### C.2 equal-characteristic ALMOST-SIMPLE sweep, d = 21..24
+============================================================================
+PART C.2 -- equal characteristic, decided EXACTLY for every q
+            (factorisation-free, complete in f1 and in the type)
+============================================================================
+  L_21  targets 2328    divisor pairs 288731    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  L_22  targets 2328    divisor pairs 305732    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  L_23  targets 2328    divisor pairs 308495    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  L_24  targets 2328    divisor pairs 386471    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_21  targets 2328    divisor pairs 281783    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_22  targets 2328    divisor pairs 298811    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_23  targets 2328    divisor pairs 301166    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+  U_24  targets 2328    divisor pairs 378980    control 2328/2328
+        order-only NEAR-MISSES (c <= |Out|) : NONE
+        HITS (c >= 2, c | |Out(S_1)|)       : NONE
+
+  TOTAL equal-characteristic hits over both towers: NONE
+

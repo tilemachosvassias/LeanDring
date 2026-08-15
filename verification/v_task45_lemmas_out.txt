@@ -1,0 +1,27 @@
+[OK ] (F1) Phi_3(q), Phi_5(q) odd for all integers q 
+[OK ] (F2) every prime of Phi_e(q) is e or == 1 mod e   (e=3,5, q<=700) 
+[OK ] (F3) v_e(Phi_e(q)) <= 1                            (e=3,5, q<=700) 
+[OK ] Lemma NC ineq  M/(n-3)^2 < 2(n-2) for n >= 10 (checked n<=2000; equivalent to n^2-11n+18>0, true for all n>=10) []
+[OK ] Lemma NC ineq (f1=2)  M/(4(n-3)^2) < n-2 for n >= 10 []
+[OK ] Lemma L-bound  l* < n/6 + 3 (f1=1),  l* < n/48 + 1 (f1=2), n <= 2*10^5 []
+
+row-2 multipliers c <= 4000 killed by Theorem L3_2-gen: 66
+   [12, 36, 84, 108, 156, 228, 252, 324, 372, 444, 468, 516, 588, 684, 732, 756, 804, 876, 948, 972, 1092, 1116, 1164, 1236, 1308] ...
+[OK ] Theorem L3_2-gen: no solution for ANY of the 66 dead c <= 4000, all n <= 3*10^5 []
+
+Lemma NC alone kills 51781/199991 = 25.89 % of n <= 200000 (asymptotically ~3/log n -> 0): it is a structural constraint, NOT a density-1 kill.
+Lemma NC-gen (j <= 4, needs l* >= 5) kills 49.85 % of n <= 200000
+
+FAILURES: none
+
+row 2: l* < 0.2310 * n/ln(n-3)   (max over p at p=2)
+        c = 6 f1 l* < 2.7726 * n/ln(n-3)
+        NC-gen+ valid for j <= 2.1640*ln(n-3) - 1
+row 3: l* < 0.1386 * n/ln(n-3)   (max over p at p=2)
+        c = 6 f1 l* < 1.6636 * n/ln(n-3)
+        NC-gen+ valid for j <= 3.6067*ln(n-3) - 1
+n ~ 1e+05:  row-2 j-range = 1..23,  row-3 j-range = 1..40
+n ~ 1e+07:  row-2 j-range = 1..33,  row-3 j-range = 1..57
+n ~ 1e+11:  row-2 j-range = 1..53,  row-3 j-range = 1..90
+Lemma NC-gen+ (row 2, j <= 24, needs l* > j) kills 78.45 % of n <= 200000
+Lemma NC-gen+ (row 3, j <= 42, needs l* > j) kills 85.24 % of n <= 200000

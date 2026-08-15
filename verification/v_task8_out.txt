@@ -1,0 +1,309 @@
+true
+
+=== LOADING CHARACTER TABLES ===
+CharacterTable( "O7(3)" )
+CharacterTable( "S6(3)" )
+O7(3) loaded: identifier = O7(3)
+S6(3) loaded: identifier = S6(3)
+
+=== TASK 1: VERIFY ORDER ===
+4585351680
+4585351680
+Order of O7(3):  4585351680
+Order of S6(3):  4585351680
+Orders equal: true
+Expected:     4585351680
+
+=== TASK 2: NUMBER OF CONJUGACY CLASSES ===
+58
+74
+O7(3) conjugacy classes:  58
+S6(3) conjugacy classes:  74
+Classes equal: false
+
+=== TASK 3: ELEMENT-ORDER SPECTRA ===
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 18, 20 ]
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 18, 20, 24, 30, 36 ]
+O7(3) orders:  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 18, 20 ]
+S6(3) orders:  [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 18, 20, 24, 
+  30, 36 ]
+Orders equal: false
+
+=== TASK 4: INVOLUTION COUNT ===
+[ 1, 351, 22113, 331695, 7280, 26208, 32760, 262080, 262080, 1572480, 
+  3144960, 1592136, 3980340, 11941020, 23882040, 38211264, 196560, 1179360, 
+  1179360, 1769040, 2653560, 5307120, 5307120, 10614240, 10614240, 10614240, 
+  14152320, 21228480, 21228480, 42456960, 42456960, 84913920, 327525120, 
+  286584480, 286584480, 14152320, 28304640, 169827840, 169827840, 114633792, 
+  229267584, 31842720, 31842720, 63685440, 63685440, 95528160, 127370880, 
+  127370880, 191056320, 352719360, 352719360, 327525120, 305690112, 42456960, 
+  42456960, 84913920, 127370880, 229267584 ]
+[ 1, 7371, 189540, 364, 364, 21840, 43680, 262080, 262080, 4717440, 44226, 
+  1990170, 3980340, 38211264, 29484, 29484, 294840, 294840, 1179360, 1179360, 
+  1179360, 1179360, 1769040, 3538080, 7076160, 7076160, 10614240, 14152320, 
+  14152320, 127370880, 327525120, 47764080, 143292240, 2358720, 2358720, 
+  9434880, 9434880, 9434880, 9434880, 169827840, 169827840, 38211264, 
+  1769040, 1769040, 10614240, 15921360, 15921360, 15921360, 15921360, 
+  21228480, 31842720, 31842720, 31842720, 63685440, 127370880, 127370880, 
+  352719360, 352719360, 327525120, 152845056, 152845056, 21228480, 21228480, 
+  84913920, 84913920, 84913920, 84913920, 229267584, 191056320, 191056320, 
+  152845056, 152845056, 127370880, 127370880 ]
+[ 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 
+  6, 6, 6, 6, 6, 6, 6, 7, 8, 8, 9, 9, 9, 9, 10, 10, 12, 12, 12, 12, 12, 12, 
+  12, 12, 13, 13, 14, 15, 18, 18, 18, 18, 20 ]
+[ 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 
+  6, 6, 6, 6, 6, 7, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 10, 12, 12, 12, 12, 12, 12, 
+  12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 14, 15, 15, 18, 18, 18, 18, 18, 18, 
+  20, 24, 24, 30, 30, 36, 36 ]
+0
+0
+O7(3) involuted elements:  354159
+S6(3) involuted elements:  196911
+Involution counts equal: false
+
+=== TASK 5: CONJUGACY CLASSES & ELEMENT COUNTS BY ORDER ===
+[  ]
+[  ]
+[  ]
+[  ]
+
+O7(3) by element order:
+order | #classes | #elements
+------|----------|----------
+    1 |        1 | 1
+    2 |        3 | 354159
+    3 |        7 | 5307848
+    4 |        4 | 41395536
+    5 |        1 | 38211264
+    6 |       16 | 275871960
+    7 |        1 | 327525120
+    8 |        2 | 573168960
+    9 |        4 | 382112640
+   10 |        2 | 343901376
+   12 |        8 | 732382560
+   13 |        2 | 705438720
+   14 |        1 | 327525120
+   15 |        1 | 305690112
+   18 |        4 | 297198720
+   20 |        1 | 229267584
+
+S6(3) by element order:
+order | #classes | #elements
+------|----------|----------
+    1 |        1 | 1
+    2 |        2 | 196911
+    3 |        7 | 5307848
+    4 |        3 | 6014736
+    5 |        1 | 38211264
+    6 |       16 | 191115288
+    7 |        1 | 327525120
+    8 |        2 | 191056320
+    9 |        8 | 382112640
+   10 |        1 | 38211264
+   12 |       14 | 513021600
+   13 |        2 | 705438720
+   14 |        1 | 327525120
+   15 |        2 | 305690112
+   18 |        6 | 382112640
+   20 |        1 | 229267584
+   24 |        2 | 382112640
+   30 |        2 | 305690112
+   36 |        2 | 254741760
+[  ]
+
+DIFFERENCES in class/element counts at orders: 
+[ 2, 4, 6, 8, 9, 10, 12, 15, 18 ]
+
+=== TASK 6: CYCLIC SUBGROUP ORBITS (RATIONAL CLASSES) ===
+[  ]
+[  ]
+[  ]
+[  ]
+
+O7(3): 56 rational-class orbits
+  Orbit containing class 1: size 1
+  Orbit containing class 2: size 1
+  Orbit containing class 3: size 1
+  Orbit containing class 4: size 1
+  Orbit containing class 5: size 1
+  Orbit containing class 6: size 1
+  Orbit containing class 7: size 1
+  Orbit containing class 8: size 1
+  Orbit containing class 9: size 1
+  Orbit containing class 10: size 1
+  Orbit containing class 11: size 1
+  Orbit containing class 12: size 1
+  Orbit containing class 13: size 1
+  Orbit containing class 14: size 1
+  Orbit containing class 15: size 1
+  Orbit containing class 16: size 1
+  Orbit containing class 17: size 1
+  Orbit containing class 18: size 1
+  Orbit containing class 19: size 1
+  Orbit containing class 20: size 1
+  Orbit containing class 21: size 1
+  Orbit containing class 22: size 1
+  Orbit containing class 23: size 1
+  Orbit containing class 24: size 1
+  Orbit containing class 25: size 1
+  Orbit containing class 26: size 1
+  Orbit containing class 27: size 1
+  Orbit containing class 28: size 1
+  Orbit containing class 29: size 1
+  Orbit containing class 30: size 1
+  Orbit containing class 31: size 1
+  Orbit containing class 32: size 1
+  Orbit containing class 33: size 1
+  Orbit containing class 34: size 1
+  Orbit containing class 35: size 1
+  Orbit containing class 36: size 1
+  Orbit containing class 37: size 1
+  Orbit containing class 38: size 1
+  Orbit containing class 39: size 1
+  Orbit containing class 40: size 1
+  Orbit containing class 41: size 1
+  Orbit containing class 42: size 1
+  Orbit containing class 43: size 1
+  Orbit containing class 44: size 1
+  Orbit containing class 45: size 1
+  Orbit containing class 46: size 1
+  Orbit containing class 47: size 1
+  Orbit containing class 48: size 1
+  Orbit containing class 49: size 1
+  Orbit containing class 50: size 2
+  Orbit containing class 52: size 1
+  Orbit containing class 53: size 1
+  Orbit containing class 54: size 2
+  Orbit containing class 56: size 1
+  Orbit containing class 57: size 1
+  Orbit containing class 58: size 1
+
+S6(3): 49 rational-class orbits
+  Orbit containing class 1: size 1
+  Orbit containing class 2: size 1
+  Orbit containing class 3: size 1
+  Orbit containing class 4: size 2
+  Orbit containing class 6: size 1
+  Orbit containing class 7: size 1
+  Orbit containing class 8: size 2
+  Orbit containing class 10: size 1
+  Orbit containing class 11: size 1
+  Orbit containing class 12: size 1
+  Orbit containing class 13: size 1
+  Orbit containing class 14: size 1
+  Orbit containing class 15: size 2
+  Orbit containing class 17: size 2
+  Orbit containing class 19: size 2
+  Orbit containing class 21: size 2
+  Orbit containing class 23: size 1
+  Orbit containing class 24: size 1
+  Orbit containing class 25: size 2
+  Orbit containing class 27: size 1
+  Orbit containing class 28: size 2
+  Orbit containing class 30: size 1
+  Orbit containing class 31: size 1
+  Orbit containing class 32: size 1
+  Orbit containing class 33: size 1
+  Orbit containing class 34: size 2
+  Orbit containing class 36: size 2
+  Orbit containing class 38: size 2
+  Orbit containing class 40: size 2
+  Orbit containing class 42: size 1
+  Orbit containing class 43: size 2
+  Orbit containing class 45: size 1
+  Orbit containing class 46: size 2
+  Orbit containing class 48: size 2
+  Orbit containing class 50: size 1
+  Orbit containing class 51: size 1
+  Orbit containing class 52: size 2
+  Orbit containing class 54: size 1
+  Orbit containing class 55: size 2
+  Orbit containing class 57: size 2
+  Orbit containing class 59: size 1
+  Orbit containing class 60: size 2
+  Orbit containing class 62: size 2
+  Orbit containing class 64: size 2
+  Orbit containing class 66: size 2
+  Orbit containing class 68: size 1
+  Orbit containing class 69: size 2
+  Orbit containing class 71: size 2
+  Orbit containing class 73: size 2
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 
+  1, 1, 2, 1, 1, 1 ]
+[ 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 1, 
+  2, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2 ]
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:173
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:174
+
+O7(3) orbit-size multiset: [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1 ]
+S6(3) orbit-size multiset: [ 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 
+  1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 
+  2, 2, 2, 2, 1, 2, 2, 2 ]
+Orbit multisets equal: false
+
+=== TASK 7: FROBENIUS-SCHUR INDICATORS & CHARACTER DEGREES ===
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+  1, 1, 1, 1, 1, 1, 1, 1 ]
+[ 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 
+  0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 
+  0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1 ]
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:185
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:186
+Error, Variable: 'inds1_sorted' must have a value
+not in any function at *stdin*:188
+Error, Variable: 'inds2_sorted' must have a value
+not in any function at *stdin*:189
+Error, Variable: 'inds1_sorted' must have a value
+not in any function at *stdin*:190
+[ [ 1, 1 ], [ 78, 1 ], [ 91, 1 ], [ 105, 1 ], [ 168, 1 ], [ 182, 1 ], 
+  [ 195, 1 ], [ 260, 2 ], [ 273, 1 ], [ 546, 1 ], [ 819, 1 ], [ 910, 2 ], 
+  [ 1092, 1 ], [ 1365, 2 ], [ 1560, 2 ], [ 1638, 1 ], [ 1820, 1 ], 
+  [ 2106, 1 ], [ 2184, 1 ], [ 2457, 1 ], [ 2730, 2 ], [ 2835, 1 ], 
+  [ 4095, 2 ], [ 4368, 1 ], [ 4536, 1 ], [ 5265, 1 ], [ 5460, 3 ], 
+  [ 5824, 2 ], [ 6552, 1 ], [ 7020, 2 ], [ 7280, 3 ], [ 7371, 1 ], 
+  [ 8190, 2 ], [ 11648, 1 ], [ 14742, 1 ], [ 16380, 1 ], [ 16640, 2 ], 
+  [ 17472, 2 ], [ 17920, 2 ], [ 19683, 1 ], [ 21840, 1 ], [ 22113, 1 ] ]
+[ [ 1, 1 ], [ 13, 2 ], [ 78, 1 ], [ 91, 2 ], [ 105, 1 ], [ 168, 1 ], 
+  [ 195, 1 ], [ 273, 2 ], [ 455, 2 ], [ 546, 2 ], [ 728, 2 ], [ 819, 1 ], 
+  [ 1170, 2 ], [ 1365, 6 ], [ 1820, 3 ], [ 2106, 1 ], [ 2184, 2 ], 
+  [ 2457, 3 ], [ 2730, 1 ], [ 2835, 1 ], [ 3640, 2 ], [ 4095, 2 ], 
+  [ 4536, 1 ], [ 5265, 1 ], [ 5460, 4 ], [ 5824, 3 ], [ 6552, 2 ], 
+  [ 7371, 2 ], [ 8190, 1 ], [ 9477, 2 ], [ 10920, 2 ], [ 11648, 3 ], 
+  [ 12285, 2 ], [ 14560, 3 ], [ 16380, 1 ], [ 16640, 2 ], [ 17472, 1 ], 
+  [ 17920, 2 ], [ 19683, 1 ] ]
+
+O7(3) character degree multiset size: 58 characters
+S6(3) character degree multiset size: 74 characters
+[  ]
+[  ]
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:207
+Error, Variable: 'Sorted' must have a value
+not in any function at *stdin*:208
+Character degree multisets equal: FALSE
+  First 10 O7(3) degrees: [ 1, 78, 91, 105, 168, 182, 195, 260, 260, 273 ]
+  First 10 S6(3) degrees: [ 1, 13, 13, 78, 91, 91, 105, 168, 195, 273 ]
+
+=== BONUS TASK 8: q=5 CASE (O7(5) vs S6(5)) ===
+CharacterTable( "O7(5)" )
+CharacterTable( "S6(5)" )
+Both q=5 tables loaded.
+O7(5) order:  228501000000000
+S6(5) order:  228501000000000
+Orders equal: true
+O7(5) conjugacy classes: 144
+S6(5) conjugacy classes: 179
+Classes equal: false
+O7(5) involution count:  138345375
+S6(5) involution count:  153969375
+Involution counts equal: false
+
+=== COMPUTATION COMPLETE ===

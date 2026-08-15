@@ -1,0 +1,85 @@
+### PART A -- order formulas
+# group | GAP |S| | formula | equal?
+U3(3) | 6048 | 6048 | true
+U3(4) | 62400 | 62400 | true
+U3(5) | 126000 | 126000 | true
+U3(7) | 5663616 | 5663616 | true
+U3(8) | 5515776 | 5515776 | true
+U3(9) | 42573600 | 42573600 | true
+U3(11) | 70915680 | 70915680 | true
+U3(13) | 811273008 | 811273008 | true
+U3(16) | 4279234560 | 4279234560 | true
+U3(17) | 2317678272 | 2317678272 | true
+U3(19) | 16938986400 | 16938986400 | true
+U3(23) | 26056457856 | 26056457856 | true
+U3(25) | 152353500000 | 152353500000 | true
+U3(27) | 282056445216 | 282056445216 | true
+U3(32) | 366157135872 | 366157135872 | true
+Sz(8) | 29120 | 29120 | true
+Sz(32) | 32537600 | 32537600 | true
+Sz(128) | 34093383680 | 34093383680 | true
+Sz(512) | 35115786567680 | 35115786567680 | true
+Sz(2048) | 36011213418659840 | 36011213418659840 | true
+R(27) | 10073444472 | 10073444472 | true
+R(243) | 49825657439340552 | 49825657439340552 | true
+R(2187) | 239189910264352349332632 | 239189910264352349332632 | true
+
+### PART B -- iota upper-bound witness A = Z(Syl_p(S))
+# group | |A| | A abelian? | [S:N_S(A)] | ind*(A) | claimed iota
+U3(3) | 3 | true | 28 | 28 | 28 | ok? true
+U3(4) | 4 | true | 65 | 65 | 65 | ok? true
+U3(5) | 5 | true | 126 | 126 | 126 | ok? true
+U3(7) | 7 | true | 344 | 344 | 344 | ok? true
+U3(8) | 8 | true | 513 | 513 | 513 | ok? true
+U3(9) | 9 | true | 730 | 730 | 730 | ok? true
+U3(11) | 11 | true | 1332 | 1332 | 1332 | ok? true
+U3(13) | 13 | true | 2198 | 2198 | 2198 | ok? true
+U3(16) | 16 | true | 4097 | 4097 | 4097 | ok? true
+U3(17) | 17 | true | 4914 | 4914 | 4914 | ok? true
+U3(19) | 19 | true | 6860 | 6860 | 6860 | ok? true
+U3(23) | 23 | true | 12168 | 12168 | 12168 | ok? true
+U3(25) | 25 | true | 15626 | 15626 | 15626 | ok? true
+U3(27) | 27 | true | 19684 | 19684 | 19684 | ok? true
+Sz(8) | 8 | true | 65 | 65 | 65 | ok? true
+Sz(32) | 32 | true | 1025 | 1025 | 1025 | ok? true
+Sz(128) | 128 | true | 16385 | 16385 | 16385 | ok? true
+R(q) : PART B skipped -- see PART C2 (matrix group / infeasible Normalizer)
+
+### PART C -- EXACT iota over ALL subgroups (no (AB) restriction)
+# where the subgroup lattice is in reach
+U3(3) : iota = 28   claimed 28   ok? true   iota_2 = 63   first 6 of I(S) = 
+[ 28, 63, 84, 112, 126, 189 ]
+Sz(8) : iota = 65   claimed 65   ok? true   iota_2 = 455   first 6 of I(S) = 
+[ 65, 455, 520, 560, 910, 1456 ]
+
+### PART C2 -- minimal degree m(S) (smallest index of a proper
+### subgroup) from the maximal subgroups, incl. the U_3(5) exception
+U3(3) : maximal-subgroup indices [ 28, 36, 63, 63 ]   m(S) = 28
+U3(4) : maximal-subgroup indices [ 65, 208, 416, 1600 ]   m(S) = 65
+U3(5) : maximal-subgroup indices [ 50, 50, 50, 126, 175, 175, 175, 525 
+ ]   m(S) = 50
+U3(7) : maximal-subgroup indices [ 344, 2107, 14749, 16856, 43904 ]   m(S) = 
+344
+U3(8) : maximal-subgroup indices [ 513, 3648, 25536, 25536, 25536, 34048, 
+  96768 ]   m(S) = 513
+U3(9) : maximal-subgroup indices [ 730, 5913, 59130, 70956, 194400 ]   m(S) = 
+730
+U3(11) : maximal-subgroup indices [ 1332, 13431, 53724, 53724, 53724, 196988, 
+  196988, 196988, 246235, 638880, 984940 ]   m(S) = 1332
+Sz(8) : maximal-subgroup indices [ 65, 560, 1456, 2080 ]   m(S) = 65
+Sz(32) : maximal-subgroup indices [ 1025, 198400, 325376, 524800 ]   m(S) = 
+1025
+R(27) : no stored Maxes
+
+### PART D -- Lemma K analogues (largest prime power dividing |S|)
+U3: violations of ppmax <= max(q^3, 2(q+1)^2), 3 <= q <= 3000: [  ]
+Sz: violations of ppmax <= q^2+1, q = 2^f, f odd <= 31: [  ]
+R : violations of ppmax <= q^3, q = 3^f, f odd <= 21: [  ]
+
+### PART E -- the order coincidence |U_3(q)| = (q+1)*|R(q)|/e
+### (found by the python negative control; it is the ONLY order
+###  near-coincidence between the three target families)
+q = 27 : |U3(q)|/|R(q)| = 28   (q+1)/gcd(3,q+1) = 28
+q = 243 : |U3(q)|/|R(q)| = 244   (q+1)/gcd(3,q+1) = 244
+q = 2187 : |U3(q)|/|R(q)| = 2188   (q+1)/gcd(3,q+1) = 2188
+### it is killed because c = (q+1)/e does NOT divide |Out(R(q))| = f.

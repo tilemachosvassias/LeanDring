@@ -1,0 +1,45 @@
+#I  packagemanager package is not available. Check that the name is correct
+#I  and it is present in one of the GAP root directories (see '??RootPaths')
+=== PART A: Omega(7,q) on nonsingular projective points ===
+Syntax warning: Unbound global variable in v_task64_bc3_repair.g:43
+             List(bas,x->-One(F)))) * tr;;
+                              ^
+q = 3  |Omega_7(q)| = 4585351680
+   iota_1 = (q^6-1)/(q-1) = 364   q^3(q^3-1)/2 = 351   q^3(q^3+1)/2 = 378
+   Q(e) square = true  : orbit size = 
+378   z_e in Omega = false   z_e^2=1 : true   det = Z(3)^0
+   Q(e) square = false  : orbit size = 
+351   z_e in Omega = true   z_e^2=1 : true   det = Z(3)^0
+      |C| = 13063680  index = 351  N_G(<z>)=C_G(z) index equal: true
+q = 5  |Omega_7(q)| = 228501000000000
+   iota_1 = (q^6-1)/(q-1) = 3906   q^3(q^3-1)/2 = 7750   q^3(q^3+1)/2 = 7875
+   Q(e) square = true  : orbit size = 
+7875   z_e in Omega = true   z_e^2=1 : true   det = Z(5)^0
+      |C| = 29016000000  index = 7875  N_G(<z>)=C_G(z) index equal: true
+   Q(e) square = false  : orbit size = 
+7750   z_e in Omega = false   z_e^2=1 : true   det = Z(5)^0
+q = 7  |Omega_7(q)| = 273457218604953600
+   iota_1 = (q^6-1)/(q-1) = 19608   q^3(q^3-1)/2 = 58653   q^3(q^3+1)/2 = 
+58996
+   Q(e) square = true  : orbit size = 
+58996   z_e in Omega = false   z_e^2=1 : true   det = Z(7)^0
+   Q(e) square = false  : orbit size = 
+58653   z_e in Omega = true   z_e^2=1 : true   det = Z(7)^0
+      |C| = 4662288691200  index = 58653  N_G(<z>)=C_G(z) index equal: true
+q = 9  |Omega_7(q)| = 54025731402499584000
+   iota_1 = (q^6-1)/(q-1) = 66430   q^3(q^3-1)/2 = 265356   q^3(q^3+1)/2 = 
+266085
+   Q(e) square = true  : orbit size = 
+266085   z_e in Omega = true   z_e^2=1 : true   det = Z(3)^0
+      |C| = 203039372390400  index = 266085  N_G(<z>)=C_G(z) index equal: true
+   Q(e) square = false  : orbit size = 
+265356   z_e in Omega = false   z_e^2=1 : true   det = Z(3)^0
+
+=== PART B: iota_1 does not divide v_eps ===
+no divisibility hits, no size hits -> claim holds on the tested grid
+
+=== PART C: maximal subgroup indices, q = 3 ===
+S6(3)  |G| = 4585351680  q^6 = 729
+   maxes[1] index = 364   <-- below q^6
+   maxes[2] index = 1120
+O7(3)  |G| = 4585351680  q^6 = 729

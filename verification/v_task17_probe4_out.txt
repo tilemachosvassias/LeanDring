@@ -1,0 +1,15 @@
+=== PGL(2,23) (= L2(23).2) ===
+987
+order=12144 time=2
+989
+RepresentativesPerfectSubgroups: 2 classes, time=45
+  order=6072 struct=PSL(2,23) selfnorm(own)=false
+  order=1 struct=1 selfnorm(own)=false
+PGL(2,23) own p.s.n. count: 0
+
+=== L2(23) itself (perfect residuum check) ===
+order=6072
+1035
+RepresentativesPerfectSubgroups(L2(23)): 2 classes, time=52
+  order=6072 struct=PSL(2,23)
+  order=1 struct=1

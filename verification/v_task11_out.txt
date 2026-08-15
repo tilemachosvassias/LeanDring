@@ -1,0 +1,74 @@
+true
+function( t ) ... end
+function( t ) ... end
+function( q, groupName ) ... end
+
+=== Perfect Maximal Subgroup Analysis ===
+Comparing O7(q) vs S6(q) (PSp(6,q))
+
+[ 3, 5, 7, 9, 11, 13, 17, 19, 23, 25, 27 ]
+[  ]
+q = 3
+  O7(3): table loaded - 15 maximal classes
+    -> perfect: 6 | unknown: 0
+  S6(3): table loaded - 11 maximal classes
+    -> perfect: 5 | unknown: 0
+
+q = 5
+  O7(5): table loaded - no Maxes data
+  S6(5): table loaded - no Maxes data
+
+q = 7
+  O7(7): NO TABLE
+  S6(7): NO TABLE
+
+q = 9
+  O7(9): NO TABLE
+  S6(9): NO TABLE
+
+q = 11
+  O7(11): NO TABLE
+  S6(11): NO TABLE
+
+q = 13
+  O7(13): NO TABLE
+  S6(13): NO TABLE
+
+q = 17
+  O7(17): NO TABLE
+  S6(17): NO TABLE
+
+q = 19
+  O7(19): NO TABLE
+  S6(19): NO TABLE
+
+q = 23
+  O7(23): NO TABLE
+  S6(23): NO TABLE
+
+q = 25
+  O7(25): NO TABLE
+  S6(25): NO TABLE
+
+q = 27
+  O7(27): NO TABLE
+  S6(27): NO TABLE
+
+
+=== SUMMARY TABLE ===
+Format: q | O7_maxes | O7_perfect | O7_unknown | S6_maxes | S6_perfect | S6_un\
+known | Verdict
+-----
+3 | 15 | 6 | 0 | 11 | 5 | 0 | DIFFER
+5 | 0 | 0 | 0 | 0 | 0 | 0 | NO_MAXES
+7 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+9 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+11 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+13 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+17 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+19 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+23 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+25 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+27 | 0 | 0 | 0 | 0 | 0 | 0 | NO_TABLE
+
+Done.

@@ -1,0 +1,22 @@
+2.A5 in 2.S5: deg 2 field NF(5,[ 1, 4 ])  Out-stable=false
+2.A5 in 2.S5: deg 2 field NF(5,[ 1, 4 ])  Out-stable=false
+2.A5 in 2.S5: deg 4 field Rationals  Out-stable=true
+2.A5 in 2.S5: deg 6 field Rationals  Out-stable=true
+2.A5 in 2.A5.2: deg 2 field NF(5,[ 1, 4 ])  Out-stable=false
+2.A5 in 2.A5.2: deg 2 field NF(5,[ 1, 4 ])  Out-stable=false
+2.A5 in 2.A5.2: deg 4 field Rationals  Out-stable=true
+2.A5 in 2.A5.2: deg 6 field Rationals  Out-stable=true
+2.A6 in 2.A6.2_1: deg 4 field Rationals  Out-stable=true
+2.A6 in 2.A6.2_1: deg 4 field Rationals  Out-stable=true
+2.A6 in 2.A6.2_2: deg 4 field Rationals  Out-stable=false
+2.A6 in 2.A6.2_2: deg 4 field Rationals  Out-stable=false
+2.A6 / 2.A6.2_3 : table missing
+2.L3(2) in 2.L3(2).2: deg 6 field NF(8,[ 1, 7 ])  Out-stable=true
+2.L3(2) in 2.L3(2).2: deg 6 field NF(8,[ 1, 7 ])  Out-stable=true
+2.L2(13) in 2.L2(13).2: deg 6 field NF(13,[ 1, 3, 4, 9, 10, 12 
+ ])  Out-stable=false
+2.L2(13) in 2.L2(13).2: deg 6 field NF(13,[ 1, 3, 4, 9, 10, 12 
+ ])  Out-stable=false
+2.J2 in 2.J2.2: deg 6 field NF(5,[ 1, 4 ])  Out-stable=false
+2.J2 in 2.J2.2: deg 6 field NF(5,[ 1, 4 ])  Out-stable=false
+U3(3) in U3(3).2: deg 6 field Rationals  Out-stable=true

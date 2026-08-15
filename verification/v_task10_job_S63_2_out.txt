@@ -1,0 +1,15 @@
+=== Job: S63_2 maximal #2 ===
+true
+<permutation group of size 4585351680 with 2 generators>
+<permutation group of size 4094064 with 2 generators>
+|M| = 4094064
+|R| = |M perfect residuum| = 4094064
+M perfect: true
+Computing RepresentativesPerfectSubgroups(R)...
+Number of perfect-subgroup classes of R: 3
+  order 1 (trivial) - skip, not self-normalizing
+  checking perfect subgroup of order 5616 ... |N_G(U)| = 
+11232  SELF-NORMALIZING: false
+  order 4094064 = M itself (already counted as maximal class) - skip
+=== Job done: S63_2 maximal #2 ===
+EXIT 0

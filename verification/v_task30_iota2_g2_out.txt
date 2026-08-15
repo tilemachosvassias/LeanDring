@@ -1,0 +1,58 @@
+G2(3) orbit sizes on 1-spaces: [ 364, 351, 378 ]
+G2(3): perm degree 351, |G| = 4245696
+  maximal subgroups: [ [ "U3(3).2", 351 ], [ "U3(3).2", 351 ], 
+  [ "(3^(1+2)+x3^2):2S4", 364 ], [ "(3^(1+2)+x3^2):2S4", 364 ], 
+  [ "L3(3).2", 378 ], [ "L3(3).2", 378 ], [ "L2(8).3", 2808 ], 
+  [ "2^3.L3(2)", 3159 ], [ "L2(13)", 3888 ], [ "2^(1+4)+:3^2.2", 7371 ] ]
+    N_S(A) at index 364 : (3^(1+2)+x3^2):2S4
+    N_S(A) at index 1456 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 364 : (3^(1+2)+x3^2):2S4
+    N_S(A) at index 1456 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 2912 (inside (3^(1+2)+x3^2):2S4)
+    N_S(A) at index 3159 : 2^3.L3(2)
+  -> I(G2(3)) up to 4000: [ 364, 1456, 2912, 3159 ]   [17s]
+
+G2(4): perm degree 416, |G| = 251596800
+  maximal subgroups: [ [ "J2", 416 ], [ "2^(2+8):(3xA5)", 1365 ], 
+  [ "2^(4+6):(A5x3)", 1365 ], [ "U3(4).2", 2016 ], [ "3.L3(4).2_3", 2080 ], 
+  [ "U3(3).2", 20800 ], [ "A5xA5", 69888 ], [ "L2(13)", 230400 ] ]
+    N_S(A) at index 1365 : 2^(2+8):(3xA5)
+    N_S(A) at index 4095 (inside 2^(2+8):(3xA5))
+    N_S(A) at index 6825 (inside 2^(2+8):(3xA5))
+    N_S(A) at index 1365 : 2^(4+6):(A5x3)
+    N_S(A) at index 4095 (inside 2^(4+6):(A5x3))
+    N_S(A) at index 6825 (inside 2^(4+6):(A5x3))
+    N_S(A) at index 2080 : 3.L3(4).2_3
+  -> I(G2(4)) up to 8000: [ 1365, 2080, 4095, 6825 ]   [12s]
+
+G2(5): perm degree 3906, |G| = 5859000000
+  maximal subgroups: [ [ "5^(1+4)_+:GL(2,5)", 3906 ], 
+  [ "5^2.5.5^2.4S5", 3906 ], [ "3.U3(5).2", 7750 ], [ "L3(5).2", 7875 ], 
+  [ "2.(A5xA5).2", 406875 ], [ "U3(3).2", 484375 ], [ "2^3.L3(2)", 4359375 ] ]
+    N_S(A) at index 3906 : 5^(1+4)_+:GL(2,5)
+    N_S(A) at index 3906 : 5^2.5.5^2.4S5
+    N_S(A) at index 7750 : 3.U3(5).2
+  -> I(G2(5)) up to 7800: [ 3906, 7750 ]   [20s]
+
+ratio trick for G2(q):
+Syntax warning: Unbound global variable in v_task30_iota2_g2.g:93
+                                   and Binomial(n,3) mod i1 = 0);
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Syntax warning: Unbound global variable in v_task30_iota2_g2.g:93
+                                   and Binomial(n,3) mod i1 = 0);
+                                                         ^^
+  q=3 iota1=364 n<=35 C(nmax,3)=6545 n with iota1|C(n,3): [ 14, 28 ]
+  q=4 iota1=1365 n<=43 C(nmax,3)=12341 n with iota1|C(n,3): [  ]
+  q=5 iota1=3906 n<=51 C(nmax,3)=20825 n with iota1|C(n,3): [  ]
+  q=7 iota1=19608 n<=67 C(nmax,3)=47905 n with iota1|C(n,3): [  ]
+  q=8 iota1=37449 n<=75 C(nmax,3)=67525 n with iota1|C(n,3): [  ]
+  q=9 iota1=66430 n<=83 C(nmax,3)=91881 n with iota1|C(n,3): [  ]
+  (no line printed for a q means C(8q+11,3) < iota1: impossible)
+  q=3: n = 3+16*rho = 
+[ 11, 19, 35 ]  vs allowed n = [ 14, 28 ]  -> empty intersection
+  q=4: n = 3+(128/21)*rho = [ 127/21, 191/21, 319/21 ]  -> not integral

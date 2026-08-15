@@ -1,0 +1,23 @@
+### L_3(q): N_S(Z(Syl_p)) and [S:N]  (predict (q+1)(q^2+q+1))
+q=29  |Z(U)|=29  elemabel=true  [S:N]=26130  pred=
+26130  ok=true  ratio-to-iota1=30
+q=31  |Z(U)|=31  elemabel=true  [S:N]=31776  pred=
+31776  ok=true  ratio-to-iota1=32
+q=32  |Z(U)|=32  elemabel=true  [S:N]=34881  pred=
+34881  ok=true  ratio-to-iota1=33
+q=37  |Z(U)|=37  elemabel=true  [S:N]=53466  pred=
+53466  ok=true  ratio-to-iota1=38
+q=41  |Z(U)|=41  elemabel=true  [S:N]=72366  pred=
+72366  ok=true  ratio-to-iota1=42
+q=49  |Z(U)|=49  elemabel=true  [S:N]=122550  pred=
+122550  ok=true  ratio-to-iota1=50
+q=64  |Z(U)|=64  elemabel=true  [S:N]=270465  pred=
+270465  ok=true  ratio-to-iota1=65
+
+### L_5(q)/L_7(2): N_S(U_{P2}) = P2, [S:N] = [d,2]_q, ratio q^2+1
+L_5(3)  |U|=729 abelian=true  [S:N]=1210  [d,2]_q=
+1210  ok=true  ratio-to-iota1=10 pred q^2+1=10
+L_7(2)  |U|=1024 abelian=true  [S:N]=2667  [d,2]_q=
+2667  ok=true  ratio-to-iota1=21 pred q^2+1=5
+L_5(4)  |U|=64 abelian=true  [S:N]=62607600  [d,2]_q=
+5797  ok=false  ratio-to-iota1=183600 pred q^2+1=17

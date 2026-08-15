@@ -1,0 +1,50 @@
+Margins are natural logs; both must be > 0.
+
+============================================================================
+ROW 2  (L_3(q), f>=2, l*>=2)
+  n=1e11     live f:   52   min lo-margin 0.398 (f=26)   min hi-margin 6.247 (f=53)
+  n=1e12     live f:   57   min lo-margin 0.4405 (f=29)   min hi-margin 7.309 (f=58)
+  n=1e15     live f:   71   min lo-margin 0.5496 (f=36)   min hi-margin 10.55 (f=72)
+  n=1e20     live f:   96   min lo-margin 0.6906 (f=47)   min hi-margin 16 (f=97)
+  n=1e30     live f:  146   min lo-margin 0.8899 (f=71)   min hi-margin 27.1 (f=147)
+  n=1e60     live f:  296   min lo-margin 1.232 (f=140)   min hi-margin 60.94 (f=297)
+  n=1e120    live f:  595   min lo-margin 1.576 (f=279)   min hi-margin 129.3 (f=596)
+  n=1e300    live f: 1492   min lo-margin 2.032 (f=694)   min hi-margin 335.6 (f=1493)
+  n=1e1000   live f: 4980   min lo-margin 2.633 (f=2306)   min hi-margin 1140 (f=4981)
+  n=1e10000  live f: 19998   min lo-margin 3.788 (f=19999)   min hi-margin 1.15e+04 (f=19999)
+  n=1e1000000 live f: 19998   min lo-margin 60.78 (f=19999)   min hi-margin 1.151e+06 (f=19999)
+============================================================================
+ROW 3  (L_5(q), f>=1, l*>=1)
+  n=1e11     live f:   26   min lo-margin 0.5294 (f=13)   min hi-margin 6.102 (f=26)
+  n=1e12     live f:   29   min lo-margin 0.5719 (f=14)   min hi-margin 7.144 (f=29)
+  n=1e15     live f:   36   min lo-margin 0.6803 (f=18)   min hi-margin 10.38 (f=36)
+  n=1e20     live f:   49   min lo-margin 0.8208 (f=24)   min hi-margin 15.83 (f=49)
+  n=1e30     live f:   74   min lo-margin 1.02 (f=35)   min hi-margin 26.93 (f=74)
+  n=1e60     live f:  148   min lo-margin 1.361 (f=70)   min hi-margin 60.78 (f=148)
+  n=1e120    live f:  298   min lo-margin 1.705 (f=139)   min hi-margin 129.2 (f=298)
+  n=1e300    live f:  746   min lo-margin 2.161 (f=347)   min hi-margin 335.5 (f=746)
+  n=1e1000   live f: 2490   min lo-margin 2.761 (f=1153)   min hi-margin 1140 (f=2490)
+  n=1e10000  live f: 19999   min lo-margin 3.912 (f=11515)   min hi-margin 1.15e+04 (f=19999)
+  n=1e1000000 live f: 19999   min lo-margin 32.47 (f=19999)   min hi-margin 1.151e+06 (f=19999)
+============================================================================
+TOTAL FAILURES: 0
+
+Asymptotic form (the grid is a check, not the proof):
+
+ row 2:  rho_min/(n-3) >= (f n^2/8.1)^{f/(2f-1)}/(2n).  The exponent
+         2f/(2f-1) exceeds 1 for every f >= 2, so at fixed f the ratio grows
+         like n^{1/(2f-1)}; and since q >= 2^f, only f <= log_2 q <= 1.5 log_2 n
+         is live, so the exponent gain n^{1/(3 log_2 n)} is bounded below by a
+         constant while the constant factor (f/8.1)^{f/(2f-1)} * sqrt(...) takes
+         over: at large f, q^{2-1/f} >= f n^2/8.1 with q^{1/f} = p >= 2 gives
+         q >= 0.497 sqrt(f) n, hence rho_min/(n-3) >= 0.248 sqrt(f).
+         rho_max/(0.3 n^2) <= 12 f (C(n,3)/2)^{1/2}/(0.3 n^2) = O(f n^{-1/2})
+         = O(log n / sqrt n) -> 0.
+
+ row 3:  rho_min/(n-3) >= (f n^2/3.13)^{2/(4-1/f)}/(2n); the exponent
+         4f/(4f-1) > 1 always, and at large f the constant (f/3.13)^{1/2} -> oo.
+         rho_max/(0.3 n^2) <= 20 f C(n,3)^{1/2}/(0.3 n^2) = O(log n/sqrt n) -> 0.
+
+Both margins are therefore monotone-improving in n past the grid, and the
+grid covers 1e11 <= n <= 1e(10^6).
+

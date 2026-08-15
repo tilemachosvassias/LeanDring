@@ -1,0 +1,3659 @@
+=== Formula spot-checks (must all be OK) ===
+  OK   |A5| = 60
+  OK   |L2(7)| (formula) = 168
+  OK   |L3(4)| (formula) = 20160
+  OK   |PSL(5,2)| (formula) = 9999360
+  OK   |Sz(8)| (formula) = 29120
+  OK   |Sp6(2)| (formula) = 1451520
+  OK   |Ree(27)|=|^2G2(27)| (formula) = 10073444472
+
+=== CONTROL: n=8 (|A8|=20160) must rediscover the L3(4) coincidence ===
+N8 = 20160
+total candidates generated: 18
+Order-N coincidences (name <> A8): 2
+  L3(4)  order=20160  Out=12
+  L4(2)  order=20160  Out=2
+CONTROL PASSED: L3(4) coincidence rediscovered.
+(informational, not part of AF range) standard k<=3 verdict for n=8: FACTORIZA\
+TION_EXISTS
+  detail: A5 * L3(2) * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 9 ===
+N = |A9| = n!/2 = 181440
+Factors(N) = [ [ 2, 6 ], [ 3, 4 ], [ 5, 1 ], [ 7, 1 ] ]
+Forced primes in (n/2, n] = [ 5, 7 ]
+total candidates generated (incl. sporadics): 25
+distinct order values: 19
+--- Forced-prime candidate report ---
+  forced prime 5: 10 candidate(s):
+      A5  order=60  Out=2  (5-valuation of order = 1)
+      A6  order=360  Out=4  (5-valuation of order = 1)
+      A7  order=2520  Out=2  (5-valuation of order = 1)
+      L2(4)  order=60  Out=2  (5-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (5-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (5-valuation of order = 1)
+      U4(2)  order=25920  Out=2  (5-valuation of order = 1)
+      L2(9)  order=360  Out=4  (5-valuation of order = 1)
+      S4(3)  order=25920  Out=2  (5-valuation of order = 1)
+      L2(5)  order=60  Out=2  (5-valuation of order = 1)
+  forced prime 7: 7 candidate(s):
+      A7  order=2520  Out=2  (7-valuation of order = 1)
+      L2(8)  order=504  Out=3  (7-valuation of order = 1)
+      L3(2)  order=168  Out=2  (7-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (7-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (7-valuation of order = 1)
+      U3(3)  order=6048  Out=2  (7-valuation of order = 1)
+      L2(7)  order=168  Out=2  (7-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 5:
+    r=2: q=2^5 (2 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=5 <= v_3(N)=4)
+    r=7: SKIP (budget fails: need f=5 <= v_7(N)=1)
+    -> no field-automorphism L2(r^5) candidate divides N.
+  forced prime 7:
+    r=2: SKIP (budget fails: need f=7 <= v_2(N)=6)
+    r=3: SKIP (budget fails: need f=7 <= v_3(N)=4)
+    r=5: SKIP (budget fails: need f=7 <= v_5(N)=1)
+    -> no field-automorphism L2(r^7) candidate divides N.
+--- Order-N coincidence check (name <> A9) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 8
+  full in-scope divisor list: [ 60, 168, 360, 504, 2520, 6048, 20160, 25920 ]
+  VERDICT (n=9): FACTORIZATION_EXISTS
+  witness: A5 * L2(8) * 6  [Out=2,3, symFactor=1]
+
+=========================================================
+=== n = 10 ===
+N = |A10| = n!/2 = 1814400
+Factors(N) = [ [ 2, 7 ], [ 3, 4 ], [ 5, 2 ], [ 7, 1 ] ]
+Forced primes in (n/2, n] = [ 7 ]
+total candidates generated (incl. sporadics): 29
+distinct order values: 23
+--- Forced-prime candidate report ---
+  forced prime 7: 8 candidate(s):
+      A7  order=2520  Out=2  (7-valuation of order = 1)
+      L2(8)  order=504  Out=3  (7-valuation of order = 1)
+      L3(2)  order=168  Out=2  (7-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (7-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (7-valuation of order = 1)
+      U3(3)  order=6048  Out=2  (7-valuation of order = 1)
+      L2(7)  order=168  Out=2  (7-valuation of order = 1)
+      J2  order=604800  Out=2  (7-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 7:
+    r=2: q=2^7 (3 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=7 <= v_3(N)=4)
+    r=5: SKIP (budget fails: need f=7 <= v_5(N)=2)
+    -> no field-automorphism L2(r^7) candidate divides N.
+--- Order-N coincidence check (name <> A10) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 9
+  full in-scope divisor list: [ 60, 168, 360, 504, 2520, 6048, 20160, 25920, 
+  604800 ]
+  VERDICT (n=10): FACTORIZATION_EXISTS
+  witness: A6 * A7 * 2  [Out=4,2, symFactor=1]
+
+=========================================================
+=== n = 11 ===
+N = |A11| = n!/2 = 19958400
+Factors(N) = [ [ 2, 7 ], [ 3, 4 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ] ]
+Forced primes in (n/2, n] = [ 7, 11 ]
+total candidates generated (incl. sporadics): 35
+distinct order values: 28
+--- Forced-prime candidate report ---
+  forced prime 7: 12 candidate(s):
+      A7  order=2520  Out=2  (7-valuation of order = 1)
+      A8  order=20160  Out=2  (7-valuation of order = 1)
+      A9  order=181440  Out=2  (7-valuation of order = 1)
+      A10  order=1814400  Out=2  (7-valuation of order = 1)
+      L2(8)  order=504  Out=3  (7-valuation of order = 1)
+      L3(2)  order=168  Out=2  (7-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (7-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (7-valuation of order = 1)
+      U3(3)  order=6048  Out=2  (7-valuation of order = 1)
+      L2(7)  order=168  Out=2  (7-valuation of order = 1)
+      M22  order=443520  Out=2  (7-valuation of order = 1)
+      J2  order=604800  Out=2  (7-valuation of order = 1)
+  forced prime 11: 4 candidate(s):
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 7:
+    r=2: q=2^7 (3 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=7 <= v_3(N)=4)
+    r=5: SKIP (budget fails: need f=7 <= v_5(N)=2)
+    r=11: SKIP (budget fails: need f=7 <= v_11(N)=1)
+    -> no field-automorphism L2(r^7) candidate divides N.
+  forced prime 11:
+    r=2: SKIP (budget fails: need f=11 <= v_2(N)=7)
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=4)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+--- Order-N coincidence check (name <> A11) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 15
+  VERDICT (n=11): FACTORIZATION_EXISTS
+  witness: A7 * M11 * 1  [Out=2,1, symFactor=1]
+
+=========================================================
+=== n = 12 ===
+N = |A12| = n!/2 = 239500800
+Factors(N) = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ] ]
+Forced primes in (n/2, n] = [ 7, 11 ]
+total candidates generated (incl. sporadics): 44
+distinct order values: 37
+--- Forced-prime candidate report ---
+  forced prime 7: 14 candidate(s):
+      A7  order=2520  Out=2  (7-valuation of order = 1)
+      A8  order=20160  Out=2  (7-valuation of order = 1)
+      A9  order=181440  Out=2  (7-valuation of order = 1)
+      A10  order=1814400  Out=2  (7-valuation of order = 1)
+      A11  order=19958400  Out=2  (7-valuation of order = 1)
+      L2(8)  order=504  Out=3  (7-valuation of order = 1)
+      L3(2)  order=168  Out=2  (7-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (7-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (7-valuation of order = 1)
+      Sp6(2)  order=1451520  Out=1  (7-valuation of order = 1)
+      U3(3)  order=6048  Out=2  (7-valuation of order = 1)
+      L2(7)  order=168  Out=2  (7-valuation of order = 1)
+      M22  order=443520  Out=2  (7-valuation of order = 1)
+      J2  order=604800  Out=2  (7-valuation of order = 1)
+  forced prime 11: 5 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 7:
+    r=2: q=2^7 (3 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=7 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=7 <= v_5(N)=2)
+    r=11: SKIP (budget fails: need f=7 <= v_11(N)=1)
+    -> no field-automorphism L2(r^7) candidate divides N.
+  forced prime 11:
+    r=2: SKIP (budget fails: need f=11 <= v_2(N)=9)
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+--- Order-N coincidence check (name <> A12) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 17
+  VERDICT (n=12): FACTORIZATION_EXISTS
+  witness: L2(11) * A9 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 13 ===
+N = |A13| = n!/2 = 3113510400
+Factors(N) = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ], [ 13, 1 ] ]
+Forced primes in (n/2, n] = [ 7, 11, 13 ]
+total candidates generated (incl. sporadics): 49
+distinct order values: 42
+--- Forced-prime candidate report ---
+  forced prime 7: 19 candidate(s):
+      A7  order=2520  Out=2  (7-valuation of order = 1)
+      A8  order=20160  Out=2  (7-valuation of order = 1)
+      A9  order=181440  Out=2  (7-valuation of order = 1)
+      A10  order=1814400  Out=2  (7-valuation of order = 1)
+      A11  order=19958400  Out=2  (7-valuation of order = 1)
+      A12  order=239500800  Out=2  (7-valuation of order = 1)
+      L2(8)  order=504  Out=3  (7-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (7-valuation of order = 1)
+      L3(2)  order=168  Out=2  (7-valuation of order = 1)
+      L3(4)  order=20160  Out=12  (7-valuation of order = 1)
+      L4(2)  order=20160  Out=2  (7-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (7-valuation of order = 1)
+      Sp6(2)  order=1451520  Out=1  (7-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (7-valuation of order = 1)
+      U3(3)  order=6048  Out=2  (7-valuation of order = 1)
+      L2(7)  order=168  Out=2  (7-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (7-valuation of order = 1)
+      M22  order=443520  Out=2  (7-valuation of order = 1)
+      J2  order=604800  Out=2  (7-valuation of order = 1)
+  forced prime 11: 6 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+  forced prime 13: 7 candidate(s):
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 7:
+    r=2: q=2^7 (3 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=7 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=7 <= v_5(N)=2)
+    r=11: SKIP (budget fails: need f=7 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=7 <= v_13(N)=1)
+    -> no field-automorphism L2(r^7) candidate divides N.
+  forced prime 11:
+    r=2: SKIP (budget fails: need f=11 <= v_2(N)=9)
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=1)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: SKIP (budget fails: need f=13 <= v_2(N)=9)
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=1)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+--- Order-N coincidence check (name <> A13) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 25
+  VERDICT (n=13): FACTORIZATION_EXISTS
+  witness: A5 * L2(11) * L2(27) * 8  [Out=2,2,6, symFactor=1]
+
+=========================================================
+=== n = 14 ===
+N = |A14| = n!/2 = 43589145600
+Factors(N) = [ [ 2, 10 ], [ 3, 5 ], [ 5, 2 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13 ]
+total candidates generated (incl. sporadics): 55
+distinct order values: 48
+--- Forced-prime candidate report ---
+  forced prime 11: 8 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+  forced prime 13: 8 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: SKIP (budget fails: need f=11 <= v_2(N)=10)
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: SKIP (budget fails: need f=13 <= v_2(N)=10)
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=5)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=2)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+--- Order-N coincidence check (name <> A14) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 28
+  VERDICT (n=14): FACTORIZATION_EXISTS
+  witness: L2(13) * A11 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 15 ===
+N = |A15| = n!/2 = 653837184000
+Factors(N) = [ [ 2, 10 ], [ 3, 6 ], [ 5, 3 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13 ]
+total candidates generated (incl. sporadics): 68
+distinct order values: 61
+--- Forced-prime candidate report ---
+  forced prime 11: 10 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+  forced prime 13: 11 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: SKIP (budget fails: need f=11 <= v_2(N)=10)
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: SKIP (budget fails: need f=13 <= v_2(N)=10)
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+--- Order-N coincidence check (name <> A15) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 35
+  VERDICT (n=15): NO_FACTORIZATION
+
+=========================================================
+=== n = 16 ===
+N = |A16| = n!/2 = 10461394944000
+Factors(N) = [ [ 2, 14 ], [ 3, 6 ], [ 5, 3 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13 ]
+total candidates generated (incl. sporadics): 79
+distinct order values: 72
+--- Forced-prime candidate report ---
+  forced prime 11: 10 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+  forced prime 13: 13 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+--- Order-N coincidence check (name <> A16) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 37
+  VERDICT (n=16): FACTORIZATION_EXISTS
+  witness: L2(64) * A11 * 2  [Out=6,2, symFactor=1]
+
+=========================================================
+=== n = 17 ===
+N = |A17| = n!/2 = 177843714048000
+Factors(N) = [ [ 2, 14 ], [ 3, 6 ], [ 5, 3 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ], 
+  [ 17, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13, 17 ]
+total candidates generated (incl. sporadics): 86
+distinct order values: 79
+--- Forced-prime candidate report ---
+  forced prime 11: 13 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      A14  order=43589145600  Out=2  (11-valuation of order = 1)
+      A15  order=653837184000  Out=2  (11-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+  forced prime 13: 18 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+  forced prime 17: 6 candidate(s):
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=11 <= v_17(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: SKIP (budget fails: need f=17 <= v_2(N)=14)
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=6)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+--- Order-N coincidence check (name <> A17) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 46
+  VERDICT (n=17): FACTORIZATION_EXISTS
+  witness: L2(16) * A14 * 1  [Out=4,2, symFactor=1]
+
+=========================================================
+=== n = 18 ===
+N = |A18| = n!/2 = 3201186852864000
+Factors(N) = [ [ 2, 15 ], [ 3, 8 ], [ 5, 3 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ], 
+  [ 17, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13, 17 ]
+total candidates generated (incl. sporadics): 93
+distinct order values: 86
+--- Forced-prime candidate report ---
+  forced prime 11: 15 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      A14  order=43589145600  Out=2  (11-valuation of order = 1)
+      A15  order=653837184000  Out=2  (11-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (11-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (11-valuation of order = 1)
+  forced prime 13: 20 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+  forced prime 17: 7 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=11 <= v_17(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: SKIP (budget fails: need f=17 <= v_2(N)=15)
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+--- Order-N coincidence check (name <> A18) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 48
+  VERDICT (n=18): FACTORIZATION_EXISTS
+  witness: L2(17) * A15 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 19 ===
+N = |A19| = n!/2 = 60822550204416000
+Factors(N) = [ [ 2, 15 ], [ 3, 8 ], [ 5, 3 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ], 
+  [ 17, 1 ], [ 19, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13, 17, 19 ]
+total candidates generated (incl. sporadics): 97
+distinct order values: 90
+--- Forced-prime candidate report ---
+  forced prime 11: 17 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      A14  order=43589145600  Out=2  (11-valuation of order = 1)
+      A15  order=653837184000  Out=2  (11-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (11-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (11-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      J1  order=175560  Out=1  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (11-valuation of order = 1)
+  forced prime 13: 21 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+  forced prime 17: 9 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+  forced prime 19: 4 candidate(s):
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=11 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=11 <= v_19(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: SKIP (budget fails: need f=17 <= v_2(N)=15)
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: SKIP (budget fails: need f=19 <= v_2(N)=15)
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=3)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+--- Order-N coincidence check (name <> A19) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 53
+  VERDICT (n=19): FACTORIZATION_EXISTS
+  witness: L2(16) * J1 * L3(9) * 2  [Out=4,1,4, symFactor=1]
+
+=========================================================
+=== n = 20 ===
+N = |A20| = n!/2 = 1216451004088320000
+Factors(N) = [ [ 2, 17 ], [ 3, 8 ], [ 5, 4 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ], 
+  [ 17, 1 ], [ 19, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13, 17, 19 ]
+total candidates generated (incl. sporadics): 103
+distinct order values: 96
+--- Forced-prime candidate report ---
+  forced prime 11: 18 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      A14  order=43589145600  Out=2  (11-valuation of order = 1)
+      A15  order=653837184000  Out=2  (11-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (11-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (11-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (11-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      J1  order=175560  Out=1  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (11-valuation of order = 1)
+  forced prime 13: 23 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+  forced prime 17: 10 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+  forced prime 19: 5 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=2)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=11 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=11 <= v_19(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: SKIP (budget fails: need f=19 <= v_2(N)=17)
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=8)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=2)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+--- Order-N coincidence check (name <> A20) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 55
+  VERDICT (n=20): FACTORIZATION_EXISTS
+  witness: L2(19) * A17 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 21 ===
+N = |A21| = n!/2 = 25545471085854720000
+Factors(N) = [ [ 2, 17 ], [ 3, 9 ], [ 5, 4 ], [ 7, 3 ], [ 11, 1 ], [ 13, 1 ], 
+  [ 17, 1 ], [ 19, 1 ] ]
+Forced primes in (n/2, n] = [ 11, 13, 17, 19 ]
+total candidates generated (incl. sporadics): 113
+distinct order values: 106
+--- Forced-prime candidate report ---
+  forced prime 11: 19 candidate(s):
+      A11  order=19958400  Out=2  (11-valuation of order = 1)
+      A12  order=239500800  Out=2  (11-valuation of order = 1)
+      A13  order=3113510400  Out=2  (11-valuation of order = 1)
+      A14  order=43589145600  Out=2  (11-valuation of order = 1)
+      A15  order=653837184000  Out=2  (11-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (11-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (11-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (11-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (11-valuation of order = 1)
+      U5(2)  order=13685760  Out=2  (11-valuation of order = 1)
+      L2(11)  order=660  Out=2  (11-valuation of order = 1)
+      M11  order=7920  Out=1  (11-valuation of order = 1)
+      M12  order=95040  Out=2  (11-valuation of order = 1)
+      M22  order=443520  Out=2  (11-valuation of order = 1)
+      J1  order=175560  Out=1  (11-valuation of order = 1)
+      HS  order=44352000  Out=2  (11-valuation of order = 1)
+      McL  order=898128000  Out=2  (11-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (11-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (11-valuation of order = 1)
+  forced prime 13: 25 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      Sp6(3)  order=4585351680  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (13-valuation of order = 1)
+  forced prime 17: 11 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 6 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 11:
+    r=2: q=2^11 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=11 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=11 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=11 <= v_7(N)=3)
+    r=13: SKIP (budget fails: need f=11 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=11 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=11 <= v_19(N)=1)
+    -> no field-automorphism L2(r^11) candidate divides N.
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=1)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: SKIP (budget fails: need f=19 <= v_2(N)=17)
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=1)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+--- Order-N coincidence check (name <> A21) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 59
+  VERDICT (n=21): NO_FACTORIZATION
+
+=========================================================
+=== n = 22 ===
+N = |A22| = n!/2 = 562000363888803840000
+Factors(N) = [ [ 2, 18 ], [ 3, 9 ], [ 5, 4 ], [ 7, 3 ], [ 11, 2 ], [ 13, 1 ], 
+  [ 17, 1 ], [ 19, 1 ] ]
+Forced primes in (n/2, n] = [ 13, 17, 19 ]
+total candidates generated (incl. sporadics): 123
+distinct order values: 116
+--- Forced-prime candidate report ---
+  forced prime 13: 27 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      Sp6(3)  order=4585351680  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (13-valuation of order = 1)
+  forced prime 17: 12 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 7 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=2)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: SKIP (budget fails: need f=19 <= v_2(N)=18)
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+--- Order-N coincidence check (name <> A22) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 61
+  VERDICT (n=22): FACTORIZATION_EXISTS
+  witness: J1 * A18 * 1  [Out=1,2, symFactor=1]
+
+=========================================================
+=== n = 23 ===
+N = |A23| = n!/2 = 12926008369442488320000
+Factors(N) = [ [ 2, 18 ], [ 3, 9 ], [ 5, 4 ], [ 7, 3 ], [ 11, 2 ], [ 13, 1 ], 
+  [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 13, 17, 19, 23 ]
+total candidates generated (incl. sporadics): 128
+distinct order values: 121
+--- Forced-prime candidate report ---
+  forced prime 13: 30 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (13-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (13-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      Sp6(3)  order=4585351680  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (13-valuation of order = 1)
+  forced prime 17: 15 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 10 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+  forced prime 23: 5 candidate(s):
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=2)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=13 <= v_23(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: SKIP (budget fails: need f=19 <= v_2(N)=18)
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: SKIP (budget fails: need f=23 <= v_2(N)=18)
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=9)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A23) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 69
+  VERDICT (n=23): NO_FACTORIZATION
+
+=========================================================
+=== n = 24 ===
+N = |A24| = n!/2 = 310224200866619719680000
+Factors(N) = [ [ 2, 21 ], [ 3, 10 ], [ 5, 4 ], [ 7, 3 ], [ 11, 2 ], 
+  [ 13, 1 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 13, 17, 19, 23 ]
+total candidates generated (incl. sporadics): 139
+distinct order values: 132
+--- Forced-prime candidate report ---
+  forced prime 13: 33 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (13-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (13-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (13-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      Sp6(3)  order=4585351680  Out=2  (13-valuation of order = 1)
+      L5(3)  order=237783237120  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (13-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (13-valuation of order = 1)
+  forced prime 17: 16 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 11 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+  forced prime 23: 7 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=2)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=13 <= v_23(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: SKIP (budget fails: need f=23 <= v_2(N)=21)
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=4)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A24) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 72
+  VERDICT (n=24): FACTORIZATION_EXISTS
+  witness: L2(23) * A21 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 25 ===
+N = |A25| = n!/2 = 7755605021665492992000000
+Factors(N) = [ [ 2, 21 ], [ 3, 10 ], [ 5, 6 ], [ 7, 3 ], [ 11, 2 ], 
+  [ 13, 1 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 13, 17, 19, 23 ]
+total candidates generated (incl. sporadics): 147
+distinct order values: 140
+--- Forced-prime candidate report ---
+  forced prime 13: 34 candidate(s):
+      A13  order=3113510400  Out=2  (13-valuation of order = 1)
+      A14  order=43589145600  Out=2  (13-valuation of order = 1)
+      A15  order=653837184000  Out=2  (13-valuation of order = 1)
+      A16  order=10461394944000  Out=2  (13-valuation of order = 1)
+      A17  order=177843714048000  Out=2  (13-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (13-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (13-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (13-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (13-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (13-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (13-valuation of order = 1)
+      L2(64)  order=262080  Out=6  (13-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (13-valuation of order = 1)
+      U3(4)  order=62400  Out=4  (13-valuation of order = 1)
+      S4(8)  order=1056706560  Out=6  (13-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (13-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (13-valuation of order = 1)
+      G2(4)  order=251596800  Out=2  (13-valuation of order = 1)
+      Sz(8)  order=29120  Out=3  (13-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (13-valuation of order = 1)
+      L2(27)  order=9828  Out=6  (13-valuation of order = 1)
+      L3(3)  order=5616  Out=2  (13-valuation of order = 1)
+      L3(9)  order=42456960  Out=4  (13-valuation of order = 1)
+      L4(3)  order=6065280  Out=4  (13-valuation of order = 1)
+      G2(3)  order=4245696  Out=1  (13-valuation of order = 1)
+      Sp6(3)  order=4585351680  Out=2  (13-valuation of order = 1)
+      L5(3)  order=237783237120  Out=2  (13-valuation of order = 1)
+      L2(25)  order=7800  Out=4  (13-valuation of order = 1)
+      S4(5)  order=4680000  Out=2  (13-valuation of order = 1)
+      U4(5)  order=14742000000  Out=4  (13-valuation of order = 1)
+      L2(13)  order=1092  Out=2  (13-valuation of order = 1)
+      Suz  order=448345497600  Out=2  (13-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (13-valuation of order = 1)
+      Fi22  order=64561751654400  Out=2  (13-valuation of order = 1)
+  forced prime 17: 16 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 12 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 7 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 13:
+    r=2: q=2^13 (4 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=13 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=13 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=13 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=13 <= v_11(N)=2)
+    r=17: SKIP (budget fails: need f=13 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=13 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=13 <= v_23(N)=1)
+    -> no field-automorphism L2(r^13) candidate divides N.
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=1)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: SKIP (budget fails: need f=23 <= v_2(N)=21)
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=1)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A25) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 74
+  VERDICT (n=25): NO_FACTORIZATION
+
+=========================================================
+=== n = 26 ===
+N = |A26| = n!/2 = 201645730563302817792000000
+Factors(N) = [ [ 2, 22 ], [ 3, 10 ], [ 5, 6 ], [ 7, 3 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23 ]
+total candidates generated (incl. sporadics): 150
+distinct order values: 143
+--- Forced-prime candidate report ---
+  forced prime 17: 17 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+  forced prime 19: 12 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 7 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: SKIP (budget fails: need f=23 <= v_2(N)=22)
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=10)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A26) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 75
+  VERDICT (n=26): FACTORIZATION_EXISTS
+  witness: L2(25) * A23 * 2  [Out=4,2, symFactor=1]
+
+=========================================================
+=== n = 27 ===
+N = |A27| = n!/2 = 5444434725209176080384000000
+Factors(N) = [ [ 2, 22 ], [ 3, 13 ], [ 5, 6 ], [ 7, 3 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23 ]
+total candidates generated (incl. sporadics): 159
+distinct order values: 152
+--- Forced-prime candidate report ---
+  forced prime 17: 18 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 12 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 8 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: SKIP (budget fails: need f=23 <= v_2(N)=22)
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=3)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A27) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 76
+  VERDICT (n=27): NO_FACTORIZATION
+
+=========================================================
+=== n = 28 ===
+N = |A28| = n!/2 = 152444172305856930250752000000
+Factors(N) = [ [ 2, 24 ], [ 3, 13 ], [ 5, 6 ], [ 7, 4 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23 ]
+total candidates generated (incl. sporadics): 169
+distinct order values: 162
+--- Forced-prime candidate report ---
+  forced prime 17: 18 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 12 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 8 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+--- Order-N coincidence check (name <> A28) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 77
+  VERDICT (n=28): FACTORIZATION_EXISTS
+  witness: L2(8) * L2(25) * A23 * 3  [Out=3,4,2, symFactor=1]
+
+=========================================================
+=== n = 29 ===
+N = |A29| = n!/2 = 4420880996869850977271808000000
+Factors(N) = [ [ 2, 24 ], [ 3, 13 ], [ 5, 6 ], [ 7, 4 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23, 29 ]
+total candidates generated (incl. sporadics): 176
+distinct order values: 169
+--- Forced-prime candidate report ---
+  forced prime 17: 23 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (17-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (17-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (17-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+17-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 17 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 13 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 2 candidate(s):
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=17 <= v_29(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: SKIP (budget fails: need f=29 <= v_2(N)=24)
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=13)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=6)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+--- Order-N coincidence check (name <> A29) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 84
+  VERDICT (n=29): NO_FACTORIZATION
+
+=========================================================
+=== n = 30 ===
+N = |A30| = n!/2 = 132626429906095529318154240000000
+Factors(N) = [ [ 2, 25 ], [ 3, 14 ], [ 5, 7 ], [ 7, 4 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23, 29 ]
+total candidates generated (incl. sporadics): 179
+distinct order values: 172
+--- Forced-prime candidate report ---
+  forced prime 17: 24 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (17-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (17-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (17-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+17-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+17-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 18 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+  forced prime 23: 14 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 3 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=17 <= v_29(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: SKIP (budget fails: need f=29 <= v_2(N)=25)
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+--- Order-N coincidence check (name <> A30) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 85
+  VERDICT (n=30): FACTORIZATION_EXISTS
+  witness: L2(29) * A27 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 31 ===
+N = |A31| = n!/2 = 4111419327088961408862781440000000
+Factors(N) = [ [ 2, 25 ], [ 3, 14 ], [ 5, 7 ], [ 7, 4 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 182
+distinct order values: 175
+--- Forced-prime candidate report ---
+  forced prime 17: 26 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (17-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (17-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (17-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+17-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+17-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+17-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 21 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 15 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 4 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+  forced prime 31: 11 candidate(s):
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=17 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=17 <= v_31(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: SKIP (budget fails: need f=29 <= v_2(N)=25)
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: SKIP (budget fails: need f=31 <= v_2(N)=25)
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A31) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 97
+  VERDICT (n=31): NO_FACTORIZATION
+
+=========================================================
+=== n = 32 ===
+N = |A32| = n!/2 = 131565418466846765083609006080000000
+Factors(N) = [ [ 2, 30 ], [ 3, 14 ], [ 5, 7 ], [ 7, 4 ], [ 11, 2 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 201
+distinct order values: 194
+--- Forced-prime candidate report ---
+  forced prime 17: 27 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (17-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (17-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (17-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+17-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+17-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+17-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+17-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 22 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 16 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 5 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+  forced prime 31: 12 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=17 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=17 <= v_31(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: SKIP (budget fails: need f=31 <= v_2(N)=30)
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=14)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=2)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A32) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 98
+  VERDICT (n=32): FACTORIZATION_EXISTS
+  witness: L2(31) * A29 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 33 ===
+N = |A33| = n!/2 = 4341658809405943247759097200640000000
+Factors(N) = [ [ 2, 30 ], [ 3, 15 ], [ 5, 7 ], [ 7, 4 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 1 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 17, 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 208
+distinct order values: 201
+--- Forced-prime candidate report ---
+  forced prime 17: 27 candidate(s):
+      A17  order=177843714048000  Out=2  (17-valuation of order = 1)
+      A18  order=3201186852864000  Out=2  (17-valuation of order = 1)
+      A19  order=60822550204416000  Out=2  (17-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (17-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (17-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (17-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (17-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (17-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (17-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (17-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+17-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+17-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+17-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+17-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+17-valuation of order = 1)
+      L2(16)  order=4080  Out=4  (17-valuation of order = 1)
+      L3(16)  order=1425715200  Out=24  (17-valuation of order = 1)
+      S4(4)  order=979200  Out=4  (17-valuation of order = 1)
+      L4(4)  order=987033600  Out=4  (17-valuation of order = 1)
+      U4(4)  order=1018368000  Out=4  (17-valuation of order = 1)
+      Sp6(4)  order=4106059776000  Out=2  (17-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (17-valuation of order = 1)
+      L2(169)  order=2413320  Out=4  (17-valuation of order = 1)
+      L2(17)  order=2448  Out=2  (17-valuation of order = 1)
+      J3  order=50232960  Out=2  (17-valuation of order = 1)
+      He  order=4030387200  Out=2  (17-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (17-valuation of order = 1)
+  forced prime 19: 23 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L3(11)  order=212427600  Out=2  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 16 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 5 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+  forced prime 31: 12 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 17:
+    r=2: q=2^17 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=17 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=17 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=17 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=17 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=17 <= v_13(N)=2)
+    r=19: SKIP (budget fails: need f=17 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=17 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=17 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=17 <= v_31(N)=1)
+    -> no field-automorphism L2(r^17) candidate divides N.
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=1)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: SKIP (budget fails: need f=31 <= v_2(N)=30)
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=1)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A33) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 99
+  VERDICT (n=33): FACTORIZATION_EXISTS
+  witness: L2(32) * A30 * 1  [Out=5,2, symFactor=1]
+
+=========================================================
+=== n = 34 ===
+N = |A34| = n!/2 = 147616399519802070423809304821760000000
+Factors(N) = [ [ 2, 31 ], [ 3, 15 ], [ 5, 7 ], [ 7, 4 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 2 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 210
+distinct order values: 203
+--- Forced-prime candidate report ---
+  forced prime 19: 23 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L3(11)  order=212427600  Out=2  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 16 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 6 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+  forced prime 31: 12 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=2)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=7)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=4)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A34) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 100
+  VERDICT (n=34): NO_FACTORIZATION
+
+=========================================================
+=== n = 35 ===
+N = |A35| = n!/2 = 5166573983193072464833325668761600000000
+Factors(N) = [ [ 2, 31 ], [ 3, 15 ], [ 5, 8 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 2 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 213
+distinct order values: 206
+--- Forced-prime candidate report ---
+  forced prime 19: 23 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L3(11)  order=212427600  Out=2  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 16 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+  forced prime 29: 6 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+  forced prime 31: 12 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=2)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=15)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A35) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 100
+  VERDICT (n=35): NO_FACTORIZATION
+
+=========================================================
+=== n = 36 ===
+N = |A36| = n!/2 = 185996663394950608733999724075417600000000
+Factors(N) = [ [ 2, 33 ], [ 3, 17 ], [ 5, 8 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 2 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ] ]
+Forced primes in (n/2, n] = [ 19, 23, 29, 31 ]
+total candidates generated (incl. sporadics): 221
+distinct order values: 214
+--- Forced-prime candidate report ---
+  forced prime 19: 23 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L3(11)  order=212427600  Out=2  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 17 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (23-valuation of order = 
+1)
+  forced prime 29: 7 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (29-valuation of order = 
+1)
+  forced prime 31: 12 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=2)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+--- Order-N coincidence check (name <> A36) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 101
+  VERDICT (n=36): NO_FACTORIZATION
+
+=========================================================
+=== n = 37 ===
+N = |A37| = n!/2 = 6881876545613172523157989790790451200000000
+Factors(N) = [ [ 2, 33 ], [ 3, 17 ], [ 5, 8 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 2 ], [ 19, 1 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ], [ 37, 1 ] 
+ ]
+Forced primes in (n/2, n] = [ 19, 23, 29, 31, 37 ]
+total candidates generated (incl. sporadics): 228
+distinct order values: 221
+--- Forced-prime candidate report ---
+  forced prime 19: 32 candidate(s):
+      A19  order=60822550204416000  Out=2  (19-valuation of order = 1)
+      A20  order=1216451004088320000  Out=2  (19-valuation of order = 1)
+      A21  order=25545471085854720000  Out=2  (19-valuation of order = 1)
+      A22  order=562000363888803840000  Out=2  (19-valuation of order = 1)
+      A23  order=12926008369442488320000  Out=2  (19-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (19-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (19-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (19-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+19-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+19-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+19-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+19-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+19-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+19-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+19-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+19-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+19-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+19-valuation of order = 1)
+      U3(8)  order=5515776  Out=18  (19-valuation of order = 1)
+      U4(8)  order=34693789777920  Out=6  (19-valuation of order = 1)
+      U3(27)  order=282056445216  Out=6  (19-valuation of order = 1)
+      Ree(27)  order=10073444472  Out=3  (19-valuation of order = 1)
+      L3(7)  order=1876896  Out=6  (19-valuation of order = 1)
+      L2(1331)  order=1178973180  Out=6  (19-valuation of order = 1)
+      L3(11)  order=212427600  Out=2  (19-valuation of order = 1)
+      L2(19)  order=3420  Out=2  (19-valuation of order = 1)
+      L2(37)  order=25308  Out=2  (19-valuation of order = 1)
+      J1  order=175560  Out=1  (19-valuation of order = 1)
+      J3  order=50232960  Out=2  (19-valuation of order = 1)
+      ON  order=460815505920  Out=2  (19-valuation of order = 1)
+      HN  order=273030912000000  Out=2  (19-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (19-valuation of order = 1)
+  forced prime 23: 22 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+23-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+23-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+23-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+23-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (23-valuation of order = 
+1)
+  forced prime 29: 12 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+29-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+29-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+29-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+29-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (29-valuation of order = 
+1)
+  forced prime 31: 17 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+31-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+31-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+31-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+31-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+  forced prime 37: 5 candidate(s):
+      U3(27)  order=282056445216  Out=6  (37-valuation of order = 1)
+      Ree(27)  order=10073444472  Out=3  (37-valuation of order = 1)
+      L2(1331)  order=1178973180  Out=6  (37-valuation of order = 1)
+      U3(11)  order=70915680  Out=6  (37-valuation of order = 1)
+      L2(37)  order=25308  Out=2  (37-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 19:
+    r=2: q=2^19 (6 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=19 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=19 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=19 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=19 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=19 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=19 <= v_17(N)=2)
+    r=23: SKIP (budget fails: need f=19 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=19 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=19 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=19 <= v_37(N)=1)
+    -> no field-automorphism L2(r^19) candidate divides N.
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=1)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=23 <= v_37(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=29 <= v_37(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    r=37: SKIP (budget fails: need f=31 <= v_37(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+  forced prime 37:
+    r=2: SKIP (budget fails: need f=37 <= v_2(N)=33)
+    r=3: SKIP (budget fails: need f=37 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=37 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=37 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=37 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=37 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=37 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=37 <= v_19(N)=1)
+    r=23: SKIP (budget fails: need f=37 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=37 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=37 <= v_31(N)=1)
+    -> no field-automorphism L2(r^37) candidate divides N.
+--- Order-N coincidence check (name <> A37) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 111
+  VERDICT (n=37): NO_FACTORIZATION
+
+=========================================================
+=== n = 38 ===
+N = |A38| = n!/2 = 261511308733300555880003612050037145600000000
+Factors(N) = [ [ 2, 34 ], [ 3, 17 ], [ 5, 8 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 2 ], [ 17, 2 ], [ 19, 2 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ], [ 37, 1 ] 
+ ]
+Forced primes in (n/2, n] = [ 23, 29, 31, 37 ]
+total candidates generated (incl. sporadics): 231
+distinct order values: 224
+--- Forced-prime candidate report ---
+  forced prime 23: 23 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+23-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+23-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+23-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+23-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+23-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (23-valuation of order = 
+1)
+  forced prime 29: 13 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+29-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+29-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+29-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+29-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+29-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (29-valuation of order = 
+1)
+  forced prime 31: 18 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+31-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+31-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+31-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+31-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+31-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+  forced prime 37: 6 candidate(s):
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+37-valuation of order = 1)
+      U3(27)  order=282056445216  Out=6  (37-valuation of order = 1)
+      Ree(27)  order=10073444472  Out=3  (37-valuation of order = 1)
+      L2(1331)  order=1178973180  Out=6  (37-valuation of order = 1)
+      U3(11)  order=70915680  Out=6  (37-valuation of order = 1)
+      L2(37)  order=25308  Out=2  (37-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=2)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=23 <= v_37(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=29 <= v_37(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    r=37: SKIP (budget fails: need f=31 <= v_37(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+  forced prime 37:
+    r=2: SKIP (budget fails: need f=37 <= v_2(N)=34)
+    r=3: SKIP (budget fails: need f=37 <= v_3(N)=17)
+    r=5: SKIP (budget fails: need f=37 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=37 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=37 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=37 <= v_13(N)=2)
+    r=17: SKIP (budget fails: need f=37 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=37 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=37 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=37 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=37 <= v_31(N)=1)
+    -> no field-automorphism L2(r^37) candidate divides N.
+--- Order-N coincidence check (name <> A38) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 112
+  VERDICT (n=38): FACTORIZATION_EXISTS
+  witness: L2(37) * A35 * 2  [Out=2,2, symFactor=1]
+
+=========================================================
+=== n = 39 ===
+N = |A39| = n!/2 = 10198941040598721679320140869951448678400000000
+Factors(N) = [ [ 2, 34 ], [ 3, 18 ], [ 5, 8 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 3 ], [ 17, 2 ], [ 19, 2 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ], [ 37, 1 ] 
+ ]
+Forced primes in (n/2, n] = [ 23, 29, 31, 37 ]
+total candidates generated (incl. sporadics): 241
+distinct order values: 234
+--- Forced-prime candidate report ---
+  forced prime 23: 23 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+23-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+23-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+23-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+23-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+23-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (23-valuation of order = 
+1)
+  forced prime 29: 13 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+29-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+29-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+29-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+29-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+29-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (29-valuation of order = 
+1)
+  forced prime 31: 18 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+31-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+31-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+31-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+31-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+31-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+  forced prime 37: 6 candidate(s):
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+37-valuation of order = 1)
+      U3(27)  order=282056445216  Out=6  (37-valuation of order = 1)
+      Ree(27)  order=10073444472  Out=3  (37-valuation of order = 1)
+      L2(1331)  order=1178973180  Out=6  (37-valuation of order = 1)
+      U3(11)  order=70915680  Out=6  (37-valuation of order = 1)
+      L2(37)  order=25308  Out=2  (37-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=2)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=23 <= v_37(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=29 <= v_37(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    r=37: SKIP (budget fails: need f=31 <= v_37(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+  forced prime 37:
+    r=2: SKIP (budget fails: need f=37 <= v_2(N)=34)
+    r=3: SKIP (budget fails: need f=37 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=37 <= v_5(N)=8)
+    r=7: SKIP (budget fails: need f=37 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=37 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=37 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=37 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=37 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=37 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=37 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=37 <= v_31(N)=1)
+    -> no field-automorphism L2(r^37) candidate divides N.
+--- Order-N coincidence check (name <> A39) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 112
+  VERDICT (n=39): NO_FACTORIZATION
+
+=========================================================
+=== n = 40 ===
+N = |A40| = n!/2 = 407957641623948867172805634798057947136000000000
+Factors(N) = [ [ 2, 37 ], [ 3, 18 ], [ 5, 9 ], [ 7, 5 ], [ 11, 3 ], 
+  [ 13, 3 ], [ 17, 2 ], [ 19, 2 ], [ 23, 1 ], [ 29, 1 ], [ 31, 1 ], [ 37, 1 ] 
+ ]
+Forced primes in (n/2, n] = [ 23, 29, 31, 37 ]
+total candidates generated (incl. sporadics): 255
+distinct order values: 248
+--- Forced-prime candidate report ---
+  forced prime 23: 23 candidate(s):
+      A23  order=12926008369442488320000  Out=2  (23-valuation of order = 1)
+      A24  order=310224200866619719680000  Out=2  (23-valuation of order = 1)
+      A25  order=7755605021665492992000000  Out=2  (23-valuation of order = 1)
+      A26  order=201645730563302817792000000  Out=2  (23-valuation of order = 
+1)
+      A27  order=5444434725209176080384000000  Out=2  (
+23-valuation of order = 1)
+      A28  order=152444172305856930250752000000  Out=2  (
+23-valuation of order = 1)
+      A29  order=4420880996869850977271808000000  Out=2  (
+23-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+23-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+23-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+23-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+23-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+23-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+23-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+23-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+23-valuation of order = 1)
+      L2(23)  order=6072  Out=2  (23-valuation of order = 1)
+      M23  order=10200960  Out=1  (23-valuation of order = 1)
+      M24  order=244823040  Out=1  (23-valuation of order = 1)
+      Co3  order=495766656000  Out=1  (23-valuation of order = 1)
+      Co2  order=42305421312000  Out=1  (23-valuation of order = 1)
+      Co1  order=4157776806543360000  Out=1  (23-valuation of order = 1)
+      Fi23  order=4089470473293004800  Out=1  (23-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (23-valuation of order = 
+1)
+  forced prime 29: 13 candidate(s):
+      A29  order=4420880996869850977271808000000  Out=2  (
+29-valuation of order = 1)
+      A30  order=132626429906095529318154240000000  Out=2  (
+29-valuation of order = 1)
+      A31  order=4111419327088961408862781440000000  Out=2  (
+29-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+29-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+29-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+29-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+29-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+29-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+29-valuation of order = 1)
+      L2(289)  order=12068640  Out=4  (29-valuation of order = 1)
+      L2(29)  order=12180  Out=2  (29-valuation of order = 1)
+      Ru  order=145926144000  Out=1  (29-valuation of order = 1)
+      Fi24'  order=1255205709190661721292800  Out=2  (29-valuation of order = 
+1)
+  forced prime 31: 19 candidate(s):
+      A31  order=4111419327088961408862781440000000  Out=2  (
+31-valuation of order = 1)
+      A32  order=131565418466846765083609006080000000  Out=2  (
+31-valuation of order = 1)
+      A33  order=4341658809405943247759097200640000000  Out=2  (
+31-valuation of order = 1)
+      A34  order=147616399519802070423809304821760000000  Out=2  (
+31-valuation of order = 1)
+      A35  order=5166573983193072464833325668761600000000  Out=2  (
+31-valuation of order = 1)
+      A36  order=185996663394950608733999724075417600000000  Out=2  (
+31-valuation of order = 1)
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+31-valuation of order = 1)
+      L2(32)  order=32736  Out=5  (31-valuation of order = 1)
+      L5(2)  order=9999360  Out=2  (31-valuation of order = 1)
+      L5(4)  order=258492255436800  Out=4  (31-valuation of order = 1)
+      L2(125)  order=976500  Out=6  (31-valuation of order = 1)
+      L3(5)  order=372000  Out=2  (31-valuation of order = 1)
+      L3(25)  order=50778000000  Out=12  (31-valuation of order = 1)
+      L4(5)  order=7254000000  Out=8  (31-valuation of order = 1)
+      G2(5)  order=5859000000  Out=1  (31-valuation of order = 1)
+      Sp6(5)  order=228501000000000  Out=2  (31-valuation of order = 1)
+      L2(31)  order=14880  Out=2  (31-valuation of order = 1)
+      ON  order=460815505920  Out=2  (31-valuation of order = 1)
+      Th  order=90745943887872000  Out=1  (31-valuation of order = 1)
+  forced prime 37: 6 candidate(s):
+      A37  order=6881876545613172523157989790790451200000000  Out=2  (
+37-valuation of order = 1)
+      U3(27)  order=282056445216  Out=6  (37-valuation of order = 1)
+      Ree(27)  order=10073444472  Out=3  (37-valuation of order = 1)
+      L2(1331)  order=1178973180  Out=6  (37-valuation of order = 1)
+      U3(11)  order=70915680  Out=6  (37-valuation of order = 1)
+      L2(37)  order=25308  Out=2  (37-valuation of order = 1)
+--- Field-automorphism edge case (sec 4u (iii)) ---
+  forced prime 23:
+    r=2: q=2^23 (7 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=23 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=23 <= v_5(N)=9)
+    r=7: SKIP (budget fails: need f=23 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=23 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=23 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=23 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=23 <= v_19(N)=2)
+    r=29: SKIP (budget fails: need f=23 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=23 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=23 <= v_37(N)=1)
+    -> no field-automorphism L2(r^23) candidate divides N.
+  forced prime 29:
+    r=2: q=2^29 (9 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=29 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=29 <= v_5(N)=9)
+    r=7: SKIP (budget fails: need f=29 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=29 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=29 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=29 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=29 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=29 <= v_23(N)=1)
+    r=31: SKIP (budget fails: need f=29 <= v_31(N)=1)
+    r=37: SKIP (budget fails: need f=29 <= v_37(N)=1)
+    -> no field-automorphism L2(r^29) candidate divides N.
+  forced prime 31:
+    r=2: q=2^31 (10 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=31 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=31 <= v_5(N)=9)
+    r=7: SKIP (budget fails: need f=31 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=31 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=31 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=31 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=31 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=31 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=31 <= v_29(N)=1)
+    r=37: SKIP (budget fails: need f=31 <= v_37(N)=1)
+    -> no field-automorphism L2(r^31) candidate divides N.
+  forced prime 37:
+    r=2: q=2^37 (12 digits), L2(q) order does NOT divide N -- rejected
+    r=3: SKIP (budget fails: need f=37 <= v_3(N)=18)
+    r=5: SKIP (budget fails: need f=37 <= v_5(N)=9)
+    r=7: SKIP (budget fails: need f=37 <= v_7(N)=5)
+    r=11: SKIP (budget fails: need f=37 <= v_11(N)=3)
+    r=13: SKIP (budget fails: need f=37 <= v_13(N)=3)
+    r=17: SKIP (budget fails: need f=37 <= v_17(N)=2)
+    r=19: SKIP (budget fails: need f=37 <= v_19(N)=2)
+    r=23: SKIP (budget fails: need f=37 <= v_23(N)=1)
+    r=29: SKIP (budget fails: need f=37 <= v_29(N)=1)
+    r=31: SKIP (budget fails: need f=37 <= v_31(N)=1)
+    -> no field-automorphism L2(r^37) candidate divides N.
+--- Order-N coincidence check (name <> A40) ---
+  hits: 0
+--- CheckSR1 (k<=3, symmetry-generous) ---
+  candidates dividing N (< N, in-scope): 113
+  VERDICT (n=40): NO_FACTORIZATION
+
+=========================================================
+=== FINAL SUMMARY: n = 9..40 ===
+  n=9: FACTORIZATION  A5 * L2(8) * 6  [Out=2,3, symFactor=1]
+  n=10: FACTORIZATION  A6 * A7 * 2  [Out=4,2, symFactor=1]
+  n=11: FACTORIZATION  A7 * M11 * 1  [Out=2,1, symFactor=1]
+  n=12: FACTORIZATION  L2(11) * A9 * 2  [Out=2,2, symFactor=1]
+  n=13: FACTORIZATION  A5 * L2(11) * L2(27) * 8  [Out=2,2,6, symFactor=1]
+  n=14: FACTORIZATION  L2(13) * A11 * 2  [Out=2,2, symFactor=1]
+  n=15: NO_FACTORIZATION
+  n=16: FACTORIZATION  L2(64) * A11 * 2  [Out=6,2, symFactor=1]
+  n=17: FACTORIZATION  L2(16) * A14 * 1  [Out=4,2, symFactor=1]
+  n=18: FACTORIZATION  L2(17) * A15 * 2  [Out=2,2, symFactor=1]
+  n=19: FACTORIZATION  L2(16) * J1 * L3(9) * 2  [Out=4,1,4, symFactor=1]
+  n=20: FACTORIZATION  L2(19) * A17 * 2  [Out=2,2, symFactor=1]
+  n=21: NO_FACTORIZATION
+  n=22: FACTORIZATION  J1 * A18 * 1  [Out=1,2, symFactor=1]
+  n=23: NO_FACTORIZATION
+  n=24: FACTORIZATION  L2(23) * A21 * 2  [Out=2,2, symFactor=1]
+  n=25: NO_FACTORIZATION
+  n=26: FACTORIZATION  L2(25) * A23 * 2  [Out=4,2, symFactor=1]
+  n=27: NO_FACTORIZATION
+  n=28: FACTORIZATION  L2(8) * L2(25) * A23 * 3  [Out=3,4,2, symFactor=1]
+  n=29: NO_FACTORIZATION
+  n=30: FACTORIZATION  L2(29) * A27 * 2  [Out=2,2, symFactor=1]
+  n=31: NO_FACTORIZATION
+  n=32: FACTORIZATION  L2(31) * A29 * 2  [Out=2,2, symFactor=1]
+  n=33: FACTORIZATION  L2(32) * A30 * 1  [Out=5,2, symFactor=1]
+  n=34: NO_FACTORIZATION
+  n=35: NO_FACTORIZATION
+  n=36: NO_FACTORIZATION
+  n=37: NO_FACTORIZATION
+  n=38: FACTORIZATION  L2(37) * A35 * 2  [Out=2,2, symFactor=1]
+  n=39: NO_FACTORIZATION
+  n=40: NO_FACTORIZATION
+
+=== COVERAGE STATEMENT ===
+Family scope (exact, N-specific bounds, NOT a magnitude truncation):
+A_m (m=5..largest prime of N), L2(q), L3(q), U3(q), S4(q)=Sp4(q),
+L4(q), U4(q), G2(q), Sz(q), Ree(q)=^2G2(q), Sp6(q), L5(q), U5(q),
+plus the 24 non-B/M sporadics (order fetched via CTblLib) plus B, M.
+Within this scope, candidate generation for each n is EXHAUSTIVE:
+for each prime p | N with valuation v_p(N), every family member
+whose defining field q=p^f could possibly divide N (f<=v_p(N)/E, E
+fixed per family) was generated and exactly divisibility-tested; no
+q was skipped by an arbitrary magnitude cutoff. The c-bound uses a
+symmetry-generous divisibility test (Out-product times k! for
+repeated-order tuples), strictly more permissive than v_task18's.
+The field-automorphism edge case (forced prime entering via a
+field-extension degree rather than the base prime, sec 4u (iii)) is
+checked explicitly per forced prime against L2(r^P) for every prime
+r|N, r<>P, within the necessary valuation budget.
+NOT covered (any n): PSL/PSU(n,q) n>=6, PSp(2n,q) n>=4,
+orthogonal O(2n+1,q)/O^+-(2n,q), exceptional E6/E7/E8/F4/^3D4/^2F4(q).
+A NO_FACTORIZATION verdict is therefore exact relative to the
+13-family + sporadic scope above, not a certified CFSG-exhaustive
+sweep against every remaining simple-group family.

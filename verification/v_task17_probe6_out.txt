@@ -1,0 +1,183 @@
+
+=== U3(8) ===
+  order=5515776  own perfect? true
+  Maxes names: [ "2^(3+6):21", "3xL2(8)", "3^2:2A4", "U3(8)M4", "U3(8)M5", 
+  "(9x3).S3", "19:3" ]
+    2^(3+6):21 order=10752 not perfect
+    3xL2(8) order=1512 not perfect
+    3^2:2A4 order=216 not perfect
+    U3(8)M4 order=216 not perfect
+    U3(8)M5 order=216 not perfect
+    (9x3).S3 order=162 not perfect
+    19:3 order=57 not perfect
+  Perfect maximal classes: 0
+
+=== U3(8).3 ===
+  CharacterTable FAIL
+
+=== U3(8).3_1 ===
+  order=16547328  own perfect? false
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Maxes' on 1 arguments
+*[1] Maxes( t )
+   @ *stdin*:30
+<function "MaxesPerfectReport">( <arguments> )
+ called from read-eval loop at *stdin*:59
+type 'quit;' to quit to outer loop
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:1
+r4 := MaxesPerfectReport("U3(8).3_2");;
+^^
+
+=== U3(8).3_2 ===
+  order=16547328  own perfect? false
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Maxes' on 1 arguments
+*[1] Maxes( t )
+   @ *stdin*:30
+ [2] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [3] Maxes( t )
+   @ *stdin*:30
+<function "MaxesPerfectReport">( <arguments> )
+ called from read-eval loop at *errin*:1
+type 'quit;' to quit to outer loop
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:1
+r5 := MaxesPerfectReport("U3(8).3_3");;
+^^
+
+=== U3(8).3_3 ===
+  order=16547328  own perfect? false
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Maxes' on 1 arguments
+*[1] Maxes( t )
+   @ *stdin*:30
+ [2] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [3] Maxes( t )
+   @ *stdin*:30
+ [4] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [5] Maxes( t )
+   @ *stdin*:30
+...  at *errin*:1
+type 'quit;' to quit to outer loop
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:1
+r6 := MaxesPerfectReport("U3(8).6");;
+^^
+
+=== U3(8).6 ===
+  order=33094656  own perfect? false
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Maxes' on 1 arguments
+*[1] Maxes( t )
+   @ *stdin*:30
+ [2] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [3] Maxes( t )
+   @ *stdin*:30
+ [4] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [5] Maxes( t )
+   @ *stdin*:30
+...  at *errin*:1
+type 'quit;' to quit to outer loop
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:1
+r7 := MaxesPerfectReport("U3(8).S3");;
+^^
+
+=== U3(8).S3 ===
+  order=33094656  own perfect? false
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `Maxes' on 1 arguments
+*[1] Maxes( t )
+   @ *stdin*:30
+ [2] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [3] Maxes( t )
+   @ *stdin*:30
+ [4] ErrorInner( rec(
+    context := GetCurrentLVars(  ),
+    tracebackContext := ParentLVars( GetCurrentLVars(  ) ),
+    mayReturnVoid := false,
+    mayReturnObj := false,
+    lateMessage := "type 'quit;' to quit to outer loop" ), 
+ [ no_method_found ] );
+   @ /home/USER/gap-4.16.0/lib/methsel2.g:258
+ [5] Maxes( t )
+   @ *stdin*:30
+...  at *errin*:1
+type 'quit;' to quit to outer loop
+[1m[34m[0m[31m[1m[34m[0m[31m
+
+=== S11 / A11 (Suz) -- cross-check only, coprimality already settles diagonal \
+===
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:3
+r8 := MaxesPerfectReport("A11");;
+^^
+
+=== A11 ===
+  order=19958400  own perfect? true
+  Maxes names: [ "A10", "A9.2", "(A8x3).2", "(A7xA4):2", "(A6xA5):2", "M11", 
+  "M11" ]
+    A10 order=1814400 PERFECT
+    A9.2 order=362880 not perfect
+    (A8x3).2 order=120960 not perfect
+    (A7xA4):2 order=60480 not perfect
+    (A6xA5):2 order=43200 not perfect
+    M11 order=7920 PERFECT
+    M11 order=7920 PERFECT
+  Perfect maximal classes: 3
+[1m[34m[0m[31mSyntax warning: Unbound global variable in *errin*:4
+r9 := MaxesPerfectReport("S11");;
+^^
+
+=== S11 ===
+  order=39916800  own perfect? false
+  Maxes names: [ "A11", "A10.2", "S9x2", "S8xS3", "S7xS4", "S6xS5", "11:10" ]
+    A11 order=19958400 PERFECT
+    A10.2 order=3628800 not perfect
+    S9x2 order=725760 not perfect
+    S8xS3 order=241920 not perfect
+    S7xS4 order=120960 not perfect
+    S6xS5 order=86400 not perfect
+    11:10 order=110 not perfect
+  Perfect maximal classes: 1
+[1m[34m[0m[31m[1m[34m[0m[31m
+=== DONE probe6 ===
+[1m[34m[0m[31m[1m[34m[0m[31m[1m[34m[0m[31m[1m[34m[0m[31m[1m[34m[0m[31m

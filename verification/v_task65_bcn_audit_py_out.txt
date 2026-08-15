@@ -1,0 +1,30 @@
+=== (A) iota_1 vs v_eps ===
+  1780 triples, 0 violations; coprimality form verified everywhere
+
+=== (B) maximal indices of Sp_2n(q), non-P1, vs q^{2n} ===
+  !! VIOLATION n=3 q=3 C6 2^{1+2n} index~57 < q^2n=729
+  !! VIOLATION n=3 q=3 S (BHR 8.28/8.29 max order) index~315 < q^2n=729
+  318 (n,q) pairs, 2 violations
+  tightest: ratio=0.0782 n=3 q=3 C6 2^{1+2n} index~57 vs q^2n=729
+
+=== (C) exact P_n identity at n=3 (the tightest exact case) ===
+  q=3: [Sp6:P3]=1120  q^6=729  diff=391
+  q=5: [Sp6:P3]=19656  q^6=15625  diff=4031
+  q=7: [Sp6:P3]=137600  q^6=117649  diff=19951
+  q=9: [Sp6:P3]=598600  q^6=531441  diff=67159
+  q=11: [Sp6:P3]=1950048  q^6=1771561  diff=178487
+  q=13: [Sp6:P3]=5231240  q^6=4826809  diff=404431
+  symbolically [Sp6:P3]=(q+1)(q^2+1)(q^3+1)=q^6+q^5+q^4+2q^3+q^2+q+1 > q^6
+
+=== (D) Liebeck S-bound sufficiency: index >= q^{2n^2+n-6n} ===
+  n=3: exponent 2n^2-5n = 3 vs 2n = 6 -> TOO WEAK
+  n=4: exponent 2n^2-5n = 12 vs 2n = 8 -> OK
+  n=5: exponent 2n^2-5n = 25 vs 2n = 10 -> OK
+  n=6: exponent 2n^2-5n = 42 vs 2n = 12 -> OK
+  n=7: exponent 2n^2-5n = 63 vs 2n = 14 -> OK
+  n=8: exponent 2n^2-5n = 88 vs 2n = 16 -> OK
+
+=== (E) the two flagged cases, tightened ===
+  C6 STILL BELOW: n=3 q=3 idx>=691 < 729
+  C6: no case below q^{2n} with the exact normaliser order
+  n=3 S-class: 0 residual flags (all at small q; ATLAS settles q=3, see GAP PART B)

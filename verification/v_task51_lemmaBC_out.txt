@@ -1,0 +1,17 @@
+# Lemma B / Lemma C sweep over 1286 simple groups
+# (B) |G| > iota^2 : 12 smallest exponents log|G|/log(iota_ub)
+   alpha=1.7371  J1             |G|=175560 iota_ub=1045 |Out|=1
+   alpha=1.8066  ON             |G|=460815505920 iota_ub=2857239 |Out|=2
+   alpha=1.8156  J3             |G|=50232960 iota_ub=17442 |Out|=2
+   alpha=2.0062  Th             |G|=90745943887872000 iota_ub=283599225 |Out|=1
+   alpha=2.1163  Ru             |G|=145926144000 iota_ub=188500 |Out|=1
+   alpha=2.1251  M12            |G|=95040 iota_ub=220 |Out|=2
+   alpha=2.1328  HS             |G|=44352000 iota_ub=3850 |Out|=2
+   alpha=2.1381  McL            |G|=898128000 iota_ub=15400 |Out|=2
+   alpha=2.2029  A7             |G|=2520 iota_ub=35 |Out|=2
+   alpha=2.2361  2F4(2)'        |G|=17971200 iota_ub=1755 |Out|=2
+   alpha=2.2402  M11            |G|=7920 iota_ub=55 |Out|=1
+   alpha=2.2851  L2(5)          |G|=60 iota_ub=6 |Out|=2
+# groups violating (B): J1, ON, J3
+# groups violating (C) |Out|*iota <= |G|^(2/3): NONE
+# tightest (C) row: A6  |Out|*iota=40  |G|^(2/3)=50.6  ratio 0.790

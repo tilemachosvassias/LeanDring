@@ -1,0 +1,372 @@
+### PART E' RE-RUN with the CORRECTED ppmax_{2'} cap
+============================================================================
+PART E' -- (H3') the q = 2 cross-characteristic multi-factor
+           residue for d > 20, decided exactly
+============================================================================
+  L_21 (2)  swept candidates 0          SURVIVORS: NONE
+  L_22 (2)  swept candidates 0          SURVIVORS: NONE
+  L_23 (2)  swept candidates 0          SURVIVORS: NONE
+  L_24 (2)  swept candidates 0          SURVIVORS: NONE
+  L_25 (2)  swept candidates 0          SURVIVORS: NONE
+  L_26 (2)  swept candidates 0          SURVIVORS: NONE
+  L_27 (2)  swept candidates 0          SURVIVORS: NONE
+  L_28 (2)  swept candidates 0          SURVIVORS: NONE
+  L_29 (2)  swept candidates 0          SURVIVORS: NONE
+  L_30 (2)  swept candidates 0          SURVIVORS: NONE
+  L_31 (2)  swept candidates 0          SURVIVORS: NONE
+  L_32 (2)  swept candidates 0          SURVIVORS: NONE
+  L_33 (2)  swept candidates 0          SURVIVORS: NONE
+  L_34 (2)  swept candidates 0          SURVIVORS: NONE
+  L_35 (2)  swept candidates 0          SURVIVORS: NONE
+  L_36 (2)  swept candidates 0          SURVIVORS: NONE
+  L_37 (2)  swept candidates 0          SURVIVORS: NONE
+  L_38 (2)  swept candidates 0          SURVIVORS: NONE
+  L_39 (2)  swept candidates 0          SURVIVORS: NONE
+  L_40 (2)  swept candidates 0          SURVIVORS: NONE
+  L_41 (2)  swept candidates 0          SURVIVORS: NONE
+  L_42 (2)  swept candidates 0          SURVIVORS: NONE
+  L_43 (2)  swept candidates 0          SURVIVORS: NONE
+  L_44 (2)  swept candidates 0          SURVIVORS: NONE
+  L_45 (2)  swept candidates 0          SURVIVORS: NONE
+  L_46 (2)  swept candidates 0          SURVIVORS: NONE
+  L_47 (2)  swept candidates 0          SURVIVORS: NONE
+  L_48 (2)  swept candidates 0          SURVIVORS: NONE
+  L_49 (2)  swept candidates 0          SURVIVORS: NONE
+  L_50 (2)  swept candidates 0          SURVIVORS: NONE
+  L_51 (2)  swept candidates 0          SURVIVORS: NONE
+  L_52 (2)  swept candidates 0          SURVIVORS: NONE
+  L_53 (2)  swept candidates 0          SURVIVORS: NONE
+  L_54 (2)  swept candidates 0          SURVIVORS: NONE
+  L_55 (2)  swept candidates 0          SURVIVORS: NONE
+  L_56 (2)  swept candidates 0          SURVIVORS: NONE
+  L_57 (2)  swept candidates 0          SURVIVORS: NONE
+  L_58 (2)  swept candidates 0          SURVIVORS: NONE
+  L_59 (2)  swept candidates 0          SURVIVORS: NONE
+  L_60 (2)  swept candidates 0          SURVIVORS: NONE
+  L_61 (2)  swept candidates 0          SURVIVORS: NONE
+  L_62 (2)  swept candidates 0          SURVIVORS: NONE
+  L_63 (2)  swept candidates 0          SURVIVORS: NONE
+  L_64 (2)  swept candidates 0          SURVIVORS: NONE
+  L_65 (2)  swept candidates 0          SURVIVORS: NONE
+  L_66 (2)  swept candidates 0          SURVIVORS: NONE
+  L_67 (2)  swept candidates 0          SURVIVORS: NONE
+  L_68 (2)  swept candidates 0          SURVIVORS: NONE
+  L_69 (2)  swept candidates 0          SURVIVORS: NONE
+  L_70 (2)  swept candidates 0          SURVIVORS: NONE
+  L_71 (2)  swept candidates 0          SURVIVORS: NONE
+  L_72 (2)  swept candidates 0          SURVIVORS: NONE
+  L_73 (2)  swept candidates 0          SURVIVORS: NONE
+  L_74 (2)  swept candidates 0          SURVIVORS: NONE
+  L_75 (2)  swept candidates 0          SURVIVORS: NONE
+  L_76 (2)  swept candidates 0          SURVIVORS: NONE
+  L_77 (2)  swept candidates 0          SURVIVORS: NONE
+  L_78 (2)  swept candidates 0          SURVIVORS: NONE
+  L_79 (2)  swept candidates 0          SURVIVORS: NONE
+  L_80 (2)  swept candidates 0          SURVIVORS: NONE
+  L_81 (2)  swept candidates 0          SURVIVORS: NONE
+  L_82 (2)  swept candidates 0          SURVIVORS: NONE
+  L_83 (2)  swept candidates 0          SURVIVORS: NONE
+  L_84 (2)  swept candidates 0          SURVIVORS: NONE
+  L_85 (2)  swept candidates 0          SURVIVORS: NONE
+  L_86 (2)  swept candidates 0          SURVIVORS: NONE
+  L_87 (2)  swept candidates 0          SURVIVORS: NONE
+  L_88 (2)  swept candidates 0          SURVIVORS: NONE
+  L_89 (2)  swept candidates 0          SURVIVORS: NONE
+  L_90 (2)  swept candidates 0          SURVIVORS: NONE
+  L_91 (2)  swept candidates 0          SURVIVORS: NONE
+  L_92 (2)  swept candidates 0          SURVIVORS: NONE
+  L_93 (2)  swept candidates 0          SURVIVORS: NONE
+  L_94 (2)  swept candidates 0          SURVIVORS: NONE
+  L_95 (2)  swept candidates 0          SURVIVORS: NONE
+  L_96 (2)  swept candidates 0          SURVIVORS: NONE
+  L_97 (2)  swept candidates 0          SURVIVORS: NONE
+  L_98 (2)  swept candidates 0          SURVIVORS: NONE
+  L_99 (2)  swept candidates 0          SURVIVORS: NONE
+  L_100(2)  swept candidates 0          SURVIVORS: NONE
+  L_101(2)  swept candidates 0          SURVIVORS: NONE
+  L_102(2)  swept candidates 0          SURVIVORS: NONE
+  L_103(2)  swept candidates 0          SURVIVORS: NONE
+  L_104(2)  swept candidates 0          SURVIVORS: NONE
+  L_105(2)  swept candidates 0          SURVIVORS: NONE
+  L_106(2)  swept candidates 0          SURVIVORS: NONE
+  L_107(2)  swept candidates 0          SURVIVORS: NONE
+  L_108(2)  swept candidates 0          SURVIVORS: NONE
+  L_109(2)  swept candidates 0          SURVIVORS: NONE
+  L_110(2)  swept candidates 0          SURVIVORS: NONE
+  L_111(2)  swept candidates 0          SURVIVORS: NONE
+  L_112(2)  swept candidates 0          SURVIVORS: NONE
+  L_113(2)  swept candidates 0          SURVIVORS: NONE
+  L_114(2)  swept candidates 0          SURVIVORS: NONE
+  L_115(2)  swept candidates 0          SURVIVORS: NONE
+  L_116(2)  swept candidates 0          SURVIVORS: NONE
+  L_117(2)  swept candidates 0          SURVIVORS: NONE
+  L_118(2)  swept candidates 0          SURVIVORS: NONE
+  L_119(2)  swept candidates 0          SURVIVORS: NONE
+  L_120(2)  swept candidates 0          SURVIVORS: NONE
+  L_121(2)  swept candidates 0          SURVIVORS: NONE
+  L_122(2)  swept candidates 0          SURVIVORS: NONE
+  L_123(2)  swept candidates 0          SURVIVORS: NONE
+  L_124(2)  swept candidates 0          SURVIVORS: NONE
+  L_125(2)  swept candidates 0          SURVIVORS: NONE
+  L_126(2)  swept candidates 0          SURVIVORS: NONE
+  L_127(2)  swept candidates 0          SURVIVORS: NONE
+  L_128(2)  swept candidates 0          SURVIVORS: NONE
+  L_129(2)  swept candidates 0          SURVIVORS: NONE
+  L_130(2)  swept candidates 0          SURVIVORS: NONE
+  L_131(2)  swept candidates 0          SURVIVORS: NONE
+  L_132(2)  swept candidates 0          SURVIVORS: NONE
+  L_133(2)  swept candidates 0          SURVIVORS: NONE
+  L_134(2)  swept candidates 0          SURVIVORS: NONE
+  L_135(2)  swept candidates 0          SURVIVORS: NONE
+  L_136(2)  swept candidates 0          SURVIVORS: NONE
+  L_137(2)  swept candidates 0          SURVIVORS: NONE
+  L_138(2)  swept candidates 0          SURVIVORS: NONE
+  L_139(2)  swept candidates 0          SURVIVORS: NONE
+  L_140(2)  swept candidates 0          SURVIVORS: NONE
+  L_141(2)  swept candidates 0          SURVIVORS: NONE
+  L_142(2)  swept candidates 0          SURVIVORS: NONE
+  L_143(2)  swept candidates 0          SURVIVORS: NONE
+  L_144(2)  swept candidates 0          SURVIVORS: NONE
+  L_145(2)  swept candidates 0          SURVIVORS: NONE
+  L_146(2)  swept candidates 0          SURVIVORS: NONE
+  L_147(2)  swept candidates 0          SURVIVORS: NONE
+  L_148(2)  swept candidates 0          SURVIVORS: NONE
+  L_149(2)  swept candidates 0          SURVIVORS: NONE
+  L_150(2)  swept candidates 0          SURVIVORS: NONE
+  L_151(2)  swept candidates 0          SURVIVORS: NONE
+  L_152(2)  swept candidates 0          SURVIVORS: NONE
+  L_153(2)  swept candidates 0          SURVIVORS: NONE
+  L_154(2)  swept candidates 0          SURVIVORS: NONE
+  L_155(2)  swept candidates 0          SURVIVORS: NONE
+  L_156(2)  swept candidates 0          SURVIVORS: NONE
+  L_157(2)  swept candidates 0          SURVIVORS: NONE
+  L_158(2)  swept candidates 0          SURVIVORS: NONE
+  L_159(2)  swept candidates 0          SURVIVORS: NONE
+  L_160(2)  swept candidates 0          SURVIVORS: NONE
+  L_161(2)  swept candidates 0          SURVIVORS: NONE
+  L_162(2)  swept candidates 0          SURVIVORS: NONE
+  L_163(2)  swept candidates 0          SURVIVORS: NONE
+  L_164(2)  swept candidates 0          SURVIVORS: NONE
+  L_165(2)  swept candidates 0          SURVIVORS: NONE
+  L_166(2)  swept candidates 0          SURVIVORS: NONE
+  L_167(2)  swept candidates 0          SURVIVORS: NONE
+  L_168(2)  swept candidates 0          SURVIVORS: NONE
+  L_169(2)  swept candidates 0          SURVIVORS: NONE
+  L_170(2)  swept candidates 0          SURVIVORS: NONE
+  L_171(2)  swept candidates 0          SURVIVORS: NONE
+  L_172(2)  swept candidates 0          SURVIVORS: NONE
+  L_173(2)  swept candidates 0          SURVIVORS: NONE
+  L_174(2)  swept candidates 0          SURVIVORS: NONE
+  L_175(2)  swept candidates 0          SURVIVORS: NONE
+  L_176(2)  swept candidates 0          SURVIVORS: NONE
+  L_177(2)  swept candidates 0          SURVIVORS: NONE
+  L_178(2)  swept candidates 0          SURVIVORS: NONE
+  L_179(2)  swept candidates 0          SURVIVORS: NONE
+  L_180(2)  swept candidates 0          SURVIVORS: NONE
+  L_181(2)  swept candidates 0          SURVIVORS: NONE
+  L_182(2)  swept candidates 0          SURVIVORS: NONE
+  L_183(2)  swept candidates 0          SURVIVORS: NONE
+  L_184(2)  swept candidates 0          SURVIVORS: NONE
+  L_185(2)  swept candidates 0          SURVIVORS: NONE
+  L_186(2)  swept candidates 0          SURVIVORS: NONE
+  L_187(2)  swept candidates 0          SURVIVORS: NONE
+  L_188(2)  swept candidates 0          SURVIVORS: NONE
+  L_189(2)  swept candidates 0          SURVIVORS: NONE
+  L_190(2)  swept candidates 0          SURVIVORS: NONE
+  L_191(2)  swept candidates 0          SURVIVORS: NONE
+  L_192(2)  swept candidates 0          SURVIVORS: NONE
+  L_193(2)  swept candidates 0          SURVIVORS: NONE
+  L_194(2)  swept candidates 0          SURVIVORS: NONE
+  L_195(2)  swept candidates 0          SURVIVORS: NONE
+  L_196(2)  swept candidates 0          SURVIVORS: NONE
+  L_197(2)  swept candidates 0          SURVIVORS: NONE
+  L_198(2)  swept candidates 0          SURVIVORS: NONE
+  L_199(2)  swept candidates 0          SURVIVORS: NONE
+  L_200(2)  swept candidates 0          SURVIVORS: NONE
+  U_21 (2)  swept candidates 0          SURVIVORS: NONE
+  U_22 (2)  swept candidates 0          SURVIVORS: NONE
+  U_23 (2)  swept candidates 0          SURVIVORS: NONE
+  U_24 (2)  swept candidates 0          SURVIVORS: NONE
+  U_25 (2)  swept candidates 0          SURVIVORS: NONE
+  U_26 (2)  swept candidates 0          SURVIVORS: NONE
+  U_27 (2)  swept candidates 0          SURVIVORS: NONE
+  U_28 (2)  swept candidates 0          SURVIVORS: NONE
+  U_29 (2)  swept candidates 0          SURVIVORS: NONE
+  U_30 (2)  swept candidates 0          SURVIVORS: NONE
+  U_31 (2)  swept candidates 0          SURVIVORS: NONE
+  U_32 (2)  swept candidates 0          SURVIVORS: NONE
+  U_33 (2)  swept candidates 0          SURVIVORS: NONE
+  U_34 (2)  swept candidates 0          SURVIVORS: NONE
+  U_35 (2)  swept candidates 0          SURVIVORS: NONE
+  U_36 (2)  swept candidates 0          SURVIVORS: NONE
+  U_37 (2)  swept candidates 0          SURVIVORS: NONE
+  U_38 (2)  swept candidates 0          SURVIVORS: NONE
+  U_39 (2)  swept candidates 0          SURVIVORS: NONE
+  U_40 (2)  swept candidates 0          SURVIVORS: NONE
+  U_41 (2)  swept candidates 0          SURVIVORS: NONE
+  U_42 (2)  swept candidates 0          SURVIVORS: NONE
+  U_43 (2)  swept candidates 0          SURVIVORS: NONE
+  U_44 (2)  swept candidates 0          SURVIVORS: NONE
+  U_45 (2)  swept candidates 0          SURVIVORS: NONE
+  U_46 (2)  swept candidates 0          SURVIVORS: NONE
+  U_47 (2)  swept candidates 0          SURVIVORS: NONE
+  U_48 (2)  swept candidates 0          SURVIVORS: NONE
+  U_49 (2)  swept candidates 0          SURVIVORS: NONE
+  U_50 (2)  swept candidates 0          SURVIVORS: NONE
+  U_51 (2)  swept candidates 0          SURVIVORS: NONE
+  U_52 (2)  swept candidates 0          SURVIVORS: NONE
+  U_53 (2)  swept candidates 0          SURVIVORS: NONE
+  U_54 (2)  swept candidates 0          SURVIVORS: NONE
+  U_55 (2)  swept candidates 0          SURVIVORS: NONE
+  U_56 (2)  swept candidates 0          SURVIVORS: NONE
+  U_57 (2)  swept candidates 0          SURVIVORS: NONE
+  U_58 (2)  swept candidates 0          SURVIVORS: NONE
+  U_59 (2)  swept candidates 0          SURVIVORS: NONE
+  U_60 (2)  swept candidates 0          SURVIVORS: NONE
+  U_61 (2)  swept candidates 0          SURVIVORS: NONE
+  U_62 (2)  swept candidates 0          SURVIVORS: NONE
+  U_63 (2)  swept candidates 0          SURVIVORS: NONE
+  U_64 (2)  swept candidates 0          SURVIVORS: NONE
+  U_65 (2)  swept candidates 0          SURVIVORS: NONE
+  U_66 (2)  swept candidates 0          SURVIVORS: NONE
+  U_67 (2)  swept candidates 0          SURVIVORS: NONE
+  U_68 (2)  swept candidates 0          SURVIVORS: NONE
+  U_69 (2)  swept candidates 0          SURVIVORS: NONE
+  U_70 (2)  swept candidates 0          SURVIVORS: NONE
+  U_71 (2)  swept candidates 0          SURVIVORS: NONE
+  U_72 (2)  swept candidates 0          SURVIVORS: NONE
+  U_73 (2)  swept candidates 0          SURVIVORS: NONE
+  U_74 (2)  swept candidates 0          SURVIVORS: NONE
+  U_75 (2)  swept candidates 0          SURVIVORS: NONE
+  U_76 (2)  swept candidates 0          SURVIVORS: NONE
+  U_77 (2)  swept candidates 0          SURVIVORS: NONE
+  U_78 (2)  swept candidates 0          SURVIVORS: NONE
+  U_79 (2)  swept candidates 0          SURVIVORS: NONE
+  U_80 (2)  swept candidates 0          SURVIVORS: NONE
+  U_81 (2)  swept candidates 0          SURVIVORS: NONE
+  U_82 (2)  swept candidates 0          SURVIVORS: NONE
+  U_83 (2)  swept candidates 0          SURVIVORS: NONE
+  U_84 (2)  swept candidates 0          SURVIVORS: NONE
+  U_85 (2)  swept candidates 0          SURVIVORS: NONE
+  U_86 (2)  swept candidates 0          SURVIVORS: NONE
+  U_87 (2)  swept candidates 0          SURVIVORS: NONE
+  U_88 (2)  swept candidates 0          SURVIVORS: NONE
+  U_89 (2)  swept candidates 0          SURVIVORS: NONE
+  U_90 (2)  swept candidates 0          SURVIVORS: NONE
+  U_91 (2)  swept candidates 0          SURVIVORS: NONE
+  U_92 (2)  swept candidates 0          SURVIVORS: NONE
+  U_93 (2)  swept candidates 0          SURVIVORS: NONE
+  U_94 (2)  swept candidates 0          SURVIVORS: NONE
+  U_95 (2)  swept candidates 0          SURVIVORS: NONE
+  U_96 (2)  swept candidates 0          SURVIVORS: NONE
+  U_97 (2)  swept candidates 0          SURVIVORS: NONE
+  U_98 (2)  swept candidates 0          SURVIVORS: NONE
+  U_99 (2)  swept candidates 0          SURVIVORS: NONE
+  U_100(2)  swept candidates 0          SURVIVORS: NONE
+  U_101(2)  swept candidates 0          SURVIVORS: NONE
+  U_102(2)  swept candidates 0          SURVIVORS: NONE
+  U_103(2)  swept candidates 0          SURVIVORS: NONE
+  U_104(2)  swept candidates 0          SURVIVORS: NONE
+  U_105(2)  swept candidates 0          SURVIVORS: NONE
+  U_106(2)  swept candidates 0          SURVIVORS: NONE
+  U_107(2)  swept candidates 0          SURVIVORS: NONE
+  U_108(2)  swept candidates 0          SURVIVORS: NONE
+  U_109(2)  swept candidates 0          SURVIVORS: NONE
+  U_110(2)  swept candidates 0          SURVIVORS: NONE
+  U_111(2)  swept candidates 0          SURVIVORS: NONE
+  U_112(2)  swept candidates 0          SURVIVORS: NONE
+  U_113(2)  swept candidates 0          SURVIVORS: NONE
+  U_114(2)  swept candidates 0          SURVIVORS: NONE
+  U_115(2)  swept candidates 0          SURVIVORS: NONE
+  U_116(2)  swept candidates 0          SURVIVORS: NONE
+  U_117(2)  swept candidates 0          SURVIVORS: NONE
+  U_118(2)  swept candidates 0          SURVIVORS: NONE
+  U_119(2)  swept candidates 0          SURVIVORS: NONE
+  U_120(2)  swept candidates 0          SURVIVORS: NONE
+  U_121(2)  swept candidates 0          SURVIVORS: NONE
+  U_122(2)  swept candidates 0          SURVIVORS: NONE
+  U_123(2)  swept candidates 0          SURVIVORS: NONE
+  U_124(2)  swept candidates 0          SURVIVORS: NONE
+  U_125(2)  swept candidates 0          SURVIVORS: NONE
+  U_126(2)  swept candidates 0          SURVIVORS: NONE
+  U_127(2)  swept candidates 0          SURVIVORS: NONE
+  U_128(2)  swept candidates 0          SURVIVORS: NONE
+  U_129(2)  swept candidates 0          SURVIVORS: NONE
+  U_130(2)  swept candidates 0          SURVIVORS: NONE
+  U_131(2)  swept candidates 0          SURVIVORS: NONE
+  U_132(2)  swept candidates 0          SURVIVORS: NONE
+  U_133(2)  swept candidates 0          SURVIVORS: NONE
+  U_134(2)  swept candidates 0          SURVIVORS: NONE
+  U_135(2)  swept candidates 0          SURVIVORS: NONE
+  U_136(2)  swept candidates 0          SURVIVORS: NONE
+  U_137(2)  swept candidates 0          SURVIVORS: NONE
+  U_138(2)  swept candidates 0          SURVIVORS: NONE
+  U_139(2)  swept candidates 0          SURVIVORS: NONE
+  U_140(2)  swept candidates 0          SURVIVORS: NONE
+  U_141(2)  swept candidates 0          SURVIVORS: NONE
+  U_142(2)  swept candidates 0          SURVIVORS: NONE
+  U_143(2)  swept candidates 0          SURVIVORS: NONE
+  U_144(2)  swept candidates 0          SURVIVORS: NONE
+  U_145(2)  swept candidates 0          SURVIVORS: NONE
+  U_146(2)  swept candidates 0          SURVIVORS: NONE
+  U_147(2)  swept candidates 0          SURVIVORS: NONE
+  U_148(2)  swept candidates 0          SURVIVORS: NONE
+  U_149(2)  swept candidates 0          SURVIVORS: NONE
+  U_150(2)  swept candidates 0          SURVIVORS: NONE
+  U_151(2)  swept candidates 0          SURVIVORS: NONE
+  U_152(2)  swept candidates 0          SURVIVORS: NONE
+  U_153(2)  swept candidates 0          SURVIVORS: NONE
+  U_154(2)  swept candidates 0          SURVIVORS: NONE
+  U_155(2)  swept candidates 0          SURVIVORS: NONE
+  U_156(2)  swept candidates 0          SURVIVORS: NONE
+  U_157(2)  swept candidates 0          SURVIVORS: NONE
+  U_158(2)  swept candidates 0          SURVIVORS: NONE
+  U_159(2)  swept candidates 0          SURVIVORS: NONE
+  U_160(2)  swept candidates 0          SURVIVORS: NONE
+  U_161(2)  swept candidates 0          SURVIVORS: NONE
+  U_162(2)  swept candidates 0          SURVIVORS: NONE
+  U_163(2)  swept candidates 0          SURVIVORS: NONE
+  U_164(2)  swept candidates 0          SURVIVORS: NONE
+  U_165(2)  swept candidates 0          SURVIVORS: NONE
+  U_166(2)  swept candidates 0          SURVIVORS: NONE
+  U_167(2)  swept candidates 0          SURVIVORS: NONE
+  U_168(2)  swept candidates 0          SURVIVORS: NONE
+  U_169(2)  swept candidates 0          SURVIVORS: NONE
+  U_170(2)  swept candidates 0          SURVIVORS: NONE
+  U_171(2)  swept candidates 0          SURVIVORS: NONE
+  U_172(2)  swept candidates 0          SURVIVORS: NONE
+  U_173(2)  swept candidates 0          SURVIVORS: NONE
+  U_174(2)  swept candidates 0          SURVIVORS: NONE
+  U_175(2)  swept candidates 0          SURVIVORS: NONE
+  U_176(2)  swept candidates 0          SURVIVORS: NONE
+  U_177(2)  swept candidates 0          SURVIVORS: NONE
+  U_178(2)  swept candidates 0          SURVIVORS: NONE
+  U_179(2)  swept candidates 0          SURVIVORS: NONE
+  U_180(2)  swept candidates 0          SURVIVORS: NONE
+  U_181(2)  swept candidates 0          SURVIVORS: NONE
+  U_182(2)  swept candidates 0          SURVIVORS: NONE
+  U_183(2)  swept candidates 0          SURVIVORS: NONE
+  U_184(2)  swept candidates 0          SURVIVORS: NONE
+  U_185(2)  swept candidates 0          SURVIVORS: NONE
+  U_186(2)  swept candidates 0          SURVIVORS: NONE
+  U_187(2)  swept candidates 0          SURVIVORS: NONE
+  U_188(2)  swept candidates 0          SURVIVORS: NONE
+  U_189(2)  swept candidates 0          SURVIVORS: NONE
+  U_190(2)  swept candidates 0          SURVIVORS: NONE
+  U_191(2)  swept candidates 0          SURVIVORS: NONE
+  U_192(2)  swept candidates 0          SURVIVORS: NONE
+  U_193(2)  swept candidates 0          SURVIVORS: NONE
+  U_194(2)  swept candidates 0          SURVIVORS: NONE
+  U_195(2)  swept candidates 0          SURVIVORS: NONE
+  U_196(2)  swept candidates 0          SURVIVORS: NONE
+  U_197(2)  swept candidates 0          SURVIVORS: NONE
+  U_198(2)  swept candidates 0          SURVIVORS: NONE
+  U_199(2)  swept candidates 0          SURVIVORS: NONE
+  U_200(2)  swept candidates 0          SURVIVORS: NONE
+
+  windows killed EMPTY by (i)+(ii) alone : 99954
+  windows swept exactly                  : 0
+  windows too large to sweep             : 0
+
+  TOTAL (H3') survivors, q = 2, 21 <= d <= 200, both towers: NONE
+

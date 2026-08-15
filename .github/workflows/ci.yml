@@ -1,0 +1,67 @@
+name: CI
+
+# Static trust-base gates. The full kernel build takes >12h serial (see
+# REPRODUCIBILITY.md) and does not fit hosted-runner limits, so CI enforces
+# everything that is checkable without elaboration; the full build + the
+# axiom audit (`lake env lean LeanDring/AxiomAudit.lean`) remain the
+# documented manual release gate.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  trust-base:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No sorry / axiom / native_decide / unsafe in Lean sources
+        run: |
+          set -e
+          fail=0
+          # sorry as code (allow the word inside comments/docstrings)
+          if grep -rn --include='*.lean' -E '^\s*(sorry|admit)\b' LeanDring/ LeanDring.lean; then
+            echo '::error::sorry/admit found'; fail=1; fi
+          if grep -rn --include='*.lean' -E '^\s*axiom ' LeanDring/ LeanDring.lean; then
+            echo '::error::custom axiom declaration found'; fail=1; fi
+          if grep -rn --include='*.lean' -E '\bnative_decide\b' LeanDring/ LeanDring.lean | grep -vE '(--|/-|\*|`)'; then
+            echo '::error::native_decide found outside comments'; fail=1; fi
+          if grep -rn --include='*.lean' -E '^\s*(unsafe|opaque) |@\[(implemented_by|extern)' LeanDring/ LeanDring.lean; then
+            echo '::error::unsafe/opaque/implemented_by/extern found'; fail=1; fi
+          exit $fail
+
+      - name: Import layering (against committed baseline)
+        run: python3 scripts/check_imports.py
+
+      - name: Paper-number cross-checks
+        run: python3 scripts/check_paper_numbers.py
+
+      - name: mapping.tsv targets all exist
+        run: |
+          python3 - <<'EOF'
+          import os, sys
+          missing = [l.split("\t")[1].strip() for l in open("scripts/mapping.tsv")
+                     if not os.path.exists(l.split("\t")[1].strip())]
+          if missing:
+              print("missing mapping.tsv targets:", *missing, sep="\n  ")
+              sys.exit(1)
+          print("all mapping.tsv targets exist")
+          EOF
+
+      - name: Import closure resolves
+        run: |
+          python3 - <<'EOF'
+          import os, sys
+          bad = 0
+          files = ["LeanDring.lean"]
+          for r, ds, fs in os.walk("LeanDring"):
+              files += [os.path.join(r, f) for f in fs if f.endswith(".lean")]
+          for p in files:
+              for i, ln in enumerate(open(p, encoding="utf-8"), 1):
+                  if ln.startswith("import LeanDring"):
+                      fp = ln.split()[1].strip().replace(".", "/") + ".lean"
+                      if not os.path.exists(fp):
+                          print(f"broken import {p}:{i} -> {fp}"); bad += 1
+          sys.exit(1 if bad else 0)
+          EOF

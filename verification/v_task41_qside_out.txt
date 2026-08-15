@@ -1,0 +1,6 @@
+sieving to 100000000
+# selftest solve_cubic: 2184 -> 14 (expect 14); 1e12-scale -> 1000000000001 (expect 1000000000001)
+# v_task41 q-side scan of R1 at ell*=1
+# S4 (odd non-prime q) q <= 1000000000000 ; L5 q <= 100000000 ; L3 (non-prime q) q <= 1000000000000
+# raw shape hits: 0
+# SURVIVORS (window + p-part): 0

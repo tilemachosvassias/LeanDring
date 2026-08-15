@@ -1,0 +1,26 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 69046 points.
+#I  Have 103808 points.
+#I  Have 116158 points.
+#I  Have 50643 points.
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 120100 points.
+#I  Have 68954 points.
+#I  Have 103761 points.
+#I  Have 116151 points.
+#I  Have 47132 points.
+RESULT S q=49 idx=1 sizeM=1081437547303774816727040000 index=
+48 zInD=false isG2order=false rounds=4

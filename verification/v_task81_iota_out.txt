@@ -1,0 +1,596 @@
+======================================================================
+PART A : ilow from CTblLib character tables (independent recursion)
+======================================================================
+
+### M22  (id=M22, |G|=443520, simple=true)
+    max L3(4)          index        22  F(M)<>1: false  ilow(M) in [21,
+21]  contrib [462,462]
+    max 2^4:a6         index        77  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [77,77]
+    max A7             index       176  F(M)<>1: false  ilow(M) in [35,
+35]  contrib [6160,6160]
+    max A7             index       176  F(M)<>1: false  ilow(M) in [35,
+35]  contrib [6160,6160]
+    max 2^4:s5         index       231  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [231,231]
+    max 2^3:sl(3,2)    index       330  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [330,330]
+    max A6.2_3         index       616  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [6160,6160]
+    max L2(11)         index       672  F(M)<>1: false  ilow(M) in [12,
+12]  contrib [8064,8064]
+  => ilow(M22) in [77, 77]  EXACT = 77
+     witness (upper): 2^4:a6 (index 77)
+     min index of a maximal M with F(M)<>1 : 77
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L3(4)  (id=L3(4), |G|=20160, simple=true)
+    max 2^4:A5         index        21  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [21,21]
+    max 2^4:A5         index        21  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [21,21]
+    max A6             index        56  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [560,560]
+    max L3(4)M4        index        56  F(M)<>1: false  ilow(M) in [
+6,infinity]  contrib [336,infinity]
+    max L3(4)M5        index        56  F(M)<>1: false  ilow(M) in [
+6,infinity]  contrib [336,infinity]
+    max L3(2)          index       120  F(M)<>1: false  ilow(M) in [7,
+7]  contrib [840,840]
+    max L3(4)M7        index       120  F(M)<>1: false  ilow(M) in [
+7,infinity]  contrib [840,infinity]
+    max L3(4)M8        index       120  F(M)<>1: false  ilow(M) in [
+7,infinity]  contrib [840,infinity]
+    max 3^2:Q8         index       280  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [280,280]
+  => ilow(L3(4)) in [21, 21]  EXACT = 21
+     witness (upper): 2^4:A5 (index 21)
+     min index of a maximal M with F(M)<>1 : 21
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### Fi22  (id=Fi22, |G|=64561751654400, simple=true)
+    max 2.U6(2)        index      3510  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [3510,3510]
+    max O7(3)          index     14080  F(M)<>1: false  ilow(M) in [351,
+351]  contrib [4942080,4942080]
+    max Fi22M3         index     14080  F(M)<>1: false  ilow(M) in [
+21,infinity]  contrib [295680,infinity]
+    max O8+(2).3.2     index     61776  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [123552,infinity]
+    max 2^10:m22       index    142155  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [142155,142155]
+    max 2^6:s6f2       index    694980  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [694980,694980]
+    max (2x2^(1+8)):U4(2):2 index   1216215  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1216215,1216215]
+    max S3xU4(3).2_2   index   1647360  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1647360,1647360]
+    max 2F4(2)'        index   3592512  F(M)<>1: false  ilow(M) in [1755,
+1755]  contrib [6304858560,6304858560]
+    max 2^(5+8):(S3xA6) index   3648645  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [3648645,3648645]
+    max 3^(1+6):2^(3+4):3^2:2 index  12812800  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [12812800,12812800]
+    max A10.2          index  17791488  F(M)<>1: false  ilow(M) in [45,
+45]  contrib [800616960,800616960]
+    max A10.2          index  17791488  F(M)<>1: false  ilow(M) in [45,
+45]  contrib [800616960,800616960]
+    max M12            index 679311360  F(M)<>1: false  ilow(M) in [132,
+220]  contrib [89669099520,149448499200]
+  => ilow(Fi22) in [3510, 3510]  EXACT = 3510
+     witness (upper): 2.U6(2) (index 3510)
+     min index of a maximal M with F(M)<>1 : 3510
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### Suz  (id=Suz, |G|=448345497600, simple=true)
+    max G2(4)          index      1782  F(M)<>1: false  ilow(M) in [1365,
+1365]  contrib [2432430,2432430]
+    max 3_2.U4(3).2_3' index     22880  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [22880,22880]
+    max U5(2)          index     32760  F(M)<>1: false  ilow(M) in [165,
+165]  contrib [5405400,5405400]
+    max 2^1+6.u4q2     index    135135  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [135135,135135]
+    max 3^5:M11        index    232960  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [232960,232960]
+    max J2.2           index    370656  F(M)<>1: false  ilow(M) in [280,
+280]  contrib [103783680,103783680]
+    max 2^4+6:3a6      index    405405  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [405405,405405]
+    max (a4xpsl(3,4)):2 index    926640  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [926640,926640]
+    max 2^2+8(a5xs3)   index   1216215  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1216215,1216215]
+    max M12.2          index   2358720  F(M)<>1: false  ilow(M) in [264,
+396]  contrib [622702080,934053120]
+    max 3^2+4:2(2^2xa4)2 index   3203200  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [3203200,3203200]
+    max (a6xa5).2      index  10378368  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [20756736,infinity]
+    max (3^2:4xa6).2   index  17297280  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [17297280,17297280]
+    max L3(3).2        index  39916800  F(M)<>1: false  ilow(M) in [26,
+26]  contrib [1037836800,1037836800]
+    max L3(3).2        index  39916800  F(M)<>1: false  ilow(M) in [26,
+26]  contrib [1037836800,1037836800]
+    max L2(25)         index  57480192  F(M)<>1: false  ilow(M) in [26,
+26]  contrib [1494484992,1494484992]
+    max A7             index 177914880  F(M)<>1: false  ilow(M) in [35,
+35]  contrib [6227020800,6227020800]
+  => ilow(Suz) in [22880, 22880]  EXACT = 22880
+     witness (upper): 3_2.U4(3).2_3' (index 22880)
+     min index of a maximal M with F(M)<>1 : 22880
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### U6(2)  (id=U6(2), |G|=9196830720, simple=true)
+    max U5(2)          index       672  F(M)<>1: false  ilow(M) in [165,
+165]  contrib [110880,110880]
+    max 2^(1+8)_+:U4(2) index       693  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [693,693]
+    max 2^9.L3(4)      index       891  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [891,891]
+    max U4(3).2_2      index      1408  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [2816,infinity]
+    max U6(2)M5        index      1408  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [2816,infinity]
+    max U6(2)M6        index      1408  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [2816,infinity]
+    max 2^(4+8):(S3xA5) index      6237  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [6237,6237]
+    max S6(2)          index      6336  F(M)<>1: false  ilow(M) in [63,
+63]  contrib [399168,399168]
+    max U6(2)M9        index      6336  F(M)<>1: false  ilow(M) in [
+12,infinity]  contrib [76032,infinity]
+    max U6(2)M10       index      6336  F(M)<>1: false  ilow(M) in [
+12,infinity]  contrib [76032,infinity]
+    max M22            index     20736  F(M)<>1: false  ilow(M) in [77,
+77]  contrib [1596672,1596672]
+    max U6(2)M12       index     20736  F(M)<>1: false  ilow(M) in [
+11,infinity]  contrib [228096,infinity]
+    max U6(2)M13       index     20736  F(M)<>1: false  ilow(M) in [
+11,infinity]  contrib [228096,infinity]
+    max S3xU4(2)       index     59136  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [59136,59136]
+    max 3^(1+4).2^(1+1+2+2).S3 index     98560  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [98560,98560]
+    max L3(4).2_1      index    228096  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [456192,infinity]
+  => ilow(U6(2)) in [693, 693]  EXACT = 693
+     witness (upper): 2^(1+8)_+:U4(2) (index 693)
+     min index of a maximal M with F(M)<>1 : 693
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### 2F4(2)'  (id=2F4(2)', |G|=17971200, simple=true)
+    max L3(3).2        index      1600  F(M)<>1: false  ilow(M) in [26,
+26]  contrib [41600,41600]
+    max 2F4(2)'M2      index      1600  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [3200,infinity]
+    max 2.2^8.f20      index      1755  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1755,1755]
+    max L2(25)         index      2304  F(M)<>1: false  ilow(M) in [26,
+26]  contrib [59904,59904]
+    max 2^2.2^8:s3     index      2925  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [2925,2925]
+    max A6.2^2         index     12480  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [24960,infinity]
+    max 2F4(2)'M7      index     12480  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [24960,infinity]
+    max 5^2:4A4        index     14976  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [14976,14976]
+  => ilow(2F4(2)') in [1755, 1755]  EXACT = 1755
+     witness (upper): 2.2^8.f20 (index 1755)
+     min index of a maximal M with F(M)<>1 : 1755
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### M11  (id=M11, |G|=7920, simple=true)
+    max A6.2_3         index        11  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [110,110]
+    max L2(11)         index        12  F(M)<>1: false  ilow(M) in [12,
+12]  contrib [144,144]
+    max 3^2:Q8.2       index        55  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [55,55]
+    max A5.2           index        66  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [330,330]
+    max 2.S4           index       165  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [165,165]
+  => ilow(M11) in [55, 55]  EXACT = 55
+     witness (upper): 3^2:Q8.2 (index 55)
+     min index of a maximal M with F(M)<>1 : 55
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### M23  (id=M23, |G|=10200960, simple=true)
+    max M22            index        23  F(M)<>1: false  ilow(M) in [77,
+77]  contrib [1771,1771]
+    max L3(4).2_2      index       253  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [506,infinity]
+    max 2^4:a7         index       253  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [253,253]
+    max A8             index       506  F(M)<>1: false  ilow(M) in [15,
+15]  contrib [7590,7590]
+    max M11            index      1288  F(M)<>1: false  ilow(M) in [55,
+55]  contrib [70840,70840]
+    max 2^4:(3xA5).2   index      1771  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1771,1771]
+    max 23:11          index     40320  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [40320,40320]
+  => ilow(M23) in [253, 253]  EXACT = 253
+     witness (upper): 2^4:a7 (index 253)
+     min index of a maximal M with F(M)<>1 : 253
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### U4(2)  (id=U4(2), |G|=25920, simple=true)
+    max P1/G1/L1/V1/ext2 index        27  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [27,27]
+    max A6.2_1         index        36  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [360,360]
+    max 3^(1+2)+:2A4   index        40  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [40,40]
+    max 3^3:S4`        index        40  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [40,40]
+    max b33141         index        45  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [45,45]
+  => ilow(U4(2)) in [27, 27]  EXACT = 27
+     witness (upper): P1/G1/L1/V1/ext2 (index 27)
+     min index of a maximal M with F(M)<>1 : 27
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### S4(3)  (id=U4(2), |G|=25920, simple=true)
+    max P1/G1/L1/V1/ext2 index        27  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [27,27]
+    max A6.2_1         index        36  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [360,360]
+    max 3^(1+2)+:2A4   index        40  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [40,40]
+    max 3^3:S4`        index        40  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [40,40]
+    max b33141         index        45  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [45,45]
+  => ilow(S4(3)) in [27, 27]  EXACT = 27
+     witness (upper): P1/G1/L1/V1/ext2 (index 27)
+     min index of a maximal M with F(M)<>1 : 27
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L3(2)  (id=L3(2), |G|=168, simple=true)
+    max Symm(4)        index         7  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [7,7]
+    max Symm(4)        index         7  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [7,7]
+    max 7:3            index         8  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [8,8]
+  => ilow(L3(2)) in [7, 7]  EXACT = 7
+     witness (upper): Symm(4) (index 7)
+     min index of a maximal M with F(M)<>1 : 7
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(11)  (id=L2(11), |G|=660, simple=true)
+    max A5             index        11  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [55,55]
+    max A5             index        11  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [55,55]
+    max 11:5           index        12  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [12,12]
+    max S3x2           index        55  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [55,55]
+  => ilow(L2(11)) in [12, 12]  EXACT = 12
+     witness (upper): 11:5 (index 12)
+     min index of a maximal M with F(M)<>1 : 12
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### A6  (id=A6, |G|=360, simple=true)
+    max A5             index         6  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [30,30]
+    max A6M2           index         6  F(M)<>1: false  ilow(M) in [
+5,infinity]  contrib [30,infinity]
+    max 3^2:4          index        10  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [10,10]
+    max s4             index        15  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [15,15]
+    max A6M5           index        15  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [15,15]
+  => ilow(A6) in [10, 10]  EXACT = 10
+     witness (upper): 3^2:4 (index 10)
+     min index of a maximal M with F(M)<>1 : 10
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### U3(3)  (id=U3(3), |G|=6048, simple=true)
+    max 3^(1+2):8      index        28  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [28,28]
+    max L3(2)          index        36  F(M)<>1: false  ilow(M) in [7,
+7]  contrib [252,252]
+    max 4.s4           index        63  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [63,63]
+    max 4^2:s3         index        63  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [63,63]
+  => ilow(U3(3)) in [28, 28]  EXACT = 28
+     witness (upper): 3^(1+2):8 (index 28)
+     min index of a maximal M with F(M)<>1 : 28
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(13)  (id=L2(13), |G|=1092, simple=true)
+    max 13:6           index        14  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [14,14]
+    max D14            index        78  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [78,78]
+    max S3x2           index        91  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [91,91]
+    max a4             index        91  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [91,91]
+  => ilow(L2(13)) in [14, 14]  EXACT = 14
+     witness (upper): 13:6 (index 14)
+     min index of a maximal M with F(M)<>1 : 14
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### M24  (id=M24, |G|=244823040, simple=true)
+    max M23            index        24  F(M)<>1: false  ilow(M) in [253,
+253]  contrib [6072,6072]
+    max M22.2          index       276  F(M)<>1: false  ilow(M) in [44,
+77]  contrib [12144,21252]
+    max 2^4:a8         index       759  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [759,759]
+    max M12.2          index      1288  F(M)<>1: false  ilow(M) in [264,
+396]  contrib [340032,510048]
+    max 2^6:3.s6       index      1771  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [1771,1771]
+    max L3(4).3.2_2    index      2024  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [4048,infinity]
+    max 2^6:(psl(3,2)xs3) index      3795  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [3795,3795]
+    max L2(23)         index     40320  F(M)<>1: false  ilow(M) in [24,
+24]  contrib [967680,967680]
+    max L3(2)          index   1457280  F(M)<>1: false  ilow(M) in [7,
+7]  contrib [10200960,10200960]
+  => ilow(M24) in [759, 759]  EXACT = 759
+     witness (upper): 2^4:a8 (index 759)
+     min index of a maximal M with F(M)<>1 : 759
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### A7  (id=A7, |G|=2520, simple=true)
+    max A6             index         7  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [70,70]
+    max L3(2)          index        15  F(M)<>1: false  ilow(M) in [7,
+7]  contrib [105,105]
+    max L3(2)          index        15  F(M)<>1: false  ilow(M) in [7,
+7]  contrib [105,105]
+    max A5.2           index        21  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [105,105]
+    max (A4x3):2       index        35  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [35,35]
+  => ilow(A7) in [35, 35]  EXACT = 35
+     witness (upper): (A4x3):2 (index 35)
+     min index of a maximal M with F(M)<>1 : 35
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### A8  (id=A8, |G|=20160, simple=true)
+    max A7             index         8  F(M)<>1: false  ilow(M) in [35,
+35]  contrib [280,280]
+    max 2^3:sl(3,2)    index        15  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [15,15]
+    max 2^3:sl(3,2)    index        15  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [15,15]
+    max A6.2_1         index        28  F(M)<>1: false  ilow(M) in [10,
+10]  contrib [280,280]
+    max 2^4:(S3xS3)    index        35  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [35,35]
+    max (A5x3):2       index        56  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [56,56]
+  => ilow(A8) in [15, 15]  EXACT = 15
+     witness (upper): 2^3:sl(3,2) (index 15)
+     min index of a maximal M with F(M)<>1 : 15
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### A5  (id=A5, |G|=60, simple=true)
+    max a4             index         5  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [5,5]
+    max D10            index         6  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [6,6]
+    max S3             index        10  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [10,10]
+  => ilow(A5) in [5, 5]  EXACT = 5
+     witness (upper): a4 (index 5)
+     min index of a maximal M with F(M)<>1 : 5
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(8)  (id=L2(8), |G|=504, simple=true)
+    max 2^3:7          index         9  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [9,9]
+    max D18            index        28  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [28,28]
+    max D14            index        36  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [36,36]
+  => ilow(L2(8)) in [9, 9]  EXACT = 9
+     witness (upper): 2^3:7 (index 9)
+     min index of a maximal M with F(M)<>1 : 9
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(16)  (id=L2(16), |G|=4080, simple=true)
+    NO MAXES STORED -> lower bound only: ilow >= 17
+
+### L2(25)  (id=L2(25), |G|=7800, simple=true)
+    max 5^2:12         index        26  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [26,26]
+    max A5.2           index        65  F(M)<>1: false  ilow(M) in [5,
+5]  contrib [325,325]
+    max L2(25)M3       index        65  F(M)<>1: false  ilow(M) in [
+2,infinity]  contrib [130,infinity]
+    max D26            index       300  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [300,300]
+    max D24            index       325  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [325,325]
+  => ilow(L2(25)) in [26, 26]  EXACT = 26
+     witness (upper): 5^2:12 (index 26)
+     min index of a maximal M with F(M)<>1 : 26
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(27)  (id=L2(27), |G|=9828, simple=true)
+    max 3^3:13         index        28  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [28,28]
+    max D28            index       351  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [351,351]
+    max D26            index       378  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [378,378]
+    max a4             index       819  F(M)<>1: true  ilow(M) in [1,
+1]  contrib [819,819]
+  => ilow(L2(27)) in [28, 28]  EXACT = 28
+     witness (upper): 3^3:13 (index 28)
+     min index of a maximal M with F(M)<>1 : 28
+     BOTTOMED OUT AT A MAXIMAL SUBGROUP: yes
+
+### L2(32)  (id=L2(32), |G|=32736, simple=true)
+    NO MAXES STORED -> lower bound only: ilow >= 31
+
+
+----------------------------------------------------------------------
+FALLBACK LOG (places where a genuine LOWER bound was substituted)
+----------------------------------------------------------------------
+  A6M2  |G|=60  reason: no Maxes stored  LB used: 5
+  L3(4)M4  |G|=360  reason: no Maxes stored  LB used: 6
+  L3(4)M5  |G|=360  reason: no Maxes stored  LB used: 6
+  L3(4)M7  |G|=168  reason: no Maxes stored  LB used: 7
+  L3(4)M8  |G|=168  reason: no Maxes stored  LB used: 7
+  L4(3).2_2  |G|=12130560  reason: no Maxes stored  LB used: 2
+  G2(3)M2  |G|=12096  reason: no Maxes stored  LB used: 2
+  G2(3)M6  |G|=11232  reason: no Maxes stored  LB used: 2
+  O7(3)M5  |G|=4245696  reason: no Maxes stored  LB used: 15
+  A6.2_1M3  |G|=120  reason: no Maxes stored  LB used: 2
+  O7(3)M8  |G|=1451520  reason: no Maxes stored  LB used: 12
+  A9M5  |G|=1512  reason: no Maxes stored  LB used: 2
+  O7(3)M11  |G|=362880  reason: no Maxes stored  LB used: 2
+  Fi22M3  |G|=4585351680  reason: no Maxes stored  LB used: 21
+  O8+(2).3.2  |G|=1045094400  reason: no Maxes stored  LB used: 2
+  2F4(2)'M2  |G|=11232  reason: no Maxes stored  LB used: 2
+  L2(25)M3  |G|=120  reason: no Maxes stored  LB used: 2
+  A6.2^2  |G|=1440  reason: no Maxes stored  LB used: 2
+  2F4(2)'M7  |G|=1440  reason: no Maxes stored  LB used: 2
+  (A5xA5):4  |G|=14400  reason: no Maxes stored  LB used: 2
+  s5wrs2  |G|=28800  reason: no Maxes stored  LB used: 2
+  M12M2  |G|=7920  reason: no Maxes stored  LB used: 11
+  M12M4  |G|=1440  reason: no Maxes stored  LB used: 2
+  A5xA5  |G|=3600  reason: no Maxes stored  LB used: 2
+  M12.2M3  |G|=1320  reason: no Maxes stored  LB used: 2
+  (a6xa5).2  |G|=43200  reason: no Maxes stored  LB used: 2
+  U4(3).2_2  |G|=6531840  reason: no Maxes stored  LB used: 2
+  U6(2)M5  |G|=6531840  reason: no Maxes stored  LB used: 2
+  U6(2)M6  |G|=6531840  reason: no Maxes stored  LB used: 2
+  U6(2)M9  |G|=1451520  reason: no Maxes stored  LB used: 12
+  U6(2)M10  |G|=1451520  reason: no Maxes stored  LB used: 12
+  U6(2)M12  |G|=443520  reason: no Maxes stored  LB used: 11
+  U6(2)M13  |G|=443520  reason: no Maxes stored  LB used: 11
+  L3(4).2_1  |G|=40320  reason: no Maxes stored  LB used: 2
+  L3(4).2_2  |G|=40320  reason: no Maxes stored  LB used: 2
+  L3(4).3.2_2  |G|=120960  reason: no Maxes stored  LB used: 2
+  L2(16)  |G|=4080  reason: no Maxes stored  LB used: 17
+  L2(32)  |G|=32736  reason: no Maxes stored  LB used: 31
+
+----------------------------------------------------------------------
+SUMMARY TABLE (method A)
+----------------------------------------------------------------------
+M22        : lo=       77  up=       77  EXACT
+L3(4)      : lo=       21  up=       21  EXACT
+Fi22       : lo=     3510  up=     3510  EXACT
+Suz        : lo=    22880  up=    22880  EXACT
+U6(2)      : lo=      693  up=      693  EXACT
+2F4(2)'    : lo=     1755  up=     1755  EXACT
+M11        : lo=       55  up=       55  EXACT
+M23        : lo=      253  up=      253  EXACT
+U4(2)      : lo=       27  up=       27  EXACT
+S4(3)      : lo=       27  up=       27  EXACT
+L3(2)      : lo=        7  up=        7  EXACT
+L2(11)     : lo=       12  up=       12  EXACT
+A6         : lo=       10  up=       10  EXACT
+U3(3)      : lo=       28  up=       28  EXACT
+L2(13)     : lo=       14  up=       14  EXACT
+M24        : lo=      759  up=      759  EXACT
+A7         : lo=       35  up=       35  EXACT
+A8         : lo=       15  up=       15  EXACT
+A5         : lo=        5  up=        5  EXACT
+L2(8)      : lo=        9  up=        9  EXACT
+L2(16)     : lo=       17  up= infinity  NOT PINNED
+L2(25)     : lo=       26  up=       26  EXACT
+L2(27)     : lo=       28  up=       28  EXACT
+L2(32)     : lo=       31  up= infinity  NOT PINNED
+
+======================================================================
+PART B : ilow recomputed from the ACTUAL GROUPS (MaximalSubgroupClassReps)
+======================================================================
+A5       |G|=          60  ilowB = 5
+L3(2)    |G|=         168  ilowB = 7
+A6       |G|=         360  ilowB = 10
+L2(11)   |G|=         660  ilowB = 12
+L2(13)   |G|=        1092  ilowB = 14
+A7       |G|=        2520  ilowB = 35
+U3(3)    |G|=        6048  ilowB = 28
+M11      |G|=        7920  ilowB = 55
+L2(8)    |G|=         504  ilowB = 9
+L2(16)   |G|=        4080  ilowB = 17
+L2(25)   |G|=        7800  ilowB = 26
+L2(27)   |G|=        9828  ilowB = 28
+L2(32)   |G|=       32736  ilowB = 33
+A8       |G|=       20160  ilowB = 15
+L3(4)    |G|=       20160  ilowB = 21
+U4(2)    |G|=       25920  ilowB = 27
+M12      |G|=       95040  ilowB = 220
+M22      |G|=      443520  ilowB = 77
+M23      |G|=    10200960  ilowB = 253
+M24      |G|=   244823040  ilowB = 759
+
+======================================================================
+PART C : FULL definition min over ALL H of [G:N_G(H)]*|H'| (subgroup lattice)
+         vs abelian-only min over A of [G:N_G(A)]
+======================================================================
+A5       |G|=      60  min over ALL H =      5  (witness |H|=
+4, H abelian=true)   min over ABELIAN A =      5   agree=true
+L3(2)    |G|=     168  min over ALL H =      7  (witness |H|=
+4, H abelian=true)   min over ABELIAN A =      7   agree=true
+A6       |G|=     360  min over ALL H =     10  (witness |H|=
+9, H abelian=true)   min over ABELIAN A =     10   agree=true
+L2(11)   |G|=     660  min over ALL H =     12  (witness |H|=
+11, H abelian=true)   min over ABELIAN A =     12   agree=true
+L2(13)   |G|=    1092  min over ALL H =     14  (witness |H|=
+13, H abelian=true)   min over ABELIAN A =     14   agree=true
+L2(8)    |G|=     504  min over ALL H =      9  (witness |H|=
+8, H abelian=true)   min over ABELIAN A =      9   agree=true
+L2(16)   |G|=    4080  min over ALL H =     17  (witness |H|=
+16, H abelian=true)   min over ABELIAN A =     17   agree=true
+A7       |G|=    2520  min over ALL H =     35  (witness |H|=
+3, H abelian=true)   min over ABELIAN A =     35   agree=true
+U3(3)    |G|=    6048  min over ALL H =     28  (witness |H|=
+3, H abelian=true)   min over ABELIAN A =     28   agree=true
+M11      |G|=    7920  min over ALL H =     55  (witness |H|=
+9, H abelian=true)   min over ABELIAN A =     55   agree=true
+L2(25)   |G|=    7800  min over ALL H =     26  (witness |H|=
+25, H abelian=true)   min over ABELIAN A =     26   agree=true
+L2(27)   |G|=    9828  min over ALL H =     28  (witness |H|=
+27, H abelian=true)   min over ABELIAN A =     28   agree=true
+U4(2)    |G|=   25920  min over ALL H =     27  (witness |H|=
+16, H abelian=true)   min over ABELIAN A =     27   agree=true
+
+======================================================================
+PART D : method A vs method B vs the PROJECT'S CLAIMED values
+======================================================================
+group           A.lo      A.up         B     claim  verdict
+M22               77        77        77        77  CONFIRMED (exact)
+L3(4)             21        21        21        21  CONFIRMED (exact)
+Fi22            3510      3510         -      3510  CONFIRMED (exact)
+Suz            22880     22880         -     22880  CONFIRMED (exact)
+U6(2)            693       693         -    (none)  no claim
+2F4(2)'         1755      1755         -      1755  CONFIRMED (exact)
+M11               55        55        55        55  CONFIRMED (exact)
+M23              253       253       253       253  CONFIRMED (exact)
+M24              759       759       759       759  CONFIRMED (exact)
+U3(3)             28        28        28        28  CONFIRMED (exact)
+U4(2)             27        27        27        27  CONFIRMED (exact)
+S4(3)             27        27         -        27  CONFIRMED (exact)
+A6                10        10        10        10  CONFIRMED (exact)
+A7                35        35        35        35  CONFIRMED (exact)
+A8                15        15        15        15  CONFIRMED (exact)
+L3(2)              7         7         7         7  CONFIRMED (exact)
+L2(11)            12        12        12    (none)  no claim
+L2(13)            14        14        14    (none)  no claim
+A5                 5         5         5    (none)  no claim
+L2(8)              9         9         9    (none)  no claim
+L2(16)            17  infinity        17    (none)  no claim
+L2(25)            26        26        26    (none)  no claim
+L2(27)            28        28        28    (none)  no claim
+L2(32)            31  infinity        33    (none)  no claim
+
+DONE

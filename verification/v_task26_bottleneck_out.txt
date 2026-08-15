@@ -1,0 +1,3 @@
+L4     m=2   2(q^3+q^2+q+1): q <= 5,000,000  =>  verified for all n <= 11,447,143   hits: NONE
+S4/L4  m=1    q^3+q^2+q+1  : q <= 5,000,000  =>  verified for all n <= 9,085,603   hits: NONE
+L3     m=2   2(q^2+q+1)    : q <= 50,000,000  =>  verified for all n <= 310,723   hits: NONE

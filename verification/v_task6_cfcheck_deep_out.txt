@@ -1,0 +1,20 @@
+
+================ D8 ================
+  search nodes: 4940462 (exhaustive)
+D4(order 8): species=20 |Aut(D)|=64 fibre-swap=62 level-mix=0 eta-setwise=64  ALL preserve eta(B)
+[primary] CF species = [0, 2, 4, 6, 8]   CF basis = [0, 2, 4, 6, 8]
+[primary] species-level: 0 of 64 automorphisms move the CF species set
+[primary] basis-level  : 0 of 64 automorphisms move the CF basis span
+[strict] CF species = [2, 4, 6, 8]   CF basis = [2, 4, 6, 8]
+[strict] species-level: 0 of 64 automorphisms move the CF species set
+[strict] basis-level  : 0 of 64 automorphisms move the CF basis span
+
+================ C2xC4 ================
+  search nodes: 4450725 (exhaustive)
+C2xC4: species=27 |Aut(D)|=64 fibre-swap=56 level-mix=0 eta-setwise=64  ALL preserve eta(B)
+[primary] CF species = [0, 2, 4, 6, 8, 10, 17, 18]   CF basis = [0, 2, 4, 6, 8, 10, 17, 18]
+[primary] species-level: 0 of 64 automorphisms move the CF species set
+[primary] basis-level  : 0 of 64 automorphisms move the CF basis span
+[strict] CF species = [2, 4, 6, 8, 10, 17, 18]   CF basis = [2, 4, 6, 8, 10, 17, 18]
+[strict] species-level: 0 of 64 automorphisms move the CF species set
+[strict] basis-level  : 0 of 64 automorphisms move the CF basis span

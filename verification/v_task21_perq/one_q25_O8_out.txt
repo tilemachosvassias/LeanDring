@@ -1,0 +1,74 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 397087 points.
+#I  Have 407348 points.
+#I  Have 407525 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 83371 points.
+#I  Have 154027 points.
+#I  Have 212782 points.
+#I  Have 260912 points.
+#I  Have 299389 points.
+#I  Have 329371 points.
+#I  Have 352017 points.
+#I  Have 368224 points.
+#I  Have 379209 points.
+#I  Have 385686 points.
+#I  Have 389101 points.
+#I  Have 390431 points.
+#I  Have 390625 points.
+#I  Have 76020 points.
+#I  Have 127811 points.
+#I  Have 160420 points.
+#I  Have 178306 points.
+#I  Have 185675 points.
+#I  Have 187187 points.
+#I  Have 397087 points.
+#I  Have 407348 points.
+#I  Have 407525 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 407526 points.
+#I  Have 83274 points.
+#I  Have 153884 points.
+#I  Have 212701 points.
+#I  Have 260954 points.
+#I  Have 299410 points.
+#I  Have 329378 points.
+#I  Have 351947 points.
+#I  Have 368217 points.
+#I  Have 379152 points.
+#I  Have 385777 points.
+#I  Have 389178 points.
+#I  Have 390434 points.
+#I  Have 390625 points.
+#I  Have 76331 points.
+#I  Have 128371 points.
+#I  Have 160914 points.
+#I  Have 178529 points.
+#I  Have 185696 points.
+#I  Have 187177 points.
+RESULT O q=25 idx=8 sizeM=929770569000000000000 index=
+2 zInD=false isG2order=false rounds=2

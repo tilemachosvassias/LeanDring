@@ -1,0 +1,2 @@
+S4/L4, q <= 6000000: max iota = 215999280000803999700  => verified for all n <= 10,902,711
+solutions: NONE

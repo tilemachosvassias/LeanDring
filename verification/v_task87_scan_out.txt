@@ -1,0 +1,103 @@
+============================================================================
+v_task87_scan.py -- EXACT equal-characteristic multi-factor census
+  targets  : L_d(q), U_d(q),  33 <= d <= 60
+  fields   : every prime power q <= 100  (35 values, f <= 6)
+  socle    : every multiset of Lie-type simple groups in char p,
+             every rank, every f_i >= 1 (INCLUDING f_i < f)
+  tests    : (D1) order divisibility  (D2) c | prod Out^l * l!
+             (D3) exact orbit floor   (D4) at least two factors
+============================================================================
+  L_33  : 35 fields swept, atoms so far 296, multi-factor HITS 0
+  U_33  : 35 fields swept, atoms so far 331, multi-factor HITS 0
+  L_34  : 35 fields swept, atoms so far 661, multi-factor HITS 0
+  U_34  : 35 fields swept, atoms so far 697, multi-factor HITS 0
+  L_35  : 35 fields swept, atoms so far 856, multi-factor HITS 0
+  U_35  : 35 fields swept, atoms so far 891, multi-factor HITS 0
+  L_36  : 35 fields swept, atoms so far 1383, multi-factor HITS 0
+  U_36  : 35 fields swept, atoms so far 1419, multi-factor HITS 0
+  L_37  : 35 fields swept, atoms so far 1746, multi-factor HITS 0
+  U_37  : 35 fields swept, atoms so far 1782, multi-factor HITS 0
+  L_38  : 35 fields swept, atoms so far 2144, multi-factor HITS 0
+  U_38  : 35 fields swept, atoms so far 2179, multi-factor HITS 0
+  L_39  : 35 fields swept, atoms so far 2431, multi-factor HITS 0
+  U_39  : 35 fields swept, atoms so far 2466, multi-factor HITS 0
+  L_40  : 35 fields swept, atoms so far 2964, multi-factor HITS 0
+  U_40  : 35 fields swept, atoms so far 3000, multi-factor HITS 0
+  L_41  : 35 fields swept, atoms so far 3348, multi-factor HITS 0
+  U_41  : 35 fields swept, atoms so far 3384, multi-factor HITS 0
+  L_42  : 35 fields swept, atoms so far 3834, multi-factor HITS 0
+  U_42  : 35 fields swept, atoms so far 3869, multi-factor HITS 0
+  L_43  : 35 fields swept, atoms so far 4133, multi-factor HITS 0
+  U_43  : 35 fields swept, atoms so far 4169, multi-factor HITS 0
+  L_44  : 35 fields swept, atoms so far 4566, multi-factor HITS 0
+  U_44  : 35 fields swept, atoms so far 4601, multi-factor HITS 0
+  L_45  : 35 fields swept, atoms so far 4912, multi-factor HITS 0
+  U_45  : 35 fields swept, atoms so far 4947, multi-factor HITS 0
+  L_46  : 35 fields swept, atoms so far 5289, multi-factor HITS 0
+  U_46  : 35 fields swept, atoms so far 5326, multi-factor HITS 0
+  L_47  : 35 fields swept, atoms so far 5553, multi-factor HITS 0
+  U_47  : 35 fields swept, atoms so far 5588, multi-factor HITS 0
+  L_48  : 35 fields swept, atoms so far 6232, multi-factor HITS 0
+  U_48  : 35 fields swept, atoms so far 6267, multi-factor HITS 0
+  L_49  : 35 fields swept, atoms so far 6745, multi-factor HITS 0
+  U_49  : 35 fields swept, atoms so far 6781, multi-factor HITS 0
+  L_50  : 35 fields swept, atoms so far 7304, multi-factor HITS 0
+  U_50  : 35 fields swept, atoms so far 7339, multi-factor HITS 0
+  L_51  : 35 fields swept, atoms so far 7653, multi-factor HITS 0
+  U_51  : 35 fields swept, atoms so far 7689, multi-factor HITS 0
+  L_52  : 35 fields swept, atoms so far 8116, multi-factor HITS 0
+  U_52  : 35 fields swept, atoms so far 8152, multi-factor HITS 0
+  L_53  : 35 fields swept, atoms so far 8436, multi-factor HITS 0
+  U_53  : 35 fields swept, atoms so far 8471, multi-factor HITS 0
+  L_54  : 35 fields swept, atoms so far 8888, multi-factor HITS 0
+  U_54  : 35 fields swept, atoms so far 8924, multi-factor HITS 0
+  L_55  : 35 fields swept, atoms so far 9218, multi-factor HITS 0
+  U_55  : 35 fields swept, atoms so far 9254, multi-factor HITS 0
+  L_56  : 35 fields swept, atoms so far 9776, multi-factor HITS 0
+  U_56  : 35 fields swept, atoms so far 9812, multi-factor HITS 0
+  L_57  : 35 fields swept, atoms so far 10191, multi-factor HITS 0
+  U_57  : 35 fields swept, atoms so far 10226, multi-factor HITS 0
+  L_58  : 35 fields swept, atoms so far 10633, multi-factor HITS 0
+  U_58  : 35 fields swept, atoms so far 10669, multi-factor HITS 0
+  L_59  : 35 fields swept, atoms so far 10907, multi-factor HITS 0
+  U_59  : 35 fields swept, atoms so far 10942, multi-factor HITS 0
+  L_60  : 35 fields swept, atoms so far 11577, multi-factor HITS 0
+  U_60  : 35 fields swept, atoms so far 11613, multi-factor HITS 0
+
+  total surviving atoms (single factors whose order divides |S|,
+  floor-compatible) over all targets and fields : 11613
+  total DFS nodes                               : 14088
+  positive-control failures                     : NONE
+
+  MULTI-FACTOR CONFIGURATIONS SURVIVING (D1)-(D4) : NONE
+============================================================================
+============================================================================
+PROBE -- the DFS descends: atom pairs jointly dividing |S|
+============================================================================
+  L_34(16) : E7(64)         x O10+(65536)      c | Out-product ? no (killed by (D2))
+  L_34(16) : E6(256)        x F4(1024)         c | Out-product ? no (killed by (D2))
+  L_40(4) : S16(32)        x F4(64)           c | Out-product ? no (killed by (D2))
+  L_40(4) : E7(16)         x F4(32)           c | Out-product ? no (killed by (D2))
+  L_40(4) : E8(4)          x E7(8)            c | Out-product ? no (killed by (D2))
+  L_40(4) : E6(64)         x O10+(1024)       c | Out-product ? no (killed by (D2))
+  L_40(4) : O10+(1024)     x E7(8)            c | Out-product ? no (killed by (D2))
+  L_40(4) : O10+(1024)     x F4(64)           c | Out-product ? no (killed by (D2))
+  L_40(4) : S10(256)       x E7(8)            c | Out-product ? no (killed by (D2))
+  L_40(4) : S10(256)       x F4(32)           c | Out-product ? no (killed by (D2))
+  L_40(4) : F4(64)         x F4(32)           c | Out-product ? no (killed by (D2))
+  L_48(2) : O16+(8)        x U4(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : E7(4)          x G2(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : E8(2)          x U4(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : E8(2)          x G2(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : E6(8)          x O10+(32)         c | Out-product ? no (killed by (D2))
+  L_48(2) : E6(8)          x U4(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : E6(8)          x G2(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : O10+(32)       x S8(64)           c | Out-product ? no (killed by (D2))
+  L_48(2) : O10+(32)       x F4(16)           c | Out-product ? no (killed by (D2))
+  L_48(2) : O10+(32)       x F4(8)            c | Out-product ? no (killed by (D2))
+  L_48(2) : O10+(32)       x U4(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : O10+(32)       x G2(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : F4(8)          x U4(256)          c | Out-product ? no (killed by (D2))
+  L_48(2) : F4(8)          x G2(256)          c | Out-product ? no (killed by (D2))
+  pairs found : 25   (all killed by (D2) and/or (D3))
+============================================================================

@@ -1,0 +1,106 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Have 107042 points.
+#I  Have 191264 points.
+#I  Have 255876 points.
+#I  Have 305365 points.
+#I  Have 341038 points.
+#I  Have 366035 points.
+#I  Have 383311 points.
+#I  Have 394178 points.
+#I  Have 400796 points.
+#I  Have 404196 points.
+#I  Have 405726 points.
+#I  Have 406194 points.
+#I  Have 406274 points.
+#I  Have 83231 points.
+#I  Have 153799 points.
+#I  Have 212701 points.
+#I  Have 260890 points.
+#I  Have 299366 points.
+#I  Have 329461 points.
+#I  Have 352058 points.
+#I  Have 368196 points.
+#I  Have 379014 points.
+#I  Have 385677 points.
+#I  Have 389102 points.
+#I  Have 390442 points.
+#I  Have 390625 points.
+#I  Have 76231 points.
+#I  Have 128416 points.
+#I  Have 161126 points.
+#I  Have 178925 points.
+#I  Have 186148 points.
+#I  Have 187790 points.
+#I  Have 107358 points in new orbit.
+#I  Have 191707 points in new orbit.
+#I  Have 256879 points in new orbit.
+#I  Have 305383 points in new orbit.
+#I  Have 341391 points in new orbit.
+#I  Have 366840 points in new orbit.
+#I  Have 383844 points in new orbit.
+#I  Have 394466 points in new orbit.
+#I  Have 400963 points in new orbit.
+#I  Have 404279 points in new orbit.
+#I  Have 405743 points in new orbit.
+#I  Have 406194 points in new orbit.
+#I  Have 406273 points in new orbit.
+#I  Have 83825 points in new orbit.
+#I  Have 154617 points in new orbit.
+#I  Have 213137 points in new orbit.
+#I  Have 261017 points in new orbit.
+#I  Have 299963 points in new orbit.
+#I  Have 329559 points in new orbit.
+#I  Have 352153 points in new orbit.
+#I  Have 368291 points in new orbit.
+#I  Have 379181 points in new orbit.
+#I  Have 385810 points in new orbit.
+#I  Have 389118 points in new orbit.
+#I  Have 390412 points in new orbit.
+#I  Have 390625 points in new orbit.
+#I  Have 77257 points in new orbit.
+#I  Have 129134 points in new orbit.
+#I  Have 161412 points in new orbit.
+#I  Have 179057 points in new orbit.
+#I  Have 186277 points in new orbit.
+#I  Have 187783 points in new orbit.
+#I  Have 107042 points.
+#I  Have 191264 points.
+#I  Have 255876 points.
+#I  Have 305365 points.
+#I  Have 341038 points.
+#I  Have 366035 points.
+#I  Have 383311 points.
+#I  Have 394178 points.
+#I  Have 400796 points.
+#I  Have 404196 points.
+#I  Have 405726 points.
+#I  Have 406194 points.
+#I  Have 406274 points.
+#I  Have 83345 points.
+#I  Have 153763 points.
+#I  Have 212816 points.
+#I  Have 261090 points.
+#I  Have 299465 points.
+#I  Have 329498 points.
+#I  Have 352173 points.
+#I  Have 368329 points.
+#I  Have 379235 points.
+#I  Have 385767 points.
+#I  Have 389199 points.
+#I  Have 390435 points.
+#I  Have 390625 points.
+#I  Have 75961 points.
+#I  Have 128326 points.
+#I  Have 161119 points.
+#I  Have 178710 points.
+#I  Have 186082 points.
+#I  Have 187788 points.
+RESULT O q=25 idx=9 sizeM=929889587250000000000 index=
+2 zInD=false isG2order=false rounds=2

@@ -1,0 +1,65 @@
+
+=== PGL(2,7) (order 336) ===
+  RepresentativesPerfectSubgroups: 2 classes, time(ms)=3
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=false
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+  --> own-factor p.s.n. count (nontrivial): 0
+
+=== PGL(2,11) (order 1320) ===
+  RepresentativesPerfectSubgroups: 3 classes, time(ms)=44
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=true
+    order=660  StructureDescription=PSL(2,11)  selfnorm_in_own_factor=false
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+  --> own-factor p.s.n. count (nontrivial): 1
+
+=== S5 (order 120) ===
+  RepresentativesPerfectSubgroups: 2 classes, time(ms)=1
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+  --> own-factor p.s.n. count (nontrivial): 0
+
+=== S7 (order 5040) ===
+  RepresentativesPerfectSubgroups: 6 classes, time(ms)=6
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=360  StructureDescription=A6  selfnorm_in_own_factor=false
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=true
+    order=2520  StructureDescription=A7  selfnorm_in_own_factor=false
+  --> own-factor p.s.n. count (nontrivial): 1
+
+=== A8 (order 20160) ===
+  RepresentativesPerfectSubgroups: 11 classes, time(ms)=62
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=360  StructureDescription=A6  selfnorm_in_own_factor=false
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=true
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=true
+    order=2520  StructureDescription=A7  selfnorm_in_own_factor=true
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=true
+    order=
+1344
+   StructureDescription=(C2 x C2 x C2) : PSL(3,2)  selfnorm_in_own_factor=true
+    order=
+1344
+   StructureDescription=(C2 x C2 x C2) : PSL(3,2)  selfnorm_in_own_factor=true
+    order=20160  StructureDescription=A8  selfnorm_in_own_factor=true
+  --> own-factor p.s.n. count (nontrivial): 7
+
+=== S8 (order 40320) ===
+  RepresentativesPerfectSubgroups: 9 classes, time(ms)=21
+    order=1  StructureDescription=1  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=60  StructureDescription=A5  selfnorm_in_own_factor=false
+    order=360  StructureDescription=A6  selfnorm_in_own_factor=false
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=true
+    order=2520  StructureDescription=A7  selfnorm_in_own_factor=false
+    order=168  StructureDescription=PSL(3,2)  selfnorm_in_own_factor=false
+    order=
+1344
+   StructureDescription=(C2 x C2 x C2) : PSL(3,2)  selfnorm_in_own_factor=true
+    order=20160  StructureDescription=A8  selfnorm_in_own_factor=false
+  --> own-factor p.s.n. count (nontrivial): 2
+
+=== DONE probe2 ===

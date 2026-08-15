@@ -1,0 +1,286 @@
+=== order-formula self-check ===
+  order-formula self-check: PASS   (37 known orders tested)
+
+=== (A) order-uniqueness of every sporadic order among ALL simple orders ===
+  M11      |S| = 7920                                     UNIQUE ['M11']
+  M12      |S| = 95040                                    UNIQUE ['M12']
+  J1       |S| = 175560                                   UNIQUE ['J1']
+  M22      |S| = 443520                                   UNIQUE ['M22']
+  J2       |S| = 604800                                   UNIQUE ['J2']
+  M23      |S| = 10200960                                 UNIQUE ['M23']
+  2F4(2)'  |S| = 17971200                                 UNIQUE ["2F4(2)'"]
+  HS       |S| = 44352000                                 UNIQUE ['HS']
+  J3       |S| = 50232960                                 UNIQUE ['J3']
+  M24      |S| = 244823040                                UNIQUE ['M24']
+  McL      |S| = 898128000                                UNIQUE ['McL']
+  He       |S| = 4030387200                               UNIQUE ['He']
+  Ru       |S| = 145926144000                             UNIQUE ['Ru']
+  Suz      |S| = 448345497600                             UNIQUE ['Suz']
+  ON       |S| = 460815505920                             UNIQUE ['ON']
+  Co3      |S| = 495766656000                             UNIQUE ['Co3']
+  Co2      |S| = 42305421312000                           UNIQUE ['Co2']
+  Fi22     |S| = 64561751654400                           UNIQUE ['Fi22']
+  HN       |S| = 273030912000000                          UNIQUE ['HN']
+  Ly       |S| = 51765179004000000                        UNIQUE ['Ly']
+  Th       |S| = 90745943887872000                        UNIQUE ['Th']
+  Fi23     |S| = 4089470473293004800                      UNIQUE ['Fi23']
+  Co1      |S| = 4157776806543360000                      UNIQUE ['Co1']
+  J4       |S| = 86775571046077562880                     UNIQUE ['J4']
+  Fi24'    |S| = 1255205709190661721292800                UNIQUE ["Fi24'"]
+  B        |S| = 4154781481226426191177580544000000       UNIQUE ['B']
+  M        |S| = 808017424794512875886459904961710757005754368000000000 UNIQUE ['M']
+
+=== (B) full coincidence hunt: all simple orders <= 10^12 ===
+  groups enumerated: 1650 ; distinct orders: 1648
+  order coincidences between DISTINCT names:
+     20160            ['A8', 'L3(4)']
+     4585351680       ['O7(3)', 'S6(3)']
+
+=== (C) B_n(q) vs C_n(q) for q odd, n>=3 : orders equal? ===
+  |B_n(q)| = |C_n(q)| identically by the shared formula q^{n^2} prod (q^{2i}-1)/d  -- verified structurally, 0 anomalies
+  (these are the CFSG order theorem's infinite family; O_{2n+1}(q) and
+   S_{2n}(q) are printed as separate names above, hence the pairs in (B).)
+
+=== simple groups of order coprime to 3, order <= 1e+24 ===
+  q-cap used for Lie families: 200000
+  groups found with 3 nmid |S| : 7
+     Sz(8)          29120
+     Sz(32)         32537600
+     Sz(128)        34093383680
+     Sz(512)        35115786567680
+     Sz(2048)       36011213418659840
+     Sz(8192)       36888985097480437760
+     Sz(32768)      37777778976635853209600
+  cross-check |Sz(q)| mod 3 for q=2^f, f odd <= 41:
+     divisible-by-3 exponents: NONE
+
+=== Phase-1 census, independent implementation ===
+--- M11   |S| = 7920   iota(S) = 55
+    simple divisors           : 4
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('L2(11)', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- M23   |S| = 10200960   iota(S) = 253
+    simple divisors           : 12
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('A7', 2), ('L2(23)', 1), ('M11', 1), ('A8', 1), ('L3(4)', 1), ('M22', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- J1   |S| = 175560   iota(S) = 1045
+    simple divisors           : 4
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- HS   |S| = 44352000   iota(S) = 3850
+    simple divisors           : 12
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('M22', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- Ly   |S| = 51765179004000000   iota(S) = 9606125
+    simple divisors           : 26
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- 2F4(2)'   |S| = 17971200   iota(S) = 1755
+    simple divisors           : 6
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- M22   |S| = 443520   iota(S) = 77
+    simple divisors           : 10
+    non-simple census solutions: 1
+    generous-prefilter survivors (proper factors): [('A6', 2), ('L2(8)', 2), ('L2(11)', 2), ('A7', 1), ('M11', 1), ('A8', 1), ('L3(4)', 1)]
+        socle L3(2) x L2(11)  c=4
+    after the generous floor  : 1 killed, 0 ALIVE
+
+--- M24   |S| = 244823040   iota(S) = 759
+    simple divisors           : 15
+    non-simple census solutions: 3
+    generous-prefilter survivors (proper factors): [('M11', 2), ('M12', 1), ('M22', 1), ('M23', 1)]
+        socle L2(23) x L3(4)  c=2
+        socle L2(23) x A8  c=2
+        socle A5 x L3(2) x L2(23)  c=4
+    after the generous floor  : 3 killed, 0 ALIVE
+
+--- J2   |S| = 604800   iota(S) = 280
+    simple divisors           : 9
+    non-simple census solutions: 2
+    generous-prefilter survivors (proper factors): [('U3(3)', 1), ('A8', 1), ('L3(4)', 1)]
+        socle A5 x A7  c=4
+        socle A5^2 x L3(2)  c=1
+    after the generous floor  : 2 killed, 0 ALIVE
+
+--- Fi22   |S| = 64561751654400   iota(S) = 3510
+    simple divisors           : 40
+    non-simple census solutions: 11
+    generous-prefilter survivors (proper factors): [('M12', 2), ('A9', 2), ('L2(64)', 1), ('M22', 1), ('J2', 1), ('S6(2)', 1), ('A10', 1), ('U4(3)', 1), ('G2(3)', 1), ('L4(3)', 1), ('U5(2)', 1), ("2F4(2)'", 1), ('A11', 1), ('L3(9)', 1), ('O8+(2)', 1), ('A12', 1), ('G2(4)', 1), ('A13', 1), ('S6(3)', 1), ('O7(3)', 1), ('U6(2)', 1), ('Suz', 1)]
+        socle L3(3) x U4(2) x M22  c=1
+        socle L3(3) x L3(4) x M12  c=6
+        socle L3(3) x M11 x S6(2)  c=1
+        socle A6 x L2(11) x L3(3) x U3(3)  c=8
+        socle A6 x L2(8) x L3(3) x M11  c=8
+        socle L3(2) x M11 x L4(3)  c=8
+        socle L3(2) x L2(11) x L3(3) x U4(2)  c=4
+        socle L3(2) x A6 x L3(3) x M12  c=2
+        socle A5 x L2(27) x U5(2)  c=8
+        socle A5 x L3(3) x U3(3) x M11  c=4
+        socle A5 x L2(8) x L3(3) x M12  c=4
+    after the generous floor  : 11 killed, 0 ALIVE
+
+--- Fi23   |S| = 4089470473293004800   iota(S) = 31671
+    simple divisors           : 52
+    non-simple census solutions: 3
+    generous-prefilter survivors (proper factors): [('S6(2)', 3), ('U4(3)', 2), ('G2(3)', 2), ('L4(3)', 1), ('M23', 1), ('U5(2)', 1), ("2F4(2)'", 1), ('A11', 1), ('L3(9)', 1), ('O8+(2)', 1), ('O8-(2)', 1), ('A12', 1), ('M24', 1), ('G2(4)', 1), ('L4(4)', 1), ('L3(16)', 1), ('A13', 1), ('S6(3)', 1), ('O7(3)', 1), ('U6(2)', 1), ('S8(2)', 1), ('Suz', 1), ('O8+(3)', 1), ('Fi22', 1)]
+        socle A6 x L2(17) x L2(23) x L2(27) x U4(2)  c=3
+        socle A5 x L2(17) x L2(23) x O7(3)  c=1
+        socle A5 x L2(17) x L2(23) x S6(3)  c=1
+    after the generous floor  : 3 killed, 0 ALIVE
+
+--- Co3   |S| = 495766656000   iota(S) = 128800
+    simple divisors           : 28
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('A12', 1), ('M24', 1), ('McL', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- McL   |S| = 898128000   iota(S) = 15400
+    simple divisors           : 20
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('U4(3)', 1), ('A11', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- Co2   |S| = 42305421312000   iota(S) = 46575
+    simple divisors           : 30
+    non-simple census solutions: 7
+    generous-prefilter survivors (proper factors): [('M23', 1), ('U5(2)', 1), ('A11', 1), ('HS', 1), ('O8+(2)', 1), ('A12', 1), ('M24', 1), ('McL', 1), ('U6(2)', 1)]
+        socle A6^2 x M23  c=32
+        socle A5 x A6 x M24  c=8
+        socle A5 x A6 x L2(23) x L3(4)  c=16
+        socle A5 x A6 x L2(23) x A8  c=16
+        socle A5^2 x L2(23) x L3(4)  c=96
+        socle A5^2 x L3(2) x A6 x L2(23)  c=32
+        socle A5^3 x L3(2) x L2(23)  c=192
+    after the generous floor  : 7 killed, 0 ALIVE
+
+=== Phase-1 census, independent implementation ===
+--- M12   |S| = 95040   iota(S) = 220
+    simple divisors           : 5
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('M11', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- J3   |S| = 50232960   iota(S) = 17442
+    simple divisors           : 7
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- He   |S| = 4030387200   iota(S) = 8330
+    simple divisors           : 14
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('S4(4)', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- Ru   |S| = 145926144000   iota(S) = 188500
+    simple divisors           : 21
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): [('G2(4)', 1)]
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- ON   |S| = 460815505920   iota(S) = 2857239
+    simple divisors           : 22
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- J4   |S| = 86775571046077562880   iota(S) = 173067389
+    simple divisors           : 22
+    non-simple census solutions: 0
+    generous-prefilter survivors (proper factors): NONE
+    after the generous floor  : 0 killed, 0 ALIVE
+
+--- Suz   |S| = 448345497600   iota(S) = 22880
+    simple divisors           : 36
+    non-simple census solutions: 8
+    generous-prefilter survivors (proper factors): [('G2(3)', 1), ('L4(3)', 1), ('U5(2)', 1), ("2F4(2)'", 1), ('A11', 1), ('L3(9)', 1), ('O8+(2)', 1), ('A12', 1), ('G2(4)', 1), ('A13', 1)]
+        socle L3(3) x A11  c=4
+        socle A7 x L3(3) x M11  c=4
+        socle L2(13) x M11 x U4(2)  c=2
+        socle L2(11) x L3(3) x L3(4)  c=6
+        socle L3(2) x A6 x L2(11) x L3(3)  c=2
+        socle A5 x L2(27) x M12  c=8
+        socle A5 x L2(8) x L2(11) x L3(3)  c=4
+        socle A5 x L3(2) x L3(3) x M11  c=1
+    after the generous floor  : 8 killed, 0 ALIVE
+
+--- Co1   |S| = 4157776806543360000   iota(S) = 1545600
+    simple divisors           : 56
+    non-simple census solutions: 119
+    generous-prefilter survivors (proper factors): [('McL', 2), ('S4(8)', 2), ('A13', 1), ('S6(3)', 1), ('O7(3)', 1), ('U6(2)', 1), ('A14', 1), ('Suz', 1), ('Co3', 1), ('A15', 1), ('A16', 1), ('Co2', 1), ('Fi22', 1)]
+        socle U3(4) x U4(3) x M23  c=2
+        socle L2(25) x U4(3) x M23  c=16
+        socle L2(23) x L3(4) x U3(4) x A9  c=3
+        socle L2(23) x L2(25) x L3(4) x S6(2)  c=3
+        socle L2(23) x L2(25) x L3(4) x A9  c=24
+        socle U3(3) x L2(23) x U3(4) x A10  c=1
+        socle U3(3) x L2(23) x L2(25) x A10  c=8
+        socle U3(3)^2 x L2(23) x S4(5)  c=4
+        socle L3(3) x L2(23) x L3(4) x U3(5)  c=48
+        socle L3(3) x L2(23) x A8 x U3(5)  c=48
+        socle L2(8) x L2(25) x U4(2) x M23  c=4
+        socle L2(8) x L2(23) x U3(4) x A10  c=12
+        ... (107 more)
+    after the generous floor  : 119 killed, 0 ALIVE
+
+--- HN   |S| = 273030912000000   iota(S) = 1539000
+    simple divisors           : 29
+    non-simple census solutions: 2
+    generous-prefilter survivors (proper factors): NONE
+        socle A5 x L2(11) x L2(19) x U3(5)  c=16
+        socle A5^5 x J1  c=2
+    after the generous floor  : 2 killed, 0 ALIVE
+
+--- Th   |S| = 90745943887872000   iota(S) = 283599225
+    simple divisors           : 41
+    non-simple census solutions: 6
+    generous-prefilter survivors (proper factors): NONE
+        socle L3(3) x L2(125) x U3(8)  c=3
+        socle L2(19) x L2(27) x L2(31) x A9  c=1
+        socle L2(19) x L2(27) x L2(31) x L3(4)  c=9
+        socle A6 x L2(8) x L2(19) x L2(27) x L2(31)  c=1
+        socle L3(2) x A6 x L2(19) x L2(27) x L2(31)  c=3
+        socle A5 x L2(8) x L2(19) x L2(27) x L2(31)  c=6
+    after the generous floor  : 6 killed, 0 ALIVE
+
+--- Fi24'   |S| = 1255205709190661721292800   iota(S) = 4860485028
+    simple divisors           : 60
+    non-simple census solutions: 2
+    generous-prefilter survivors (proper factors): [('Fi23', 1)]
+        socle L2(8) x L2(17) x L2(23) x L2(29) x O7(3)  c=3
+        socle L2(8) x L2(17) x L2(23) x L2(29) x S6(3)  c=3
+    after the generous floor  : 2 killed, 0 ALIVE
+
+=== Phase-1 census, independent implementation ===
+--- B   |S| = 4154781481226426191177580544000000   iota(S) = 13571955000
+    simple divisors           : 100
+    non-simple census solutions: 1391
+    generous-prefilter survivors (proper factors): [('A18', 1), ('F4(2)', 1), ('S10(2)', 1), ('A19', 1), ('Th', 1), ('A20', 1), ('Fi23', 1), ('Co1', 1), ('O12+(2)', 1), ('O12-(2)', 1), ('L6(4)', 1), ('2E6(2)', 1), ('S12(2)', 1)]
+        socle L2(47) x S4(5) x U3(8) x L5(4)  c=12
+        socle L2(47) x L3(5) x U3(8) x U5(2) x L3(16)  c=2
+        socle L2(47) x M12 x L3(5) x U3(8) x L3(16)  c=288
+        socle L2(32) x L2(47) x S4(5) x U3(8) x S8(2)  c=2
+        socle L2(32) x L2(47) x S4(5) x U3(8) x L4(4)  c=96
+        socle L2(32) x L2(47) x A10 x U3(8) x U4(4)  c=240
+        socle L2(32) x L2(47) x J2 x U3(8) x U4(4)  c=720
+        socle L2(32) x L2(47) x U3(4) x S4(4) x A10 x U3(8)  c=4
+        socle L2(32) x L2(47) x U3(4) x S4(4) x S6(2) x U3(8)  c=5
+        socle L2(32) x L2(47) x U3(4) x J2 x S4(4) x U3(8)  c=12
+        socle L2(32) x L2(47) x U3(4) x A9 x S4(4) x U3(8)  c=40
+        socle Sz(8) x L2(47) x L3(5) x J3 x U6(2)  c=16
+        ... (1379 more)
+    after the generous floor  : 1391 killed, 0 ALIVE
+

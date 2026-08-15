@@ -1,0 +1,45 @@
+==========================================================================
+C_6:  m^3 - m = 6(q^3+q^2+q+1)
+  smooth: True   genus: 1
+  rational points at infinity (m^3 = c q^3): []   -- none, as advertised
+  minimal model : Elliptic Curve defined by y^2 = x^3 + 72*x - 5148 over Rational Field
+  conductor     : 3983580
+  torsion       : 1
+  rank          : 3 (proved)
+  generators    : [(16 : 10 : 1), (21 : 75 : 1), (24 : 102 : 1)]
+  44 collinear rational triples, all giving ONE class:
+  kappa = [D - 3O] = (82369/4 : -23639905/8 : 1)
+  kappa in 3E(Q) : []  => rational inflection exists: False
+  ==> integrality is relative to a degree-3 divisor with no rational
+      point in its support; integral_points() does NOT apply.
+  known integral points (all have q <= 1, none a prime power):
+      (q, m) = (-8, -14)   ->  n = -13
+      (q, m) = (-3, -5)   ->  n = -4
+      (q, m) = (-1, -1)   ->  n = 0
+      (q, m) = (-1, 0)   ->  n = 1
+      (q, m) = (-1, 1)   ->  n = 2
+      (q, m) = (0, 2)   ->  n = 3
+      (q, m) = (1, 3)   ->  n = 4
+==========================================================================
+C_12:  m^3 - m = 12(q^3+q^2+q+1)
+  smooth: True   genus: 1
+  rational points at infinity (m^3 = c q^3): []   -- none, as advertised
+  minimal model : Elliptic Curve defined by y^2 + y = x^3 + 18*x - 1294 over Rational Field
+  conductor     : 80383347
+  torsion       : 1
+  rank          : 3 (proved)
+  generators    : [(12 : 25 : 1), (81/4 : 683/8 : 1), (36 : 214 : 1)]
+  14 collinear rational triples, all giving ONE class:
+  kappa = [D - 3O] = (1324801/16 : -1524845985/64 : 1)
+  kappa in 3E(Q) : []  => rational inflection exists: False
+  ==> integrality is relative to a degree-3 divisor with no rational
+      point in its support; integral_points() does NOT apply.
+  known integral points (all have q <= 1, none a prime power):
+      (q, m) = (-2, -4)   ->  n = -3
+      (q, m) = (-1, -1)   ->  n = 0
+      (q, m) = (-1, 0)   ->  n = 1
+      (q, m) = (-1, 1)   ->  n = 2
+==========================================================================
+What would be needed: elliptic logarithms relative to a degree-3 divisor
+(Bilu-style), over a rank-3 Mordell-Weil lattice.  Not in Sage, not in
+Magma.  See NOTES.md Sec.4ap for the group-theoretic bypass taken instead.

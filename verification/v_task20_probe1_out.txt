@@ -1,0 +1,45 @@
+=== A5 (n=9 factor 1) ===
+|A5|=60 |Aut(A5)|=120
+Socle(Aut(A5)) order = 60 (expect 60)
+
+=== L2(8) (n=9 factor 2) ===
+|L2(8)|=504
+1013
+AutomorphismGroup computed, time(ms)=9
+|Aut(L2(8))| = 1512 (expect 1512)
+1022
+IsomorphismPermGroup done, time(ms)=2 degree=9
+Socle(Aut(L2(8))) order = 504 (expect 504)
+
+=== A6 (n=10 factor 1) ===
+1024
+AutomorphismGroup(A6) computed, time(ms)=17
+|Aut(A6)| = 1440 (expect 1440)
+1042
+IsomorphismPermGroup done, time(ms)=0 degree=80
+Socle(Aut(A6)) order = 360 (expect 360)
+
+=== A7 (n=10 factor 2, n=11 factor 1) ===
+|Aut(A7)|=5040 (expect 5040)
+Socle(Aut(A7)) order = 2520 (expect 2520)
+
+=== M11 (n=11 factor 2) ===
+|M11|=7920
+1050
+|Aut(M11)| = 7920 (expect 7920, trivial outer) time(ms)=1
+
+=== L2(11) (n=12 factor 1) ===
+|L2(11)|=660
+1052
+AutomorphismGroup(L2(11)) computed, time(ms)=5
+|Aut(L2(11))| = 1320 (expect 1320)
+1057
+IsomorphismPermGroup done, time(ms)=1 degree=12
+Socle(Aut(L2(11))) order = 660 (expect 660)
+
+=== A9 (n=12 factor 2) ===
+|Aut(A9)|=362880 (expect 362880)
+1059
+Socle(Aut(A9)) order = 181440 (expect 181440) time(ms)=0
+
+=== DONE probe1 ===

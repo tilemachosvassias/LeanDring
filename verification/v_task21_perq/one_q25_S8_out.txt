@@ -1,0 +1,14 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Error, usage: Group(<gen>,...), Group(<gens>), Group(<gens>,<id>)
+Error, usage: Group(<gen>,...), Group(<gens>), Group(<gens>,<id>)
+Error, usage: Group(<gen>,...), Group(<gens>), Group(<gens>,<id>)
+Error, usage: Group(<gen>,...), Group(<gens>), Group(<gens>,<id>)
+RESULT S q=25 idx=8 sizeM=
+7922382000000 FAILED reason=RECOG_FAIL isG2order=false rounds=2

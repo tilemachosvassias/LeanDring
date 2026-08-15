@@ -1,0 +1,42 @@
+true
+true
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+Syntax error: 'QUIT;' cannot be used in this context
+    QUIT;
+    ^^^^
+#I  Looking for short orbit (0)...
+#I  Have 321187 points.
+#I  Have 629759 points.
+#I  Have 940328 points.
+#I  Have 1240418 points.
+#I  Have 1549316 points.
+#I  Have 1877116 points.
+#I  Have 2201627 points.
+#I  Have 2505612 points.
+#I  Have 2808923 points.
+#I  Have 3113819 points.
+#I  Have 3440015 points.
+#I  Have 3765724 points.
+#I  Have 4070534 points.
+#I  Have 4372403 points.
+#I  Have 4675345 points.
+#I  Have 4976741 points.
+#I  Have 5277107 points.
+#I  Have 5580458 points.
+#I  Have 5882199 points.
+#I  Have 6184367 points.
+#I  Have 6489786 points.
+#I  Have 6794925 points.
+#I  Have 7101387 points.
+#I  Have 7411458 points.
+#I  Have 7733274 points.
+#I  Have 8052651 points.
+#I  Have 8356757 points.
+#I  Have 8665753 points.
+#I  Have 8974432 points.
+#I  Have 9294472 points.
+#I  Have 9610255 points.
+#I  Have 9916432 points.
+Error, Orbit too long, increase opt.OrbitLengthLimit

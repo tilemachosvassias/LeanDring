@@ -1,0 +1,15 @@
+  n=2000000
+  n=4000000
+  n=6000000
+  n=8000000
+  n=10000000
+  n=12000000
+  n=14000000
+  n=16000000
+  n=18000000
+  n=20000000
+# v_task42 R1 scan, WEAKENED GAP R^p > 3(n-3)/4, SIZE filter dropped -- complete over ALL q, for 10 <= n <= 20000000
+# per-shape hits L3=137 q3(L4/S4)=17 cyc5(L5)=2 U4=4 cyc6(Sp6)=2 U5=1
+# shape hits (iota1 realised by some q): 163
+# gap windows entered: 101
+# SURVIVORS: 0
