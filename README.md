@@ -354,7 +354,9 @@ The division of labor is simple to state. The **mathematics** is the
 author's: the order-`p⁴` rigidity results and the order-`5⁵` counterexample
 are the author's alone; on the even-order results (the class theorems and
 the recognition of the finite simple groups), **Claude** (Anthropic's AI
-assistant) contributed as an assistant. The **Lean formalization** in this
+assistant) contributed as an assistant.
+
+The **Lean formalization** in this
 repository — the proofs, the certificate engineering, and the documentation —
 was written by Claude, working under the author's direction and review.
 Every file's `Authors:` line records this
