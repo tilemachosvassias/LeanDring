@@ -10,7 +10,7 @@
 #          left WL-equal is reported for deeper analysis (none occurs).
 #
 # Verified run: GAP 4.16.0, 2026-07-28; log: results/species_p4_small.log.
-# Usage:  gap -q < gap/p4/species_p4_small.g > results/species_p4_small.log
+# Usage:  gap -q < provenance/gap/p4/species_p4_small.g > results/species_p4_small.log
 
 # rank of D(G): number of classes [K,lambda] = sum over subgroup-class
 # representatives K of the number of N_G(K)-orbits on linear characters of K

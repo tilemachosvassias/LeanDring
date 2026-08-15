@@ -5,7 +5,7 @@
 # So the count for H is the number of N_G(H)-orbits on the SET H/H'.
 # Total = sum over conjugacy classes of subgroups H.
 #
-# Run:  ~/gap-4.15.1/gap -q -b gap/census/rank_p3.g
+# Run:  ~/gap-4.15.1/gap -q -b provenance/gap/census/rank_p3.g
 
 NumPairsForH := function(G, H)
   local N, epi, Q, elts, orbs, seen, q, orb, x, ncan, gensN, imgs, n, pre, con;

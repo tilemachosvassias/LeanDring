@@ -123,7 +123,7 @@ Repository shape (why the tree is so large):
 | class | files | lines | note |
 |---|---:|---:|---|
 | human-written mathematical core | 107 | ~37 600 | includes `LeanDring/MainResults.lean` |
-| machine-emitted by the Python emitters (`python/p5_*.py`) | 565 | ~800 700 | stage-5 mass certificate |
+| machine-emitted by the Python emitters (`provenance/emitters/p5_*.py`) | 565 | ~800 700 | stage-5 mass certificate |
 | machine-emitted by the in-tree `#eval` generators | 191 | ~86 200 | embedded data + chunked kernel decides |
 | order-`p⁴` arc | 32 | ~12 400 | a separate paper-relevant result set |
 | even-order layer | 39 | ~11 000 | paper Sections 6–7 |

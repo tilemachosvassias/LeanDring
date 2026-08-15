@@ -1,4 +1,4 @@
-# gap/ — the GAP scripts behind the order-`p⁴` and order-`5⁵` results
+# provenance/gap/ — the GAP scripts behind the order-`p⁴` and order-`5⁵` results
 
 The computations that produce the paper's core objects: the monomial pair-class
 data `M(G)`, the `2724 × 2724` species tables of the two order-`5⁵` twins
@@ -78,8 +78,8 @@ listed as an ancillary file.
 ## Running them
 
 ```bash
-gap -q < gap/em06_brauer_pair.g   > results/em06_brauer_pair.log
-gap -q < gap/p4/species_p4_small.g > results/species_p4_small.log
+gap -q < provenance/gap/em06_brauer_pair.g   > results/em06_brauer_pair.log
+gap -q < provenance/gap/p4/species_p4_small.g > results/species_p4_small.log
 ```
 
 Written for GAP 4.16.0 with the standard character-table and small-groups
@@ -89,7 +89,7 @@ create.
 
 Five of the `species/` scripts (`regen_3125.g`, `match_3125.g`, `diag_3125.g`,
 `verify_3125_archive.g`, `verify_5d.g`) also read the archived preprint-era
-tables under `gap/legacy/preprint_archive/` — 854 MB of bulk species dumps that
+tables under `provenance/gap/legacy/preprint_archive/` — 854 MB of bulk species dumps that
 are deliberately not published here, being superseded by the certified Lean
 data. They are included for their algorithms and their checks, which are
 readable without the archive; `match_3125.g` runs its Phase A entirely on

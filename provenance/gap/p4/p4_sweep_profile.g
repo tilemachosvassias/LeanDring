@@ -18,7 +18,7 @@
 # species-table dimension (# G-classes of (H, linear-char) pairs = D-ring rank);
 # compute that next with a dedicated char-pair-orbit script.
 #
-# Run:  gap -q gap/p4/p4_sweep_profile.g   (or read from a GAP session)
+# Run:  gap -q provenance/gap/p4/p4_sweep_profile.g   (or read from a GAP session)
 
 CountSubsOfOrder := function(G, n)
   local subs;

@@ -3,7 +3,7 @@
 #
 # Algorithm: the (1/|K|)-normalized species sum, implemented as a sum over a
 # transversal that is ASSERTED two-sided per column class (F1-safe, see
-# docs/audit_gap_table_algorithm.md). Rows use DG_G_coset (gap/lib/dg_correct.g),
+# docs/audit_gap_table_algorithm.md). Rows use DG_G_coset (provenance/gap/lib/dg_correct.g),
 # the generally-correct coset-orbit parametrization, NOT Work_New::DG_G; the
 # per-class count equality below is now a regression assert, not the correctness
 # gate. Complexity is factored: admissible
@@ -11,11 +11,11 @@
 # not per entry — this is what makes the full table feasible.
 # Labels (subgroup class, fibre, character) are saved alongside each table.
 #
-# Run:  ~/gap-4.15.1/gap -q -b gap/species/regen_3125.g
+# Run:  ~/gap-4.15.1/gap -q -b provenance/gap/species/regen_3125.g
 # Output: results/n_test_3125/Tmine_{68,69}.g and *_meta.g
 
-Read("gap/legacy/preprint_archive/Work_New");  # MG_G (columns); DG_G (superseded)
-Read("gap/lib/dg_correct.g");                       # DG_G_coset (generally-correct rows)
+Read("provenance/gap/legacy/preprint_archive/Work_New");  # MG_G (columns); DG_G (superseded)
+Read("provenance/gap/lib/dg_correct.g");                       # DG_G_coset (generally-correct rows)
 
 RegenGroup := function(id)
   local G, DG, MG, n, reps, nc, classOfRow, classOfCol, a, b, i, j, K, H, h,

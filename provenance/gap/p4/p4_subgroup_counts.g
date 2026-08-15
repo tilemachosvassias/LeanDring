@@ -22,7 +22,7 @@
 # settles the paper's table row on its own terms. We also report IdGroup,
 # so the dictionary used by the 2026-07-18 audit can be checked afterwards.
 #
-# Usage:  gap -q < gap/p4/p4_subgroup_counts.g > results/p4_subgroup_counts.log
+# Usage:  gap -q < provenance/gap/p4/p4_subgroup_counts.g > results/p4_subgroup_counts.log
 
 CountsOf := function(G, p)
   # returns [ N_p, N_{p^2}, N_{p^3} ] : number of subgroups of each order

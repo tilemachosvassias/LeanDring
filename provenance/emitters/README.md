@@ -1,4 +1,4 @@
-# python/ — the certificate emitters
+# provenance/emitters/ — the certificate emitters
 
 The seven scripts that generated the machine-emitted parts of the `5⁵`
 certificate, plus the helper module they share. They are published so that the
@@ -28,7 +28,7 @@ data, and they are published unmodified.** They predate the reorganisation of
 `LeanDring/P5/` into mathematical blocks, so they read and write the old flat
 layout — a single `LeanDring/Basic/` directory, with module names like
 `LeanDring.Basic.P5MatchLeaf0`. The reorganisation renamed every one of those
-files; [`../scripts/mapping.tsv`](../scripts/mapping.tsv) records the complete
+files; [`../../scripts/mapping.tsv`](../../scripts/mapping.tsv) records the complete
 old → new correspondence.
 
 Re-running them therefore reproduces the *content* of the certificates, not

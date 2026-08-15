@@ -95,16 +95,27 @@ prime), and unconditional species-table separations
 
 ## Orientation
 
-Top level, at a glance:
+Top level, at a glance. Three directories hold computations that are **not
+part of the proof**; two of them form the provenance pipeline behind the `5⁵`
+certificate, one stands apart:
 
-| path | what it is | compiled? |
+```
+provenance/gap/  ──computes candidate data──▶  provenance/emitters/  ──emits Lean source──▶  LeanDring/P5/Data/
+(species tables, censuses)          (the seven code generators)      (kernel `decide` re-checks
+                                                                      every datum from scratch)
+
+provenance/corroboration/   — independent of that pipeline: corroborates the even-order
+                  sections of the paper; nothing in the library reads it
+```
+
+| path | role | compiled? |
 |---|---|---|
-| `LeanDring/`, `LeanDring.lean` | the Lean library — pure `.lean`, nothing else | **yes** |
-| `docs/` | the paper ↔ Lean theorem correspondence table | no |
+| `LeanDring/`, `LeanDring.lean` | the Lean library — pure `.lean`, nothing else; the only thing that is *proof* | **yes** |
+| `docs/` | the paper ↔ Lean theorem correspondence | no |
 | `scripts/` | import-layering and paper-number checkers | no |
-| `gap/` | the 19 GAP scripts that compute the order-`p⁴` and order-`5⁵` objects — species tables, the `5⁵` census, the table alignment — including the one the paper cites by path; untrusted hint providers, provenance only | no |
-| `python/` | the seven emitters that generated the machine-emitted `5⁵` certificates; provenance only | no |
-| `verification/` | GAP/Python computations that corroborate the even-order layer, in six per-topic clusters; provenance only | no |
+| `provenance/gap/` | **pipeline stage 1 — compute.** The 19 GAP scripts that computed the candidate data (species tables, the `5⁵` census, the table alignment) which the Lean certificates re-derive by kernel `decide`. Untrusted: a wrong output here can only make a `decide` fail | no |
+| `provenance/emitters/` | **pipeline stage 2 — emit.** The seven code generators that turned the GAP data into the machine-emitted `.lean` certificate files under `LeanDring/P5/Data/`. Their output is committed and kernel-checked, so they are historical record, not dependency | no |
+| `provenance/corroboration/` | **outside the pipeline.** Standalone computations corroborating the *even-order* sections (whose theorems carry named `Prop` hypotheses), in six per-topic clusters. Spot-check evidence for numbers the paper quotes — no Lean file depends on them | no |
 
 The library itself is organized into five strata, each importing only downward
 (`scripts/check_imports.py` enforces this mechanically):

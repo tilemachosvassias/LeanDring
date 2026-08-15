@@ -1,5 +1,5 @@
 # match_3125.g -- close task 5a/5b from the independently regenerated
-# labeled tables (gap/species/regen_3125.g output).
+# labeled tables (provenance/gap/species/regen_3125.g output).
 #
 # Phase A: find + fully verify a permutation equivalence
 #          TM68[i][j] = TM69[rho[i]][gamma[j]]  (proves D(68) ~= D(69)
@@ -16,7 +16,7 @@
 # produce a false positive, only a `fail`, which is then INCONCLUSIVE, not a
 # non-isomorphism proof).
 #
-# Run:  ~/gap-4.15.1/gap -q -b gap/species/match_3125.g
+# Run:  ~/gap-4.15.1/gap -q -b provenance/gap/species/match_3125.g
 
 SortedKey := function(v)
   local w; w := ShallowCopy(v); Sort(w); return w;
@@ -140,7 +140,7 @@ else
 fi;
 
 Print("== Phase B1: TM68 ~ archived T1\n");
-Read("gap/legacy/preprint_archive/G3125_68");;
+Read("provenance/gap/legacy/preprint_archive/G3125_68");;
 mB1 := MatchTables(TM68, T1);;
 if mB1 = fail then
   Print("PHASE B1: TM68 !~ archived T1 or matcher stalled -- INVESTIGATE\n");
@@ -150,7 +150,7 @@ fi;
 Unbind(T1);
 
 Print("== Phase B2: TM69 ~ archived T2\n");
-Read("gap/legacy/preprint_archive/G3125_69");;
+Read("provenance/gap/legacy/preprint_archive/G3125_69");;
 mB2 := MatchTables(TM69, T2);;
 if mB2 = fail then
   Print("PHASE B2: TM69 !~ archived T2 or matcher stalled -- INVESTIGATE\n");

@@ -10,10 +10,10 @@
 #          deterministic sample of entries of the ARCHIVED tables T1/T2 with the
 #          unambiguous formula  (1/|K|) * sum over ALL g in G of
 #          [H^g <= K] * lambda(h^g),  and compare exactly.
-# Run:  ~/gap-4.15.1/gap -q -b gap/species/verify_5d.g
+# Run:  ~/gap-4.15.1/gap -q -b provenance/gap/species/verify_5d.g
 # Checked against: audit doc F1/A2 definitions; formula (D3) of STATE.md.
 
-Read("gap/legacy/preprint_archive/Work_New");
+Read("provenance/gap/legacy/preprint_archive/Work_New");
 
 TwoSidedCheck := function(G)
   local reps, bad, i, K, T, n;
@@ -96,8 +96,8 @@ RunGroup := function(id, T)
 end;
 
 Print("Reading archived tables...\n");
-Read("gap/legacy/preprint_archive/G3125_68");;
-Read("gap/legacy/preprint_archive/G3125_69");;
+Read("provenance/gap/legacy/preprint_archive/G3125_68");;
+Read("provenance/gap/legacy/preprint_archive/G3125_69");;
 r68 := RunGroup(68, T1);;
 r69 := RunGroup(69, T2);;
 if Length(r68[1][2]) = 0 and Length(r69[1][2]) = 0 and r68[2] and r69[2]

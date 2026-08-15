@@ -26,7 +26,7 @@
 #   (6) their tables of marks agree (the Section 5.5 claim; this is the
 #       computation cross-checked against the certified Lean data).
 #
-# Usage:  gap -q < gap/em06_brauer_pair.g > results/em06_brauer_pair.log
+# Usage:  gap -q < provenance/gap/em06_brauer_pair.g > results/em06_brauer_pair.log
 
 G1 := SmallGroup(3125, 68);;
 G2 := SmallGroup(3125, 69);;

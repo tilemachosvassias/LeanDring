@@ -3,7 +3,7 @@
 # Self-contained GAP sieve for the D(G)-isomorphism problem.
 # No external files needed.  Usage:
 #
-#   gap> Read("gap/lib/dring_sieve_standalone.g");
+#   gap> Read("provenance/gap/lib/dring_sieve_standalone.g");
 #   gap> DSelfTest();          # regression anchors from verified Python runs
 #   gap> DSieve(32);           # all groups of order 32, cheap invariants
 #   gap> DSieve(64);

@@ -6,9 +6,9 @@
 # launch the full 2724 x 2724 table computation.
 #
 # Run from the project root:
-#   gap -q gap/species/verify_3125_sample.g
+#   gap -q provenance/gap/species/verify_3125_sample.g
 
-Read("gap/lib/dring_sieve_standalone.g");
+Read("provenance/gap/lib/dring_sieve_standalone.g");
 
 PartialSpeciesTableD3125 := function(G, k)
     local cls, basis, T, i, j, s, b, conjH, g, tot, elG, pos;

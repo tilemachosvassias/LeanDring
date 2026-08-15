@@ -7,7 +7,7 @@
 # no permutation equivalence exists -- a genuine semantic discrepancy in the
 # archived table (matcher stall ruled out).
 #
-# Run:  ~/gap-4.15.1/gap -q -b gap/species/diag_3125.g
+# Run:  ~/gap-4.15.1/gap -q -b provenance/gap/species/diag_3125.g
 
 SortedKey := function(v)
   local w; w := ShallowCopy(v); Sort(w); return w;
@@ -52,12 +52,12 @@ end;
 
 Read("results/n_test_3125/Tmine_68.g");;
 Read("results/n_test_3125/Tmine_68_meta.g");;
-Read("gap/legacy/preprint_archive/G3125_68");;
+Read("provenance/gap/legacy/preprint_archive/G3125_68");;
 Diag("68", TM68, T1, META68);
 Unbind(TM68); Unbind(T1);
 Read("results/n_test_3125/Tmine_69.g");;
 Read("results/n_test_3125/Tmine_69_meta.g");;
-Read("gap/legacy/preprint_archive/G3125_69");;
+Read("provenance/gap/legacy/preprint_archive/G3125_69");;
 Diag("69", TM69, T2, META69);
 Print("DIAG DONE\n");
 QUIT;

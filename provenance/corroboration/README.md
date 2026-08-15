@@ -1,4 +1,4 @@
-# verification/ — external computations (GAP, Python)
+# provenance/corroboration/ — external computations (GAP, Python)
 
 Supporting computations for the even-order layer. They corroborate numbers
 quoted in the paper and guided the Lean development; they are **not** part of

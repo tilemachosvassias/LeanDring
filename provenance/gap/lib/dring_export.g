@@ -4,8 +4,8 @@
 # isomorphism decision in crossiso.py.
 #
 # Usage:
-#   gap> Read("gap/lib/dring_sieve_standalone.g");
-#   gap> Read("gap/lib/dring_export.g");
+#   gap> Read("provenance/gap/lib/dring_sieve_standalone.g");
+#   gap> Read("provenance/gap/lib/dring_export.g");
 #   gap> DExport(SmallGroup(32,13), "g32_13.txt");
 #   gap> DExport(SmallGroup(32,14), "g32_14.txt");
 # then locally:

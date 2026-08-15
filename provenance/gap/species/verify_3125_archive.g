@@ -6,14 +6,14 @@
 # checks the block-start ([H,1]) columns, and checks the full Galois row action.
 #
 # Run from the project root:
-#   gap -q gap/species/verify_3125_archive.g
+#   gap -q provenance/gap/species/verify_3125_archive.g
 #
 # Override the archive location before Read(), if necessary:
 #   ArchiveRoot := "/path/to/gap/archive/";;
-#   Read("gap/species/verify_3125_archive.g");
+#   Read("provenance/gap/species/verify_3125_archive.g");
 
 if not IsBound(ArchiveRoot) then
-    ArchiveRoot := "gap/legacy/preprint_archive/";
+    ArchiveRoot := "provenance/gap/legacy/preprint_archive/";
 fi;
 
 Read(Concatenation(ArchiveRoot, "G3125_68"));
