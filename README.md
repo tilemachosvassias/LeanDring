@@ -96,14 +96,23 @@ the ring `D(G)` remembers: does `D(G) ≅ D(H)` force `G ≅ H`?
    (`OddOrder.burnsideEquivOfOddOrder`): the integer-valued points of `D(G)`
    are intrinsically recognizable as the mark species.
 
-4. **The even-order layer.** Unconditionally: `D ⇒ B` for the class
-   `C₂ × H` and, more generally, central Sylow-2 groups (which are recovered
-   up to isomorphism), and rigidity for extraspecial 2-groups. Conditionally —
-   with the external inputs carried as *named `Prop` hypotheses* in the
-   statements (Boltje's integrality criterion, CFSG-dependent data): a
-   recognition theorem for the nonabelian finite simple groups.
+4. **Even order: class theorems.** Unconditionally: `D ⇒ B` for the class
+   `C₂ × H` with `H` odd and, more generally, for every group with central
+   Sylow 2-subgroup — which is moreover recovered up to isomorphism — and
+   rigidity for the extraspecial 2-groups.
 
-5. **En route.** Gauss's sign theorem for the quadratic Gauss sum is re-proved
+5. **Recognition of the finite simple groups by `D(G)`.** If `G` is a
+   nonabelian finite simple group and `H` is *any* finite group with
+   `D(G) ≅ D(H)`, then `G ≅ H`: a simple group is determined by its D-ring
+   among all finite groups, with no assumption on the comparison group. The
+   proof runs through Müller's conductor invariants (`ι`, `κ`), separates the
+   two order coincidences among the simple groups (`A₈` vs `L₃(4)`, and the
+   `Bₙ/Cₙ` families), and is formalized as verified implications whose
+   external inputs — Boltje's integrality criterion, CFSG-dependent
+   separations — are carried as *named `Prop` hypotheses* in the statements
+   (`Even.simpleGroupTheorem` and the surrounding `SimpleRigidity` layer).
+
+6. **En route.** Gauss's sign theorem for the quadratic Gauss sum is re-proved
    from scratch, following Schur (`GaussSign.gauss_eq`) — one of the
    Mathlib-upstreamable components.
 
