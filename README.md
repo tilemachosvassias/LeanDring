@@ -340,13 +340,14 @@ each of these gaps does and does not affect.
 
 ## AI assistance, stated plainly
 
-This formalization was developed with substantial assistance from **Claude**
-(Anthropic's AI assistant), working in human-directed sessions: large parts
-of the Lean proofs, the certificate engineering, the restructuring, and the
-documentation were drafted, repaired, and audited that way. Every file's
-`Authors:` line records it (`formalization assisted by Claude`). The
-mathematics, the accompanying paper, the decisions about what to prove and
-what to cite, and the final review are the author's.
+The mathematics — the results, the proof strategies, the certificate design,
+the accompanying paper, and the decisions about what to prove and what to
+cite — is the author's work, as is the overwhelming share of the development
+itself. **Claude** (Anthropic's AI assistant) assisted under the author's
+direction with parts of the formalization engineering: Lean proof drafting
+and repair, restructuring, documentation, and consistency audits. Every
+file's `Authors:` line records that assistance
+(`formalization assisted by Claude`).
 
 This does not enter the trust base. The point of a kernel-checked
 development is precisely that trust rests on the *checker*, not on how the
