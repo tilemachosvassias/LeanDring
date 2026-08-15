@@ -350,13 +350,13 @@ each of these gaps does and does not affect.
 
 ## AI assistance, stated plainly
 
-The mathematics — the results, the proof strategies, the certificate design,
-the accompanying paper, and the decisions about what to prove and what to
-cite — is the author's work, as is the overwhelming share of the development
-itself. **Claude** (Anthropic's AI assistant) assisted under the author's
-direction with parts of the formalization engineering: Lean proof drafting
-and repair, restructuring, documentation, and consistency audits. Every
-file's `Authors:` line records that assistance
+The division of labor is simple to state. The **mathematics** — the results,
+the proof strategies, the accompanying paper, and the decisions about what to
+prove and what to cite — is the author's, with **Claude** (Anthropic's AI
+assistant) helping out here and there. The **Lean formalization** in this
+repository — the proofs, the certificate engineering, and the documentation —
+was written by Claude, working under the author's direction and review.
+Every file's `Authors:` line records this
 (`formalization assisted by Claude`).
 
 This does not enter the trust base. The point of a kernel-checked
