@@ -350,7 +350,7 @@ each of these gaps does and does not affect.
 
 ## AI assistance, stated plainly
 
-The division of labor is simple to state. The **mathematics** is the
+The **mathematics** is the
 author's: the order-`p⁴` rigidity results and the order-`5⁵` counterexample
 are the author's alone; on the even-order results (the class theorems and
 the recognition of the finite simple groups), **Claude** (Anthropic's AI
