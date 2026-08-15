@@ -168,13 +168,14 @@ Top level, at a glance. Three directories hold computations that are **not
 part of the proof**; two of them form the provenance pipeline behind the `5⁵`
 certificate, one stands apart:
 
-```
-provenance/gap/  ──computes candidate data──▶  provenance/emitters/  ──emits Lean source──▶  LeanDring/P5/Data/
-(species tables, censuses)          (the seven code generators)      (kernel `decide` re-checks
-                                                                      every datum from scratch)
-
-provenance/corroboration/   — independent of that pipeline: corroborates the even-order
-                  sections of the paper; nothing in the library reads it
+```mermaid
+flowchart LR
+    gap["<b>provenance/gap/</b><br/>computes candidate data<br/>(species tables, censuses)"]
+    emit["<b>provenance/emitters/</b><br/>emits Lean source<br/>(the seven code generators)"]
+    data["<b>LeanDring/P5/Data/</b><br/>kernel-checked certificates<br/>(every datum re-derived by <code>decide</code>)"]
+    cor["<b>provenance/corroboration/</b><br/>even-order spot-check evidence<br/>(nothing in the library reads it)"]
+    gap --> emit --> data
+    cor ~~~ data
 ```
 
 | path | role | compiled? |
