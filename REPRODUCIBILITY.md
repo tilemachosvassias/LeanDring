@@ -37,8 +37,9 @@ do not run `lake update`, the build is pinned to exactly the revisions above.
 ```bash
 git clone https://github.com/tilemachosvassias/LeanDring lean_dring
 cd lean_dring
-lake exe cache get      # fetch Mathlib's prebuilt oleans (required; building
-                        # Mathlib from source takes hours)
+# fetch Mathlib's prebuilt oleans first (required; building Mathlib
+# from source takes hours)
+lake exe cache get
 lake build
 ```
 

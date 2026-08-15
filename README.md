@@ -47,6 +47,66 @@ paper-result ↔ Lean-declaration correspondence table.
 audit (1300 `#print axioms` lines); building the library reprints the
 certificates.
 
+## The mathematics
+
+**The ring.** For a finite group `G`, a *monomial `G`-set* (over `ℂˣ`) is a
+finite `G`-set `X` equipped with a weight cocycle `w : G × X → ℂˣ` satisfying
+`w(gh, x) = w(g, h·x)·w(h, x)`; isomorphisms are equivariant bijections up to
+gauge. Disjoint union and product make the isomorphism classes a semiring, and
+its Grothendieck ring is the **monomial representation ring** `D(G)` — the
+`ℂˣ`-fibered Burnside ring of Dress and Boltje, Müller's *Darstellungsring*.
+It is free as a `ℤ`-module on the **pair classes** `[K, λ]` (a subgroup
+`K ≤ G` with a linear character `λ : K → ℂˣ`, up to conjugacy), and it
+contains the classical Burnside ring `B(G)` through a split embedding
+`η : B(G) ↪ D(G)` (in Lean: `MonGSet`, `DRing`, `basisOfCharPairClass`, `eta`).
+
+**The invariant.** For each pair `(H, h)` with `h ∈ H ≤ G` there is a ring
+homomorphism `φ_{H,h} : D(G) → ℂ`, the **species**, given on basis elements
+by Müller's explicit character-sum formula. Arranged over all pair classes and
+all `(H, hH′)`, they form the **species table** of `G` — and the table is a
+*complete* invariant of the ring: the joint species map is injective
+(`DRing.species_injective`). The **isomorphism problem** asks how much of `G`
+the ring `D(G)` remembers: does `D(G) ≅ D(H)` force `G ≅ H`?
+
+**Main results, as formalized.**
+
+1. **Rigidity at order `p⁴`** (`p ≥ 5`). The fifteen groups of order `p⁴`
+   are pairwise separated by their species tables — a single theorem with
+   `105 = C(15,2)` conjuncts (`P4.p4_pairwise_species_distinct`). The hardest
+   pair, the exceptional twins (xii)/(xiii), is separated unconditionally by a
+   quadratic Gauss-sum evaluation and a mod-8 root-of-unity contradiction
+   (`P4.isEmpty_tableIso_model_model`). Passing from the fifteen models to an
+   arbitrary group of order `p⁴` uses the classical classification, carried as
+   the explicit hypothesis `P4Classification` (`p4_species_classifies`).
+
+2. **The counterexample at order `5⁵`.** Rigidity fails one order higher:
+   the two groups catalogued as `SmallGroup(3125,68)` and `SmallGroup(3125,69)`
+   have isomorphic D-rings,
+   `Nonempty (DRing (Coordinate 1) ≃+* DRing (Coordinate 2))`
+   (`P5Presentation.dring_equiv_coordinate12`), certified cell by cell over
+   the full `2724 × 2724` species tables. The isomorphism transports to the
+   presented groups (`dring_isomorphism_of_presented_5_5_twins`) and, via the
+   odd-order theorem, to their Burnside rings
+   (`burnside_isomorphism_of_5_5_twins`). The two groups are non-isomorphic —
+   an Eick–Müller Brauer pair, `[COMPUTED]` — so `D(G)` does *not* determine
+   `G` in general.
+
+3. **Müller's odd-order theorem.** For groups of odd order, any abstract ring
+   isomorphism `D(G) ≃+* D(H)` induces `B(G) ≃+* B(H)`
+   (`OddOrder.burnsideEquivOfOddOrder`): the integer-valued points of `D(G)`
+   are intrinsically recognizable as the mark species.
+
+4. **The even-order layer.** Unconditionally: `D ⇒ B` for the class
+   `C₂ × H` and, more generally, central Sylow-2 groups (which are recovered
+   up to isomorphism), and rigidity for extraspecial 2-groups. Conditionally —
+   with the external inputs carried as *named `Prop` hypotheses* in the
+   statements (Boltje's integrality criterion, CFSG-dependent data): a
+   recognition theorem for the nonabelian finite simple groups.
+
+5. **En route.** Gauss's sign theorem for the quadratic Gauss sum is re-proved
+   from scratch, following Schur (`GaussSign.gauss_eq`) — one of the
+   Mathlib-upstreamable components.
+
 ## What is proven
 
 **Foundations.** The Burnside ring `B(G)` via a generic Grothendieck ring
@@ -155,8 +215,9 @@ the certificate pipeline, and the import-layering rule, and with
 ## Building
 
 ```bash
-lake exe cache get      # fetch Mathlib's prebuilt oleans — required; building
-                         # Mathlib from source takes hours
+# fetch Mathlib's prebuilt oleans first — required; building Mathlib
+# from source takes hours
+lake exe cache get
 lake build
 ```
 
