@@ -1402,10 +1402,12 @@ cover all 39 modules of the even-order layer (`LeanDring/Even/`).
 #print axioms LeanDring.DRing.burnsideEquivOfPsiTwoEquivariant
 
 -- ============================================================================
--- The even-order layer (LeanDring/Even/*.lean): Sections 6 and 7 of the paper.
+-- The even-order layer (LeanDring/Even/*.lean): the subject of the companion paper
+-- "Class theorems and the recognition of finite simple groups for monomial
+-- representation rings", where its status and named hypotheses are catalogued.
 -- `import LeanDring.Even` above puts all 39 modules of the layer inside this audit.
 --
--- Read the results below with §7.6 in hand. Most of this layer consists of verified
+-- Most of this layer consists of verified
 -- *implications* whose antecedents are named `Prop`s — `BoltjeIntegrality`,
 -- `MullerIsolation`, `SimpleOrderRigidity`, `TwinSeparation`, `TwoGroupRigidity`,
 -- `CoprimeTensorFactorization` and the rest. A hypothesis is a hypothesis, not an

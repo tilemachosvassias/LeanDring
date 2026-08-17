@@ -1,24 +1,24 @@
 # Paper ↔ Lean theorem correspondence
 
 Repository: `lean_dring` (Lean 4.32.0 + Mathlib `v4.32.0`).
-Last updated: **2026-08-15**.
+Last updated: **2026-08-17**.
 
 ## Scope of this document
 
 This document covers the paper's Sections 2–5 (foundations, order-`p⁴` rigidity,
 the Gauss-sum twin argument, the order-`5⁵` counterexample) together with odd
-order, the Gauss sign and abelian 2-groups — 41 entries, all backed by
-`LeanDring.Paper` aliases.
+order, the Gauss sign and abelian 2-groups — 42 entries, all but one backed by
+`LeanDring.Paper` aliases (the exception, the Dedekind-dependent mark-table
+lemma in §5, is cited by its internal name).
 
-**It does not yet cover Sections 6–7** (the even-order layer: cancellation for
-`C₂ × H`, and the recognition theorem for the finite simple groups), which
-account for 16 further numbered results. Those results *are* formalized —
-`LeanDring/Even/`, 39 modules, `sorry`-free, inside the build closure — and the
-relevant declarations are named inline in the paper's own prose, but they have
-no `LeanDring.Paper` alias and therefore no entry here. Their status, and the
-external inputs they carry as explicit named `Prop`s, are set out in the paper
-instead (Section 7.6, "What is proved, and under what hypotheses", and
-Section 8). Adding alias entries for them is open work.
+**It does not cover the even-order layer** (cancellation for `C₂ × H`, and the
+recognition theorem for the finite simple groups). Those results *are*
+formalized — `LeanDring/Even/`, 39 modules, `sorry`-free, inside the build
+closure — but they have no `LeanDring.Paper` alias and therefore no entry here.
+Their status, and the external inputs they carry as explicit named `Prop`s, are
+the subject of the companion paper "Class theorems and the recognition of
+finite simple groups for monomial representation rings" (in preparation), where
+they are catalogued. Adding alias entries for them is open work.
 
 Every entry's **Lean declaration** field names a declaration in
 `LeanDring/MainResults.lean` or its verification-facing companion
@@ -49,6 +49,7 @@ explicit presentations.
 |---|---|
 | **Proved** | unconditional, kernel-checked in Lean; no external input |
 | **Proved (external classification)** | Lean-checked given the classical classification of groups of order `p⁴`, which is cited, not formalized |
+| **Proved (external classical input)** | Lean-checked given one named classical theorem, carried as an explicit hypothesis of the Lean statement and cited, not formalized |
 | **[COMPUTED]** | established by an exact external computation (GAP); *not* a Lean theorem |
 
 ---
@@ -246,6 +247,19 @@ semantic entries.
 > machine-checked claim is the exhaustive separation of the fifteen Lean models;
 > the passage to arbitrary groups uses the cited classification.
 
+- **Lemma (ab-from-marks): `|Gᵃᵇ|` is a mark-table invariant in odd order** — **Proved (external classical input)** (caveat iv)<br>
+  not restated in `MainResults.lean`; cited by its internal name<br>
+  `DRing.MarkTableIso.card_abelianization_eq` in `LeanDring/Theory/DRing/MarksAbelianization.lean`
+
+> **Caveat (iv) — Dedekind's theorem in odd order.** The Lean form of the lemma
+> carries the explicit hypothesis `OddDedekind` — Dedekind's classification of
+> groups with all subgroups normal (Robinson, §5.3), **cited, not formalized**
+> (Mathlib has no Hamiltonian-group theory). `Even.oddDedekind_of_pgroup`
+> derives `OddDedekind` from the strictly weaker `DedekindOddPGroup`, so the
+> citation is to the odd `p`-group case alone. Local to this lemma and the
+> mark-rigidity corollary built on it: neither Theorem A nor Theorem B depends
+> on it.
+
 ## 6. Odd order, Gauss sign, abelian 2-groups
 
 - **Müller's odd-order theorem: `D(G) ≅ D(G')` ⟹ `B(G) ≅ B(G')` for odd order** — **Proved**<br>
@@ -294,13 +308,16 @@ Further foundational results cited in passing by the paper and registered in
 
 ## Summary of external inputs
 
-The paper's claims rest on exactly three things outside Lean:
+The paper's claims rest on exactly four things outside Lean:
 
 1. the classical classification of groups of order `p⁴` (caveat i) — a cited
    theorem of the literature;
 2. the identification of the Lean pc-presentations with GAP's
    `SmallGroup(3125,68)` / `(3125,69)` (caveat ii) — an exact computation;
-3. the non-isomorphy of those two groups (caveat iii) — an exact computation.
+3. the non-isomorphy of those two groups (caveat iii) — an exact computation;
+4. Dedekind's theorem for odd `p`-groups (caveat iv) — a cited theorem of the
+   literature, used only for the mark-table lemma in §5; neither Theorem A nor
+   Theorem B depends on it.
 
 Everything else in this document is kernel-checked with axiom set contained in
 `[propext, Classical.choice, Quot.sound]`.
