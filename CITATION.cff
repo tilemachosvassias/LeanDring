@@ -18,9 +18,9 @@ authors:
     given-names: Tilemachos
     email: tilemachos.vassias@gmail.com
 license: Apache-2.0
-version: 1.0.0
-date-released: 2026-08-15
-doi: 10.5281/zenodo.21949625
+version: 1.0.1
+date-released: 2026-08-17
+doi: 10.5281/zenodo.21949624  # concept DOI: resolves to the latest version
 repository-code: "https://github.com/tilemachosvassias/LeanDring"
 keywords:
   - Lean 4
