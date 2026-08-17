@@ -75,6 +75,19 @@ listed as an ancillary file.
 | `p4/verify_gjg10_c.g` | whether full tables of marks separate `SmallGroup(p⁴, i)` for `i ∈ {3,8,9,10}` — the quartet left tied by the corrected subgroup counts | `Paper.p4_pairwise_species_distinct` |
 | `p4/verify_gjg10_d.g` | confirms the subgroup-class-count polynomials `6p+5`, `4p+7`, `2p+8` for that quartet at `p = 11, 13`, exhibiting ids 9 and 10 as the tied pair | `Paper.exceptional_p4_twins_separated` |
 
+## The series at larger primes (Section 7.4 of the paper)
+
+Evidence, not proof, for the open problem of whether the D-ring isomorphism
+persists along the order-`p⁵` series (the paper's Problem on the series):
+
+| script | what it does |
+|---|---|
+| `series_higher_primes_defs.g` | shared definitions: the presented pair `Gpq(p, 1)` / `Gpq(p, d)` (`d` a quadratic non-residue mod `p`), `rank_Z D(G)` by normalizer orbits on `H/H'`, and diagonal-block fingerprints. Rank equality checked for `p = 5, 7, 11, 13, 17, 19` |
+| `series_blocks_fast.g` | exact diagonal-block fingerprints of the species tables via canonical root-of-unity multiplicity vectors (integer arithmetic only, no cyclotomic field arithmetic); the multisets of blocks agree for `p = 5, 7, 11`. Agreement is a necessary condition for a species-table isomorphism — evidence; disagreement would be decisive |
+
+Neither script feeds the Lean development: the `p = 5` theorem is certified
+independently, and no paper claim rests on these runs.
+
 ## Running them
 
 ```bash
